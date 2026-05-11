@@ -1,0 +1,47 @@
+.footer { background:#080812; border-top:1px solid rgba(255,255,255,0.05); padding:80px 0 0; }
+.grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:40px; margin-bottom:60px; }
+.brandText { color:rgba(255,255,255,0.6); font-size:0.9rem; line-height:1.8; margin:24px 0; }
+.logoWrapper { 
+  height: 40px; 
+  position: relative; 
+  margin-bottom: 24px; 
+  transform: translateY(-8px); 
+}
+.footerLogo { object-fit:contain; object-position:left; }
+
+.columnTitle { color:#fff; font-size:1rem; font-weight:700; margin-bottom:24px; text-transform:uppercase; letter-spacing:1px; }
+.linkList { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.link { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.92rem; transition:all 0.3s; display:inline-block; }
+.link:hover { color: var(--accent); transform: translateX(5px); }
+
+.contactList { list-style:none; display:flex; flex-direction:column; gap:16px; }
+.contactItem { display:flex; align-items:flex-start; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem; }
+.contactItem i { color: var(--accent); font-size: 1rem; margin-top: 3px; }
+.contactItem a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.contactItem a:hover { color: var(--accent); }
+
+.socials { display:flex; gap:12px; }
+.socialLink { width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; color:#fff; transition:all 0.3s; }
+.socialLink:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-3px); }
+
+.bottom { border-top:1px solid rgba(255,255,255,0.05); padding:30px 0; }
+.bottomInfo { display:flex; justify-content:space-between; align-items:center; }
+.bottomInfo p { color:rgba(255,255,255,0.3); font-size:0.85rem; }
+
+.legalLinks { display:flex; gap:15px; align-items:center; color:rgba(255,255,255,0.2); }
+.legalLinks button, .legalLinks a { 
+  background:none; border:none; color:rgba(255,255,255,0.4); 
+  font-size:0.8rem; cursor:pointer; transition:color 0.2s; 
+  text-decoration: none;
+}
+.legalLinks button:hover, .legalLinks a:hover { color:var(--accent); }
+.legalLinks span { font-size:0.7rem; }
+
+@media (max-width:900px) {
+  .grid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:600px) {
+  .grid { grid-template-columns:1fr; gap:40px; }
+  .bottomInfo { flex-direction:column; gap:15px; text-align:center; }
+  .legalLinks { justify-content:center; }
+}

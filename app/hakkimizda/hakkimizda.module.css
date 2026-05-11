@@ -1,0 +1,144 @@
+.storySection {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.storyContent h2 {
+  font-size: 2.5rem;
+  font-family: var(--heading-font);
+  color: #111;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.storyContent p {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.storyImageWrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.storyImageWrap img {
+  object-fit: cover;
+}
+
+.valuesSection {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: var(--heading-font);
+  color: #111;
+  margin-bottom: 50px;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.valueCard {
+  background: #ffffff;
+  padding: 40px 30px;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  border-color: #e31e24;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  color: #e31e24;
+  margin-bottom: 20px;
+}
+
+.valueCard h3 {
+  font-size: 1.4rem;
+  color: #111;
+  margin-bottom: 15px;
+  font-family: var(--heading-font);
+}
+
+.valueCard p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.missionVision {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.mvBox {
+  padding: 50px;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-left: 4px solid #e31e24;
+  border-radius: 4px;
+}
+
+.mvBox h3 {
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 20px;
+  font-family: var(--heading-font);
+}
+
+.mvBox p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+@media (max-width: 992px) {
+  .storyGrid, .mvGrid {
+    grid-template-columns: 1fr;
+  }
+  .storyImageWrap {
+    height: 400px;
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+  .mvBox {
+    padding: 30px;
+  }
+}

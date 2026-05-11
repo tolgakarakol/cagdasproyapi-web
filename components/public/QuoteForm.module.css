@@ -1,0 +1,121 @@
+.section { 
+  background: #0a0a0f; 
+  padding: 100px 0;
+}
+
+.wrapper { 
+  display: grid; 
+  grid-template-columns: 1fr 1.4fr; 
+  gap: 80px; 
+  align-items: center; 
+}
+
+.tag { 
+  color: var(--accent); 
+  font-size: 0.85rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+  display: block; 
+  margin-bottom: 15px; 
+}
+
+.heading { 
+  font-size: clamp(2rem, 4vw, 3rem); 
+  color: #ffffff; 
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 20px; 
+}
+
+.sub { 
+  color: rgba(255, 255, 255, 0.7); 
+  line-height: 1.8; 
+  margin-bottom: 35px; 
+}
+
+.features { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+}
+
+.feature { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  color: #ffffff; 
+  font-size: 1rem; 
+  font-weight: 500;
+}
+
+.feature i { 
+  color: var(--accent); 
+  font-size: 1.1rem; 
+}
+
+.form {
+  background: #111118; 
+  border: 1px solid #222; 
+  border-radius: 8px;
+  padding: 50px; 
+}
+
+.field { margin-bottom: 25px; }
+
+.field label { 
+  display: block; 
+  color: #ffffff; 
+  font-size: 0.9rem; 
+  font-weight: 600; 
+  margin-bottom: 10px; 
+}
+
+.field input, .field select, .field textarea {
+  width: 100%; 
+  background: #1a1a24; 
+  border: 1px solid #333;
+  border-radius: 4px; 
+  padding: 14px 18px;
+  color: #ffffff; 
+  font-size: 1rem;
+  transition: all 0.2s; 
+  outline: none;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus { 
+  border-color: var(--accent); 
+  background: #20202d;
+}
+
+.field select option { 
+  background: #1a1a24; 
+  color: #ffffff; 
+}
+
+.field textarea { resize: vertical; }
+
+.submit { 
+  width: 100%; 
+  background: radial-gradient(circle, #e31e24 0%, #a11418 100%);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(227, 30, 36, 0.3);
+}
+
+.submit:hover { 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(227, 30, 36, 0.4);
+}
+
+@media (max-width: 992px) {
+  .wrapper { grid-template-columns: 1fr; gap: 50px; }
+  .form { padding: 30px; }
+}

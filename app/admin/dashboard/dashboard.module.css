@@ -1,0 +1,14 @@
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px; flex-wrap:wrap; gap:16px; }
+.title { font-family:'Playfair Display',serif; font-size:2rem; color:#f0f0f0; margin-bottom:4px; }
+.sub { color:#9aa0b0; font-size:0.95rem; }
+.previewBtn { display:flex; align-items:center; gap:8px; padding:10px 20px; background:rgba(200,150,12,0.1); border:1px solid rgba(200,150,12,0.3); border-radius:8px; color:#c8960c; font-size:0.9rem; font-weight:600; transition:all 0.2s; }
+.previewBtn:hover { background:rgba(200,150,12,0.2); }
+.siteInfo { background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.2); border-radius:10px; padding:14px 18px; margin-bottom:24px; display:flex; align-items:center; gap:10px; color:#a5b4fc; font-size:0.9rem; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; margin-bottom:28px; }
+.card { display:flex; align-items:center; gap:16px; padding:20px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; text-decoration:none; transition:all 0.2s; }
+.card:hover { background:rgba(255,255,255,0.06); border-color:rgba(255,255,255,0.12); transform:translateY(-2px); }
+.iconWrap { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.card h3 { color:#f0f0f0; font-size:0.95rem; font-weight:600; margin-bottom:4px; }
+.card p { color:#9aa0b0; font-size:0.82rem; }
+.notice { background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.2); border-radius:10px; padding:16px 20px; display:flex; gap:12px; color:#fcd34d; font-size:0.9rem; line-height:1.6; }
+.notice i { flex-shrink:0; margin-top:2px; }

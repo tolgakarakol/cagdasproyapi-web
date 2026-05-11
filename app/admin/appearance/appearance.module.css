@@ -1,0 +1,24 @@
+.loading { display:flex; align-items:center; justify-content:center; height:200px; color:#c8960c; font-size:2rem; }
+.header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:28px; flex-wrap:wrap; gap:16px; }
+.headerTitle { font-family:'Playfair Display',serif; font-size:1.8rem; color:#f0f0f0; margin-bottom:4px; }
+.headerSub { color:#9aa0b0; font-size:0.9rem; }
+.saveBtn { padding:10px 24px; background:#c8960c; color:#0f0f1a; border:none; border-radius:8px; font-weight:700; cursor:pointer; display:flex; align-items:center; gap:8px; transition:all 0.2s; }
+.saveBtn:disabled { opacity:0.7; cursor:not-allowed; }
+.saveBtn:not(:disabled):hover { background:#e8b422; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.section { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:24px; }
+.section h3 { color:#f0f0f0; font-size:1rem; font-weight:600; margin-bottom:20px; display:flex; align-items:center; gap:8px; }
+.section h3 i { color:#c8960c; }
+.field { margin-bottom:20px; }
+.field label { display:block; color:#9aa0b0; font-size:0.85rem; margin-bottom:8px; font-weight:500; }
+.field select { width:100%; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:10px 14px; color:#f0f0f0; font-size:0.9rem; outline:none; cursor:pointer; }
+.field select:focus { border-color:#c8960c; }
+.field select option { background:#16213e; }
+.preview { margin-top:8px; color:#c8960c; font-size:1.2rem; padding:8px 0; }
+.colorField { margin-bottom:16px; }
+.colorField label { display:block; color:#9aa0b0; font-size:0.85rem; margin-bottom:8px; }
+.colorRow { display:flex; align-items:center; gap:12px; }
+.colorRow input[type=color] { width:48px; height:36px; border:none; border-radius:6px; cursor:pointer; background:none; padding:0; }
+.colorRow span { color:#f0f0f0; font-size:0.9rem; font-family:monospace; }
+.preview2 { border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.1); }
+@media (max-width:768px) { .grid { grid-template-columns:1fr; } }
