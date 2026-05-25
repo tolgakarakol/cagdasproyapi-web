@@ -4,33 +4,33 @@ import styles from './Testimonials.module.css';
 const REVIEWS = [
   {
     id: 1,
-    name: 'Ahmet Karataş',
-    location: 'Başakşehir / Google İncelemesi',
-    initial: 'AK',
+    name: 'Büşra Atmaca',
+    location: 'Google İncelemesi',
+    initial: 'BA',
     avatarBg: '#e31e24', // Accent red
     stars: 5,
-    date: '1 hafta önce',
-    text: 'Terasımıza yaptırdığımız bioklimatik pergola ve giyotin cam sistemi gerçekten harika oldu. Çağdaş Pro Yapı ekibine profesyonel işçilikleri ve zamanında teslimatları için çok teşekkür ederiz.'
+    date: '1 ay önce',
+    text: 'Müşteri memnuniyeti için tek adressiniz🙏'
   },
   {
     id: 2,
-    name: 'Sibel Yılmaz',
-    location: 'Beylikdüzü / Google İncelemesi',
-    initial: 'SY',
+    name: 'Sude Pekel',
+    location: 'Google İncelemesi',
+    initial: 'SP',
     avatarBg: '#0f172a', // Dark blue-grey
     stars: 5,
-    date: '3 hafta önce',
-    text: 'Kış bahçesi yaptırmak için uzun süre araştırma yaptık ve en son Çağdaş Pro Yapı\'da karar kıldık. Albert Genau kalitesi zaten tartışılmaz ama montaj ekibinin titizliği ve güler yüzü ayrıca takdire şayandı.'
+    date: '1 ay önce',
+    text: 'Çağdaş Pro Yapı’da çalışıyorum ama aynı zamanda kendi evime de cam balkon yaptırdım. Süreçlere hakim olduğum için gönül rahatlığıyla tercih ettim. Gerçekten işçilikleri temiz, ekip çok ilgili ve montaj çok titiz yapıldı. Sonuçtan çok memnun kaldım, gönül rahatlığıyla tavsiye ederim.'
   },
   {
     id: 3,
-    name: 'Murat Şahin',
-    location: 'Bakırköy / Google İncelemesi',
-    initial: 'MŞ',
+    name: 'Merve Altıntaş',
+    location: 'Google İncelemesi',
+    initial: 'MA',
     avatarBg: '#a11418', // Deep red
     stars: 5,
     date: '1 ay önce',
-    text: 'Giyotin cam balkon montajı son derece titizlikle yapıldı. Isı yalıtımı, rüzgar direnci ve motorlu mekanizmanın sessizliği beklediğimden çok daha iyi çıktı. Kesinlikle tavsiye ederim.'
+    text: 'Profesyonel bir hizmet arayanlar tereddüt etmeden tercih edebilir.'
   }
 ];
 
