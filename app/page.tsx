@@ -12,6 +12,7 @@ import QuoteForm from '@/components/public/QuoteForm';
 import ContactSection from '@/components/public/ContactSection';
 import Footer from '@/components/public/Footer';
 import WhatsAppFloat from '@/components/public/WhatsAppFloat';
+import Testimonials from '@/components/public/Testimonials';
 
 const SECTION_MAP: Record<string, React.ComponentType<{ content: any }>> = {
   products_grid: ProductsGrid,
@@ -55,6 +56,14 @@ export default async function HomePage() {
       {otherSections.map((section: any) => {
         const Component = SECTION_MAP[section.type];
         if (!Component || section.type === 'contact' || section.type === 'quote_form') return null;
+        if (section.type === 'products_grid') {
+          return (
+            <div key={section._id}>
+              <Component content={section.content} />
+              <Testimonials />
+            </div>
+          );
+        }
         return <Component key={section._id} content={section.content} />;
       })}
       <PartnersCarousel />
