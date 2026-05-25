@@ -446,6 +446,7 @@ export default function ProductClient({ params }: { params: any }) {
 
       {product.isCategory ? (
         <section className={styles.categorySection}>
+          <h2 className={styles.categorySectionTitle}>Katlanır Sistem</h2>
           <div className={styles.categoryGrid}>
             {product.subProducts.map((sub: any, i: number) => (
               <div key={i} className={`${styles.categoryCard} ${sub.featured ? styles.categoryCardFeatured : ''}`}>

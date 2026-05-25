@@ -390,3 +390,11 @@
   .highlightTitle { font-size: 1.8rem; }
   .highlightContent { font-size: 1rem; }
 }
+
+.categorySectionTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 50px;
+}
