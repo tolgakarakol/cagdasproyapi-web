@@ -311,8 +311,8 @@ const PRODUCT_DATA: any = {
   },
   'katlanir-sistem-cam-balkon': {
     isCategory: true,
-    badge: 'Albert Genau — Katlanır Sistemler',
-    heroTitle: 'Katlanır Cam Balkon Sistemleri',
+    badge: 'Katlanır - Sürme Cam Balkon',
+    heroTitle: 'Katlanır - Sürme Cam Balkon',
     heroSub: 'Balkonu dört mevsim yaşam alanına dönüştüren premium çözümler.',
     heroImg: '/images/products/katlanir_balkon_hero_v4.jpg',
     subProducts: [
