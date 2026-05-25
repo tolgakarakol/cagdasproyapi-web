@@ -329,9 +329,9 @@ const PRODUCT_DATA: any = {
     heroImg: '/images/products/kis_bahcesi_hero.jpg',
     tagline: 'Müstakil eviniz, terasınız veya ticari mekanınız için çelik taşıyıcı sistemle güçlendirilmiş, premium kış bahçesi sistemleri. Doğayla iç içe, güvenli ve estetik yaşam alanları sunuyoruz.',
     features: [
-      { img: '/images/products/pergola_final.jpg', title: 'Çelik Taşıyıcı Gövde', desc: 'Ağır kar yüklerine ve rüzgara karşı ekstra dayanıklı özel tasarım çelik iskelet.' },
-      { img: '/images/products/katlanir_isicamli.jpg', title: 'Isıcam Entegrasyonu', desc: 'Tavan ve yan yüzeylerde maksimum yalıtım sağlayan özel ısıcam sistemleri.' },
-      { img: '/images/products/giyotin_hero.jpg', title: 'Panoramik Tasarım', desc: 'Modern mimariyle uyumlu, geniş açıklıklı ve kesintisiz görüş sunan estetik yapılar.' }
+      { img: '/images/products/celik_tasiyici_govde.png', title: 'Çelik Taşıyıcı Gövde', desc: 'Ağır kar yüklerine ve rüzgara karşı ekstra dayanıklı özel tasarım çelik iskelet.' },
+      { img: '/images/products/isicam-entegrasyonu.png', title: 'Isıcam Entegrasyonu', desc: 'Tavan ve yan yüzeylerde maksimum yalıtım sağlayan özel ısıcam sistemleri.' },
+      { img: '/images/products/ruzgar-kirici.png', title: 'Panoramik Tasarım', desc: 'Modern mimariyle uyumlu, geniş açıklıklı ve kesintisiz görüş sunan estetik yapılar.' }
     ],
     safetyImg: '/images/products/kis_bahcesi_hero.jpg',
     cleaningImg: '/images/products/katlanir_balkon_hero_v4.jpg',
