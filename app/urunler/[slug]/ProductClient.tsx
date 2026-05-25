@@ -120,7 +120,7 @@ const PRODUCT_DATA: any = {
   },
   'tiara-08-10': {
     badge: 'Albert Genau — Tiara®',
-    heroTitle: 'Tek Camlı Kayar Katlanır',
+    heroTitle: 'Tek Camlı Katlanır Cam Balkon',
     heroSub: 'Balkonunuzu Evinizin En Kullanışlı Odasına Dönüştürün.',
     heroImg: '/images/products/tiara_hero.jpg',
     tagline: 'Tiara, uzun yıllar teknik servise ihtiyaç duymadan kullanılmak üzere geliştirilmiş, 38 Avrupa ülkesinde patenti olan yeni nesil bir cam sistemidir. Maksimum panoramik görüntü ve eşsiz konforu bir arada sunar.',
@@ -316,8 +316,8 @@ const PRODUCT_DATA: any = {
     heroSub: 'Balkonu dört mevsim yaşam alanına dönüştüren premium çözümler.',
     heroImg: '/images/products/katlanir_balkon_hero_v4.jpg',
     subProducts: [
-      { slug: 'tiara-twinmax', title: 'Isıcamlı Cam Balkon', desc: 'Isıcamlı cambalkonun zirvesi. Maksimum ısı yalıtımı ve konfor.', image: '/images/products/katlanir_isicamli.jpg', badge: 'ISI YALITIMLI' },
-      { slug: 'tiara-08-10', title: 'Tek Camlı Kayar Katlanır', desc: 'Tek camlı sistemlerde zirve kalite. Panoramik manzara için ideal.', image: '/images/products/katlanir_tek_camli.jpg', badge: 'TEK CAMLI' },
+      { slug: 'tiara-twinmax', title: 'Isıcamlı Katlanır Cam Balkon', desc: 'Isıcamlı cambalkonun zirvesi. Maksimum ısı yalıtımı ve konfor.', image: '/images/products/katlanir_isicamli.jpg', badge: 'ISI YALITIMLI' },
+      { slug: 'tiara-08-10', title: 'Tek Camlı Katlanır Cam Balkon', desc: 'Tek camlı sistemlerde zirve kalite. Panoramik manzara için ideal.', image: '/images/products/katlanir_tek_camli.jpg', badge: 'TEK CAMLI' },
       { slug: 'statu-optima', title: 'Ekonomik Seri', desc: 'Albert Genau kalitesini uygun fiyatla balkonunuza taşıyın.', image: '/images/products/katlanir_ekonomik_v3.jpg', badge: 'EKONOMİK' },
       { slug: 'statu-tango', title: 'Klasik Ekonomik', desc: 'Zamanın testinden geçmiş, güvenilir klasik cambalkon deneyimi.', image: '/images/products/katlanir_klasik.jpg', badge: 'KLASİK' }
     ]
