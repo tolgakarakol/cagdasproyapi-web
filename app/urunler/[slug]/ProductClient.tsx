@@ -326,7 +326,7 @@ const PRODUCT_DATA: any = {
     badge: 'Özel Proje Çözümleri',
     heroTitle: 'Çelik Konstrüksiyon & Kış Bahçesi',
     heroSub: 'Dört Mevsim Yaşanabilir Ekstra Alanlar.',
-    heroImg: '/images/products/kis_bahcesi_hero.jpg',
+    heroImg: '/images/products/panoromik-yatay.png',
     tagline: 'Müstakil eviniz, terasınız veya ticari mekanınız için çelik taşıyıcı sistemle güçlendirilmiş, premium kış bahçesi sistemleri. Doğayla iç içe, güvenli ve estetik yaşam alanları sunuyoruz.',
     features: [
       { img: '/images/products/celik_tasiyici_govde.png', title: 'Çelik Taşıyıcı Gövde', desc: 'Ağır kar yüklerine ve rüzgara karşı ekstra dayanıklı özel tasarım çelik iskelet.' },
