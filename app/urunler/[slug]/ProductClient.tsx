@@ -187,7 +187,7 @@ const PRODUCT_DATA: any = {
   },
   'statu-optima': {
     badge: 'Albert Genau — Statü Optima®',
-    heroTitle: 'Ekonomik Cam Balkon',
+    heroTitle: 'Isıcamlı Sürme Cam Balkon',
     heroSub: 'Kalite ve Uygun Fiyatın Buluştuğu Tek Camlı Çözüm.',
     heroImg: '/images/products/katlanir_ekonomik_v3.jpg',
     tagline: 'Optima 08 ile fiyat endişesi yaşamadan da kaliteli cam balkona sahip olabilirsiniz. Albert Genau kalitesini ekonomik fiyatlarla balkonunuza taşıyan, dayanıklı ve uzun ömürlü en ideal seri.',
@@ -217,7 +217,7 @@ const PRODUCT_DATA: any = {
   },
   'statu-tango': {
     badge: 'Albert Genau — Statü Tango®',
-    heroTitle: 'Klasik Ekonomik Cambalkon',
+    heroTitle: 'Tek Camlı Sürme Cam Balkon',
     heroSub: 'Güvenilir Performans, Alışılmış Klasik Tasarım.',
     heroImg: '/images/products/kis_bahcesi_hero.jpg',
     tagline: 'Statü Tango, yıllardır tercih edilen klasik cambalkon deneyimini Albert Genau mühendisliği ile sunar. Ekonomik çözümlerde sağlamlık ve sadelik arayanların tercihi.',
@@ -318,8 +318,8 @@ const PRODUCT_DATA: any = {
     subProducts: [
       { slug: 'tiara-twinmax', title: 'Isıcamlı Katlanır Cam Balkon', desc: 'Isıcamlı cambalkonun zirvesi. Maksimum ısı yalıtımı ve konfor.', image: '/images/products/katlanir_isicamli.jpg', badge: 'ISI YALITIMLI' },
       { slug: 'tiara-08-10', title: 'Tek Camlı Katlanır Cam Balkon', desc: 'Tek camlı sistemlerde zirve kalite. Panoramik manzara için ideal.', image: '/images/products/katlanir_tek_camli.jpg', badge: 'TEK CAMLI' },
-      { slug: 'statu-optima', title: 'Ekonomik Seri', desc: 'Albert Genau kalitesini uygun fiyatla balkonunuza taşıyın.', image: '/images/products/katlanir_ekonomik_v3.jpg', badge: 'EKONOMİK' },
-      { slug: 'statu-tango', title: 'Klasik Ekonomik', desc: 'Zamanın testinden geçmiş, güvenilir klasik cambalkon deneyimi.', image: '/images/products/katlanir_klasik.jpg', badge: 'KLASİK' }
+      { slug: 'statu-optima', title: 'Isıcamlı Sürme Cam Balkon', desc: 'Albert Genau kalitesini uygun fiyatla balkonunuza taşıyın.', image: '/images/products/katlanir_ekonomik_v3.jpg', badge: 'ISI YALITIMLI' },
+      { slug: 'statu-tango', title: 'Tek Camlı Sürme Cam Balkon', desc: 'Zamanın testinden geçmiş, güvenilir klasik cambalkon deneyimi.', image: '/images/products/katlanir_klasik.jpg', badge: 'TEK CAMLI' }
     ]
   },
   'kis-bahcesi': {
@@ -448,7 +448,26 @@ export default function ProductClient({ params }: { params: any }) {
         <section className={styles.categorySection}>
           <h2 className={styles.categorySectionTitle}>Katlanır Sistem</h2>
           <div className={styles.categoryGrid}>
-            {product.subProducts.map((sub: any, i: number) => (
+            {product.subProducts.slice(0, 2).map((sub: any, i: number) => (
+              <div key={i} className={`${styles.categoryCard} ${sub.featured ? styles.categoryCardFeatured : ''}`}>
+                <div className={styles.categoryCardImg}>
+                  <Image src={sub.image} alt={sub.title} fill />
+                  <div className={styles.categoryCardBadge}>{sub.badge}</div>
+                </div>
+                <div className={styles.categoryCardBody}>
+                  <h3 className={styles.categoryCardTitle}>{sub.title}</h3>
+                  <p className={sub.featured ? styles.categoryCardDescFeatured : styles.categoryCardDesc}>{sub.desc}</p>
+                  <Link href={`/urunler/${sub.slug}`} className={styles.categoryCardBtn}>
+                    DETAYLI İNCELE <i className="fas fa-arrow-right" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h2 className={`${styles.categorySectionTitle} ${styles.sectionGap}`}>Sürme Sistem</h2>
+          <div className={styles.categoryGrid}>
+            {product.subProducts.slice(2, 4).map((sub: any, i: number) => (
               <div key={i} className={`${styles.categoryCard} ${sub.featured ? styles.categoryCardFeatured : ''}`}>
                 <div className={styles.categoryCardImg}>
                   <Image src={sub.image} alt={sub.title} fill />
