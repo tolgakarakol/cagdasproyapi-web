@@ -19,20 +19,22 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === '/';
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isHome = mounted ? pathname === '/' : true;
   // Anasayfada ve henüz kaydırılmamışsa 'beyaz' (invert) logo kullanacağız
   const useWhiteLogo = isHome && !scrolled;
 
   return (
-    <nav className={`${styles.nav} ${scrolled || !isHome ? styles.scrolled : ''}`}>
+    <nav className={`${styles.nav} ${(scrolled || !isHome) && mounted ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <a href="/" className={styles.logo} style={{ cursor: 'pointer', display: 'flex' }}>
           <img 
