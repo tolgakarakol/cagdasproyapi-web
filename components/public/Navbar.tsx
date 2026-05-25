@@ -7,7 +7,7 @@ import styles from './Navbar.module.css';
 
 const PRODUCTS = [
   { name: 'Giyotin Tam Balkon', slug: 'giyotin-tam-balkon' },
-  { name: 'Katlanır Sistem Cam Balkon', slug: 'katlanir-sistem-cam-balkon' },
+  { name: 'Katlanır - Sürme Cam Balkon', slug: 'katlanir-sistem-cam-balkon' },
   { name: 'Bioklimatik Pergola', slug: 'bioklimatik-pergola' },
   { name: 'Rüzgar Kırıcı Sistem', slug: 'ruzgar-kirici-sistem' },
   { name: 'Çelik Konstrüksiyon & Kış Bahçesi', slug: 'kis-bahcesi' },
