@@ -29,12 +29,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isHome = mounted ? pathname === '/' : true;
-  // Anasayfada ve henüz kaydırılmamışsa 'beyaz' (invert) logo kullanacağız
-  const useWhiteLogo = isHome && !scrolled;
+  // Her zaman beyaz arka plan ve renkli logo kullanacağız
+  const useWhiteLogo = false;
 
   return (
-    <nav className={`${styles.nav} ${(scrolled || !isHome) && mounted ? styles.scrolled : ''}`}>
+    <nav className={`${styles.nav} ${styles.scrolled}`}>
       <div className={styles.container}>
         <a href="/" className={styles.logo} style={{ cursor: 'pointer', display: 'flex' }}>
           <img 
