@@ -15,8 +15,10 @@
 
 .badge {
   display:inline-block; padding:8px 20px; border-radius:50px;
-  background:rgba(227,30,36,0.1); border:1px solid rgba(227,30,36,0.3);
-  color:var(--accent); font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:30px;
+  background: radial-gradient(circle, #e31e24 0%, #a11418 100%);
+  border: 1px solid rgba(227,30,36,0.5);
+  color: #ffffff; font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:2px; margin-bottom:30px;
+  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
 }
 
 .title {

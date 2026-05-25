@@ -37,7 +37,7 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
           <div className={styles.overlay} />
           <div className={styles.content}>
             <div className={`${styles.text} ${i === current ? styles.textActive : ''}`}>
-              <span className={styles.badge}>Albert Genau Yetkili Bayisi</span>
+              <span className={styles.badge}>Albert Genau Üretici Bayisi</span>
               <h1 className={styles.title}>{slide.title}</h1>
               <p className={styles.subtitle}>{slide.subtitle}</p>
               <div className={styles.ctas}>
