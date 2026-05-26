@@ -249,7 +249,7 @@ const PRODUCT_DATA: any = {
     heroTitle: 'Rüzgar Kırıcı Sistemler',
     heroTitleExtra: '',
     heroSub: 'Yeni Rüzgar Kırıcı Cam Sistemi ile Tanışın',
-    heroImg: '/images/products/giyotin_hero.jpg',
+    heroImg: '/images/products/panoromik-yatay.png',
     safetyImg: '/images/products/airflex_safety_priority.png',
     tagline: 'Rüzgar Kırıcı Sistem – Airflex, minimalist tasarımı ile panoramik manzaranızı korurken aynı zamanda ses, toz ve rüzgarı engeller. Konforunuzu artırır.\n\nAyarlanabilir köşe çözümleri, inovatif ve estetik yer sabitleme seçenekleri ile rüzgar kırıcı sistem, hotel, restaurant ve cafelerde, teraslarda ve ofis bölmelerinde rahatlıkla uygulanabilir. Sadece 47 mm profil genişliğine sahip airflex – rüzgar kırıcı ile tanışmanın tam zamanı.',
     features: [],
