@@ -7,7 +7,7 @@ import { useState, use } from 'react';
 const PRODUCT_DATA: any = {
   'giyotin-tam-balkon': {
     badge: 'Albert Genau — Tambalkon®',
-    heroTitle: 'Balkonu Odaya Dönüştürür',
+    heroTitle: 'Giyotin Tam Balkon',
     heroSub: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.',
     heroImg: '/images/products/giyotin_hero.png',
     tagline: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.\nİçerisiyle dışarısı arasındaki çizgiyi siler. Bu sadece bir cam balkon değil. Bu, Tambalkon®.',
@@ -246,7 +246,7 @@ const PRODUCT_DATA: any = {
   },
   'ruzgar-kirici-sistem': {
     badge: 'Albert Genau — AirFlex',
-    heroTitle: 'Rüzgar Kırıcı Sistemler',
+    heroTitle: 'Rüzgar Kırıcı Sistem',
     heroTitleExtra: '',
     heroSub: 'Yeni Rüzgar Kırıcı Cam Sistemi ile Tanışın',
     heroImg: '/images/products/panoromik-yatay.png',
@@ -326,7 +326,7 @@ const PRODUCT_DATA: any = {
     badge: 'Özel Proje Çözümleri',
     heroTitle: 'Çelik Konstrüksiyon & Kış Bahçesi',
     heroSub: 'Dört Mevsim Yaşanabilir Ekstra Alanlar.',
-    heroImg: '/images/products/panoromik-yatay.png',
+    heroImg: '/images/kis-bahcesi-banner.png',
     tagline: 'Müstakil eviniz, terasınız veya ticari mekanınız için çelik taşıyıcı sistemle güçlendirilmiş, premium kış bahçesi sistemleri. Doğayla iç içe, güvenli ve estetik yaşam alanları sunuyoruz.',
     features: [
       { img: '/images/products/celik_tasiyici_govde.png', title: 'Çelik Taşıyıcı Gövde', desc: 'Ağır kar yüklerine ve rüzgara karşı ekstra dayanıklı özel tasarım çelik iskelet.' },
@@ -378,7 +378,7 @@ const PRODUCT_DATA: any = {
   },
   'cam-kapi': {
     badge: 'Hareketli Cam Sistemleri',
-    heroTitle: 'Hareketli Cam Duvarlar',
+    heroTitle: 'Cam Kapı Sistemleri',
     heroSub: 'Eşiksiz Zeminler, Kesintisiz Geçişler.',
     heroImg: '/images/products/giyotin_panoramic.png',
     tagline: 'Albert Genau’nun üstten askılı özel taşıyıcı profili sayesinde mekanlarınızı eşiksiz ve esnek bir şekilde bölerek panoramik manzaranın tadını çıkarın.',
@@ -476,7 +476,7 @@ PRODUCT_DATA['kompozit-cephe-sistemleri'] = {
 
 PRODUCT_DATA['pvc-cam-sistemleri'] = {
   badge: 'Çağdaş Pro Yapı — Premium PVC Sistemleri',
-  heroTitle: 'Yeni Nesil PVC Cam Sistemleri',
+  heroTitle: 'PVC Cam Sistemleri',
   heroSub: 'Üstün Isı Yalıtımı, Akustik Konfor ve Uzun Ömürlü Kullanım İçin Estetik Çözümler.',
   heroImg: '/images/pvc_sistem_banner.png',
   tagline: 'Yaşam alanlarınızı yeniden tanımlayın. Çağdaş Pro Yapı PVC pencere ve kapı sistemleri; mükemmel ısı yalıtımı, üst düzey ses yalıtımı ve yenilikçi güvenlik özellikleriyle konforunuzu en üst seviyeye taşır. Çok odalı profil sistemiyle geliştirilen doğramalarımız, estetik tasarımı teknolojiyle buluşturarak evinizi dört mevsim korur.',
@@ -533,7 +533,7 @@ PRODUCT_DATA['pvc-cam-sistemleri'] = {
 
 PRODUCT_DATA['kupeste-modelleri'] = {
   badge: 'Çağdaş Pro Yapı — Premium Güvenlik ve Estetik',
-  heroTitle: 'Modern Küpeşte ve Korkuluk Sistemleri',
+  heroTitle: 'Küpeşte Korkuluk Modelleri',
   heroSub: 'Merdiven, Balkon ve Teras İçin Kusursuz Mimari Detaylar, Ödün Vermeyen Güvenlik.',
   heroImg: '/images/kupeste-modelleri/kupeste-banner.png',
   tagline: 'Mekanlarınıza değer katın. Çağdaş Pro Yapı küpeşte ve korkuluk sistemleri; balkon, teras, merdiven ve havuz kenarlarında maksimum güvenlik sağlarken, minimalist ve şık tasarımlarıyla mimarinizin ayrılmaz bir parçası olur. Alüminyum, paslanmaz çelik ve temperli camın kusursuz birleşimiyle üretilen sistemlerimiz, hem iç hem dış mekanlarda prestijli bir görünüm sunar.',
