@@ -408,55 +408,69 @@ PRODUCT_DATA['dusakabin-sistemleri'] = PRODUCT_DATA['dusakabin'];
 PRODUCT_DATA['cam-kapi-sistemleri'] = PRODUCT_DATA['cam-kapi'];
 
 PRODUCT_DATA['kompozit-cephe-sistemleri'] = {
-  badge: 'Çağdaş Pro Yapı — Cephe',
+  badge: 'Çağdaş Pro Yapı — Cephe Sistemleri',
   heroTitle: 'Kompozit Cephe Sistemleri',
-  heroSub: 'Modern Mimariye Özel Dayanıklı ve Estetik Cephe Çözümleri.',
-  heroImg: '/images/products/giyotin_panoramic.png',
-  tagline: 'Kompozit cephe kaplama sistemleri; binaların dış yüzeyine modern, dayanıklı ve estetik bir görünüm kazandırır. Alüminyum kompozit paneller, hafif yapısı ve yüksek dayanıklılığıyla günümüz mimarisinin vazgeçilmezi haline gelmiştir. Çağdaş Pro Yapı olarak, ofisinizin, iş yerinizin veya konutunuzun cephesini yenileyin.',
+  heroSub: 'Binanızı Onlarca Yıl Koruyan, Estetiği Öne Çıkaran Alüminyum Kompozit Cephe Çözümleri.',
+  heroImg: '/images/kompozit-cephe/kompozit-cephe-03.png',
+  tagline: 'Kompozit cephe kaplaması, iki ince alüminyum levha arasına sıkıştırılmış polimer çekirdeğinden oluşan, binalara modern ve uzun soluklu bir dış yüzey kazandıran özel bir panel sistemidir. Sektörün önde gelen üreticilerinin malzemeleriyle çalışan Çağdaş Pro Yapı; ofis binaları, fabrikalar, okullar, hastaneler ve konut projelerinde estetik, dayanıklı ve güvenli cephe çözümleri sunmaktadır.',
   features: [
-    { img: '/images/products/twinmax_insulation.jpg', title: 'Alüminyum Kompozit Panel', desc: 'Hafif, dayanıklı ve yüksek estetik değere sahip alüminyum kompozit kaplamalar.' },
-    { img: '/images/products/giyotin_safety.png', title: 'Hava & Nem Yalıtımı', desc: 'Özel profil sistemleri ile cepheyi nem, rüzgar ve iklim koşullarına karşı korur.' },
-    { img: '/images/products/katlanir_balkon_hero_hq.jpg', title: 'Geniş Renk Seçeneği', desc: 'Yüzlerce renk ve doku seçeneği ile mimarinize uygun özel tasarım çözümleri.' }
+    { img: '/images/kompozit-cephe/kompozit-cephe-01.png', title: 'Alüminyum Kompozit Panel', desc: 'İki katmanlı alüminyum yüzey ve polimer çekirdekten oluşan ACP paneller; yaklaşık 4–6 kg/m² ağırlığıyla binaya ek statik yük bindirmeden uygulanır. Yüksek dayanım, kolay işlenebilirlik ve mükemmel estetik bir arada sunar.' },
+    { img: '/images/kompozit-cephe/kompozit-cephe-02.png', title: 'PVDF Kaplama Teknolojisi', desc: 'PVDF kaplama ile işlenmiş paneller UV ışınlarına, asit yağmurlarına ve iklim koşullarına karşı 25 yıl ve üzeri renk ve parlaklığını korur. Mat, parlak, metalik ve özel efektli seçenekler mevcuttur.' },
+    { img: '/images/kompozit-cephe/kompozit-cephe-04.png', title: 'Gizli Montaj Sistemi', desc: 'Özel alüminyum alt konstrüksiyon ve klibs sistemi ile paneller görünür vida veya perçin kullanılmadan monte edilir. Temiz ve minimalist bir cephe görünümü elde edilirken panel yenileme işlemleri de kolaylıkla yapılabilir.' }
   ],
-  safetyImg: '/images/products/giyotin_safety.png',
-  cleaningImg: '/images/products/twinmax_clean.jpg',
-  safetyTitle: 'Uzun Ömürlü Cephe Koruması',
-  safetyDesc: 'UV ışınlarına, korozyona ve mekanik darbelere karşı yüksek dirençli kompozit paneller ile binanızın cephesini onlarca yıl koruyun.',
-  cleaningDesc: 'Pürüzsüz yüzeyi sayesinde toz ve kir tutmayan kompozit cepheler, standart su basıncıyla kolayca temizlenir.',
+  safetyImg: '/images/kompozit-cephe/kompozit-cephe-05.png',
+  safetyTitle: 'Yangın Güvenliği — A2 Sınıfı Panel Seçeneği',
+  safetyDesc: 'Türkiye Bina Yangın Yönetmeliği\'ne uygun olarak, yüksek katlı ve kamusal binalarda zorunlu tutulan A2 sınıfı alüminyum kompozit panel seçeneği sunulmaktadır. Mineral dolgu çekirdekli bu paneller 650°C\'ye kadar alevlenme göstermez ve yangının bina cephesinde yayılmasını önler.',
+  cleaningImg: '/images/kompozit-cephe/kompozit-cephe-06.png',
+  cleaningDesc: 'PVDF kaplı pürüzsüz yüzeyler hava kirliliği ve toz tutumunu minimize eder. Yıllık periyodik basınçlı su ile yıkama ve yumuşak deterjanla uygulama, cepheyi her zaman yeni gibi tutar.',
   cleaningSteps: [
-    'Yüzeyi önce bol suyla yıkayarak kaba kirleri temizleyin.',
-    'Yumuşak fırça ve pH nötr deterjan ile panelleri silin.',
-    'Durulayıp kurutun; leke bırakmaz.'
+    'Yüzeyi önce bol suyla yıkayarak kaba kirleri ve tozu giderin.',
+    'pH nötr deterjan ve yumuşak fırça ile panel yüzeyini nazikçe temizleyin.',
+    'Bol suyla durulayın; PVDF yüzey su izi ve leke bırakmaz.'
   ],
   sections: [
     {
       type: 'text_image',
-      title: 'Neden Kompozit Cephe?',
-      content: 'Geleneksel sıva ve boya sistemlerine kıyasla çok daha uzun ömürlü olan kompozit cephe kaplamaları; enerji verimliliğini artırır, bakım maliyetlerini düşürür ve binanıza çarpıcı bir görünüm kazandırır. Ofis binaları, alışveriş merkezleri, fabrikalar ve konut projeleri için ideal çözümler sunmaktayız.',
-      image: '/images/products/giyotin_panoramic.png',
+      title: 'Kompozit Cephe Neden Tercih Edilir?',
+      content: 'Geleneksel taş ve sıva cephe sistemleriyle karşılaştırıldığında alüminyum kompozit paneller çok daha hafif, çok daha hızlı monte edilebilir ve çok daha uzun servis ömrüne sahiptir. Kaplama altına uygulanan taş yünü veya EPS yalıtım levhası ile enerji verimliliği de önemli ölçüde artırılır. Tüm bu avantajlar, kısa montaj süreci ve düşük bakım maliyetiyle birleşince kompozit cephe; hem yeni yapı hem de yenileme projelerinde en akılcı cephe çözümü haline gelir.',
+      image: '/images/kompozit-cephe/kompozit-cephe-07.png',
       reverse: false
+    },
+    {
+      type: 'highlight',
+      title: 'Renk ve Doku Özgürlüğü',
+      content: '200\'ü aşkın standart RAL ve NCS rengi ile özel sipariş renk uygulamaları mümkündür. Fırçalanmış, taş, ahşap ve tuğla imitasyonlu doku seçenekleriyle mimarinizin vizyonunu birebir hayata geçirebilirsiniz.',
+      badge: '200+ Renk Seçeneği'
+    },
+    {
+      type: 'text_image',
+      title: 'Hızlı ve Temiz Montaj',
+      content: 'Alüminyum alt konstrüksiyon üzerine montaj yapılan kompozit cephe sistemleri çalışma süresini ve inşaat kirliliğini minimuma indirir. Saha kesim ve bükme işlemleri ile eğimli ve karmaşık geometrik formlara kolayca adapte olur. Komple cephe yenileme işlemleri haftalarca değil, gün bazında tamamlanır.',
+      image: '/images/kompozit-cephe/kompozit-cephe-08.png',
+      reverse: true
     },
     {
       type: 'grid',
       title: 'Teknik Avantajlar',
       items: [
-        { title: 'Yangın Dayanımı', desc: 'A2 sınıfı alev geciktirici panel seçenekleri ile binalara ekstra güvenlik.', icon: 'fas fa-fire-extinguisher' },
-        { title: 'Isı Yalıtımı', desc: 'Ek yalıtım katmanı ile enerji tasarrufu sağlayan akıllı cephe sistemleri.', icon: 'fas fa-thermometer-half' },
-        { title: 'Ses Yalıtımı', desc: 'Çok katmanlı yapısı sayesinde dış gürültüyü en aza indirir.', icon: 'fas fa-volume-mute' },
-        { title: 'Hızlı Montaj', desc: 'Özel klibs sistemi ile hızlı ve temiz montaj, iş süreçlerinizi aksatmaz.', icon: 'fas fa-bolt' },
-        { title: 'Hafif Yapı', desc: 'Binaya ek yük bindirmeyen alüminyum kompozit yapısı.', icon: 'fas fa-feather' },
-        { title: 'Uzun Ömür', desc: '25 yıl ve üzeri servis ömrü ile yatırımınızı koruyun.', icon: 'fas fa-infinity' }
+        { title: 'Yangın Dayanımı', desc: 'A2 sınıfı yanmaz panel seçeneği ile TSE ve Türkiye Bina Yangın Yönetmeliği\'ne tam uyumluluk.', icon: 'fas fa-fire-extinguisher' },
+        { title: 'UV Kararlılığı', desc: 'PVDF kaplama ile 25 yıl garantili renk ve parlaklık koruması; solma ve çatlama görülmez.', icon: 'fas fa-sun' },
+        { title: 'Deprem Güvenliği', desc: 'Gizli montaj sistemi panel esnekliğine izin verir, deprem hareketlerinde kırılma riski yoktur.', icon: 'fas fa-shield-halved' },
+        { title: 'Ses Yalıtımı', desc: 'Alüminyum–polimer–alüminyum sandviç yapı dış kaynaklı gürültüyü önemli ölçüde azaltır.', icon: 'fas fa-volume-mute' },
+        { title: 'Düşük Bakım Maliyeti', desc: 'Korozyona ve kire dayanıklı yüzeyler sayesinde 10+ yıl boyunca ek bakım gerektirmez.', icon: 'fas fa-piggy-bank' },
+        { title: 'Her İklime Uygun', desc: '-50°C ile +80°C arasında termal kararlılık; don, yağmur ve güneşe dayanıklı yapı.', icon: 'fas fa-temperature-high' }
       ]
     }
   ],
   darkFeatures: [
-    { icon: 'fas fa-building', title: 'Ticari & Konut Projeleri', desc: 'Her ölçekteki projede profesyonel cephe çözümleri sunuyoruz.' },
-    { icon: 'fas fa-palette', title: 'Özel Renk & Doku', desc: 'Mat, parlak, fırçalanmış ve taş görünümlü yüzey seçenekleri.' },
-    { icon: 'fas fa-certificate', title: 'Sertifikalı Ürünler', desc: 'Uluslararası standartlara uygun, sertifikalı kompozit panel malzemeleri.' }
+    { icon: 'fas fa-building', title: 'Ticari & Konut Projeleri', desc: 'Ofis binaları, fabrikalar, hastaneler, AVM\'ler ve konut projelerinde profesyonel uygulama deneyimi.' },
+    { icon: 'fas fa-palette', title: 'Özel Renk & Doku', desc: 'Mat, parlak, metalik, taş ve ahşap imitasyonlu yüzeylerle mimarınızın vizyonunu gerçeğe taşıyın.' },
+    { icon: 'fas fa-certificate', title: 'Sertifikalı Malzeme', desc: 'Uluslararası yangın, UV ve mekanik dayanım testlerinden geçmiş, TSE belgeli kompozit panel malzemeleri.' }
   ],
   testimonials: [
-    { text: 'Ofis binamızın cephesini yenilediler, görünüm muhteşem. İşçilik kalitesi de çok iyiydi.', name: 'Ahmet K.', city: 'İstanbul' },
-    { text: 'Montaj süreci çok hızlı tamamlandı, iş yerimiz kapanmak zorunda kalmadı.', name: 'Selin T.', city: 'Tekirdağ' }
+    { text: 'İş yerimizin cephesi tamamen yenilendi; hem daha modern göründü hem de binanın değeri arttı. Montaj ekibi çok hızlı ve özenli çalıştı.', name: 'Kemal A.', city: 'Tekirdağ' },
+    { text: 'Fabrika binamızın cephesini A2 yangın sınıfı panellerle kapladık. İşçilik kalitesi ve detay hassasiyeti beklentimizin çok üzerindeydi.', name: 'Okan T.', city: 'Kırklareli' },
+    { text: 'Eski sıva cephemiz çatlaklar atmıştı. Kompozit cephe ile hem güzel görüntü hem de uzun soluklu çözüm aldık.', name: 'Serdar M.', city: 'İstanbul' }
   ]
 };
 
