@@ -478,7 +478,7 @@ PRODUCT_DATA['pvc-cam-sistemleri'] = {
   badge: 'Çağdaş Pro Yapı — PVC',
   heroTitle: 'PVC Cam Sistemleri',
   heroSub: 'Üstün Isı Yalıtımı ve Uzun Ömürlü Kullanım İçin PVC Pencere & Kapı Sistemleri.',
-  heroImg: '/images/products/katlanir_balkon_hero_v4.jpg',
+  heroImg: '/images/pvc_sistem_banner.png',
   tagline: 'PVC pencere ve kapı sistemleri; mükemmel ısı yalıtımı, ses yalıtımı ve güvenlik özellikleriyle yaşam konforunuzu en üst seviyeye taşır. Çok odalı profil sistemiyle geliştirilmiş PVC doğramalar, evinizi dört mevsim koruyarak enerji tasarrufu sağlar.',
   features: [
     { img: '/images/products/twinmax_insulation.jpg', title: 'Çok Odalı Profil', desc: '5 ve 6 odalı profil sistemi ile maksimum ısı yalıtımı. Kışın sıcak, yazın serin.' },
