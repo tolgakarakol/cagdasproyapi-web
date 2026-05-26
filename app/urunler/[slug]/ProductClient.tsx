@@ -407,6 +407,175 @@ PRODUCT_DATA['celik-konstruksiyon-kis-bahcesi'] = PRODUCT_DATA['kis-bahcesi'];
 PRODUCT_DATA['dusakabin-sistemleri'] = PRODUCT_DATA['dusakabin'];
 PRODUCT_DATA['cam-kapi-sistemleri'] = PRODUCT_DATA['cam-kapi'];
 
+PRODUCT_DATA['kompozit-cephe-sistemleri'] = {
+  badge: 'Çağdaş Pro Yapı — Cephe',
+  heroTitle: 'Kompozit Cephe Sistemleri',
+  heroSub: 'Modern Mimariye Özel Dayanıklı ve Estetik Cephe Çözümleri.',
+  heroImg: '/images/products/giyotin_panoramic.png',
+  tagline: 'Kompozit cephe kaplama sistemleri; binaların dış yüzeyine modern, dayanıklı ve estetik bir görünüm kazandırır. Alüminyum kompozit paneller, hafif yapısı ve yüksek dayanıklılığıyla günümüz mimarisinin vazgeçilmezi haline gelmiştir. Çağdaş Pro Yapı olarak, ofisinizin, iş yerinizin veya konutunuzun cephesini yenileyin.',
+  features: [
+    { img: '/images/products/twinmax_insulation.jpg', title: 'Alüminyum Kompozit Panel', desc: 'Hafif, dayanıklı ve yüksek estetik değere sahip alüminyum kompozit kaplamalar.' },
+    { img: '/images/products/giyotin_safety.png', title: 'Hava & Nem Yalıtımı', desc: 'Özel profil sistemleri ile cepheyi nem, rüzgar ve iklim koşullarına karşı korur.' },
+    { img: '/images/products/katlanir_balkon_hero_hq.jpg', title: 'Geniş Renk Seçeneği', desc: 'Yüzlerce renk ve doku seçeneği ile mimarinize uygun özel tasarım çözümleri.' }
+  ],
+  safetyImg: '/images/products/giyotin_safety.png',
+  cleaningImg: '/images/products/twinmax_clean.jpg',
+  safetyTitle: 'Uzun Ömürlü Cephe Koruması',
+  safetyDesc: 'UV ışınlarına, korozyona ve mekanik darbelere karşı yüksek dirençli kompozit paneller ile binanızın cephesini onlarca yıl koruyun.',
+  cleaningDesc: 'Pürüzsüz yüzeyi sayesinde toz ve kir tutmayan kompozit cepheler, standart su basıncıyla kolayca temizlenir.',
+  cleaningSteps: [
+    'Yüzeyi önce bol suyla yıkayarak kaba kirleri temizleyin.',
+    'Yumuşak fırça ve pH nötr deterjan ile panelleri silin.',
+    'Durulayıp kurutun; leke bırakmaz.'
+  ],
+  sections: [
+    {
+      type: 'text_image',
+      title: 'Neden Kompozit Cephe?',
+      content: 'Geleneksel sıva ve boya sistemlerine kıyasla çok daha uzun ömürlü olan kompozit cephe kaplamaları; enerji verimliliğini artırır, bakım maliyetlerini düşürür ve binanıza çarpıcı bir görünüm kazandırır. Ofis binaları, alışveriş merkezleri, fabrikalar ve konut projeleri için ideal çözümler sunmaktayız.',
+      image: '/images/products/giyotin_panoramic.png',
+      reverse: false
+    },
+    {
+      type: 'grid',
+      title: 'Teknik Avantajlar',
+      items: [
+        { title: 'Yangın Dayanımı', desc: 'A2 sınıfı alev geciktirici panel seçenekleri ile binalara ekstra güvenlik.', icon: 'fas fa-fire-extinguisher' },
+        { title: 'Isı Yalıtımı', desc: 'Ek yalıtım katmanı ile enerji tasarrufu sağlayan akıllı cephe sistemleri.', icon: 'fas fa-thermometer-half' },
+        { title: 'Ses Yalıtımı', desc: 'Çok katmanlı yapısı sayesinde dış gürültüyü en aza indirir.', icon: 'fas fa-volume-mute' },
+        { title: 'Hızlı Montaj', desc: 'Özel klibs sistemi ile hızlı ve temiz montaj, iş süreçlerinizi aksatmaz.', icon: 'fas fa-bolt' },
+        { title: 'Hafif Yapı', desc: 'Binaya ek yük bindirmeyen alüminyum kompozit yapısı.', icon: 'fas fa-feather' },
+        { title: 'Uzun Ömür', desc: '25 yıl ve üzeri servis ömrü ile yatırımınızı koruyun.', icon: 'fas fa-infinity' }
+      ]
+    }
+  ],
+  darkFeatures: [
+    { icon: 'fas fa-building', title: 'Ticari & Konut Projeleri', desc: 'Her ölçekteki projede profesyonel cephe çözümleri sunuyoruz.' },
+    { icon: 'fas fa-palette', title: 'Özel Renk & Doku', desc: 'Mat, parlak, fırçalanmış ve taş görünümlü yüzey seçenekleri.' },
+    { icon: 'fas fa-certificate', title: 'Sertifikalı Ürünler', desc: 'Uluslararası standartlara uygun, sertifikalı kompozit panel malzemeleri.' }
+  ],
+  testimonials: [
+    { text: 'Ofis binamızın cephesini yenilediler, görünüm muhteşem. İşçilik kalitesi de çok iyiydi.', name: 'Ahmet K.', city: 'İstanbul' },
+    { text: 'Montaj süreci çok hızlı tamamlandı, iş yerimiz kapanmak zorunda kalmadı.', name: 'Selin T.', city: 'Tekirdağ' }
+  ]
+};
+
+PRODUCT_DATA['pvc-cam-sistemleri'] = {
+  badge: 'Çağdaş Pro Yapı — PVC',
+  heroTitle: 'PVC Cam Sistemleri',
+  heroSub: 'Üstün Isı Yalıtımı ve Uzun Ömürlü Kullanım İçin PVC Pencere & Kapı Sistemleri.',
+  heroImg: '/images/products/katlanir_balkon_hero_v4.jpg',
+  tagline: 'PVC pencere ve kapı sistemleri; mükemmel ısı yalıtımı, ses yalıtımı ve güvenlik özellikleriyle yaşam konforunuzu en üst seviyeye taşır. Çok odalı profil sistemiyle geliştirilmiş PVC doğramalar, evinizi dört mevsim koruyarak enerji tasarrufu sağlar.',
+  features: [
+    { img: '/images/products/twinmax_insulation.jpg', title: 'Çok Odalı Profil', desc: '5 ve 6 odalı profil sistemi ile maksimum ısı yalıtımı. Kışın sıcak, yazın serin.' },
+    { img: '/images/products/twinmax_lock.jpg', title: 'Çevre Dolaşımlı Kilit', desc: 'Çevre dolaşımlı manivela sistemi ile hırsızlığa karşı yüksek güvenlik.' },
+    { img: '/images/products/tiara_wheels.jpg', title: 'Isıcam Entegrasyonu', desc: '4+12+4 veya 4+16+4 Isıcam seçenekleri ile enerji verimliliğinde zirvede.' }
+  ],
+  safetyImg: '/images/products/katlanir_balkon_hero_hq.jpg',
+  cleaningImg: '/images/products/twinmax_clean.jpg',
+  safetyTitle: 'Hırsızlığa Karşı Tam Güvenlik',
+  safetyDesc: 'Çevre dolaşımlı manivela sistemi ve çok noktalı kilit mekanizması ile PVC kapı ve pencereleriniz, yüksek güvenlik standartlarını karşılar.',
+  cleaningDesc: 'PVC profillerin pürüzsüz yüzeyi, toz ve kiri tutmaz. Standart ıslak bez ile zahmetsizce temizlenir.',
+  cleaningSteps: [
+    'Profilleri ıslak ve yumuşak bir bezle silin.',
+    'Menteşe ve kilitlere periyodik olarak özel yağ sürün.',
+    'Conta sistemlerini yılda bir kez kontrol ettirin.'
+  ],
+  sections: [
+    {
+      type: 'text_image',
+      title: 'PVC Pencere Sistemi Neden Tercih Edilir?',
+      content: 'PVC pencere ve kapı sistemleri, ahşap ve alüminyum alternatifleriyle karşılaştırıldığında çok daha üstün ısı yalıtımı sunar. Paslanmaz, çürümez ve nem almaz yapısı sayesinde onlarca yıl bakım gerektirmeden kullanılır. Farklı renk folyo seçenekleri ile ahşap görünümlü PVC doğramalar da mevcuttur.',
+      image: '/images/products/katlanir_balkon_hero_v4.jpg',
+      reverse: false
+    },
+    {
+      type: 'highlight',
+      title: 'Enerji Tasarrufu = Uzun Vadeli Kazanç',
+      content: 'Kaliteli PVC pencere ve kapı sistemi, ısıtma ve soğutma giderlerinizi yüzde 30\'a kadar azaltabilir. Bu da yatırımınızın kısa sürede amorti olması demektir. Çağdaş Pro Yapı olarak size en uygun profil sistemini ve Isıcam seçeneğini öneriyor, fiyat teklifinizi hemen hazırlıyoruz.',
+      badge: 'Enerji Tasarrufu'
+    },
+    {
+      type: 'grid',
+      title: 'Teknik Özellikler',
+      items: [
+        { title: 'Isı Yalıtımı', desc: 'Çok odalı profil yapısı ile Uf değeri 1.0 W/m²K\'ye kadar iner.', icon: 'fas fa-thermometer-empty' },
+        { title: 'Ses Yalıtımı', desc: '45 dB\'e kadar ses yalıtımı ile şehir gürültüsünden uzak bir yaşam.', icon: 'fas fa-headphones' },
+        { title: 'UV Dayanımı', desc: 'Özel UV katkılı PVC formülü ile onlarca yıl renk solmaz.', icon: 'fas fa-sun' },
+        { title: 'Çeşitli Açılım Tipleri', desc: 'Kanatlı, sürgülü, sabit ve katlanır açılım seçenekleri.', icon: 'fas fa-arrows-alt' }
+      ]
+    }
+  ],
+  darkFeatures: [
+    { icon: 'fas fa-snowflake', title: 'Dört Mevsim Konfor', desc: 'Kışın ısıyı içeride tutar, yazın dışarıdan ısıyı engeller.' },
+    { icon: 'fas fa-shield-halved', title: 'Yüksek Güvenlik', desc: 'Çok noktalı kilit sistemi ile hırsızlığa karşı tam koruma.' },
+    { icon: 'fas fa-leaf', title: 'Çevre Dostu', desc: 'Yüzde 100 geri dönüştürülebilir PVC profil malzemeleri.' }
+  ],
+  testimonials: [
+    { text: 'Isı tasarrufu gözle görülür şekilde arttı, fatura farklarını hissediyoruz.', name: 'Fatma Y.', city: 'İstanbul' },
+    { text: 'Renk seçenekleri çok geniş, ahşap görünümlü olanı aldık, evinize çok yakıştı.', name: 'Kemal B.', city: 'Tekirdağ' }
+  ]
+};
+
+PRODUCT_DATA['kupeste-modelleri'] = {
+  badge: 'Çağdaş Pro Yapı — Güvenlik',
+  heroTitle: 'Küpeşte Modelleri',
+  heroSub: 'Merdiven, Balkon ve Teras İçin Güvenli ve Estetik Korkuluk Sistemleri.',
+  heroImg: '/images/products/giyotin_safety.png',
+  tagline: 'Küpeşte ve korkuluk sistemleri; balkon, teras, merdiven ve rampa güvenliğini sağlarken mekanlarınıza estetik değer katar. Alüminyum, paslanmaz çelik ve cam bileşenli küpeşte modelleri, modern mimarinizle uyum içinde tasarlanır.',
+  features: [
+    { img: '/images/products/giyotin_safety.png', title: 'Paslanmaz Çelik Küpeşte', desc: 'Dış mekan koşullarına dayanıklı 304 kalite paslanmaz çelik profil ve korkuluklar.' },
+    { img: '/images/products/katlanir_balkon_hero_hq.jpg', title: 'Cam Dolgulu Küpeşte', desc: 'Temperli veya lamine cam dolgulu şeffaf korkuluk sistemleriyle kesintisiz manzara.' },
+    { img: '/images/products/twinmax_lock.jpg', title: 'Alüminyum Küpeşte', desc: 'Hafif ve dayanıklı alüminyum profil sistemleriyle estetik ve uzun ömürlü korkuluklar.' }
+  ],
+  safetyImg: '/images/products/airflex_safety_priority.png',
+  cleaningImg: '/images/products/twinmax_clean.jpg',
+  safetyTitle: 'Güvenli Yaşam Alanları',
+  safetyDesc: 'Balkon ve merdiven korkulukları, belirli yük taşıma kapasitesi ve yükseklik standartlarını karşılayan mühendislik hesaplarıyla üretilir. Her projeye özel ölçü ve tasarım.',
+  cleaningDesc: 'Paslanmaz çelik ve alüminyum yüzeyler, rutin temizlikte ıslak bez kullanımıyla parlaklığını ve estetiğini korur.',
+  cleaningSteps: [
+    'Paslanmaz çelik yüzeyleri yumuşak bezle silin.',
+    'Cam dolgular için standart cam temizleyici kullanın.',
+    'Alüminyum profilleri yılda iki kez özel bakım spreyi ile koruyun.'
+  ],
+  sections: [
+    {
+      type: 'text_image',
+      title: 'Küpeşte Sistemleri Nasıl Seçilir?',
+      content: 'Küpeşte ve korkuluk sistemleri seçerken; kullanım alanı (iç mekan/dış mekan), estetik beklenti ve bütçe belirleyici unsurlardır. İç mekânlarda modern cam ve paslanmaz çelik kombinasyonlar çok tercih edilirken, dış mekânlarda korozyon dayanımı yüksek alüminyum veya paslanmaz sistemler öne çıkar. Uzman ekibimiz projenize en uygun sistemi belirleyerek üretim ve montajını gerçekleştirir.',
+      image: '/images/products/giyotin_safety.png',
+      reverse: false
+    },
+    {
+      type: 'highlight',
+      title: 'Her Projeye Özel Tasarım',
+      content: 'Standart ürün çözümlerinin yanı sıra, mimari projenize özel ölçü ve tasarımda küpeşte sistemleri de üretmekteyiz. Özel bükme, kaynak ve yüzey işlemleriyle (toz boya, eloksal, parlatma) benzersiz korkuluk tasarımları oluşturuyoruz.',
+      badge: 'Özel Üretim'
+    },
+    {
+      type: 'grid',
+      title: 'Uygulama Alanları',
+      items: [
+        { title: 'Balkon Korkulukları', desc: 'Konutlarda ve ticari binalarda balkon güvenliğini estetikle buluşturan çözümler.', icon: 'fas fa-home' },
+        { title: 'Merdiven Küpeşteleri', desc: 'İç ve dış merdiven korkulukları; sabit, sarmal veya düz merdiven için.', icon: 'fas fa-stairs' },
+        { title: 'Teras Korkulukları', desc: 'Çatı terasları ve çatı katı balkonları için dayanıklı sistem çözümleri.', icon: 'fas fa-building' },
+        { title: 'Ramp Korkulukları', desc: 'Erişilebilirlik standartlarını karşılayan rampa ve yaya yolu korkulukları.', icon: 'fas fa-wheelchair' },
+        { title: 'Cam Korkuluk', desc: 'Isıcam ve lamine güvenlik camları ile şeffaf korkuluk sistemleri.', icon: 'fas fa-glasses' },
+        { title: 'Paslanmaz & Alüminyum', desc: 'Tüm dış mekan koşullarına dayanıklı metal profil seçenekleri.', icon: 'fas fa-cog' }
+      ]
+    }
+  ],
+  darkFeatures: [
+    { icon: 'fas fa-ruler-combined', title: 'Özel Ölçü Üretim', desc: 'Her projeye milimetrik hassasiyetle özel ölçü üretim.' },
+    { icon: 'fas fa-shield-alt', title: 'Yük Taşıma Garantisi', desc: 'Mühendislik hesaplı, standartlara uygun statik dayanım.' },
+    { icon: 'fas fa-paint-brush', title: 'Toz Boya & Eloksal', desc: 'Renk ve yüzey işlemi seçenekleriyle projenize uygun estetik.' }
+  ],
+  testimonials: [
+    { text: 'Cam küpeşte ile merdivenimiz bambaşka göründü, herkes hayran kalıyor.', name: 'Deniz A.', city: 'İstanbul' },
+    { text: 'Paslanmaz çelik balkon korkuluğu muhteşem. Fiyat performans mükemmel.', name: 'Orhan K.', city: 'Bursa' }
+  ]
+};
+
 const DEFAULT_PRODUCT = {
   badge: 'Çağdaş Pro Yapı',
   heroTitle: 'Premium Cam Sistemleri',

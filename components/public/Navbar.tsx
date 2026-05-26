@@ -13,6 +13,9 @@ const PRODUCTS = [
   { name: 'Çelik Konstrüksiyon & Kış Bahçesi', slug: 'kis-bahcesi' },
   { name: 'Duşakabin Sistemleri', slug: 'dusakabin-sistemleri' },
   { name: 'Cam Kapı Sistemleri', slug: 'cam-kapi-sistemleri' },
+  { name: 'Kompozit Cephe Sistemleri', slug: 'kompozit-cephe-sistemleri' },
+  { name: 'PVC Cam Sistemleri', slug: 'pvc-cam-sistemleri' },
+  { name: 'Küpeşte Modelleri', slug: 'kupeste-modelleri' },
 ];
 
 export default function Navbar() {
