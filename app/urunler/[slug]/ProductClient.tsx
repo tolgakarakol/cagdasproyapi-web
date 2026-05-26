@@ -475,59 +475,59 @@ PRODUCT_DATA['kompozit-cephe-sistemleri'] = {
 };
 
 PRODUCT_DATA['pvc-cam-sistemleri'] = {
-  badge: 'Çağdaş Pro Yapı — PVC',
-  heroTitle: 'PVC Cam Sistemleri',
-  heroSub: 'Üstün Isı Yalıtımı ve Uzun Ömürlü Kullanım İçin PVC Pencere & Kapı Sistemleri.',
+  badge: 'Çağdaş Pro Yapı — Premium PVC Sistemleri',
+  heroTitle: 'Yeni Nesil PVC Cam Sistemleri',
+  heroSub: 'Üstün Isı Yalıtımı, Akustik Konfor ve Uzun Ömürlü Kullanım İçin Estetik Çözümler.',
   heroImg: '/images/pvc_sistem_banner.png',
-  tagline: 'PVC pencere ve kapı sistemleri; mükemmel ısı yalıtımı, ses yalıtımı ve güvenlik özellikleriyle yaşam konforunuzu en üst seviyeye taşır. Çok odalı profil sistemiyle geliştirilmiş PVC doğramalar, evinizi dört mevsim koruyarak enerji tasarrufu sağlar.',
+  tagline: 'Yaşam alanlarınızı yeniden tanımlayın. Çağdaş Pro Yapı PVC pencere ve kapı sistemleri; mükemmel ısı yalıtımı, üst düzey ses yalıtımı ve yenilikçi güvenlik özellikleriyle konforunuzu en üst seviyeye taşır. Çok odalı profil sistemiyle geliştirilen doğramalarımız, estetik tasarımı teknolojiyle buluşturarak evinizi dört mevsim korur.',
   features: [
-    { img: '/images/products/twinmax_insulation.jpg', title: 'Çok Odalı Profil', desc: '5 ve 6 odalı profil sistemi ile maksimum ısı yalıtımı. Kışın sıcak, yazın serin.' },
-    { img: '/images/products/twinmax_lock.jpg', title: 'Çevre Dolaşımlı Kilit', desc: 'Çevre dolaşımlı manivela sistemi ile hırsızlığa karşı yüksek güvenlik.' },
-    { img: '/images/products/tiara_wheels.jpg', title: 'Isıcam Entegrasyonu', desc: '4+12+4 veya 4+16+4 Isıcam seçenekleri ile enerji verimliliğinde zirvede.' }
+    { img: '/images/pvc-model-01.png', title: 'Maksimum İzolasyon Teknolojisi', desc: 'İleri teknoloji 5 ve 6 odalı profil sistemleri ile enerji kayıplarını en aza indirin. Kışın sıcak, yazın serin bir yaşam alanı.' },
+    { img: '/images/pvc-model-02.png', title: 'Üst Düzey Akustik Performans', desc: 'Dış dünyanın gürültüsünü dışarıda bırakın. Özel yalıtım contaları ve profil yapısı ile huzurlu ve sessiz mekanlar yaratın.' },
+    { img: '/images/pvc-model-01.png', title: 'Premium Isıcam Entegrasyonu', desc: 'Gelişmiş 4+12+4 veya 4+16+4 Isıcam sistemleri ile enerji verimliliğinde zirveyi deneyimleyin. Tasarruf ve konfor bir arada.' }
   ],
-  safetyImg: '/images/products/katlanir_balkon_hero_hq.jpg',
-  cleaningImg: '/images/products/twinmax_clean.jpg',
-  safetyTitle: 'Hırsızlığa Karşı Tam Güvenlik',
-  safetyDesc: 'Çevre dolaşımlı manivela sistemi ve çok noktalı kilit mekanizması ile PVC kapı ve pencereleriniz, yüksek güvenlik standartlarını karşılar.',
-  cleaningDesc: 'PVC profillerin pürüzsüz yüzeyi, toz ve kiri tutmaz. Standart ıslak bez ile zahmetsizce temizlenir.',
+  safetyImg: '/images/pvc-model-02.png',
+  cleaningImg: '/images/pvc-model-01.png',
+  safetyTitle: 'Ödün Vermeyen Tam Güvenlik',
+  safetyDesc: 'Ailenizin güvenliği önceliğimizdir. Çevre dolaşımlı manivela sistemi ve çelik destekli çok noktalı kilit mekanizması ile PVC kapı ve pencereleriniz hırsızlığa karşı maksimum direnç gösterir.',
+  cleaningDesc: 'Özel formüle edilmiş pürüzsüz PVC yüzey yapısı toz ve kir barınmasını engeller. Yıllarca ilk günkü parlaklığını koruyan sistemlerimiz, zahmetsiz temizlik imkanı sunar.',
   cleaningSteps: [
-    'Profilleri ıslak ve yumuşak bir bezle silin.',
-    'Menteşe ve kilitlere periyodik olarak özel yağ sürün.',
-    'Conta sistemlerini yılda bir kez kontrol ettirin.'
+    'Profilleri nemli ve yumuşak mikrofiber bir bezle nazikçe silin.',
+    'Mekanik aksamların kusursuz çalışması için menteşe ve kilitlere periyodik bakım yapın.',
+    'Sızdırmazlık performansını korumak için conta sistemlerini düzenli kontrol edin.'
   ],
   sections: [
     {
       type: 'text_image',
-      title: 'PVC Pencere Sistemi Neden Tercih Edilir?',
-      content: 'PVC pencere ve kapı sistemleri, ahşap ve alüminyum alternatifleriyle karşılaştırıldığında çok daha üstün ısı yalıtımı sunar. Paslanmaz, çürümez ve nem almaz yapısı sayesinde onlarca yıl bakım gerektirmeden kullanılır. Farklı renk folyo seçenekleri ile ahşap görünümlü PVC doğramalar da mevcuttur.',
-      image: '/images/products/katlanir_balkon_hero_v4.jpg',
+      title: 'Mimari Mükemmellik ve Estetik Uyum',
+      content: 'Klasik beyazın ötesine geçin. Çağdaş Pro Yapı PVC sistemleri, ahşap desenli lamine kaplamalar ve modern renk paletleriyle projenizin mimari dokusuna kusursuz uyum sağlar. Paslanmaz, çürümez ve güneş ışınlarına (UV) karşı yüksek dirençli yapısıyla onlarca yıl bakım gerektirmeden estetiğini korur.',
+      image: '/images/pvc-model-02.png',
       reverse: false
     },
     {
       type: 'highlight',
-      title: 'Enerji Tasarrufu = Uzun Vadeli Kazanç',
-      content: 'Kaliteli PVC pencere ve kapı sistemi, ısıtma ve soğutma giderlerinizi yüzde 30\'a kadar azaltabilir. Bu da yatırımınızın kısa sürede amorti olması demektir. Çağdaş Pro Yapı olarak size en uygun profil sistemini ve Isıcam seçeneğini öneriyor, fiyat teklifinizi hemen hazırlıyoruz.',
-      badge: 'Enerji Tasarrufu'
+      title: 'Sürdürülebilir Enerji ve Uzun Vadeli Kazanç',
+      content: 'Doğru PVC pencere yatırımı, sadece estetik değil aynı zamanda ekonomik bir karardır. A sınıfı enerji verimliliği sunan sistemlerimiz, ısıtma ve soğutma giderlerinizde %30\'a varan tasarruf sağlayarak yatırımınızı kısa sürede amorti eder.',
+      badge: 'A Sınıfı Verimlilik'
     },
     {
       type: 'grid',
-      title: 'Teknik Özellikler',
+      title: 'Premium Teknik Özellikler',
       items: [
-        { title: 'Isı Yalıtımı', desc: 'Çok odalı profil yapısı ile Uf değeri 1.0 W/m²K\'ye kadar iner.', icon: 'fas fa-thermometer-empty' },
-        { title: 'Ses Yalıtımı', desc: '45 dB\'e kadar ses yalıtımı ile şehir gürültüsünden uzak bir yaşam.', icon: 'fas fa-headphones' },
-        { title: 'UV Dayanımı', desc: 'Özel UV katkılı PVC formülü ile onlarca yıl renk solmaz.', icon: 'fas fa-sun' },
-        { title: 'Çeşitli Açılım Tipleri', desc: 'Kanatlı, sürgülü, sabit ve katlanır açılım seçenekleri.', icon: 'fas fa-arrows-alt' }
+        { title: 'Üstün Isı Yalıtımı', desc: 'Gelişmiş çok odalı profil yapısı ile Uf değeri 1.0 W/m²K seviyelerine ulaşan mükemmel yalıtım.', icon: 'fas fa-thermometer-empty' },
+        { title: 'Maksimum Ses Yalıtımı', desc: '45 dB\'e varan akustik yalıtım kapasitesi ile şehir gürültüsünden tamamen izole edilmiş odalar.', icon: 'fas fa-headphones' },
+        { title: 'UV ve Renk Dayanımı', desc: 'Özel formüllü UV katkılı yapısı sayesinde yıllar geçse de ilk günkü rengini ve parlaklığını korur.', icon: 'fas fa-sun' },
+        { title: 'Çok Yönlü Açılım Sistemleri', desc: 'Mekanınıza özel tek açılım, çift açılım, sürme ve katlanır gibi zengin fonksiyonel seçenekler.', icon: 'fas fa-arrows-alt' }
       ]
     }
   ],
   darkFeatures: [
-    { icon: 'fas fa-snowflake', title: 'Dört Mevsim Konfor', desc: 'Kışın ısıyı içeride tutar, yazın dışarıdan ısıyı engeller.' },
-    { icon: 'fas fa-shield-halved', title: 'Yüksek Güvenlik', desc: 'Çok noktalı kilit sistemi ile hırsızlığa karşı tam koruma.' },
-    { icon: 'fas fa-leaf', title: 'Çevre Dostu', desc: 'Yüzde 100 geri dönüştürülebilir PVC profil malzemeleri.' }
+    { icon: 'fas fa-snowflake', title: 'Dört Mevsim İklim Kontrolü', desc: 'Termal bariyer teknolojisi ile kışın ısıyı hapseder, yazın kavurucu sıcaklarını dışarıda tutar.' },
+    { icon: 'fas fa-shield-halved', title: 'Çelik Destekli Güvenlik', desc: 'İçerisinde yer alan galvanizli çelik destek sacları ile sarsılmaz bir yapı ve maksimum dayanım.' },
+    { icon: 'fas fa-leaf', title: 'Doğa Dostu ve Sürdürülebilir', desc: 'Gelecek nesillere saygılı, %100 geri dönüştürülebilir ve çevreye duyarlı PVC formülasyonu.' }
   ],
   testimonials: [
-    { text: 'Isı tasarrufu gözle görülür şekilde arttı, fatura farklarını hissediyoruz.', name: 'Fatma Y.', city: 'İstanbul' },
-    { text: 'Renk seçenekleri çok geniş, ahşap görünümlü olanı aldık, evinize çok yakıştı.', name: 'Kemal B.', city: 'Tekirdağ' }
+    { text: 'Eski pencerelerimizi Çağdaş Pro Yapı PVC sistemleri ile değiştirdik. Evdeki ısı farkı inanılmaz, ayrıca dışarının gürültüsü tamamen kesildi.', name: 'Ayşe K.', city: 'Tekirdağ' },
+    { text: 'Ahşap desenli kaplama tercih ettik, gerçek ahşaptan farksız duruyor ve bakımı çok kolay. Montaj ekibi de son derece profesyoneldi.', name: 'Burak M.', city: 'İstanbul' }
   ]
 };
 
