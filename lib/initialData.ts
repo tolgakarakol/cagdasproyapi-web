@@ -19,7 +19,7 @@ export const INITIAL_SECTIONS = [
           ctaLink: '/urunler/kis-bahcesi'
         },
         {
-          image: '/images/products/giyotin_hero.jpg',
+          image: '/images/products/panoromik-yatay.png',
           title: 'Giyotin Cam Balkon',
           subtitle: 'Silinebilir akıllı cam balkon sistemleri ile manzaranızı kesmeyin.',
           ctaText: 'TÜM ÜRÜNLERİ GÖR',
