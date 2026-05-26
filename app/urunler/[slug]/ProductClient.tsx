@@ -532,61 +532,68 @@ PRODUCT_DATA['pvc-cam-sistemleri'] = {
 };
 
 PRODUCT_DATA['kupeste-modelleri'] = {
-  badge: 'Çağdaş Pro Yapı — Güvenlik',
-  heroTitle: 'Küpeşte Modelleri',
-  heroSub: 'Merdiven, Balkon ve Teras İçin Güvenli ve Estetik Korkuluk Sistemleri.',
-  heroImg: '/images/products/giyotin_safety.png',
-  tagline: 'Küpeşte ve korkuluk sistemleri; balkon, teras, merdiven ve rampa güvenliğini sağlarken mekanlarınıza estetik değer katar. Alüminyum, paslanmaz çelik ve cam bileşenli küpeşte modelleri, modern mimarinizle uyum içinde tasarlanır.',
+  badge: 'Çağdaş Pro Yapı — Premium Güvenlik ve Estetik',
+  heroTitle: 'Modern Küpeşte ve Korkuluk Sistemleri',
+  heroSub: 'Merdiven, Balkon ve Teras İçin Kusursuz Mimari Detaylar, Ödün Vermeyen Güvenlik.',
+  heroImg: '/images/kupeste-modelleri/kupeste-banner.png',
+  tagline: 'Mekanlarınıza değer katın. Çağdaş Pro Yapı küpeşte ve korkuluk sistemleri; balkon, teras, merdiven ve havuz kenarlarında maksimum güvenlik sağlarken, minimalist ve şık tasarımlarıyla mimarinizin ayrılmaz bir parçası olur. Alüminyum, paslanmaz çelik ve temperli camın kusursuz birleşimiyle üretilen sistemlerimiz, hem iç hem dış mekanlarda prestijli bir görünüm sunar.',
   features: [
-    { img: '/images/products/giyotin_safety.png', title: 'Paslanmaz Çelik Küpeşte', desc: 'Dış mekan koşullarına dayanıklı 304 kalite paslanmaz çelik profil ve korkuluklar.' },
-    { img: '/images/products/katlanir_balkon_hero_hq.jpg', title: 'Cam Dolgulu Küpeşte', desc: 'Temperli veya lamine cam dolgulu şeffaf korkuluk sistemleriyle kesintisiz manzara.' },
-    { img: '/images/products/twinmax_lock.jpg', title: 'Alüminyum Küpeşte', desc: 'Hafif ve dayanıklı alüminyum profil sistemleriyle estetik ve uzun ömürlü korkuluklar.' }
+    { img: '/images/kupeste-modelleri/kupeste-model-01.png', title: 'Paslanmaz Çelik ve Dayanıklılık', desc: 'Aşırı hava koşullarına dayanıklı, 304 ve 316 kalite paslanmaz çelik profiller ile korozyona karşı tam koruma. Uzun ömürlü ve sağlam yapı.' },
+    { img: '/images/kupeste-modelleri/kupeste-model-02.png', title: 'Kesintisiz Cam Korkuluk Sistemleri', desc: 'Temperli ve lamine güvenlik camları kullanılarak tasarlanan şeffaf korkuluklar ile manzaranızı bölmeden mekanlarınıza derinlik ve ferahlık katın.' },
+    { img: '/images/kupeste-modelleri/kupeste-model-03.png', title: 'Mimari Alüminyum Sistemler', desc: 'Hafifliği ve esnekliği ile öne çıkan, mimari detaylara uygun tasarlanabilen alüminyum profil sistemleri. Geniş renk yelpazesi ve eloksal yüzey seçenekleri.' }
   ],
-  safetyImg: '/images/products/airflex_safety_priority.png',
-  cleaningImg: '/images/products/twinmax_clean.jpg',
-  safetyTitle: 'Güvenli Yaşam Alanları',
-  safetyDesc: 'Balkon ve merdiven korkulukları, belirli yük taşıma kapasitesi ve yükseklik standartlarını karşılayan mühendislik hesaplarıyla üretilir. Her projeye özel ölçü ve tasarım.',
-  cleaningDesc: 'Paslanmaz çelik ve alüminyum yüzeyler, rutin temizlikte ıslak bez kullanımıyla parlaklığını ve estetiğini korur.',
+  safetyImg: '/images/kupeste-modelleri/kupeste-model-04.png',
+  cleaningImg: '/images/kupeste-modelleri/kupeste-model-05.png',
+  safetyTitle: 'Mühendislik Harikası Güvenlik Standartları',
+  safetyDesc: 'Tüm korkuluk ve küpeşte sistemlerimiz; uluslararası statik ve rüzgar yükü hesaplamalarına uygun olarak, ailenizin ve ziyaretçilerinizin güvenliğini maksimize edecek şekilde üretilir ve monte edilir.',
+  cleaningDesc: 'Paslanmaz çelik, alüminyum ve pürüzsüz cam yüzeylerimiz; kir ve leke tutunmasını zorlaştırır. Özel temizlik kimyasallarına ihtiyaç duymadan pratik bir şekilde ilk günkü görünümüne kavuşur.',
   cleaningSteps: [
-    'Paslanmaz çelik yüzeyleri yumuşak bezle silin.',
-    'Cam dolgular için standart cam temizleyici kullanın.',
-    'Alüminyum profilleri yılda iki kez özel bakım spreyi ile koruyun.'
+    'Cam yüzeyleri profesyonel veya standart cam temizleyiciler ve mikrofiber bez ile silin.',
+    'Paslanmaz çelik aksamları su damlacığı izi bırakmamak adına kuru bir bezle parlatın.',
+    'Alüminyum profilleri aşındırıcı olmayan temizlik malzemeleri ile periyodik olarak temizleyin.'
   ],
   sections: [
     {
       type: 'text_image',
-      title: 'Küpeşte Sistemleri Nasıl Seçilir?',
-      content: 'Küpeşte ve korkuluk sistemleri seçerken; kullanım alanı (iç mekan/dış mekan), estetik beklenti ve bütçe belirleyici unsurlardır. İç mekânlarda modern cam ve paslanmaz çelik kombinasyonlar çok tercih edilirken, dış mekânlarda korozyon dayanımı yüksek alüminyum veya paslanmaz sistemler öne çıkar. Uzman ekibimiz projenize en uygun sistemi belirleyerek üretim ve montajını gerçekleştirir.',
-      image: '/images/products/giyotin_safety.png',
+      title: 'Projenize Özel Mimari Çözümler',
+      content: 'Her yapı benzersizdir ve kendi karakterini yansıtacak detaylara ihtiyaç duyar. Çağdaş Pro Yapı olarak, standart ölçülerin ötesinde projenizin mimari gereksinimlerine uygun, özel üretim küpeşte sistemleri tasarlıyoruz. Kavisli balkonlar, döner merdivenler veya galeri boşlukları için statik dayanımı yüksek, estetik ve yenilikçi çözümler üretiyoruz.',
+      image: '/images/kupeste-modelleri/kupeste-model-02.png',
       reverse: false
     },
     {
       type: 'highlight',
-      title: 'Her Projeye Özel Tasarım',
-      content: 'Standart ürün çözümlerinin yanı sıra, mimari projenize özel ölçü ve tasarımda küpeşte sistemleri de üretmekteyiz. Özel bükme, kaynak ve yüzey işlemleriyle (toz boya, eloksal, parlatma) benzersiz korkuluk tasarımları oluşturuyoruz.',
-      badge: 'Özel Üretim'
+      title: 'Sonsuz Renk ve Yüzey Seçenekleri',
+      content: 'Alüminyum küpeştelerinizde statik toz boya ile yüzlerce farklı renk seçeneği veya eloksal kaplama ile mat, parlak, bronz gibi metalik görünümler elde edebilirsiniz. Cam korkuluklarda ise şeffaf, füme, bronz ve mavi renkli cam seçenekleriyle mekanınızın atmosferini dilediğiniz gibi yönlendirin.',
+      badge: 'Premium Tasarım'
+    },
+    {
+      type: 'text_image',
+      title: 'Uzman Montaj, Ömür Boyu Konfor',
+      content: 'Küpeşte ve korkuluk sistemlerinde malzemenin kalitesi kadar montajın da hassasiyeti kritik önem taşır. Uzman teknik ekibimiz, en karmaşık mimari detaylarda dahi milimetrik hesaplamalarla hatasız ve sağlam kurulumlar gerçekleştirir. Gizli bağlantı aparatları ve epoksi sabitleme yöntemleriyle sallantı ve gevşeme sorunları tamamen ortadan kaldırılır.',
+      image: '/images/kupeste-modelleri/kupeste-model-04.png',
+      reverse: true
     },
     {
       type: 'grid',
-      title: 'Uygulama Alanları',
+      title: 'Premium Özellikler ve Kullanım Alanları',
       items: [
-        { title: 'Balkon Korkulukları', desc: 'Konutlarda ve ticari binalarda balkon güvenliğini estetikle buluşturan çözümler.', icon: 'fas fa-home' },
-        { title: 'Merdiven Küpeşteleri', desc: 'İç ve dış merdiven korkulukları; sabit, sarmal veya düz merdiven için.', icon: 'fas fa-stairs' },
-        { title: 'Teras Korkulukları', desc: 'Çatı terasları ve çatı katı balkonları için dayanıklı sistem çözümleri.', icon: 'fas fa-building' },
-        { title: 'Ramp Korkulukları', desc: 'Erişilebilirlik standartlarını karşılayan rampa ve yaya yolu korkulukları.', icon: 'fas fa-wheelchair' },
-        { title: 'Cam Korkuluk', desc: 'Isıcam ve lamine güvenlik camları ile şeffaf korkuluk sistemleri.', icon: 'fas fa-glasses' },
-        { title: 'Paslanmaz & Alüminyum', desc: 'Tüm dış mekan koşullarına dayanıklı metal profil seçenekleri.', icon: 'fas fa-cog' }
+        { title: 'Teras ve Balkon Korkulukları', desc: 'Rüzgar dayanımı yüksek, dış mekana uyumlu cam ve paslanmaz çelik balkon sistemleri.', icon: 'fas fa-home' },
+        { title: 'Merdiven Küpeşteleri', desc: 'İç ve dış mekan merdivenleri için estetik tutamaklar, güvenli ve şık dönüş detayları.', icon: 'fas fa-stairs' },
+        { title: 'Fransız Balkon Sistemleri', desc: 'Dar cephe boşluklarında maksimum güvenlik ve estetik sağlayan modern cam korkuluklar.', icon: 'fas fa-building' },
+        { title: 'Havuz Kenarı Korkulukları', desc: 'Su ve neme karşı ekstra dirençli, güvenli ve kesintisiz görüş sağlayan cam sistemler.', icon: 'fas fa-swimming-pool' },
+        { title: 'Galeri Boşluğu Sistemleri', desc: 'Villa ve iş merkezlerinin iç mekan galeri boşlukları için lüks görünümlü cam uygulamalar.', icon: 'fas fa-layer-group' },
+        { title: 'Erişilebilirlik (Rampa) Çözümleri', desc: 'Engelli rampaları ve yaya geçitleri için uluslararası standartlara uygun sağlam küpeşteler.', icon: 'fas fa-wheelchair' }
       ]
     }
   ],
   darkFeatures: [
-    { icon: 'fas fa-ruler-combined', title: 'Özel Ölçü Üretim', desc: 'Her projeye milimetrik hassasiyetle özel ölçü üretim.' },
-    { icon: 'fas fa-shield-alt', title: 'Yük Taşıma Garantisi', desc: 'Mühendislik hesaplı, standartlara uygun statik dayanım.' },
-    { icon: 'fas fa-paint-brush', title: 'Toz Boya & Eloksal', desc: 'Renk ve yüzey işlemi seçenekleriyle projenize uygun estetik.' }
+    { icon: 'fas fa-ruler-combined', title: 'Milimetrik Özel Üretim', desc: 'Mekanınızın tüm kavis ve detaylarına uygun kusursuz tasarımlar.' },
+    { icon: 'fas fa-shield-alt', title: 'Üstün Statik Dayanım', desc: 'Mühendislik hesapları yapılmış, esnemeyen ve sarsılmayan rijit bağlantılar.' },
+    { icon: 'fas fa-gem', title: 'Premium Yüzey İşlemleri', desc: 'Korozyona dayanıklı eloksal, elektrostatik boya ve parlak paslanmaz yüzeyler.' }
   ],
   testimonials: [
-    { text: 'Cam küpeşte ile merdivenimiz bambaşka göründü, herkes hayran kalıyor.', name: 'Deniz A.', city: 'İstanbul' },
-    { text: 'Paslanmaz çelik balkon korkuluğu muhteşem. Fiyat performans mükemmel.', name: 'Orhan K.', city: 'Bursa' }
+    { text: 'Villamızın merdiven ve galeri boşluklarına yapılan cam küpeşteler tek kelimeyle muazzam oldu. Evin tüm havası değişti, çok daha geniş ve lüks görünüyor.', name: 'Hakan T.', city: 'İstanbul' },
+    { text: 'Fransız balkonlarımız için paslanmaz detaylı sistemler yapıldı. Gerek malzeme kalitesi gerekse ekibin titiz işçiliği harikaydı. Çok sağlam ve güven veriyor.', name: 'Serap E.', city: 'Tekirdağ' }
   ]
 };
 
