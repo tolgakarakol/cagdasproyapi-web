@@ -27,8 +27,8 @@ const GALLERY_DATA = [
     title: 'Bioklimatik Pergola',
     images: [
       { src: '/images/products/pergola_final.jpg', alt: 'Bioklimatik Pergola Uygulaması 1' },
-      { src: '/images/products/pergola_hero.jpg', alt: 'Bioklimatik Pergola Uygulaması 2' },
-      { src: '/images/products/pergola_v2.jpg', alt: 'Bioklimatik Pergola Uygulaması 3' }
+      { src: '/images/slides/bioklimatik.jpg', alt: 'Bioklimatik Pergola Uygulaması 2' },
+      { src: '/images/slides/slider_bioklimatik.png', alt: 'Bioklimatik Pergola Uygulaması 3' }
     ]
   },
   {
