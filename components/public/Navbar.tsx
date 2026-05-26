@@ -57,6 +57,7 @@ export default function Navbar() {
           </li>
           <li className={styles.menuItem}><Link href="/e-katalog" className={styles.menuLink}>E-Katalog</Link></li>
           <li className={styles.menuItem}><Link href="/hap-bilgiler" className={styles.menuLink}>Hap Bilgiler</Link></li>
+          <li className={styles.menuItem}><Link href="/galeri" className={styles.menuLink}>Galeri</Link></li>
           <li className={styles.menuItem}><Link href="/iletisim" className={styles.menuLink}>İletişim</Link></li>
         </ul>
 
@@ -97,6 +98,7 @@ export default function Navbar() {
           </li>
           <li><Link href="/e-katalog" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>E-Katalog</Link></li>
           <li><Link href="/hap-bilgiler" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Hap Bilgiler</Link></li>
+          <li><Link href="/galeri" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Galeri</Link></li>
           <li><Link href="/iletisim" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>İletişim</Link></li>
         </ul>
       </div>
