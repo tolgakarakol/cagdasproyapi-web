@@ -65,6 +65,73 @@ const GALLERY_DATA = [
   }
 ];
 
+interface GallerySectionProps {
+  title: string;
+  images: { src: string; alt: string }[];
+  onImageClick: (src: string, alt: string) => void;
+}
+
+function GallerySection({ title, images, onImageClick }: GallerySectionProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (containerRef.current) {
+      const scrollAmount = containerRef.current.clientWidth;
+      containerRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  return (
+    <div className={styles.gallerySection}>
+      <div className={styles.sectionHeader}>
+        <h2 className={styles.sectionTitle}>{title}</h2>
+      </div>
+      <div className={styles.sliderWrapper}>
+        <button
+          className={`${styles.navBtn} ${styles.prevBtn}`}
+          onClick={() => scroll('left')}
+          aria-label="Önceki görseller"
+        >
+          <i className="fas fa-chevron-left" />
+        </button>
+
+        <div className={styles.sliderContainer} ref={containerRef}>
+          {images.map((img, imgIdx) => (
+            <div
+              key={imgIdx}
+              className={styles.slide}
+              onClick={() => onImageClick(img.src, img.alt)}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={85}
+                style={{ objectFit: 'cover' }}
+              />
+              <div className={styles.imageOverlay}>
+                <i className={`fas fa-magnifying-glass-plus ${styles.zoomIcon}`} />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <button
+          className={`${styles.navBtn} ${styles.nextBtn}`}
+          onClick={() => scroll('right')}
+          aria-label="Sonraki görseller"
+        >
+          <i className="fas fa-chevron-right" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedAlt, setSelectedAlt] = useState<string>('');
@@ -84,75 +151,21 @@ export default function GalleryPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="Galeri" 
-        subtitle="Çağdaş Pro Yapı kalitesiyle hayata geçirilen premium projelerimiz" 
+      <PageHeader
+        title="Galeri"
+        subtitle="Çağdaş Pro Yapı kalitesiyle hayata geçirilen premium projelerimiz"
       />
 
       <section className={styles.galleryPage}>
         <div className={styles.container}>
-          {GALLERY_DATA.map((section, sectionIdx) => {
-            const containerRef = useRef<HTMLDivElement>(null);
-
-            const scroll = (direction: 'left' | 'right') => {
-              if (containerRef.current) {
-                const scrollAmount = containerRef.current.clientWidth;
-                containerRef.current.scrollBy({
-                  left: direction === 'left' ? -scrollAmount : scrollAmount,
-                  behavior: 'smooth'
-                });
-              }
-            };
-
-            return (
-              <div key={sectionIdx} className={styles.gallerySection}>
-                <div className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>{section.title}</h2>
-                </div>
-                <div className={styles.sliderWrapper}>
-                  {/* Left Arrow Button */}
-                  <button 
-                    className={`${styles.navBtn} ${styles.prevBtn}`} 
-                    onClick={() => scroll('left')}
-                    aria-label="Önceki görseller"
-                  >
-                    <i className="fas fa-chevron-left" />
-                  </button>
-
-                  <div className={styles.sliderContainer} ref={containerRef}>
-                    {section.images.map((img, imgIdx) => (
-                      <div 
-                        key={imgIdx} 
-                        className={styles.slide}
-                        onClick={() => openLightbox(img.src, img.alt)}
-                      >
-                        <Image 
-                          src={img.src} 
-                          alt={img.alt} 
-                          fill 
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          quality={85}
-                          style={{ objectFit: 'cover' }}
-                        />
-                        <div className={styles.imageOverlay}>
-                          <i className={`fas fa-magnifying-glass-plus ${styles.zoomIcon}`} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Right Arrow Button */}
-                  <button 
-                    className={`${styles.navBtn} ${styles.nextBtn}`} 
-                    onClick={() => scroll('right')}
-                    aria-label="Sonraki görseller"
-                  >
-                    <i className="fas fa-chevron-right" />
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+          {GALLERY_DATA.map((section, sectionIdx) => (
+            <GallerySection
+              key={sectionIdx}
+              title={section.title}
+              images={section.images}
+              onImageClick={openLightbox}
+            />
+          ))}
         </div>
       </section>
 
@@ -163,10 +176,10 @@ export default function GalleryPage() {
             <button className={styles.closeBtn} onClick={closeLightbox} aria-label="Kapat">
               <i className="fas fa-times" />
             </button>
-            <img 
-              src={selectedImage} 
-              alt={selectedAlt} 
-              className={styles.lightboxImage} 
+            <img
+              src={selectedImage}
+              alt={selectedAlt}
+              className={styles.lightboxImage}
             />
           </div>
         </div>
