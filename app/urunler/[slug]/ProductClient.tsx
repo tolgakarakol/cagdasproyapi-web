@@ -817,32 +817,7 @@ export default function ProductClient({ params }: { params: any }) {
             <Link href="/iletisim" className={styles.ctaBtn}>HEMEN İLETİŞİME GEÇ</Link>
           </div>
 
-          {product.testimonials.length > 0 && (
-            <section className={styles.testimonials}>
-              <h2 className={styles.testimonialsTitle}>Kullanıcılar Anlatıyor</h2>
-              <div className={styles.testimonialsGrid}>
-                {product.testimonials.map((t: any, i: number) => (
-                  <div key={i} className={styles.testimonialCard}>
-                    <div className={styles.stars}>
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                      <i className="fas fa-star" />
-                    </div>
-                    <p className={styles.testimonialText}>"{t.text}"</p>
-                    <div className={styles.testimonialAuthor}>
-                      <div className={styles.authorAvatar}>{t.name.charAt(0)}</div>
-                      <div>
-                        <div className={styles.authorName}>{t.name}</div>
-                        <div className={styles.authorCity}>{t.city}</div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
+
         </>
       )}
     </>
