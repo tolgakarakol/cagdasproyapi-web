@@ -41,8 +41,6 @@ const PRODUCT_DATA: any = {
       { img: '/images/products/pergola_v2.jpg', title: 'Kesintisiz Oval Dikme', desc: 'Geleneksel pergola sistemlerinden farklı olarak dikmelerin görünümünü estetik ve fonksiyonel olarak çeşitlendirir. Kesintisiz bir dikme görünümü sunar.' }
     ],
     safetyImg: '/images/products/pergola_hero.jpg',
-    cleaningImg: '/images/products/giyotin_hero.jpg',
-    cleaningSteps: ['Lamel açılarını ayarlayın.', 'Su ile silin.', 'Yılda bir kez olukları kontrol edin.'],
     sections: [
       {
         type: 'text_image',
