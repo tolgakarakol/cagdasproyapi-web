@@ -32,6 +32,23 @@ import { INITIAL_SECTIONS } from '@/lib/initialData';
 async function getSections() {
   try {
     await connectDB();
+
+    // Auto-migrate old images in DB to the new giyotin-cam-balkon.png
+    try {
+      await Section.updateMany(
+        { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/products/panoromik-yatay.png' },
+        { $set: { 'content.slides.$[elem].image': '/images/giyotin-cam-balkon.png' } },
+        { arrayFilters: [{ 'elem.image': '/images/products/panoromik-yatay.png' }] }
+      );
+      await Section.updateMany(
+        { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/slides/giyotin-balkon.jpg' },
+        { $set: { 'content.slides.$[elem].image': '/images/giyotin-cam-balkon.png' } },
+        { arrayFilters: [{ 'elem.image': '/images/slides/giyotin-balkon.jpg' }] }
+      );
+    } catch (dbErr) {
+      console.warn('Migration warning:', dbErr);
+    }
+
     const sections = await Section.find({ pageSlug: 'home', isVisible: true }).sort({ order: 1 }).lean();
     if (sections && sections.length > 0) {
       return JSON.parse(JSON.stringify(sections));
