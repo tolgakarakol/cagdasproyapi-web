@@ -9,7 +9,7 @@ const PRODUCT_DATA: any = {
     badge: 'Albert Genau — Tambalkon®',
     heroTitle: 'Giyotin Tam Balkon',
     heroSub: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.',
-    heroImg: '/images/products/giyotin_hero.png',
+    heroImg: '/images/giyotin-cam-balkon.png',
     tagline: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.\nİçerisiyle dışarısı arasındaki çizgiyi siler. Bu sadece bir cam balkon değil. Bu, Tambalkon®.',
     features: [
       { img: '/images/products/giyotin_remote.png', title: 'Tam Otomatik Kumandalı', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde.' },
