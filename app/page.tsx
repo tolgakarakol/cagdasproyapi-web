@@ -33,17 +33,22 @@ async function getSections() {
   try {
     await connectDB();
 
-    // Auto-migrate old images in DB to the new giyotin-cam-balkon.png
+    // Auto-migrate old images in DB to the new giyotin-balkon-banner.png
     try {
       await Section.updateMany(
         { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/products/panoromik-yatay.png' },
-        { $set: { 'content.slides.$[elem].image': '/images/giyotin-cam-balkon.png' } },
+        { $set: { 'content.slides.$[elem].image': '/images/giyotin-balkon-banner.png' } },
         { arrayFilters: [{ 'elem.image': '/images/products/panoromik-yatay.png' }] }
       );
       await Section.updateMany(
         { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/slides/giyotin-balkon.jpg' },
-        { $set: { 'content.slides.$[elem].image': '/images/giyotin-cam-balkon.png' } },
+        { $set: { 'content.slides.$[elem].image': '/images/giyotin-balkon-banner.png' } },
         { arrayFilters: [{ 'elem.image': '/images/slides/giyotin-balkon.jpg' }] }
+      );
+      await Section.updateMany(
+        { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/giyotin-cam-balkon.png' },
+        { $set: { 'content.slides.$[elem].image': '/images/giyotin-balkon-banner.png' } },
+        { arrayFilters: [{ 'elem.image': '/images/giyotin-cam-balkon.png' }] }
       );
     } catch (dbErr) {
       console.warn('Migration warning:', dbErr);
