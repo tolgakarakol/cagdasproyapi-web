@@ -120,7 +120,7 @@ async function seed() {
               ctaLink: '#teklif',
             },
             {
-              image: '/images/slides/giyotin-balkon.jpg',
+              image: '/images/giyotin-cam-balkon.png',
               title: 'Giyotin Cam Balkon Sistemleri',
               subtitle: '5 yıl paslanmaz, 2 yıl sistem garantisi. Albert Genau kalitesiyle.',
               ctaText: 'Teklif Al',
