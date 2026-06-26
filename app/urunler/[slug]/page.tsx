@@ -36,10 +36,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   return (
     <main>
       <Navbar />
-      <ProductClient params={params} />
+      <ProductClient slug={slug} />
       <Footer />
     </main>
   );

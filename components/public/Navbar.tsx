@@ -42,8 +42,8 @@ export default function Navbar() {
           <img 
             src={useWhiteLogo ? "/images/cagdasproyapi_beyaz.png" : "/images/cagdas_pro_yapi_logo.png"} 
             alt="Anasayfa" 
-            width={240} 
-            height={65} 
+            width={368} 
+            height={98} 
             style={{ objectFit: 'contain' }}
           />
         </a>

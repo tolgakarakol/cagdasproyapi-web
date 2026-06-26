@@ -31,10 +31,19 @@ import { INITIAL_SECTIONS } from '@/lib/initialData';
 
 async function getSections() {
   try {
-    await connectDB();
+    const conn = await connectDB();
+    if (!conn) {
+      console.warn('DB connection failed/inactive, using initial data fallback');
+      return INITIAL_SECTIONS;
+    }
 
     // Auto-migrate old images in DB to the new giyotin-balkon-banner.png
     try {
+      await Section.updateMany(
+        { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/slides/slider_bioklimatik.png' },
+        { $set: { 'content.slides.$[elem].image': '/images/biyoklimatik-balkon.png' } },
+        { arrayFilters: [{ 'elem.image': '/images/slides/slider_bioklimatik.png' }] }
+      );
       await Section.updateMany(
         { pageSlug: 'home', type: 'hero_slider', 'content.slides.image': '/images/products/panoromik-yatay.png' },
         { $set: { 'content.slides.$[elem].image': '/images/giyotin-balkon-banner.png' } },

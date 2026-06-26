@@ -5,7 +5,7 @@ export const INITIAL_SECTIONS = [
     content: {
       slides: [
         {
-          image: '/images/slides/slider_bioklimatik.png',
+          image: '/images/biyoklimatik-balkon.png',
           title: 'Bioklimatik Pergola',
           subtitle: 'Motorlu alüminyum lamel sistemi ile dört mevsim açık hava konforu.',
           ctaText: 'HEMEN KEŞFET',

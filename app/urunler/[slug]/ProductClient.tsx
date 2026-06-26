@@ -2,9 +2,9 @@
 import styles from './product.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, use } from 'react';
+import { useState } from 'react';
 
-const PRODUCT_DATA: any = {
+export const PRODUCT_DATA: any = {
   'giyotin-tam-balkon': {
     badge: 'Albert Genau — Tambalkon®',
     heroTitle: 'Giyotin Tam Balkon',
@@ -13,7 +13,7 @@ const PRODUCT_DATA: any = {
     tagline: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.\nİçerisiyle dışarısı arasındaki çizgiyi siler. Bu sadece bir cam balkon değil. Bu, Tambalkon®.',
     features: [
       { img: '/images/products/giyotin_remote.png', title: 'Tam Otomatik Kumandalı', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde.' },
-      { img: '/images/products/giyotin_panoramic.png', title: 'Yer Kazandıran Tasarım', desc: 'Açıldığında tüm alanı kazanırsınız.' }
+      { img: '/images/products/giyotin_profil_detay.png', title: 'Hassas Alüminyum Profil', desc: '10 mm temperli cam, anodize antrasit profil; her bağlantı noktasında mükemmellik.' }
     ],
     safetyImg: '/images/products/giyotin_safety.png',
     cleaningImg: '/images/products/giyotin_cleaning.png',
@@ -33,7 +33,7 @@ const PRODUCT_DATA: any = {
     badge: 'Albert Genau — Bioklimatik',
     heroTitle: 'Bioklimatik Pergola',
     heroSub: 'Motorlu alüminyum lameller ile dört mevsim açık hava konforu.',
-    heroImg: '/images/slides/slider_bioklimatik.png',
+    heroImg: '/images/biyoklimatik-balkon.png',
     tagline: 'Pergola, bioklimatik pergola ya da bioklimatik pergola fiyatları... Pergola ile ilgili aranan her şeyi yeniledik. Dünya’nın 86 ülkesinde 500’ün üzerinde üretici bayisi ile sektör lideri Albert Genau, yeni nesil bioklimatik pergola sistemini tasarladı. Tüm detaylarıyla, %100 Albert Genau…',
     features: [
       { img: '/images/products/pergola_hero.jpg', title: 'Makaslı Sistem', desc: 'Bioklimatik pergolanın panelleri, makas sistemi ile birbirine bağlanarak senkronize bir şekilde açılıp kapanma hareketi gerçekleştirir ve her türlü ortamda güvenilir performans sunar.' },
@@ -248,7 +248,7 @@ const PRODUCT_DATA: any = {
     heroTitleExtra: '',
     heroSub: 'Yeni Rüzgar Kırıcı Cam Sistemi ile Tanışın',
     heroImg: '/images/products/panoromik-yatay.png',
-    safetyImg: '/images/products/airflex_safety_priority.png',
+    safetyImg: '/images/products/airflex_safety.png',
     tagline: 'Rüzgar Kırıcı Sistem – Airflex, minimalist tasarımı ile panoramik manzaranızı korurken aynı zamanda ses, toz ve rüzgarı engeller. Konforunuzu artırır.\n\nAyarlanabilir köşe çözümleri, inovatif ve estetik yer sabitleme seçenekleri ile rüzgar kırıcı sistem, hotel, restaurant ve cafelerde, teraslarda ve ofis bölmelerinde rahatlıkla uygulanabilir. Sadece 47 mm profil genişliğine sahip airflex – rüzgar kırıcı ile tanışmanın tam zamanı.',
     features: [],
     sections: [
@@ -256,14 +256,14 @@ const PRODUCT_DATA: any = {
         type: 'text_image',
         title: 'Farklı Yükseklik ve Cam Tiplerine Göre Farklı Uygulama Çeşitleri',
         content: 'Estetik görünümünün yanı sıra güvenliğe de önem veren AirFlex – Rüzgar Kırıcıyı, 5 farklı yükseklik ölçülerinde ve farklı cam tiplerine uygun olarak kullanabilirsiniz.',
-        image: '/images/products/giyotin_panoramic.png',
+        image: '/images/products/airflex_heights.png',
         reverse: false
       },
       {
         type: 'text_image',
         title: 'İster Sabit İster Taşınabilir Uygulama',
         content: 'Rüzgar Kırıcı - Airflex, mekânlarda yeni ve yaratıcı bölme çözümleri için size esneklik sağlar. İsterseniz farklı şekillerde zemine sabitleyerek uygulayacağınız sisteminizi, dilerseniz taşınabilir olarak da kullanabilirsiniz.',
-        image: '/images/products/giyotin_remote.png',
+        image: '/images/products/airflex_portable.png',
         reverse: true
       },
       {
@@ -276,15 +276,8 @@ const PRODUCT_DATA: any = {
         type: 'text_image',
         title: 'İzolasyonun Şık ve Estetik Hâli',
         content: 'AirFlex – Rüzgar Kırıcı sistemin minimal tasarımı, sadece 47 mm’lik dikme genişliği ile tüm mekânların izolasyonunu daha şık hâle getiriyor. Rüzgar, toz ve sokak kalabalığının etkisinden koruma sağlayacak sistemi istediğiniz zaman açık istediğiniz zaman kapalı olarak kullanabilirsiniz.',
-        image: '/images/products/giyotin_safety.png',
+        image: '/images/products/airflex_profile.png',
         reverse: false
-      },
-      {
-        type: 'text_image',
-        title: 'Led ve Logo Uygulaması ile Mekâna Uygun Özel Çözümler',
-        content: 'Led ışıklı trabzan seçeneği sayesinde karanlıkta bile estetik görünümü ile öne çıkan AirFlex Rüzgar Kırıcı Cam Sisteminin cam panellerine logonuzu uygulayabilir ve kurumsal imajınızı daha şık yansıtabilirsiniz.',
-        image: '/images/products/giyotin_hero.jpg',
-        reverse: true
       },
       {
         type: 'grid',
@@ -331,8 +324,8 @@ const PRODUCT_DATA: any = {
       { img: '/images/products/isicam-entegrasyonu.png', title: 'Isıcam Entegrasyonu', desc: 'Tavan ve yan yüzeylerde maksimum yalıtım sağlayan özel ısıcam sistemleri.' },
       { img: '/images/products/ruzgar-kirici.png', title: 'Panoramik Tasarım', desc: 'Modern mimariyle uyumlu, geniş açıklıklı ve kesintisiz görüş sunan estetik yapılar.' }
     ],
-    safetyImg: '/images/products/kis_bahcesi_hero.jpg',
-    cleaningImg: '/images/products/katlanir_balkon_hero_v4.jpg',
+    safetyImg: '/images/products/kis_bahcesi_safety_hq.png',
+    cleaningImg: '/images/products/kis_bahcesi_cleaning_hq.png',
     cleaningSteps: ['Dış cephe camları özel aparatlarla yıkanabilir.', 'İç yüzeyleri standart temizleyicilerle silebilirsiniz.', 'Çelik kısımları nemli bezle düzenli olarak koruyun.'],
     darkFeatures: [
       { icon: 'fas fa-shield-alt', title: 'Yüksek Statik Dayanım', desc: 'Her türlü iklim koşuluna dayanacak mühendislik hesaplamaları.' },
@@ -350,14 +343,14 @@ const PRODUCT_DATA: any = {
     badge: 'Premium Banyo',
     heroTitle: 'Duşakabin Sistemleri',
     heroSub: 'Banyonuzda Modern, Ferah ve Güvenli Tasarım.',
-    heroImg: '/images/products/dusakabin_hero_hq.jpg',
+    heroImg: '/images/products/dusakabin_hero_premium.png',
     tagline: 'Dar alanlarda bile mekanı geniş gösteren, su sızıntısını engelleyen ve kireç tutmayan cam yüzey teknolojisine sahip duşakabin çözümleri.',
     features: [
       { img: '/images/products/dusakabin_clean.png', title: 'Su İtici Kaplama', desc: 'Cam yüzeyinde kireç ve leke tutunmasını engelleyen nano teknoloji kaplama.' },
       { img: '/images/products/dusakabin_safe.png', title: 'Sızdırmazlık Contaları', desc: 'Su kaçaklarını %100 engelleyen özel tasarlanmış manyetik ve şeffaf contalar.' },
       { img: '/images/products/dusakabin_wheels.png', title: 'Kusursuz Kayar Sistem', desc: 'Cam kapıların sessiz ve pürüzsüz şekilde kaymasını sağlayan paslanmaz tekerlek mekanizması.' }
     ],
-    safetyImg: '/images/products/dusakabin_safe.png',
+    safetyImg: '/images/products/dusakabin_safety_premium.png',
     cleaningImg: '/images/products/dusakabin_clean.png',
     cleaningSteps: [
       'Suyu iten özel kaplama sayesinde her duş sonrası çekçekle kolayca kurutun.',
@@ -378,15 +371,15 @@ const PRODUCT_DATA: any = {
     badge: 'Hareketli Cam Sistemleri',
     heroTitle: 'Cam Kapı Sistemleri',
     heroSub: 'Eşiksiz Zeminler, Kesintisiz Geçişler.',
-    heroImg: '/images/products/giyotin_panoramic.png',
+    heroImg: '/images/products/cam_kapı_banner.png',
     tagline: 'Albert Genau’nun üstten askılı özel taşıyıcı profili sayesinde mekanlarınızı eşiksiz ve esnek bir şekilde bölerek panoramik manzaranın tadını çıkarın.',
     features: [
-      { img: '/images/products/katlanir_isicamli.jpg', title: 'Eşiksiz Zeminler', desc: 'Zeminde ray veya kanal bulunmaz. Paneller açıkken zemin tamamen düz kalır, yürürken ayağınız takılmaz.' },
-      { img: '/images/products/giyotin_remote.png', title: 'Tüy Kadar Hafif Hareket', desc: 'Özel Quattro HD tekerlek sistemi sayesinde 150 kiloluk devasa cam paneller minimum sürtünme ile hareket eder.' },
-      { img: '/images/products/twinmax_lock.jpg', title: 'Gizlenebilir Park Alanları', desc: 'Sistem esnek park seçenekleri sunar. Camları bir duvarın arkasına veya kolon yanına şık bir şekilde saklayabilirsiniz.' }
+      { img: '/images/cam-kapi/cam-kapi-dikey-01.png', title: 'Eşiksiz Zeminler', desc: 'Zeminde ray veya kanal bulunmaz. Paneller açıkken zemin tamamen düz kalır, yürürken ayağınız takılmaz.' },
+      { img: '/images/cam-kapi/cam-kapi-dikey-02.png', title: 'Tüy Kadar Hafif Hareket', desc: 'Özel Quattro HD tekerlek sistemi sayesinde 150 kiloluk devasa cam paneller minimum sürtünme ile hareket eder.' },
+      { img: '/images/cam-kapi/cam-kapi-dikey-03.png', title: 'Gizlenebilir Park Alanları', desc: 'Sistem esnek park seçenekleri sunar. Camları bir duvarın arkasına veya kolon yanına şık bir şekilde saklayabilirsiniz.' }
     ],
-    safetyImg: '/images/products/giyotin_safety.png',
-    cleaningImg: '/images/products/twinmax_clean.jpg',
+    safetyImg: '/images/cam-kapi/cam-kapi-yatay-01.png',
+    cleaningImg: '/images/cam-kapi/cam-kapi-yatay-03.png',
     cleaningSteps: ['Eşiksiz zemin sayesinde alt ray temizliği gerektirmez.', 'Cam yüzeyler standart temizleyicilerle silinebilir.'],
     darkFeatures: [
       { icon: 'fas fa-lock', title: 'Pim Güvencesi', desc: 'Cam paneller yapıştırıcıya ek olarak, Eksantrik Cam Pimleri ile mekanik olarak kilitlenir.' },
@@ -612,8 +605,7 @@ const DEFAULT_PRODUCT = {
   testimonials: []
 };
 
-export default function ProductClient({ params }: { params: any }) {
-  const { slug } = use(params) as any;
+export default function ProductClient({ slug }: { slug: string }) {
   const product = PRODUCT_DATA[slug] || { ...DEFAULT_PRODUCT };
 
   return (

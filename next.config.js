@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'www.albertgenau.com' },
       { protocol: 'https', hostname: 'res.cloudinary.com' },
@@ -8,6 +9,7 @@ const nextConfig = {
     ],
     formats: ['image/avif', 'image/webp'],
   },
+  allowedDevOrigins: ['127.0.0.1', 'localhost'],
   async headers() {
     return [
       {

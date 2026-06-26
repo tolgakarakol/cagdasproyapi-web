@@ -7,14 +7,11 @@ interface Slide { image: string; title: string; subtitle: string; ctaText: strin
 
 export default function HeroSlider({ slides }: { slides: Slide[] }) {
   const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const goTo = useCallback((index: number) => {
-    if (isAnimating) return;
-    setIsAnimating(true);
     setCurrent(index);
-    setTimeout(() => setIsAnimating(false), 700);
-  }, [isAnimating]);
+  }, []);
 
   const next = useCallback(() => goTo((current + 1) % slides.length), [current, slides.length, goTo]);
   const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length), [current, slides.length, goTo]);
@@ -24,10 +21,34 @@ export default function HeroSlider({ slides }: { slides: Slide[] }) {
     return () => clearInterval(t);
   }, [next]);
 
+  const handleTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    if ('touches' in e) {
+      setTouchStart(e.touches[0].clientX);
+    } else {
+      setTouchStart(e.clientX);
+    }
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent | React.MouseEvent) => {
+    if (touchStart === null) return;
+    const end = 'changedTouches' in e ? e.changedTouches[0].clientX : e.clientX;
+    const diff = touchStart - end;
+    if (diff > 50) next();
+    if (diff < -50) prev();
+    setTouchStart(null);
+  };
+
   if (!slides?.length) return null;
 
   return (
-    <section className={styles.slider} id="anasayfa">
+    <section 
+      className={styles.slider} 
+      id="anasayfa"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleTouchStart}
+      onMouseUp={handleTouchEnd}
+    >
       {slides.map((slide, i) => (
         <div
           key={i}
