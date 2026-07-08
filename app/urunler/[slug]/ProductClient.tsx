@@ -103,18 +103,6 @@ export const PRODUCT_DATA: any = {
         content: 'Albert Genau Bioklimatik pergola sistemlerinin etrafını, isterseniz sürme cambalkon sistemleri ile isterseniz otomatik giyotin cam sistemleri veya cambalkon sistemleri ile kapatabilirsiniz. Pergola sistemi, bu sistemler ile %100 entegre tasarlandığı için, montaj sırasında herhangi bir sıkıntı yaşanmaz. Tüm sistemler %100 Albert Genau garantisinde olur.',
         image: '/images/bioklimatik/ag-bioklimatik-pergola.webp',
         reverse: false
-      },
-      {
-        type: 'grid',
-        title: 'Teknik Detaylar ve Üstünlükler',
-        items: [
-          { title: 'Adaptif Hareket', desc: 'Kurulum veya kullanım esnasında oluşabilecek hataları etkin bir şekilde sönümleyerek panellerin hareketini kontrol altında tutar.', icon: 'fas fa-sync' },
-          { title: 'Sonsuz Modülasyon', desc: 'Özel tasarım kiriş ve bağlantı sistemleri ile çok geniş açıklıkları maksimum özgürlük ve kolaylıkla geliştirebilirsiniz.', icon: 'fas fa-expand-arrows-alt' },
-          { title: '5,5 Metre Dikmesiz Açıklık', desc: 'Destek kirişi uygulaması sayesinde tam 5,5 metreye kadar ekstra dikmeye gerek olmadan ulaşılabilir.', icon: 'fas fa-arrows-alt-h' },
-          { title: 'İklimlendirme Modları', desc: 'Güneşlenme, havalandırma ve tam izolasyon gibi seçenekler arasında istenen açıklık miktarını ayarlayabilirsiniz.', icon: 'fas fa-cloud-sun' },
-          { title: 'Çift Yönlü İzolasyon', desc: 'Her bir panelde çift katmanlı izolasyon (hem conta hem fırça) kullanılarak su, ışık ve hava girişi tamamen engellenir.', icon: 'fas fa-shield-alt' },
-          { title: 'Yalıtım Dolgulu Panel', desc: 'Yüksek yoğunluklu XPS dolgu malzemesi ile hem ısı hem de akustik yalıtım sunarak konforu artırır.', icon: 'fas fa-volume-mute' }
-        ]
       }
     ],
     darkFeatures: [
