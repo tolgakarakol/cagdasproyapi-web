@@ -16,6 +16,8 @@ export const PRODUCT_DATA: any = {
       { img: '/images/products/giyotin_profil_detay.png', title: 'Hassas Alüminyum Profil', desc: '10 mm temperli cam, anodize antrasit profil; her bağlantı noktasında mükemmellik.' }
     ],
     safetyImg: '/images/products/giyotin_safety.png',
+    safetyTitle: 'Güvenliği Önceleyen Dikey Cam Sistemi',
+    safetyDesc: 'Paneller istenilen yükseklikte konumlandırılabilir. Böylece çocuklar ve evcil hayvanlar için daha kontrollü, daha güvenli ve daha konforlu bir balkon kullanımı sağlanır.',
     cleaningImg: '/images/products/giyotin_cleaning.png',
     cleaningSteps: ['Uzaktan kumanda ile açın.', 'Push butonlara basın.', 'Hafif eğimli konuma getirip silin.'],
     darkFeatures: [
