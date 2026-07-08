@@ -69,7 +69,8 @@ export const PRODUCT_DATA: any = {
     features: [
       { img: '/images/bioklimatik/Kesintisiz-Oval-Dikme.webp', title: 'Kesintisiz Oval Dikme', desc: 'Albert Genau Bioklimatik Pergola, geleneksel pergola sistemlerinden farklı olarak dikmelerin görünümünü estetik ve fonksiyonel olarak çeşitlendirir. Oval dikme kapağı ve düz dikme kapağı gibi seçeneklerle farklı zevklere hitap ederken, her iki seçenekte de kesintisiz bir dikme görünümü sunar.' },
       { img: '/images/bioklimatik/Makasli-Sistem.webp', title: 'Makaslı Sistem', desc: 'Bioklimatik pergolanın panelleri, makas sistemi ile birbirine bağlanarak senkronize bir şekilde açılıp kapanma hareketi gerçekleştirir ve her türlü ortamda güvenilir performans sunar. Bu makaslar, hareket sırasında panellerin konumunu ve hızını kontrol altında tutarak sistemin bütünlüğünü her an korur.' },
-      { img: '/images/bioklimatik/Monoblok-Oluk.webp', title: 'Monoblok Oluk', desc: 'Pergolanın olukları çift katmanlı yapısı ile ekstra dayanıklıdır. Bu çift hücreli yapı anti sehim geometri özelliği taşır. Kenet mekanizması ile montajı ekstra kolay olan oluk, monoblok oluşuyla her türlü Albert Genau cam balkon, sürme ve giyotin sistem entegrasyonunda, su yalıtımını ve drenajını engellemeyecek şekilde tasarlanmıştır.' }
+      { img: '/images/bioklimatik/Monoblok-Oluk.webp', title: 'Monoblok Oluk', desc: 'Pergolanın olukları çift katmanlı yapısı ile ekstra dayanıklıdır. Bu çift hücreli yapı anti sehim geometri özelliği taşır. Kenet mekanizması ile montajı ekstra kolay olan oluk, monoblok oluşuyla her türlü Albert Genau cam balkon, sürme ve giyotin sistem entegrasyonunda, su yalıtımını ve drenajını engellemeyecek şekilde tasarlanmıştır.' },
+      { img: '/images/bioklimatik/Adaptif-Hareket.webp', title: 'Adaptif Hareket', desc: 'Albert Genau Bioklimatik Pergola, özenle tasarlanmış ray ve panel mekanizmalarıyla donatılmıştır. Adaptif hareket özelliği, kurulum sırasında veya kullanım esnasında oluşabilecek hataları etkin bir şekilde sönümleyerek panellerin hareketini kontrol altında tutar ve güvenli bir şekilde sistem hareketi devam eder.', isWide: true }
     ],
     safetyTitle: 'Yaprak Tutuculu Drenaj Sistemi',
     safetyDesc: 'Bioklimatik Pergola, su drenaj sisteminde özel olarak tasarlanmış yaprak tutucusuyla donatılmıştır. Bu yaprak tutuculu drenaj sistemi, oluğun içine entegre edilerek su giderini tıkayabilecek materyallere karşı koruma sağlar. Aynı zamanda, kolay takılabilir ve çıkarılabilir yapısıyla bakımı son derece pratiktir. Pergolanın su drenaj sistemi, kullanıcıya hem güvenlik hem de kolaylık sağlayarak, uzun ömürlü ve düşük bakım gereksinimli bir çözüm sunar.',
@@ -732,11 +733,11 @@ export default function ProductClient({ slug }: { slug: string }) {
             <section className={styles.features}>
               <div className={styles.featuresGrid}>
                 {product.features.map((f: any, i: number) => (
-                  <div key={i} className={styles.featureCard}>
-                    <div className={styles.featureCardImg}>
+                  <div key={i} className={f.isWide ? styles.featureCardWide : styles.featureCard}>
+                    <div className={f.isWide ? styles.featureCardWideImg : styles.featureCardImg}>
                       <Image src={f.img} alt={f.title} fill />
                     </div>
-                    <div className={styles.featureCardBody}>
+                    <div className={f.isWide ? styles.featureCardWideBody : styles.featureCardBody}>
                       <h3 className={styles.featureCardTitle}>{f.title}</h3>
                       <p className={styles.featureCardDesc}>{f.desc}</p>
                     </div>
