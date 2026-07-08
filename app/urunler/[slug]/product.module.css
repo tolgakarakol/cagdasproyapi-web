@@ -331,7 +331,7 @@
 }
 .reverse .textImageGrid { direction: rtl; }
 .reverse .textImageContent { direction: ltr; }
-.textImageContent { padding: 80px 40px; display: flex; flex-direction: column; justify-content: center; }
+.textImageContent { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
 .textImageImg { display: flex; align-items: stretch; width: 100%; }
 .textImageImg img { width: 100%; height: auto; object-fit: contain; display: block; }
 
