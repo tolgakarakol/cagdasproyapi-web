@@ -14,6 +14,7 @@ export const PRODUCT_DATA: any = {
     textFeatures: {
       title: 'Neden Tambalkon® Giyotin Cam Balkon',
       desc: 'Klasik cam balkon sistemlerinde alan kaybı, panel birikmesi ve manuel kullanım alışkanlıklarını geride bırakın. Tambalkon®, dikey hareket eden cam panelleri sayesinde balkonunuzu ferah, güvenli ve fonksiyonel bir yaşam alanına dönüştürür.',
+      img: '/images/cambalkon/tambalkon_odul.jpg',
       items: [
         { title: 'Tam Otomatik Kumandalı Kullanım', desc: 'Cam panelleri tek tuşla açın, kapatın veya dilediğiniz seviyede durdurun. Tambalkon®, günlük kullanımda pratik ve konforlu bir deneyim sunar.' },
         { title: 'Yer Kazandıran Dikey Hareket', desc: 'Katlanır sistemlerdeki panel birikmesi yerine, camlar yukarı-aşağı hareket eder. Böylece balkon mobilyalarınız ve kullanım alanınız korunur.' },
@@ -689,6 +690,11 @@ export default function ProductClient({ slug }: { slug: string }) {
                 <div className={styles.textFeaturesLeft}>
                   <h2 className={styles.textFeaturesMainTitle}>{product.textFeatures.title}</h2>
                   <p className={styles.textFeaturesMainDesc}>{product.textFeatures.desc}</p>
+                  {product.textFeatures.img && (
+                    <div style={{ marginTop: '30px', overflow: 'hidden', borderRadius: '8px', border: '1px solid #eee' }}>
+                      <img src={product.textFeatures.img} alt={product.textFeatures.title} style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
+                    </div>
+                  )}
                 </div>
                 <div className={styles.textFeaturesRight}>
                   {product.textFeatures.items.map((item: any, i: number) => (
