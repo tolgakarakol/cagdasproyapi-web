@@ -832,12 +832,14 @@ export default function ProductClient({ slug }: { slug: string }) {
             if (section.type === 'text_image') {
               return (
                 <section key={idx} className={`${styles.textImageSection} ${section.reverse ? styles.reverse : ''}`} style={{ backgroundColor: section.bg || '#fff' }}>
-                  <div className={styles.textImageContent}>
-                    <h2 className={styles.sectionTitle}>{section.title}</h2>
-                    <p className={styles.sectionText}>{section.content}</p>
-                  </div>
-                  <div className={styles.textImageImg}>
-                    <Image src={section.image} alt={section.title} fill style={{ objectFit: section.imageFit || 'cover' }} />
+                  <div className={styles.textImageGrid}>
+                    <div className={styles.textImageContent}>
+                      <h2 className={styles.sectionTitle}>{section.title}</h2>
+                      <p className={styles.sectionText}>{section.content}</p>
+                    </div>
+                    <div className={styles.textImageImg}>
+                      <img src={section.image} alt={section.title} style={{ objectFit: section.imageFit || 'cover' }} />
+                    </div>
                   </div>
                 </section>
               );

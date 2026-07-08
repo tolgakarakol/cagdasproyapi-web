@@ -324,15 +324,16 @@
   .testHeader::before, .testHeader::after { display: none; }
 }
 /* ===== NEW SECTIONS ===== */
-.textImageSection {
+.textImageSection { background: #fff; }
+.textImageGrid {
   display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; background: #fff;
+  align-items: stretch; max-width: 1200px; margin: 0 auto;
 }
-.reverse { direction: rtl; }
+.reverse .textImageGrid { direction: rtl; }
 .reverse .textImageContent { direction: ltr; }
-.textImageContent { padding: 80px; }
-.textImageImg { position: relative; height: 500px; width: 100%; }
-.textImageImg img { object-fit: cover; }
+.textImageContent { padding: 80px 40px; display: flex; flex-direction: column; justify-content: center; }
+.textImageImg { display: flex; align-items: stretch; width: 100%; }
+.textImageImg img { width: 100%; height: auto; object-fit: contain; display: block; }
 
 .sectionTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 25px; }
 .sectionText { font-size: 1.1rem; line-height: 1.8; color: #555; white-space: pre-line; }
@@ -383,9 +384,8 @@
 .paymentInfo strong { color: var(--accent); font-weight: 900; }
 
 @media (max-width: 992px) {
-  .textImageSection { grid-template-columns: 1fr; }
+  .textImageGrid { grid-template-columns: 1fr; }
   .textImageContent { padding: 40px 20px; }
-  .textImageImg { height: 350px; }
   .highlightCard { padding: 40px 20px; }
   .highlightTitle { font-size: 1.8rem; }
   .highlightContent { font-size: 1rem; }
