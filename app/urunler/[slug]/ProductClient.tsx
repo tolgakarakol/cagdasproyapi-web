@@ -67,9 +67,9 @@ export const PRODUCT_DATA: any = {
     heroImg: '/images/biyoklimatik-balkon.png',
     tagline: 'Pergola, bioklimatik pergola ya da bioklimatik pergola fiyatları... Pergola ile ilgili aranan her şeyi yeniledik. Dünya’nın 86 ülkesinde 500’ün üzerinde üretici bayisi ile sektör lideri Albert Genau, yeni nesil bioklimatik pergola sistemini tasarladı. Tüm detaylarıyla, %100 Albert Genau…',
     features: [
-      { img: '/images/products/pergola_hero.jpg', title: 'Makaslı Sistem', desc: 'Bioklimatik pergolanın panelleri, makas sistemi ile birbirine bağlanarak senkronize bir şekilde açılıp kapanma hareketi gerçekleştirir ve her türlü ortamda güvenilir performans sunar.' },
-      { img: '/images/products/pergola_final.jpg', title: 'Monoblok Oluk', desc: 'Çift katmanlı yapısı ile ekstra dayanıklıdır. Kenet mekanizması ile montajı kolay olan oluk, monoblok oluşuyla su yalıtımını ve drenajını engellemeyecek şekilde tasarlanmıştır.' },
-      { img: '/images/products/pergola_v2.jpg', title: 'Kesintisiz Oval Dikme', desc: 'Geleneksel pergola sistemlerinden farklı olarak dikmelerin görünümünü estetik ve fonksiyonel olarak çeşitlendirir. Kesintisiz bir dikme görünümü sunar.' }
+      { img: '/images/bioklimatik/Kesintisiz-Oval-Dikme.webp', title: 'Kesintisiz Oval Dikme', desc: 'Albert Genau Bioklimatik Pergola, geleneksel pergola sistemlerinden farklı olarak dikmelerin görünümünü estetik ve fonksiyonel olarak çeşitlendirir. Oval dikme kapağı ve düz dikme kapağı gibi seçeneklerle farklı zevklere hitap ederken, her iki seçenekte de kesintisiz bir dikme görünümü sunar.' },
+      { img: '/images/bioklimatik/Makasli-Sistem.webp', title: 'Makaslı Sistem', desc: 'Bioklimatik pergolanın panelleri, makas sistemi ile birbirine bağlanarak senkronize bir şekilde açılıp kapanma hareketi gerçekleştirir ve her türlü ortamda güvenilir performans sunar. Bu makaslar, hareket sırasında panellerin konumunu ve hızını kontrol altında tutarak sistemin bütünlüğünü her an korur.' },
+      { img: '/images/bioklimatik/Monoblok-Oluk.webp', title: 'Monoblok Oluk', desc: 'Pergolanın olukları çift katmanlı yapısı ile ekstra dayanıklıdır. Bu çift hücreli yapı anti sehim geometri özelliği taşır. Kenet mekanizması ile montajı ekstra kolay olan oluk, monoblok oluşuyla her türlü Albert Genau cam balkon, sürme ve giyotin sistem entegrasyonunda, su yalıtımını ve drenajını engellemeyecek şekilde tasarlanmıştır.' }
     ],
     safetyImg: '/images/products/pergola_hero.jpg',
     sections: [
