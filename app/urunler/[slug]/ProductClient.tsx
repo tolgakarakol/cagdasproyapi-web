@@ -142,9 +142,9 @@ export const PRODUCT_DATA: any = {
     featured: true,
     badge: 'Albert Genau — Tiara Twinmax®',
     heroTitle: 'Tiara Twinmax\nIsıcam\'lı Cam Balkon',
-    heroSub: 'Cam balkon sistemlerinde ulaşılan en üst düzey ısı yalıtım teknolojisi Tiara Twinmax ile tanışın. Albert Genau kalitesi ve mühendisliğiyle tasarlanan bu yeni nesil Isıcam\'lı cambalkon, yaşam alanlarınıza minimalist bir şıklık katarken, kışın soğuktan, yazın ise aşırı sıcaktan koruyarak dört mevsim kesintisiz konfor sunar.',
+    heroSub: '',
     heroImg: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
-    tagline: '',
+    tagline: 'Cam balkon sistemlerinde ulaşılan en üst düzey ısı yalıtım teknolojisi Tiara Twinmax ile tanışın. Albert Genau kalitesi ve mühendisliğiyle tasarlanan bu yeni nesil Isıcam\'lı cambalkon, yaşam alanlarınıza minimalist bir şıklık katarken, kışın soğuktan, yazın ise aşırı sıcaktan koruyarak dört mevsim kesintisiz konfor sunar.',
     features: [],
     safetyImg: '',
     safetyDesc: '',
@@ -720,7 +720,7 @@ export default function ProductClient({ slug }: { slug: string }) {
               {product.heroTitle}
               {product.heroTitleExtra && <span className={styles.heroTitleExtra}>{product.heroTitleExtra}</span>}
             </h1>
-            <p className={styles.heroSub}>{product.heroSub}</p>
+            {product.heroSub && <p className={styles.heroSub}>{product.heroSub}</p>}
           </div>
         </div>
       </div>
