@@ -18,7 +18,7 @@ export const PRODUCT_DATA: any = {
     safetyImg: '/images/cambalkon/cam_balkon_guvenlik.jpg',
     safetyTitle: 'Güvenliği Önceleyen Dikey Cam Sistemi',
     safetyDesc: 'Paneller istenilen yükseklikte konumlandırılabilir. Böylece çocuklar ve evcil hayvanlar için daha kontrollü, daha güvenli ve daha konforlu bir balkon kullanımı sağlanır.',
-    cleaningImg: '/images/products/giyotin_cleaning.png',
+    cleaningImg: '/images/cambalkon/tambalkon-temizleme.mp4',
     cleaningTitle: 'Tambalkon nasıl temizlenir?',
     cleaningDesc: 'Tambalkon®, %100 erişilebilir cam panelleriyle temizlik sürecini güvenli ve zahmetsiz hale getirir. Dışarıya sarkmaya gerek kalmadan tüm yüzeylere içeriden ulaşabilirsiniz.',
     cleaningSteps: [
@@ -709,10 +709,14 @@ export default function ProductClient({ slug }: { slug: string }) {
             <section className={styles.cleaning}>
               <div className={styles.cleaningGrid}>
                 <div className={styles.cleaningImgWrap}>
-                  <img src={product.cleaningImg} alt="Temizlik" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  {product.cleaningImg?.endsWith('.mp4') ? (
+                    <video src={product.cleaningImg} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    <img src={product.cleaningImg} alt="Temizlik" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  )}
                 </div>
                 <div className={styles.cleaningContent}>
-                  <h2>Nasıl Temizlenir?</h2>
+                  <h2>{product.cleaningTitle || 'Nasıl Temizlenir?'}</h2>
                   <p>{product.cleaningDesc || '%100 silinebilir cam panelleriyle temizliği zahmetsiz hale getirir.'}</p>
                   <ul className={styles.steps}>
                     {product.cleaningSteps.map((step: string, i: number) => (
