@@ -47,6 +47,8 @@ export const PRODUCT_DATA: any = {
       {
         type: 'text_image',
         reverse: true,
+        bg: '#f1f2f2',
+        imageFit: 'contain',
         title: 'Paslanmaz Inox Zincir',
         content: 'Tambalkon®’da kullanılan paslanmaz inox zincirler, 1440 saat tuzlu su testine tabi tutulmuş ve 10 yıl paslanmazlık garantisi ile sunulmuştur.\n\nBu teknoloji; sessiz, sıkışma yapmayan ve uzun ömürlü bir kullanım sağlarken, klasik zincir veya kayış arızalarına karşı yüksek dayanım sunar.',
         image: '/images/cambalkon/inox-gorsel.webp'
@@ -829,13 +831,13 @@ export default function ProductClient({ slug }: { slug: string }) {
           {product.sections?.map((section: any, idx: number) => {
             if (section.type === 'text_image') {
               return (
-                <section key={idx} className={`${styles.textImageSection} ${section.reverse ? styles.reverse : ''}`}>
+                <section key={idx} className={`${styles.textImageSection} ${section.reverse ? styles.reverse : ''}`} style={{ backgroundColor: section.bg || '#fff' }}>
                   <div className={styles.textImageContent}>
                     <h2 className={styles.sectionTitle}>{section.title}</h2>
                     <p className={styles.sectionText}>{section.content}</p>
                   </div>
                   <div className={styles.textImageImg}>
-                    <Image src={section.image} alt={section.title} fill />
+                    <Image src={section.image} alt={section.title} fill style={{ objectFit: section.imageFit || 'cover' }} />
                   </div>
                 </section>
               );
