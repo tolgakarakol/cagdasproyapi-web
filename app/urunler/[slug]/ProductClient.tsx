@@ -767,15 +767,17 @@ export default function ProductClient({ slug }: { slug: string }) {
         </section>
       ) : (
         <>
-          <section>
-            <div className={styles.tagline}>
-              <p className={styles.taglineText}>
-                {product.tagline?.split('\n').map((line: string, i: number) => (
-                  <span key={i}>{line}<br /></span>
-                ))}
-              </p>
-            </div>
-          </section>
+          {product.tagline && (
+            <section>
+              <div className={styles.tagline}>
+                <p className={styles.taglineText}>
+                  {product.tagline.split('\n').map((line: string, i: number) => (
+                    <span key={i}>{line}<br /></span>
+                  ))}
+                </p>
+              </div>
+            </section>
+          )}
 
           {product.textFeatures && (
             <section className={styles.textFeatures}>
