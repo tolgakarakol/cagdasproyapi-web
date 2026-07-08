@@ -25,6 +25,7 @@
   font-size: clamp(2.2rem, 5vw, 4rem);
   font-weight: 900; color: #fff;
   line-height: 1.1; letter-spacing: -1px;
+  white-space: pre-line;
 }
 .heroTitleExtra {
   color: var(--accent);
