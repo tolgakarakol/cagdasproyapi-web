@@ -803,110 +803,6 @@ export default function ProductClient({ slug }: { slug: string }) {
             </section>
           )}
 
-          {product.features && product.features.length > 0 && (
-            <section className={styles.features}>
-              <div className={styles.featuresGrid}>
-                {product.features.map((f: any, i: number) => (
-                  <div key={i} className={f.isWide ? styles.featureCardWide : styles.featureCard}>
-                    <div className={f.isWide ? styles.featureCardWideImg : styles.featureCardImg}>
-                      <Image src={f.img} alt={f.title} fill />
-                    </div>
-                    <div className={f.isWide ? styles.featureCardWideBody : styles.featureCardBody}>
-                      <h3 className={styles.featureCardTitle}>{f.title}</h3>
-                      <p className={styles.featureCardDesc}>{f.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {product.safetyImg && (
-            <div className={styles.fullBanner}>
-              <Image src={product.safetyImg} alt="Güvenlik" fill className={styles.fullBannerImg} />
-              <div className={styles.fullBannerOverlay}>
-                <h2 className={styles.fullBannerTitle}>{product.safetyTitle || 'Güvenlik Önceliğimiz!'}</h2>
-                <p className={styles.fullBannerDesc}>
-                  {product.safetyDesc || 'Paneller istenilen yükseklikte konumlanarak hem çocuklar hem de evcil hayvanlar için güvenli bir ortam oluşturur.'}
-                </p>
-              </div>
-            </div>
-          )}
-
-          {product.cleaningSteps && product.cleaningSteps.length > 0 && (
-            <section className={styles.cleaning}>
-              <div className={styles.cleaningGrid}>
-                <div className={styles.cleaningImgWrap}>
-                  {product.cleaningImg?.endsWith('.mp4') ? (
-                    <video src={product.cleaningImg} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  ) : (
-                    <img src={product.cleaningImg} alt="Temizlik" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  )}
-                </div>
-                <div className={styles.cleaningContent}>
-                  <h2>{product.cleaningTitle || 'Nasıl Temizlenir?'}</h2>
-                  <p>{product.cleaningDesc || '%100 silinebilir cam panelleriyle temizliği zahmetsiz hale getirir.'}</p>
-                  <ul className={styles.steps}>
-                    {product.cleaningSteps.map((step: string, i: number) => (
-                      <li key={i} className={styles.step}>
-                        <span className={styles.stepNum}>{i + 1}</span>
-                        <span className={styles.stepText}>{step}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-          )}
-
-          {product.tests && (
-            <section className={styles.testSection}>
-              <div className={styles.testHeader}>
-                <h2 className={styles.testTitle}>Testleri Geçtik!</h2>
-              </div>
-              <div className={styles.testGrid}>
-                {product.tests.map((test: any, i: number) => (
-                  <div key={i} className={styles.testCard}>
-                    <div className={styles.testIcon}><i className={test.icon} /></div>
-                    <h3 className={styles.testCardTitle}>{test.title}</h3>
-                    <p className={styles.testCardDesc}>{test.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          <section className={styles.darkFeatures}>
-            <h2 className={styles.darkFeaturesTitle}>Teknik Üstünlükler</h2>
-            <div className={styles.darkFeaturesGrid}>
-              {product.darkFeatures.map((f: any, i: number) => (
-                <div key={i} className={styles.darkCard}>
-                  <div className={styles.darkIcon}><i className={f.icon} /></div>
-                  <h3 className={styles.darkCardTitle}>{f.title}</h3>
-                  <p className={styles.darkCardDesc}>{f.desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {product.bottomFeatures && product.bottomFeatures.length > 0 && (
-            <section className={styles.features}>
-              <div className={styles.featuresGrid}>
-                {product.bottomFeatures.map((f: any, i: number) => (
-                  <div key={i} className={styles.featureCard}>
-                    <div className={styles.featureCardImg}>
-                      <Image src={f.img} alt={f.title} fill />
-                    </div>
-                    <div className={styles.featureCardBody}>
-                      <h3 className={styles.featureCardTitle}>{f.title}</h3>
-                      <p className={styles.featureCardDesc}>{f.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
           {product.sections?.map((section: any, idx: number) => {
             if (section.type === 'text_list_with_image') {
               return (
@@ -1048,6 +944,111 @@ export default function ProductClient({ slug }: { slug: string }) {
             }
             return null;
           })}
+
+          
+          {product.features && product.features.length > 0 && (
+            <section className={styles.features}>
+              <div className={styles.featuresGrid}>
+                {product.features.map((f: any, i: number) => (
+                  <div key={i} className={f.isWide ? styles.featureCardWide : styles.featureCard}>
+                    <div className={f.isWide ? styles.featureCardWideImg : styles.featureCardImg}>
+                      <Image src={f.img} alt={f.title} fill />
+                    </div>
+                    <div className={f.isWide ? styles.featureCardWideBody : styles.featureCardBody}>
+                      <h3 className={styles.featureCardTitle}>{f.title}</h3>
+                      <p className={styles.featureCardDesc}>{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {product.safetyImg && (
+            <div className={styles.fullBanner}>
+              <Image src={product.safetyImg} alt="Güvenlik" fill className={styles.fullBannerImg} />
+              <div className={styles.fullBannerOverlay}>
+                <h2 className={styles.fullBannerTitle}>{product.safetyTitle || 'Güvenlik Önceliğimiz!'}</h2>
+                <p className={styles.fullBannerDesc}>
+                  {product.safetyDesc || 'Paneller istenilen yükseklikte konumlanarak hem çocuklar hem de evcil hayvanlar için güvenli bir ortam oluşturur.'}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {product.cleaningSteps && product.cleaningSteps.length > 0 && (
+            <section className={styles.cleaning}>
+              <div className={styles.cleaningGrid}>
+                <div className={styles.cleaningImgWrap}>
+                  {product.cleaningImg?.endsWith('.mp4') ? (
+                    <video src={product.cleaningImg} autoPlay loop muted playsInline style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    <img src={product.cleaningImg} alt="Temizlik" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  )}
+                </div>
+                <div className={styles.cleaningContent}>
+                  <h2>{product.cleaningTitle || 'Nasıl Temizlenir?'}</h2>
+                  <p>{product.cleaningDesc || '%100 silinebilir cam panelleriyle temizliği zahmetsiz hale getirir.'}</p>
+                  <ul className={styles.steps}>
+                    {product.cleaningSteps.map((step: string, i: number) => (
+                      <li key={i} className={styles.step}>
+                        <span className={styles.stepNum}>{i + 1}</span>
+                        <span className={styles.stepText}>{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {product.tests && (
+            <section className={styles.testSection}>
+              <div className={styles.testHeader}>
+                <h2 className={styles.testTitle}>Testleri Geçtik!</h2>
+              </div>
+              <div className={styles.testGrid}>
+                {product.tests.map((test: any, i: number) => (
+                  <div key={i} className={styles.testCard}>
+                    <div className={styles.testIcon}><i className={test.icon} /></div>
+                    <h3 className={styles.testCardTitle}>{test.title}</h3>
+                    <p className={styles.testCardDesc}>{test.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section className={styles.darkFeatures}>
+            <h2 className={styles.darkFeaturesTitle}>Teknik Üstünlükler</h2>
+            <div className={styles.darkFeaturesGrid}>
+              {product.darkFeatures.map((f: any, i: number) => (
+                <div key={i} className={styles.darkCard}>
+                  <div className={styles.darkIcon}><i className={f.icon} /></div>
+                  <h3 className={styles.darkCardTitle}>{f.title}</h3>
+                  <p className={styles.darkCardDesc}>{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {product.bottomFeatures && product.bottomFeatures.length > 0 && (
+            <section className={styles.features}>
+              <div className={styles.featuresGrid}>
+                {product.bottomFeatures.map((f: any, i: number) => (
+                  <div key={i} className={styles.featureCard}>
+                    <div className={styles.featureCardImg}>
+                      <Image src={f.img} alt={f.title} fill />
+                    </div>
+                    <div className={styles.featureCardBody}>
+                      <h3 className={styles.featureCardTitle}>{f.title}</h3>
+                      <p className={styles.featureCardDesc}>{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Final Features Grid */}
           {product.finalFeatures && product.finalFeatures.length > 0 && (
