@@ -170,7 +170,19 @@ export const PRODUCT_DATA: any = {
             desc: 'İster düz ister açılı/oval balkon mimarisine sahip olun; özel tasarım kanatlar direksiz olarak tamamen açılabilir ve manzaranız bölünmez.'
           }
         ]
-      }
+      },
+      {
+        type: 'text_image_full',
+        title: 'Gizli Su Tahliye Sistemi',
+        content: 'Taşıyıcı kasa profili üzerinde yer alan gizli hava kanalları ve su tahliye sistemi, ani sağanak yağışlarda bile suyu hızla dışarı akıtır. Oluşabilecek kondens (terleme) suyunu tahliye ederken dışarıdan doğrudan hava girişini de engeller.',
+        image: '/images/twinmax/Tiara-Twinmax-Gizli-Su-Tahliye-Sistemi.webp'
+      },
+      {
+        type: 'text_image_dark',
+        title: 'Mekanlara Özgürlük Veren\nEşik Çözümleri',
+        content: 'Farklı ihtiyaçlara cevap verebilen eşikli ve eşiksiz ray profilleri sayesinde, Tiara Twinmax hem iç mekan bölmelerinde hem de dış mekan kapatmalarında maksimum esneklik sağlar. Geçiş alanlarında takılmaları önleyen özel eşiksiz alt kasa tasarımıyla konforunuzu artırır.',
+        image: '/images/twinmax/Tiara-Twinmax-Esikli-ve-Esiksiz-Kasa-Secenekleri.webp'
+      },
     ],
     bottomFeatures: [
       {
@@ -190,20 +202,6 @@ export const PRODUCT_DATA: any = {
         title: 'Paslanmaz Teker ile Ömür Boyu Kullanım',
         desc: 'Cambalkon sistemlerinin tüm yükünü taşıyan tekerlek mekanizmaları dış iklime tamamen dayanıklıdır. Tiara\'nın özel tekerlekleri 1440 saat tuz testine tabi tutulmuş olup, 10 yıl paslanmazlık garantisi altındadır. İlk günkü gibi sessiz ve akıcı çalışır.',
         wide: true
-      }
-    ],
-    extraSections: [
-      {
-        type: 'text_image_full',
-        title: 'Gizli Su Tahliye Sistemi',
-        content: 'Taşıyıcı kasa profili üzerinde yer alan gizli hava kanalları ve su tahliye sistemi, ani sağanak yağışlarda bile suyu hızla dışarı akıtır. Oluşabilecek kondens (terleme) suyunu tahliye ederken dışarıdan doğrudan hava girişini de engeller.',
-        image: '/images/twinmax/Tiara-Twinmax-Gizli-Su-Tahliye-Sistemi.webp'
-      },
-      {
-        type: 'text_image_dark',
-        title: 'Mekanlara Özgürlük Veren Eşik Çözümleri',
-        content: 'İsteğe bağlı olarak, mekanın zemin yapısına göre farklı yüksekliklerde eşik çözümleri sunabilen Tiara platformunu konforunuz için tasarladık. İster zemin içi gömülü (eşiksiz) ister düşük eşikli seçenekleriyle ev içi geçişlerde veya ticari mekanlarda takılmadan güvenli adımlar atın. Seçim sizin!',
-        image: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri.webp'
       }
     ],
     finalFeatures: [
@@ -438,7 +436,7 @@ export const PRODUCT_DATA: any = {
     cleaningImg: '/images/products/kis_bahcesi_cleaning_hq.png',
     cleaningSteps: ['Dış cephe camları özel aparatlarla yıkanabilir.', 'İç yüzeyleri standart temizleyicilerle silebilirsiniz.', 'Çelik kısımları nemli bezle düzenli olarak koruyun.'],
     darkFeatures: [
-      { icon: 'fas fa-shield-alt', title: 'Yüksek Statik Dayanım', desc: 'Her türlü iklim koşuluna dayanacak mühendislik hesaplamaları.' },
+      { icon: 'fas fa-shield-alt', title: 'Yüksek Statik Dayanım', desc: 'Her türlü iklim koşulluna dayanacak mühendislik hesaplamaları.' },
       { icon: 'fas fa-sun', title: 'Dört Mevsim Kullanım', desc: 'Doğru izolasyon ile kışın sıcak, yazın ferah bir ortam.' },
       { icon: 'fas fa-tint-slash', title: 'Maksimum Yalıtım', desc: 'Özel çatı sistemleri ve yalıtım bariyerleri ile su sızıntılarına karşı tam koruma.' }
     ],
