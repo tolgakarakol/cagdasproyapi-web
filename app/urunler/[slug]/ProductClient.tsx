@@ -379,8 +379,8 @@ export const PRODUCT_DATA: any = {
       { icon: 'fas fa-wind', title: 'Dört Mevsim Koruma', desc: 'Yan EPDM contalar ve alt-üst fırçalarla rüzgar, toz ve gürültü geçişi minimize edilir.' },
       { icon: 'fas fa-eye-slash', title: 'Estetik Park Alanı', desc: 'Sistem açıkken cam paneller minimum yer kaplar ve mekanın bütünlüğünü bozmaz.' }
     ],
-    safetyTitle: 'Eksantrik Pim Güvencesi',
-    safetyDesc: 'Cam paneller sadece yapıştırıcılarla değil, profilin içine giren özel pimlerle mekanik olarak tutturulur. Düşme riski yoktur.',
+    safetyTitle: 'Geniş Kullanım Alanları',
+    safetyDesc: 'Cam Kapı Sistemlerinin Avantajları arasında gösterildiği üzere ofisler, klinikler, mağazalar, duş alanları ve ev içi mekanlarda (mutfak/salon arası) yaygın olarak tercih edilir.',
     cleaningDesc: 'Eşiksiz yapısı ve pürüzsüz cam yüzeyleri ile ofis ve mağaza temizliğinde büyük kolaylık sağlar.',
     testimonials: [
       { text: 'Restoranımızın teras ve iç mekanı arasındaki eşiği kaldırmak harika oldu.', name: 'Hakan T.', city: 'Tekirdağ' }
