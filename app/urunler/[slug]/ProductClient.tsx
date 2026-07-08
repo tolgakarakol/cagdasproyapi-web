@@ -27,9 +27,9 @@ export const PRODUCT_DATA: any = {
       'Panelleri eğimli konuma alarak camları içeriden temizleyin.'
     ],
     darkFeatures: [
-      { icon: 'fas fa-shield-halved', title: 'Maksimum Yalıtım', desc: 'EPDM conta ve kıl fırça birleşimi.' },
-      { icon: 'fas fa-pen-ruler', title: 'Estetik ve Fonksiyonel', desc: 'Minimalist tasarım and mükemmel fonksiyon.' },
-      { icon: 'fas fa-wind', title: 'Havalandırma Seçenekleri', desc: 'İdeal havalandırma kontrolü.' }
+      { icon: 'fas fa-shield-halved', title: 'Maksimum Yalıtım Performansı', desc: 'EPDM conta ve kıl fırça birleşimiyle tüm temas noktalarında çok katmanlı yalıtım sağlar. Cambalkonlar arasında en yüksek yalıtım değerine sahip sistem.' },
+      { icon: 'fas fa-pen-ruler', title: 'Estetik ve Fonksiyonellik', desc: 'Az profilli tasarımı ve açıldığında korkuluk görevi görmesiyle şık ve estetik bir balkon keyfi sunar. Minimalist bir şıklık, mükemmel fonksiyon.' },
+      { icon: 'fas fa-wind', title: 'Havalandırma Seçenekleri', desc: 'Tam açık, tam kapalı veya istediğiniz aralıkta. Tambalkon, size dilediğiniz şekilde havalandırma seçeneği sunarak maksimum fonksiyonellik sağlar.' }
     ],
     testimonials: [
       { text: 'Balkonum artık her gün kullanılabilir durumda.', name: 'Seda A.', city: 'İstanbul' },
