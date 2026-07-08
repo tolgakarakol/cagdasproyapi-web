@@ -15,7 +15,7 @@ export const PRODUCT_DATA: any = {
       { img: '/images/products/giyotin_remote.png', title: 'Tam Otomatik Kumandalı', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde.' },
       { img: '/images/products/giyotin_profil_detay.png', title: 'Hassas Alüminyum Profil', desc: '10 mm temperli cam, anodize antrasit profil; her bağlantı noktasında mükemmellik.' }
     ],
-    safetyImg: '/images/products/giyotin_safety.png',
+    safetyImg: '/images/cambalkon/cam_balkon_guvenlik.jpg',
     safetyTitle: 'Güvenliği Önceleyen Dikey Cam Sistemi',
     safetyDesc: 'Paneller istenilen yükseklikte konumlandırılabilir. Böylece çocuklar ve evcil hayvanlar için daha kontrollü, daha güvenli ve daha konforlu bir balkon kullanımı sağlanır.',
     cleaningImg: '/images/products/giyotin_cleaning.png',
