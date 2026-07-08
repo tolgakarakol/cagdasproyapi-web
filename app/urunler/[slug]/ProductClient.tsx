@@ -380,7 +380,7 @@ export const PRODUCT_DATA: any = {
       { icon: 'fas fa-eye-slash', title: 'Estetik Park Alanı', desc: 'Sistem açıkken cam paneller minimum yer kaplar ve mekanın bütünlüğünü bozmaz.' }
     ],
     safetyTitle: 'Geniş Kullanım Alanları',
-    safetyDesc: 'Cam Kapı Sistemlerinin Avantajları arasında gösterildiği üzere ofisler, klinikler, mağazalar, duş alanları ve ev içi mekanlarda (mutfak/salon arası) yaygın olarak tercih edilir.',
+    safetyDesc: 'Cam Kapı Sistemlerinin Avantajları arasında gösterildiği üzere ofisler, klinikler, mağazalar, duş alanları ve ev içi mekanlarda (mutfak/salon) yaygın olarak tercih edilir.',
     cleaningDesc: 'Pürüzsüz yapısı sayesinde kir tutmaz, lekelere karşı dirençlidir ve kolayca silinerek hijyenik tutulabilir',
     testimonials: [
       { text: 'Restoranımızın teras ve iç mekanı arasındaki eşiği kaldırmak harika oldu.', name: 'Hakan T.', city: 'Tekirdağ' }
