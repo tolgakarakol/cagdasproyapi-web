@@ -36,7 +36,7 @@
 
 /* ===== TAGLINE ===== */
 .tagline {
-  padding: 70px 20px;
+  padding: 40px 20px;
   text-align: center;
   background: #fff;
   max-width: 750px;
@@ -404,7 +404,7 @@
 }
 
 /* ===== TEXT FEATURES SECTION ===== */
-.textFeatures { padding: 100px 0; background: #fff; }
+.textFeatures { padding: 40px 0 100px 0; background: #fff; }
 .textFeaturesGrid {
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 60px; align-items: start;
