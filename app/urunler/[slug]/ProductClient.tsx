@@ -11,10 +11,16 @@ export const PRODUCT_DATA: any = {
     heroSub: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.',
     heroImg: '/images/giyotin-balkon-banner.png',
     tagline: 'Balkonunuzda yer kaybetmeden, tek tuşla açılıp kapanan yeni nesil motorlu giyotin cam sistemi ile tanışın. Albert Genau mühendisliğiyle geliştirilen Tambalkon®, minimal profil yapısı, panoramik görüş avantajı, yüksek yalıtım performansı ve güvenli dikey hareket teknolojisiyle yaşam alanlarınıza modern bir konfor standardı kazandırır.',
-    features: [
-      { img: '/images/products/giyotin_remote.png', title: 'Tam Otomatik Kumandalı', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde.' },
-      { img: '/images/products/giyotin_profil_detay.png', title: 'Hassas Alüminyum Profil', desc: '10 mm temperli cam, anodize antrasit profil; her bağlantı noktasında mükemmellik.' }
-    ],
+    textFeatures: {
+      title: 'Neden Tambalkon® Giyotin Cam Balkon',
+      desc: 'Klasik cam balkon sistemlerinde alan kaybı, panel birikmesi ve manuel kullanım alışkanlıklarını geride bırakın. Tambalkon®, dikey hareket eden cam panelleri sayesinde balkonunuzu ferah, güvenli ve fonksiyonel bir yaşam alanına dönüştürür.',
+      items: [
+        { title: 'Tam Otomatik Kumandalı Kullanım', desc: 'Cam panelleri tek tuşla açın, kapatın veya dilediğiniz seviyede durdurun. Tambalkon®, günlük kullanımda pratik ve konforlu bir deneyim sunar.' },
+        { title: 'Yer Kazandıran Dikey Hareket', desc: 'Katlanır sistemlerdeki panel birikmesi yerine, camlar yukarı-aşağı hareket eder. Böylece balkon mobilyalarınız ve kullanım alanınız korunur.' },
+        { title: 'Panoramik ve Minimal Görünüm', desc: 'Az profilli tasarım ve geniş cam yüzeyler sayesinde manzaranız kesintiye uğramaz; içerisiyle dışarısı arasındaki sınır zarifçe azalır.' }
+      ]
+    },
+    features: [],
     safetyImg: '/images/cambalkon/cam_balkon_guvenlik.jpg',
     safetyTitle: 'Güvenliği Önceleyen Dikey Cam Sistemi',
     safetyDesc: 'Paneller istenilen yükseklikte konumlandırılabilir. Böylece çocuklar ve evcil hayvanlar için daha kontrollü, daha güvenli ve daha konforlu bir balkon kullanımı sağlanır.',
@@ -677,7 +683,26 @@ export default function ProductClient({ slug }: { slug: string }) {
             </div>
           </section>
 
-          {product.features.length > 0 && (
+          {product.textFeatures && (
+            <section className={styles.textFeatures}>
+              <div className={styles.textFeaturesGrid}>
+                <div className={styles.textFeaturesLeft}>
+                  <h2 className={styles.textFeaturesMainTitle}>{product.textFeatures.title}</h2>
+                  <p className={styles.textFeaturesMainDesc}>{product.textFeatures.desc}</p>
+                </div>
+                <div className={styles.textFeaturesRight}>
+                  {product.textFeatures.items.map((item: any, i: number) => (
+                    <div key={i} className={styles.textFeatureItem}>
+                      <h3 className={styles.textFeatureTitle}>{item.title}</h3>
+                      <p className={styles.textFeatureDesc}>{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {product.features && product.features.length > 0 && (
             <section className={styles.features}>
               <div className={styles.featuresGrid}>
                 {product.features.map((f: any, i: number) => (

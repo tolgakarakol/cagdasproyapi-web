@@ -402,3 +402,24 @@
 .sectionGap {
   margin-top: 80px;
 }
+
+/* ===== TEXT FEATURES SECTION ===== */
+.textFeatures { padding: 100px 0; background: #fff; }
+.textFeaturesGrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: start;
+  max-width: 1200px; margin: 0 auto; padding: 0 30px;
+}
+.textFeaturesLeft { position: sticky; top: 120px; }
+.textFeaturesMainTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 20px; line-height: 1.2; }
+.textFeaturesMainDesc { font-size: 1.1rem; color: #555; line-height: 1.8; }
+.textFeaturesRight { display: flex; flex-direction: column; gap: 40px; }
+.textFeatureItem { background: #f9f9f9; padding: 40px; border-left: 4px solid var(--accent); border-radius: 4px; transition: transform 0.3s; }
+.textFeatureItem:hover { transform: translateX(10px); background: #f1f1f1; }
+.textFeatureTitle { font-size: 1.3rem; font-weight: 800; color: #111; margin-bottom: 12px; }
+.textFeatureDesc { font-size: 1rem; color: #555; line-height: 1.7; }
+
+@media (max-width: 992px) {
+  .textFeaturesGrid { grid-template-columns: 1fr; gap: 40px; }
+  .textFeaturesLeft { position: static; }
+}
