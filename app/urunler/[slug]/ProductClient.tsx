@@ -19,7 +19,13 @@ export const PRODUCT_DATA: any = {
     safetyTitle: 'Güvenliği Önceleyen Dikey Cam Sistemi',
     safetyDesc: 'Paneller istenilen yükseklikte konumlandırılabilir. Böylece çocuklar ve evcil hayvanlar için daha kontrollü, daha güvenli ve daha konforlu bir balkon kullanımı sağlanır.',
     cleaningImg: '/images/products/giyotin_cleaning.png',
-    cleaningSteps: ['Uzaktan kumanda ile açın.', 'Push butonlara basın.', 'Hafif eğimli konuma getirip silin.'],
+    cleaningTitle: 'Tambalkon nasıl temizlenir?',
+    cleaningDesc: 'Tambalkon®, %100 erişilebilir cam panelleriyle temizlik sürecini güvenli ve zahmetsiz hale getirir. Dışarıya sarkmaya gerek kalmadan tüm yüzeylere içeriden ulaşabilirsiniz.',
+    cleaningSteps: [
+      'Uzaktan kumanda ile sistemi tam açık konuma getirin.',
+      'Push butonlara basarak alt paneli serbest bırakın.',
+      'Panelleri eğimli konuma alarak camları içeriden temizleyin.'
+    ],
     darkFeatures: [
       { icon: 'fas fa-shield-halved', title: 'Maksimum Yalıtım', desc: 'EPDM conta ve kıl fırça birleşimi.' },
       { icon: 'fas fa-pen-ruler', title: 'Estetik ve Fonksiyonel', desc: 'Minimalist tasarım and mükemmel fonksiyon.' },
