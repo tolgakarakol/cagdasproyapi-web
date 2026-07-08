@@ -825,15 +825,17 @@ export default function ProductClient({ slug }: { slug: string }) {
             </section>
           )}
 
-          <div className={styles.fullBanner}>
-            <Image src={product.safetyImg} alt="Güvenlik" fill className={styles.fullBannerImg} />
-            <div className={styles.fullBannerOverlay}>
-              <h2 className={styles.fullBannerTitle}>{product.safetyTitle || 'Güvenlik Önceliğimiz!'}</h2>
-              <p className={styles.fullBannerDesc}>
-                {product.safetyDesc || 'Paneller istenilen yükseklikte konumlanarak hem çocuklar hem de evcil hayvanlar için güvenli bir ortam oluşturur.'}
-              </p>
+          {product.safetyImg && (
+            <div className={styles.fullBanner}>
+              <Image src={product.safetyImg} alt="Güvenlik" fill className={styles.fullBannerImg} />
+              <div className={styles.fullBannerOverlay}>
+                <h2 className={styles.fullBannerTitle}>{product.safetyTitle || 'Güvenlik Önceliğimiz!'}</h2>
+                <p className={styles.fullBannerDesc}>
+                  {product.safetyDesc || 'Paneller istenilen yükseklikte konumlanarak hem çocuklar hem de evcil hayvanlar için güvenli bir ortam oluşturur.'}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
 
           {product.cleaningSteps && product.cleaningSteps.length > 0 && (
             <section className={styles.cleaning}>
