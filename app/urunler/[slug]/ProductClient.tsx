@@ -48,7 +48,7 @@ export const PRODUCT_DATA: any = {
         type: 'text_image',
         reverse: true,
         bg: '#f1f2f2',
-        imageFit: 'contain',
+        imageFit: 'cover',
         title: 'Paslanmaz Inox Zincir',
         content: 'Tambalkon®’da kullanılan paslanmaz inox zincirler, 1440 saat tuzlu su testine tabi tutulmuş ve 10 yıl paslanmazlık garantisi ile sunulmuştur.\n\nBu teknoloji; sessiz, sıkışma yapmayan ve uzun ömürlü bir kullanım sağlarken, klasik zincir veya kayış arızalarına karşı yüksek dayanım sunar.',
         image: '/images/cambalkon/inox-gorsel.webp'
