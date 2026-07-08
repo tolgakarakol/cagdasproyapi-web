@@ -513,3 +513,7 @@
   .extraDarkGrid { grid-template-columns: 1fr; }
   .finalFeaturesGrid { grid-template-columns: 1fr; }
 }
+
+.textListLeft { display: flex; flex-direction: column; }
+.textListImgWrap { margin-top: 30px; border-radius: 8px; overflow: hidden; width: 100%; border: 1px solid #eee; }
+.textListImgWrap img { width: 100%; height: auto; display: block; object-fit: cover; }

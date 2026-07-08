@@ -152,29 +152,27 @@ export const PRODUCT_DATA: any = {
     cleaningSteps: [],
     sections: [
       {
-        type: 'text_image',
+        type: 'text_list_with_image',
         title: 'Neden Tiara Twinmax\nIsıcam\'lı Cam Balkon',
         content: 'Klasik balkon kapatma yöntemlerini unutun. Tiara Twinmax, estetik tasarımı ve maksimum sızdırmazlık performansını bir araya getirerek balkonunuzu evinizin en konforlu odasına dönüştürür.',
         image: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
-        reverse: false
+        features: [
+          {
+            title: '5 Kata Varan Üstün Isı Yalıtımı',
+            desc: 'Sistemde kullanılan Isıcam teknolojisi sayesinde, standart tek camlı balkonlara kıyasla 5,1 kata varan daha yüksek ısı yalıtımı ve enerji tasarrufu sağlanır.'
+          },
+          {
+            title: 'Avrupa Test Sertifikalı Dayanıklılık',
+            desc: 'Sınıfının ulaşabileceği en yüksek hava, su, rüzgar ve ses yalıtımı değerlerine sahip, uluslararası akredite testlerden başarıyla geçmiş tek sertifikalı sistemdir.'
+          },
+          {
+            title: 'Köşesiz Kesintisiz Tasarım',
+            desc: 'İster düz ister açılı/oval balkon mimarisine sahip olun; özel tasarım kanatlar direksiz olarak tamamen açılabilir ve manzaranız bölünmez.'
+          }
+        ]
       }
     ],
     bottomFeatures: [
-      {
-        img: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
-        title: '5 Kata Varan Üstün Isı Yalıtımı',
-        desc: 'Sistemde kullanılan Isıcam teknolojisi sayesinde, standart tek camlı balkonlara kıyasla 5,1 kata varan daha yüksek ısı yalıtımı ve enerji tasarrufu sağlanır.'
-      },
-      {
-        img: '/images/twinmax/Tiara-Twinmax-Gelismis-Ispanyolet-Kilit-ile-Ekstra-Guvenlik.webp',
-        title: 'Avrupa Test Sertifikalı Dayanıklılık',
-        desc: 'Sınıfının ulaşabileceği en yüksek hava, su, rüzgar ve ses yalıtımı değerlerine sahip, uluslararası akredite testlerden başarıyla geçmiş tek sertifikalı sistemdir.'
-      },
-      {
-        img: '/images/twinmax/Tiara-Twinmax-Miknatisli-ve-EPDM-Contali-Maksimum-Izolasyon.webp',
-        title: 'Köşesiz Kesintisiz Tasarım',
-        desc: 'İster düz ister açılı/oval balkon mimarisine sahip olun; özel tasarım kanatlar direksiz olarak tamamen açılabilir ve manzaranız bölünmez.'
-      },
       {
         img: '/images/twinmax/Tiara-Twinmax-Miknatisli-ve-EPDM-Contali-Maksimum-Izolasyon.webp',
         title: 'Mıknatıslı ve EPDM Contalı Maksimum İzolasyon',
@@ -912,6 +910,29 @@ export default function ProductClient({ slug }: { slug: string }) {
           )}
 
           {product.sections?.map((section: any, idx: number) => {
+            if (section.type === 'text_list_with_image') {
+              return (
+                <section key={idx} className={styles.textFeatures}>
+                  <div className={styles.textFeaturesGrid}>
+                    <div className={styles.textListLeft}>
+                      <h2 className={styles.sectionTitle}>{section.title}</h2>
+                      <p className={styles.sectionText}>{section.content}</p>
+                      <div className={styles.textListImgWrap}>
+                        <img src={section.image} alt={section.title} />
+                      </div>
+                    </div>
+                    <div className={styles.textFeaturesRight}>
+                      {section.features?.map((feat: any, i: number) => (
+                        <div key={i} className={styles.textFeatureItem}>
+                          <h3 className={styles.textFeatureTitle}>{feat.title}</h3>
+                          <p className={styles.textFeatureDesc}>{feat.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              );
+            }
             if (section.type === 'text_image') {
               return (
                 <section key={idx} className={`${styles.textImageSection} ${section.reverse ? styles.reverse : ''}`}>
