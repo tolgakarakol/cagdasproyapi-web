@@ -43,6 +43,15 @@ export const PRODUCT_DATA: any = {
       { img: '/images/cambalkon/Yer-Kazandiran-Giyotin-Cambalkon.webp', title: 'Tambalkon Yer Kazandıran Giyotin Cam Balkon', desc: 'Yer Kazandıran Tasarım. Katlanır cam sistemleri birikme yapar, yer kaybettirir. Tambalkon aşağı ve yukarı hareket eden camlar ile yer tasarrufu sağlar, alanınızı genişletir. Hayalinizdeki balkonu dekore edebilirsiniz.' },
       { img: '/images/cambalkon/Panoramik-Manzara-Giyotin-Cambalkon.webp', title: 'Tambalkon Panoramik Manzara', desc: 'Tam Panoramik Manzara. Minimal profiller ve geniş cam yüzeyler, manzaranızı kesintisiz algılamanızı sağlar. Tambalkon®, balkona daha ferah ve modern bir atmosfer kazandırır.' }
     ],
+    sections: [
+      {
+        type: 'text_image',
+        reverse: true,
+        title: 'Paslanmaz Inox Zincir',
+        content: 'Tambalkon®’da kullanılan paslanmaz inox zincirler, 1440 saat tuzlu su testine tabi tutulmuş ve 10 yıl paslanmazlık garantisi ile sunulmuştur.\n\nBu teknoloji; sessiz, sıkışma yapmayan ve uzun ömürlü bir kullanım sağlarken, klasik zincir veya kayış arızalarına karşı yüksek dayanım sunar.',
+        image: '/images/cambalkon/inox-gorsel.webp'
+      }
+    ],
     testimonials: [
       { text: 'Balkonum artık her gün kullanılabilir durumda.', name: 'Seda A.', city: 'İstanbul' },
       { text: 'Görüntü kesintisiz, temizliği de çok pratik.', name: 'Murat K.', city: 'İzmir' },
