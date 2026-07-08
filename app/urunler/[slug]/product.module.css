@@ -324,16 +324,17 @@
   .testHeader::before, .testHeader::after { display: none; }
 }
 /* ===== NEW SECTIONS ===== */
-.textImageSection { background: #fff; }
+.textImageSection { background: #fff; padding: 60px 20px; }
 .textImageGrid {
   display: grid; grid-template-columns: 1fr 1fr;
-  align-items: stretch; max-width: 1200px; margin: 0 auto;
+  align-items: center; max-width: 1200px; margin: 0 auto;
+  border-radius: 12px; overflow: hidden;
 }
 .reverse .textImageGrid { direction: rtl; }
 .reverse .textImageContent { direction: ltr; }
 .textImageContent { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
-.textImageImg { display: flex; align-items: stretch; width: 100%; }
-.textImageImg img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.textImageImg { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; }
+.textImageImg img { width: 100%; height: auto; object-fit: contain; display: block; }
 
 .sectionTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 25px; }
 .sectionText { font-size: 1.1rem; line-height: 1.8; color: #555; white-space: pre-line; }
