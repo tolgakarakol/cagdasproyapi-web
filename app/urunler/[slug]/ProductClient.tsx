@@ -351,12 +351,6 @@ export const PRODUCT_DATA: any = {
       { img: '/images/products/dusakabin_wheels.png', title: 'Kusursuz Kayar Sistem', desc: 'Cam kapıların sessiz ve pürüzsüz şekilde kaymasını sağlayan paslanmaz tekerlek mekanizması.' }
     ],
     safetyImg: '/images/products/dusakabin_safety_premium.png',
-    cleaningImg: '/images/products/dusakabin_clean.png',
-    cleaningSteps: [
-      'Suyu iten özel kaplama sayesinde her duş sonrası çekçekle kolayca kurutun.',
-      'Kireç lekesi oluşumunu önlemek için haftalık olarak cam temizleyici ürünlerle silin.',
-      'Paslanmaz menteşe ve kulp gibi aksesuarları yumuşak, aşındırıcı olmayan bir bezle parlatın.'
-    ],
     darkFeatures: [
       { icon: 'fas fa-shield-halved', title: 'Temperli Güvenlik Camı', desc: 'Olası kazalara karşı kırılmalarda dağılmayan özel 8mm cam.' },
       { icon: 'fas fa-tint-slash', title: 'Paslanmaz Aksesuar', desc: 'Su ve neme dayanıklı paslanmaz menteşe ve kulp sistemleri.' },
@@ -364,7 +358,6 @@ export const PRODUCT_DATA: any = {
     ],
     safetyTitle: 'Aileniz İçin Güvenli Duş Deneyimi',
     safetyDesc: '8mm kalınlığında özel temperli camlar sayesinde darbelere karşı ekstra dirençlidir. Kırılma anında küçük parçalara ayrılarak kesici özellik göstermez.',
-    cleaningDesc: 'Leke ve kireç tutmayan özel cam yüzeyi sayesinde temizliği zahmetsiz hale getirir.',
     testimonials: []
   },
   'cam-kapi': {
