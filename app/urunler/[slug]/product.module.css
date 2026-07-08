@@ -463,3 +463,52 @@
 @media (max-width: 768px) {
   .textGalleryImages { grid-template-columns: 1fr; }
 }
+
+/* ===== EXTRA FULL WIDTH SECTION ===== */
+.extraFullSection { padding: 80px 20px; background: #fff; }
+.extraFullGrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; max-width: 1200px; margin: 0 auto;
+  gap: 60px;
+}
+.extraFullImg { border-radius: 8px; overflow: hidden; }
+.extraFullImg img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px; }
+.extraFullContent {}
+.extraFullTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 25px; line-height: 1.2; }
+.extraFullText { font-size: 1.1rem; line-height: 1.8; color: #555; }
+
+/* ===== EXTRA DARK SECTION ===== */
+.extraDarkSection { padding: 80px 20px; background: #111; color: #fff; }
+.extraDarkGrid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; max-width: 1200px; margin: 0 auto;
+  gap: 60px;
+}
+.extraDarkContent {}
+.extraDarkTitle { font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 25px; line-height: 1.2; }
+.extraDarkText { font-size: 1.1rem; line-height: 1.8; color: #ccc; }
+.extraDarkImg { border-radius: 8px; overflow: hidden; }
+.extraDarkImg img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px; }
+
+/* ===== FINAL FEATURES SECTION ===== */
+.finalFeaturesSection { padding: 80px 20px; background: #f9f9f9; }
+.finalFeaturesGrid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 30px; max-width: 1200px; margin: 0 auto;
+}
+.finalFeatureCard {
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s;
+}
+.finalFeatureCard:hover { transform: translateY(-5px); }
+.finalFeatureImg { position: relative; height: 220px; }
+.finalFeatureBody { padding: 25px; }
+.finalFeatureTitle { font-size: 1.2rem; font-weight: 800; color: #111; margin-bottom: 12px; }
+.finalFeatureDesc { font-size: 0.95rem; color: #555; line-height: 1.7; white-space: pre-line; }
+
+@media (max-width: 992px) {
+  .extraFullGrid { grid-template-columns: 1fr; }
+  .extraDarkGrid { grid-template-columns: 1fr; }
+  .finalFeaturesGrid { grid-template-columns: 1fr; }
+}

@@ -141,28 +141,92 @@ export const PRODUCT_DATA: any = {
     isCategory: false,
     featured: true,
     badge: 'Albert Genau — Tiara Twinmax®',
-    heroTitle: 'Isıcamlı Cam Balkonun Zirvesi',
-    heroSub: 'Türkiye\'nin En Çok Tercih Edilen Isıcamlı Sistemi.',
-    heroImg: '/images/products/twinmax_hero.jpg',
-    tagline: 'Isıcamlı cambalkon sistemlerinde ulaşılmış en üst düzey yalıtımla tanışın. Albert Genau teknolojisiyle balkonunuzu dört mevsim yaşanır bir odaya dönüştürün.',
-    features: [
-      { img: '/images/products/twinmax_insulation.jpg', title: '5 Kat Daha Fazla Yalıtım', desc: 'Tek cama göre 5.1 kata varan ısı yalıtımı performansı.' },
-      { img: '/images/products/twinmax_lock.jpg', title: 'Konfor Kilit Sistemi', desc: 'Gömme kollu tasarımıyla ekstra güvenlik ve estetik bir arada. Pencere kadar güvenli.' },
-      { img: '/images/products/twinmax_test.jpg', title: 'Avrupa Test Sertifikalı', desc: 'Hava, su, rüzgar dayanımında ulaşılan en yüksek sınıflar.' }
+    heroTitle: 'Tiara Twinmax\nIsıcam\'lı Cam Balkon',
+    heroSub: 'Cam balkon sistemlerinde ulaşılan en üst düzey ısı yalıtım teknolojisi Tiara Twinmax ile tanışın. Albert Genau kalitesi ve mühendisliğiyle tasarlanan bu yeni nesil Isıcam\'lı cambalkon, yaşam alanlarınıza minimalist bir şıklık katarken, kışın soğuktan, yazın ise aşırı sıcaktan koruyarak dört mevsim kesintisiz konfor sunar.',
+    heroImg: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
+    tagline: '',
+    features: [],
+    safetyImg: '',
+    safetyDesc: '',
+    cleaningImg: '',
+    cleaningSteps: [],
+    sections: [
+      {
+        type: 'text_image',
+        title: 'Neden Tiara Twinmax\nIsıcam\'lı Cam Balkon',
+        content: 'Klasik balkon kapatma yöntemlerini unutun. Tiara Twinmax, estetik tasarımı ve maksimum sızdırmazlık performansını bir araya getirerek balkonunuzu evinizin en konforlu odasına dönüştürür.',
+        image: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
+        reverse: false
+      }
     ],
-    safetyImg: '/images/products/twinmax_clean.jpg',
-    cleaningImg: '/images/products/twinmax_clean.jpg',
-    cleaningSteps: ['Kanatları toplayarak sistemi açın.', 'Menteşeli yapı sayesinde her iki tarafı da silin.', 'Pürüzsüz profilleri nemli bezle temizleyin.'],
-    darkFeatures: [
-      { icon: 'fas fa-shield-virus', title: 'Mıknatıslı Conta Sistemi', desc: 'Mıknatıslı birleşimlerle maksimum izolasyon.' },
-      { icon: 'fas fa-sync', title: 'ABL Fren Mekanizması', desc: 'Kanatların sarkmasını engelleyen otomatik kilitleme.' },
-      { icon: 'fas fa-window-restore', title: 'Jaluzi Perde Uyumu', desc: 'Isıcam arası jaluzi perde opsiyonu.' }
+    bottomFeatures: [
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Isicamli-Cambalkon-Sistemi.webp',
+        title: '5 Kata Varan Üstün Isı Yalıtımı',
+        desc: 'Sistemde kullanılan Isıcam teknolojisi sayesinde, standart tek camlı balkonlara kıyasla 5,1 kata varan daha yüksek ısı yalıtımı ve enerji tasarrufu sağlanır.'
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Gelismis-Ispanyolet-Kilit-ile-Ekstra-Guvenlik.webp',
+        title: 'Avrupa Test Sertifikalı Dayanıklılık',
+        desc: 'Sınıfının ulaşabileceği en yüksek hava, su, rüzgar ve ses yalıtımı değerlerine sahip, uluslararası akredite testlerden başarıyla geçmiş tek sertifikalı sistemdir.'
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Miknatisli-ve-EPDM-Contali-Maksimum-Izolasyon.webp',
+        title: 'Köşesiz Kesintisiz Tasarım',
+        desc: 'İster düz ister açılı/oval balkon mimarisine sahip olun; özel tasarım kanatlar direksiz olarak tamamen açılabilir ve manzaranız bölünmez.'
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Miknatisli-ve-EPDM-Contali-Maksimum-Izolasyon.webp',
+        title: 'Mıknatıslı ve EPDM Contalı Maksimum İzolasyon',
+        desc: 'Kanat birleşimlerinde kullanılan yalıtım fırçası, EPDM conta yapısı ve mıknatıslı conta yatakları sayesinde dışarıdaki rüzgar, yağmur ve ses içeri sızamaz. Kusursuz bir izolasyon deneyimi sunar.',
+        wide: true
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Gelismis-Ispanyolet-Kilit-ile-Ekstra-Guvenlik.webp',
+        title: 'Gelişmiş İspanyolet Kilit ile Ekstra Güvenlik',
+        desc: 'Albert Genau tarafından özel olarak geliştirilen gizli gömme kollu ispanyolet kilit sistemi, standart zincirli kilitlere veda etmenizi sağlar. Hem estetik bir görünüm sunar hem de dışarıdan zorlamalara karşı üst düzey güvenlik vadeder.',
+        wide: true
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Paslanmaz-Teker-ile-Omur-Boyu-Kullanim.webp',
+        title: 'Paslanmaz Teker ile Ömür Boyu Kullanım',
+        desc: 'Cambalkon sistemlerinin tüm yükünü taşıyan tekerlek mekanizmaları dış iklime tamamen dayanıklıdır. Tiara\'nın özel tekerlekleri 1440 saat tuz testine tabi tutulmuş olup, 10 yıl paslanmazlık garantisi altındadır. İlk günkü gibi sessiz ve akıcı çalışır.',
+        wide: true
+      }
     ],
-    testimonials: [
-      { text: 'Balkonumuz evin en sevilen odası oldu.', name: 'Hakan B.', city: 'İstanbul' },
-      { text: 'Isı yalıtımı gerçekten fark ediyor.', name: 'Derya S.', city: 'Tekirdağ' },
-      { text: 'Montaj ekibi çok ilgiliydi, teşekkürler.', name: 'Caner T.', city: 'Sakarya' }
-    ]
+    extraSections: [
+      {
+        type: 'text_image_full',
+        title: 'Gizli Su Tahliye Sistemi',
+        content: 'Taşıyıcı kasa profili üzerinde yer alan gizli hava kanalları ve su tahliye sistemi, ani sağanak yağışlarda bile suyu hızla dışarı akıtır. Oluşabilecek kondens (terleme) suyunu tahliye ederken dışarıdan doğrudan hava girişini de engeller.',
+        image: '/images/twinmax/Tiara-Twinmax-Gizli-Su-Tahliye-Sistemi.webp'
+      },
+      {
+        type: 'text_image_dark',
+        title: 'Mekanlara Özgürlük Veren Eşik Çözümleri',
+        content: 'İsteğe bağlı olarak, mekanın zemin yapısına göre farklı yüksekliklerde eşik çözümleri sunabilen Tiara platformunu konforunuz için tasarladık. İster zemin içi gömülü (eşiksiz) ister düşük eşikli seçenekleriyle ev içi geçişlerde veya ticari mekanlarda takılmadan güvenli adımlar atın. Seçim sizin!',
+        image: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri.webp'
+      }
+    ],
+    finalFeatures: [
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Entegre-Jaluzi-Perde-ile-Pratik-Gunes-Kontrolu.webp',
+        title: 'Entegre Jaluzi Perde ile Pratik Güneş Kontrolü',
+        desc: 'Balkonunuzda ekstra perde temizleme ve montaj derdine son! Sistemimiz, iki cam arasına yerleştirilen Isıcam arası jaluzi perde uygulamalarıyla tam uyumludur. Güneş ışığını ve mahremiyetinizi balkon alanını daraltmadan estetikçe yönetin.\n\nNot: Isıcam arası jaluzi uygulaması opsiyoneldir ve jaluzi Albert Genau tarafından üretilmemektedir.'
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Ruzgar-Kilidi-ile-Ekstra-Guvenlik.webp',
+        title: 'Rüzgar Kilidi ile Ekstra Güvenlik',
+        desc: 'Yüksek katlı veya yoğun rüzgar alan binalarda, açık konumdaki cam kanatları güvenle bir arada tutan rüzgar kilidi mekanizması, zorlu hava koşullarında dahi tam denge sağlar.\n\nNot: Rüzgar kilidi donanımı opsiyonel bir Albert Genau çözümüdür, siparişiniz esnasında ayrıca talep ediniz.'
+      },
+      {
+        img: '/images/twinmax/Tiara-Twinmax-Patentli-Cocuk-Emniyet-Kilidi-ile-Tam-Guvenlik.webp',
+        title: 'Patentli Çocuk Emniyet Kilidi ile Tam Güvenlik',
+        desc: 'Menteşeli panellere entegre edilebilen kilit sistemi sayesinde çocuklarınız balkonda oynarken aklınız onlarda kalmaz. Maksimum çocuk güvenliği için özel koruma.'
+      }
+    ],
+    darkFeatures: [],
+    testimonials: []
   },
   'tiara-08-10': {
     badge: 'Albert Genau — Tiara®',
@@ -928,6 +992,60 @@ export default function ProductClient({ slug }: { slug: string }) {
             return null;
           })}
 
+
+          {/* Extra Sections (text_image_full, text_image_dark) */}
+          {product.extraSections?.map((es: any, idx: number) => {
+            if (es.type === 'text_image_full') {
+              return (
+                <section key={`extra-${idx}`} className={styles.extraFullSection}>
+                  <div className={styles.extraFullGrid}>
+                    <div className={styles.extraFullImg}>
+                      <img src={es.image} alt={es.title} />
+                    </div>
+                    <div className={styles.extraFullContent}>
+                      <h2 className={styles.extraFullTitle}>{es.title}</h2>
+                      <p className={styles.extraFullText}>{es.content}</p>
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+            if (es.type === 'text_image_dark') {
+              return (
+                <section key={`extra-${idx}`} className={styles.extraDarkSection}>
+                  <div className={styles.extraDarkGrid}>
+                    <div className={styles.extraDarkContent}>
+                      <h2 className={styles.extraDarkTitle}>{es.title}</h2>
+                      <p className={styles.extraDarkText}>{es.content}</p>
+                    </div>
+                    <div className={styles.extraDarkImg}>
+                      <img src={es.image} alt={es.title} />
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+            return null;
+          })}
+
+          {/* Final Features Grid */}
+          {product.finalFeatures && product.finalFeatures.length > 0 && (
+            <section className={styles.finalFeaturesSection}>
+              <div className={styles.finalFeaturesGrid}>
+                {product.finalFeatures.map((f: any, i: number) => (
+                  <div key={i} className={styles.finalFeatureCard}>
+                    <div className={styles.finalFeatureImg}>
+                      <Image src={f.img} alt={f.title} fill />
+                    </div>
+                    <div className={styles.finalFeatureBody}>
+                      <h3 className={styles.finalFeatureTitle}>{f.title}</h3>
+                      <p className={styles.finalFeatureDesc}>{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           <div className={styles.ctaBanner}>
             <h2 className={styles.ctaBannerTitle}>Ücretsiz Keşif ve Fiyat Teklifi</h2>
