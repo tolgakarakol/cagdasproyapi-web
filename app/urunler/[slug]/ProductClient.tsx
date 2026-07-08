@@ -365,11 +365,11 @@ export const PRODUCT_DATA: any = {
     heroTitle: 'Cam Kapı Sistemleri',
     heroSub: 'Eşiksiz Zeminler, Kesintisiz Geçişler.',
     heroImg: '/images/products/cam_kapı_banner.png',
-    tagline: 'Albert Genau’nun üstten askılı özel taşıyıcı profili sayesinde mekanlarınızı eşiksiz ve esnek bir şekilde bölerek panoramik manzaranın tadını çıkarın.',
+    tagline: 'Üstten askılı özel taşıyıcı profili sayesinde mekanlarınızı eşiksiz ve esnek bir şekilde bölerek panoramik manzaranın tadını çıkarın.',
     features: [
-      { img: '/images/cam-kapi/cam-kapi-dikey-01.png', title: 'Eşiksiz Zeminler', desc: 'Zeminde ray veya kanal bulunmaz. Paneller açıkken zemin tamamen düz kalır, yürürken ayağınız takılmaz.' },
-      { img: '/images/cam-kapi/cam-kapi-dikey-02.png', title: 'Tüy Kadar Hafif Hareket', desc: 'Özel Quattro HD tekerlek sistemi sayesinde 150 kiloluk devasa cam paneller minimum sürtünme ile hareket eder.' },
-      { img: '/images/cam-kapi/cam-kapi-dikey-03.png', title: 'Gizlenebilir Park Alanları', desc: 'Sistem esnek park seçenekleri sunar. Camları bir duvarın arkasına veya kolon yanına şık bir şekilde saklayabilirsiniz.' }
+      { img: '/images/cam-kapi/cam-kapi-dikey-01.png', title: 'Tek Yönlü Kapılar', desc: 'Tek yöne açılabilen özel mekanizması sayesinde dar alanlarda bile pratik ve kullanışlı bir deneyim sunar.' },
+      { img: '/images/cam-kapi/cam-kapi-dikey-02.png', title: 'Çift Yönlü Kapılar', desc: 'Her iki yöne de açılabilen esnek yapısıyla insan trafiğinin yoğun olduğu geçiş noktalarında yüksek konfor sağlar.' },
+      { img: '/images/cam-kapi/cam-kapi-dikey-03.png', title: 'Güvenlik (Temperli Cam)', desc: 'Kırılmaya ve darbelere karşı ekstra dirençli özel temperli cam yapısıyla mekanlarınızda tam güvenlik sağlar.' }
     ],
     safetyImg: '/images/cam-kapi/cam-kapi-yatay-01.png',
     cleaningImg: '/images/cam-kapi/cam-kapi-yatay-03.png',
