@@ -79,14 +79,14 @@ export const PRODUCT_DATA: any = {
       {
         type: 'text_image',
         title: 'Bioklimatik Pergola Nedir?',
-        content: 'Pergola, gölgelendirme amaçlı yapılmış çatı sistemlerinin genel adıdır. Bioklimatik pergola, alüminyum lamellerden oluşan çatı sistemine sahip, motor ve uzaktan kumanda ile bu çatı sisteminin lamellerinin hareket ettirildiği gölgelendirme yapısıdır. Eski nesil bioklimatik pergolaların aksine, yeni nesil sistemler çok daha esnek ve dayanıklı çözümler sunar.',
+        content: 'Pergola, gölgelendirme amaçlı yapılmış çatı sistemlerinin genel adıdır. Bioklimatik pergola, alüminyum lamellerden oluşan çatı sistemine sahip, motor ve uzaktan kumanda ile bu çatı sisteminin lamellerinin hareket ettirildiği gölgelendirme yapısıdır. Eski nesil bioklimatik pergolaların sadece lamelleri olduğu yerde hareket eder ya da motorun yanı sıra ikinci bir aktüatör yardımı ile lameller hareket ettirilir, lamel hareketleri çelik teller ile sağlanır.',
         image: '/images/products/pergola_v2.jpg',
         reverse: false
       },
       {
         type: 'text_image',
-        title: 'Albert Genau Bioklimatik Pergola Sistemi',
-        content: 'Albert Genau Biokimatik Pergola Sistemi, tek motor ve uzaktan kumanda ile hareket eder. Pergola sisteminin lamellerin senkronize hareketi, özel tasarım makas sistemi ile sağlanır. Kendi kendine ayakta durabilen sistem, her türlü iklim koşullarında sorunsuz ve konforlu kullanım için tasarlanmıştır.\n\nBahçenizde ve terasınızda, bioklimatik pergola sistemleri kurabilir, etrafını yine Albert Genau hareketli cambalkon sitemleri ile kapatarak keyifli mekanlar oluşturabilirsiniz.',
+        title: 'Albert Genau\nBioklimatik Pergola Sistemi',
+        content: 'Albert Genau Biokimatik Pergola Sistemi, tek motor ve uzaktan kumanda ile hareket eder. Pergola sisteminin lamellerin senkronize hareketi, özel tasarım makas sistemi ile sağlanır. Kendi kendine ayakta durabilen Albert Genau Bioklimatik Pergola Sistemi, her türlü iklim koşullarında sorunsuz ve konforlu kullanım için tasarlanmıştır.\n\nBahçenizde ve terasınızda, bioklimatik pergola sistemleri kurabilir, sistemlerin etrafını yine Albert Genau hareketli cambalkon sitemleri ile kapatarak, keyifli mekanlar oluşturabilirsiniz. Bioklimatik pergola sitemlerinin tavanını, istediğiniz kadar açıp, istediğiniz kadar kapatabilirsiniz.',
         image: '/images/products/pergola_final.jpg',
         reverse: true
       },
