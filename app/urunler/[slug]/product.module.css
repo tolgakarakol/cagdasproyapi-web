@@ -453,3 +453,13 @@
   .textFeaturesGrid { grid-template-columns: 1fr; gap: 40px; }
   .textFeaturesLeft { position: static; }
 }
+.textGallerySection { padding: 80px 20px; background: #fff; }
+.textGalleryContainer { max-width: 1200px; margin: 0 auto; text-align: center; }
+.textGalleryTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 25px; }
+.textGalleryContent { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 900px; margin: 0 auto 50px auto; }
+.textGalleryImages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.textGalleryImgWrap { border-radius: 8px; overflow: hidden; }
+.textGalleryImgWrap img { width: 100%; height: auto; display: block; object-fit: cover; }
+@media (max-width: 768px) {
+  .textGalleryImages { grid-template-columns: 1fr; }
+}

@@ -103,6 +103,16 @@ export const PRODUCT_DATA: any = {
         content: 'Albert Genau Bioklimatik pergola sistemlerinin etrafını, isterseniz sürme cambalkon sistemleri ile isterseniz otomatik giyotin cam sistemleri veya cambalkon sistemleri ile kapatabilirsiniz. Pergola sistemi, bu sistemler ile %100 entegre tasarlandığı için, montaj sırasında herhangi bir sıkıntı yaşanmaz. Tüm sistemler %100 Albert Genau garantisinde olur.',
         image: '/images/bioklimatik/ag-bioklimatik-pergola.webp',
         reverse: false
+      },
+      {
+        type: 'text_gallery',
+        title: 'Çift Yönlü Ambiyans Aydınlatma',
+        content: 'Albert Genau Bioklimatik Pergola çift yönlü aydınlatma özelliğiyle donatılmıştır. Ambiyans aydınlatma seçeneği, mekânın genel aydınlatmasının yanı sıra çoklu modlara sahip, ayarlanabilir renk spektrumuyla her türlü atmosfere uyum sağlar. Pergolanın aydınlatma fonksiyonu, sonradan eklenme özelliğiyle ambiyans aydınlatma, ortam aydınlatma ve tamamen aydınlatmasız şekillerde uygulanabilir. Bu seçeneklerin her birinde, estetikten ödün verilmeden, kullanıcıya en uygun aydınlatma deneyimi sunulur.',
+        images: [
+          '/images/bioklimatik/ambiyans_01.webp',
+          '/images/bioklimatik/ambiyans_02.webp',
+          '/images/bioklimatik/ambiyans_03.webp'
+        ]
       }
     ],
     darkFeatures: [
@@ -867,6 +877,23 @@ export default function ProductClient({ slug }: { slug: string }) {
                         <p className={styles.gridItemDesc}>{item.desc}</p>
                       </div>
                     ))}
+                  </div>
+                </section>
+              );
+            }
+            if (section.type === 'text_gallery') {
+              return (
+                <section key={idx} className={styles.textGallerySection}>
+                  <div className={styles.textGalleryContainer}>
+                    <h2 className={styles.textGalleryTitle}>{section.title}</h2>
+                    <p className={styles.textGalleryContent}>{section.content}</p>
+                    <div className={styles.textGalleryImages}>
+                      {section.images?.map((img: string, i: number) => (
+                        <div key={i} className={styles.textGalleryImgWrap}>
+                          <img src={img} alt={`${section.title} ${i}`} />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </section>
               );
