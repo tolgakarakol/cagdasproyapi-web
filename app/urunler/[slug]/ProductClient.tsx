@@ -10,7 +10,7 @@ export const PRODUCT_DATA: any = {
     heroTitle: 'Giyotin Tam Balkon',
     heroSub: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.',
     heroImg: '/images/giyotin-balkon-banner.png',
-    tagline: 'Minimal profiliyle görünmez, panoramik görüşüyle fark edilir.\nİçerisiyle dışarısı arasındaki çizgiyi siler. Bu sadece bir cam balkon değil. Bu, Tambalkon®.',
+    tagline: 'Balkonunuzda yer kaybetmeden, tek tuşla açılıp kapanan yeni nesil motorlu giyotin cam sistemi ile tanışın. Albert Genau mühendisliğiyle geliştirilen Tambalkon®, minimal profil yapısı, panoramik görüş avantajı, yüksek yalıtım performansı ve güvenli dikey hareket teknolojisiyle yaşam alanlarınıza modern bir konfor standardı kazandırır.',
     features: [
       { img: '/images/products/giyotin_remote.png', title: 'Tam Otomatik Kumandalı', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde.' },
       { img: '/images/products/giyotin_profil_detay.png', title: 'Hassas Alüminyum Profil', desc: '10 mm temperli cam, anodize antrasit profil; her bağlantı noktasında mükemmellik.' }
