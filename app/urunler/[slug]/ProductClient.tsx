@@ -381,7 +381,7 @@ export const PRODUCT_DATA: any = {
     ],
     safetyTitle: 'Geniş Kullanım Alanları',
     safetyDesc: 'Cam Kapı Sistemlerinin Avantajları arasında gösterildiği üzere ofisler, klinikler, mağazalar, duş alanları ve ev içi mekanlarda (mutfak/salon arası) yaygın olarak tercih edilir.',
-    cleaningDesc: 'Eşiksiz yapısı ve pürüzsüz cam yüzeyleri ile ofis ve mağaza temizliğinde büyük kolaylık sağlar.',
+    cleaningDesc: 'Pürüzsüz yapısı sayesinde kir tutmaz, lekelere karşı dirençlidir ve kolayca silinerek hijyenik tutulabilir',
     testimonials: [
       { text: 'Restoranımızın teras ve iç mekanı arasındaki eşiği kaldırmak harika oldu.', name: 'Hakan T.', city: 'Tekirdağ' }
     ]
