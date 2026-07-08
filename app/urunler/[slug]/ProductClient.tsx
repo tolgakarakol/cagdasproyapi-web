@@ -92,9 +92,17 @@ export const PRODUCT_DATA: any = {
       },
       {
         type: 'highlight',
-        title: 'Bioklimatik Pergola… Ama Markası Ne?',
-        content: 'Günümüzde pergola sistemlerinin bileşenleri markasız ya da toplama sistemler ile satılabilmektedir. Sistemin bileşenleri ayrı ayrı toplandığından, bütün olarak işlevde eksiklikler olabilmektedir. O yüzden bioklimatik pergola sistemini yaptırırken mutlaka markasını, garanti süresi ve koşullarını sorunuz. Mevsimlik firmalardan uzak durunuz.',
+        title: 'Bioklimatik Pergola… Ama Markası Ne ?',
+        content: 'Günümüzde çoğunlukla, pergola sistemlerinin bileşenleri, uygulayıcı firmalar tarafından çeşitli firmalardan toplanarak markasız ya da kendi markaları ile satılabilmektedir. Sistemin bileşenleri ayrı ayrı toplandığından, bütün olarak işlevde eksiklikler olabilmektedir. O yüzden pergola sistemini ya da bioklimatik pergola sistemini yaptırırken mutlaka markasını, garanti süresi ve koşullarını sorunuz. Mevsimlik, bugün var yarın yok, firmalardan uzak durunuz.',
         badge: '%100 Güven'
+      },
+      {
+        type: 'text_image',
+        badge: '%100',
+        title: 'Bioklimatik Pergola ve Diğer Sistemler %100 Entegre',
+        content: 'Albert Genau Bioklimatik pergola sistemlerinin etrafını, isterseniz sürme cambalkon sistemleri ile isterseniz otomatik giyotin cam sistemleri veya cambalkon sistemleri ile kapatabilirsiniz. Pergola sistemi, bu sistemler ile %100 entegre tasarlandığı için, montaj sırasında herhangi bir sıkıntı yaşanmaz. Tüm sistemler %100 Albert Genau garantisinde olur.',
+        image: '/images/bioklimatik/ag-bioklimatik-pergola.webp',
+        reverse: false
       },
       {
         type: 'grid',
@@ -837,6 +845,7 @@ export default function ProductClient({ slug }: { slug: string }) {
                 <section key={idx} className={`${styles.textImageSection} ${section.reverse ? styles.reverse : ''}`}>
                   <div className={styles.textImageGrid} style={{ backgroundColor: section.bg || '#fff' }}>
                     <div className={styles.textImageContent}>
+                      {section.badge && <span className={styles.sectionBadge}>{section.badge}</span>}
                       <h2 className={styles.sectionTitle}>{section.title}</h2>
                       <p className={styles.sectionText}>{section.content}</p>
                     </div>
