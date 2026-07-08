@@ -101,7 +101,7 @@ export const PRODUCT_DATA: any = {
         badge: '%100',
         title: 'Bioklimatik Pergola ve Diğer Sistemler %100 Entegre',
         content: 'Albert Genau Bioklimatik pergola sistemlerinin etrafını, isterseniz sürme cambalkon sistemleri ile isterseniz otomatik giyotin cam sistemleri veya cambalkon sistemleri ile kapatabilirsiniz. Pergola sistemi, bu sistemler ile %100 entegre tasarlandığı için, montaj sırasında herhangi bir sıkıntı yaşanmaz. Tüm sistemler %100 Albert Genau garantisinde olur.',
-        image: '/images/bioklimatik/ag-bioklimatik-pergola.webp',
+        image: '/images/bioklimatik/ag-bioklimatik-pergola.jpg',
         reverse: false
       },
       {
