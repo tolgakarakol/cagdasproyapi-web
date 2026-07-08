@@ -38,6 +38,11 @@ export const PRODUCT_DATA: any = {
       { icon: 'fas fa-pen-ruler', title: 'Estetik ve Fonksiyonellik', desc: 'Az profilli tasarımı ve açıldığında korkuluk görevi görmesiyle şık ve estetik bir balkon keyfi sunar. Minimalist bir şıklık, mükemmel fonksiyon.' },
       { icon: 'fas fa-wind', title: 'Havalandırma Seçenekleri', desc: 'Tam açık, tam kapalı veya istediğiniz aralıkta. Tambalkon, size dilediğiniz şekilde havalandırma seçeneği sunarak maksimum fonksiyonellik sağlar.' }
     ],
+    bottomFeatures: [
+      { img: '/images/cambalkon/Kumandali-Cambalkon.webp', title: 'Tam Otomatik Kumandalı Kolaylık', desc: 'Bir tuşla açın, kapatın, kontrol tamamen sizde. Tambalkon®, uzaktan kumanda ile pratik ve konforlu bir cam balkon deneyimi sunar.' },
+      { img: '/images/cambalkon/Yer-Kazandiran-Giyotin-Cambalkon.webp', title: 'Tambalkon Yer Kazandıran Giyotin Cam Balkon', desc: 'Yer Kazandıran Tasarım. Katlanır cam sistemleri birikme yapar, yer kaybettirir. Tambalkon aşağı ve yukarı hareket eden camlar ile yer tasarrufu sağlar, alanınızı genişletir. Hayalinizdeki balkonu dekore edebilirsiniz.' },
+      { img: '/images/cambalkon/Panoramik-Manzara-Giyotin-Cambalkon.webp', title: 'Tambalkon Panoramik Manzara', desc: 'Tam Panoramik Manzara. Minimal profiller ve geniş cam yüzeyler, manzaranızı kesintisiz algılamanızı sağlar. Tambalkon®, balkona daha ferah ve modern bir atmosfer kazandırır.' }
+    ],
     testimonials: [
       { text: 'Balkonum artık her gün kullanılabilir durumda.', name: 'Seda A.', city: 'İstanbul' },
       { text: 'Görüntü kesintisiz, temizliği de çok pratik.', name: 'Murat K.', city: 'İzmir' },
@@ -791,6 +796,24 @@ export default function ProductClient({ slug }: { slug: string }) {
               ))}
             </div>
           </section>
+
+          {product.bottomFeatures && product.bottomFeatures.length > 0 && (
+            <section className={styles.features}>
+              <div className={styles.featuresGrid}>
+                {product.bottomFeatures.map((f: any, i: number) => (
+                  <div key={i} className={styles.featureCard}>
+                    <div className={styles.featureCardImg}>
+                      <Image src={f.img} alt={f.title} fill />
+                    </div>
+                    <div className={styles.featureCardBody}>
+                      <h3 className={styles.featureCardTitle}>{f.title}</h3>
+                      <p className={styles.featureCardDesc}>{f.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {product.sections?.map((section: any, idx: number) => {
             if (section.type === 'text_image') {
