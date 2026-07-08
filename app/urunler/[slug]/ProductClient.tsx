@@ -693,11 +693,13 @@ export default function ProductClient({ slug }: { slug: string }) {
             <section className={styles.textFeatures}>
               <div className={styles.textFeaturesGrid}>
                 <div className={styles.textFeaturesLeft}>
-                  <h2 className={styles.textFeaturesMainTitle}>{product.textFeatures.title}</h2>
-                  <p className={styles.textFeaturesMainDesc}>{product.textFeatures.desc}</p>
+                  <div className={styles.textFeaturesLeftContent}>
+                    <h2 className={styles.textFeaturesMainTitle}>{product.textFeatures.title}</h2>
+                    <p className={styles.textFeaturesMainDesc}>{product.textFeatures.desc}</p>
+                  </div>
                   {product.textFeatures.img && (
-                    <div style={{ marginTop: '30px', overflow: 'hidden', borderRadius: '8px', border: '1px solid #eee' }}>
-                      <img src={product.textFeatures.img} alt={product.textFeatures.title} style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
+                    <div className={styles.textFeaturesImgWrap}>
+                      <img src={product.textFeatures.img} alt={product.textFeatures.title} />
                     </div>
                   )}
                 </div>

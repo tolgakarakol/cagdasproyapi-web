@@ -407,10 +407,13 @@
 .textFeatures { padding: 40px 0 100px 0; background: #fff; }
 .textFeaturesGrid {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 60px; align-items: start;
+  gap: 60px; align-items: stretch;
   max-width: 1200px; margin: 0 auto; padding: 0 30px;
 }
-.textFeaturesLeft { position: sticky; top: 120px; }
+.textFeaturesLeft { display: flex; flex-direction: column; }
+.textFeaturesLeftContent { margin-bottom: 30px; }
+.textFeaturesImgWrap { flex: 1; display: flex; overflow: hidden; border-radius: 8px; border: 1px solid #eee; }
+.textFeaturesImgWrap img { width: 100%; height: 100%; object-fit: cover; }
 .textFeaturesMainTitle { font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 20px; line-height: 1.2; }
 .textFeaturesMainDesc { font-size: 1.1rem; color: #555; line-height: 1.8; }
 .textFeaturesRight { display: flex; flex-direction: column; gap: 40px; }
