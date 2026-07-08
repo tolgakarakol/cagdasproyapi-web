@@ -107,6 +107,20 @@ export const PRODUCT_DATA: any = {
           '/images/bioklimatik/ambiyans_02.webp',
           '/images/bioklimatik/ambiyans_03.webp'
         ]
+      },
+      {
+        type: 'text_features',
+        image: '/images/bioklimatik/estetik_alimunyum.webp',
+        features: [
+          {
+            title: 'Gizli Bağlantı Elemanlarıyla Estetik Görünüm',
+            desc: 'Bioklimatik Pergolanınbağlantı elemanları dışarıdan görünmez şekilde tasarlanmıştır. Bioklimatik pergola taşıyıcı dikmeler, kiriş ve oluk profillerinin bağlantısı, tasarımda kullanılan tercihlerve özenle seçilmiş aksamlar sayesinde estetik görünümünü korur. Ayrıca, sistemde gizli ayak opsiyonu da kullanıcılara sunulmaktadır, bu da Albert Genau Bioklimatik Pergolayı tercih edenlere estetik ve işlevsellik açısından daha fazla esneklik sunar.'
+          },
+          {
+            title: 'T6 Termik Seviyeli Güçlendirilmiş Alüminyum Profiller',
+            desc: 'Pergolada T6 termik seviyeli güçlendirilmiş profiller kullanılmaktadır. Bu profiller, güvenlik ve sağlamlığı ön planda tutarak yüksek taşıma kapasitesi ve dayanıklı bir yapı sunar. T6 termik seviyeli profiller, uzun ömürlü ve güvenilir bir performans sağlamak için özenle tasarlanmıştır.'
+          }
+        ]
       }
     ],
     darkFeatures: [
@@ -887,6 +901,25 @@ export default function ProductClient({ slug }: { slug: string }) {
                           <img src={img} alt={`${section.title} ${i}`} />
                         </div>
                       ))}
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+            if (section.type === 'text_features') {
+              return (
+                <section key={idx} className={styles.textFeatures}>
+                  <div className={styles.textFeaturesGrid}>
+                    <div className={styles.textFeaturesLeft}>
+                      {section.features?.map((feat: any, i: number) => (
+                        <div key={i} className={styles.textFeatureItem}>
+                          <h3 className={styles.textFeatureTitle}>{feat.title}</h3>
+                          <p className={styles.textFeatureDesc}>{feat.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={styles.textFeaturesImgWrap}>
+                      <img src={section.image} alt="Özellikler" />
                     </div>
                   </div>
                 </section>
