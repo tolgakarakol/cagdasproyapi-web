@@ -283,13 +283,13 @@ export const PRODUCT_DATA: any = {
         type: 'text_image_full',
         title: 'Gizli Su Tahliye Sistemi',
         content: 'Taşıyıcı kasa profili üzerindeki gizli buhar kanalı sayesinde sağlanan hem kozmetik hem de verimli su tahliye sistemi, yine bir Tiara özelliği. Kondens kanalı sayesinde hızlı tahliyenin yanında dış ortamdan doğrudan hava girişini de engeller.',
-        image: '/images/tiara-08-10/Tiara-Gizli-Su-Tahliye-Sistemi.png'
+        image: '/images/tiara-08-10/yeni_gizli_su_tahliye_sistemi.png'
       },
       {
         type: 'text_image_dark',
         title: 'Düşmez, Sarkmaz\nCam Kanatlar',
         content: 'Tiara Cambalkon Sistemi için özel bir kilitleme mekanizması geliştirildi. "ABL Auto Brake Lock" adı verilen sistem ile kayar cam paneller park alanına geldiklerinde, otomatik kilitlenip, kanadın yerinden oynamadan açılması sağlanıyor.',
-        image: '/images/tiara-08-10/Tiara-Dusmez-Sarkmaz-Cam-Kanatlar.png'
+        image: '/images/tiara-08-10/yeni_cam_kanatlar.png'
       }
     ],
     darkFeatures: [
