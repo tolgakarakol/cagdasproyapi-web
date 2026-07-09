@@ -181,9 +181,10 @@ export const PRODUCT_DATA: any = {
       },
       {
         type: 'text_image_dark',
+        topImage: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri-2.webp',
         title: 'Mekanlara Özgürlük Veren\nEşik Çözümleri',
         content: 'Farklı ihtiyaçlara cevap verebilen eşikli ve eşiksiz ray profilleri sayesinde, Tiara Twinmax hem iç mekan bölmelerinde hem de dış mekan kapatmalarında maksimum esneklik sağlar. Geçiş alanlarında takılmaları önleyen özel eşiksiz alt kasa tasarımıyla konforunuzu artırır.',
-        image: '/images/twinmax/Tiara-Twinmax-Esikli-ve-Esiksiz-Kasa-Secenekleri.webp'
+        image: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri.webp'
       }
     ],
     bottomFeatures: [
@@ -227,36 +228,130 @@ export const PRODUCT_DATA: any = {
     testimonials: []
   },
   'tiara-08-10': {
+    isCategory: false,
+    featured: true,
     badge: 'Albert Genau — Tiara®',
-    heroTitle: 'Tek Camlı Katlanır Cam Balkon',
-    heroSub: 'Balkonunuzu Evinizin En Kullanışlı Odasına Dönüştürün.',
-    heroImg: '/images/products/tiara_hero.jpg',
-    tagline: 'Tiara, uzun yıllar teknik servise ihtiyaç duymadan kullanılmak üzere geliştirilmiş, 38 Avrupa ülkesinde patenti olan yeni nesil bir cam sistemidir. Maksimum panoramik görüntü ve eşsiz konforu bir arada sunar.',
-    features: [
-      { img: '/images/products/tiara_wheels.jpg', title: '38 mm Durdurulamaz Hareket', desc: 'Altta 4, üstte 4 olmak üzere toplam 8 adet %100 paslanmaz tekerlek sistemi ile en az sürtünme ve ses.' },
-      { img: '/images/products/tiara_pins.jpg', title: 'Güvenli Cam Pimi Sistemi', desc: 'Kanat birleşimleri sadece kimyasal ile değil, cama monte edilen özel pimler ile sağlanır. Maksimum taşıma kapasitesi sunar.' },
-      { img: '/images/products/katlanir_tek_camli.jpg', title: 'Alüminyum İzolasyon Fitilleri', desc: 'Kendinden fırçalı alüminyum fitiller ile düz veya açılı tüm birleşimlerde uzun ömürlü ve şık yalıtım.' }
+    heroTitle: 'Katlanır Cam Sistemi\nTIARA',
+    heroSub: '',
+    heroImg: '/images/tiara-08-10/Tiara-Her-Balkona-Uygun.jpg',
+    tagline: 'Yeni nesil cam sistemi Tiara ile birlikte balkonunuzu evinizin kullanışlı bir odası haline getirebilirsiniz. Bu sistem uzun yıllar teknik servise ihtiyaç duymadan kullanılmak üzere geliştirilmiştir. Alışveriş merkezlerinde, restaurantlarda, kafe ve ofislerde açıldığında ihtiyaç duyduğunuz alanlar için esnek çözümler sunduğu gibi kapandığında da güvenli ve görünür hale getirmektedir.',
+    features: [],
+    safetyImg: '',
+    safetyDesc: '',
+    cleaningImg: '',
+    cleaningSteps: [],
+    sections: [
+      {
+        type: 'text_list_with_image',
+        title: 'HER BALKONA\nHER MEKANA UYGUN!',
+        content: 'Tiara ile yeni yaşam alanınızın keyfine varın. Maksimum genişliğe kadar kanat yapısına izin veren bu sistem, eşsiz bir panoramik görüntü imkanı sunuyor. Sistemin menteşeli panelleri üzerine entegre edilen çocuk kilidi sayesinde, çocuğunuz emniyette.',
+        image: '/images/tiara-08-10/Tiara-Ornek-01.jpg',
+        features: [
+          {
+            title: 'Cam Balkonu Açıp Kapatmak Çok Kolay',
+            desc: 'İple ve zincirle uğraşmadan cam balkonunuzu kolayca açıp kapatın. Konfor Kilit pencere kadar güvenli ve kapalıyken gizlenen kol tasarımı ile estetik bir görüntü sağlar. Standart kilit zincirli olup, konfor kilit opsiyoneldir.'
+          },
+          {
+            title: 'Gizli Su Tahliye Sistemi',
+            desc: 'Taşıyıcı kasa profili üzerindeki gizli buhar kanalı sayesinde sağlanan hem kozmetik hem de verimli su tahliye sistemi, yine bir Tiara özelliği. Kondens kanalı sayesinde hızlı tahliyenin yanında dış ortamdan doğrudan hava girişini de engeller.'
+          },
+          {
+            title: 'Durdurulamaz Hareket',
+            desc: '38 mm çapında, altta 4, üstte 4, toplam 8 adet özel mühendislik plastiği kaplanmış %100 paslanmaz teker kullanılmıştır. Tüm kanatlar, konforlu şekilde, en az sürtünme ve ses ile hareket eder, açılıp kapanır.'
+          }
+        ]
+      },
+      {
+        type: 'text_image',
+        title: 'Tiara08 — Incek Life Blue, Ankara',
+        content: 'Sistem Sayısı: 226 Sistem | Balkon Tipi: 9 Tip | Toplam Cam: 2.076 m²\n\n9 farklı tipte 226 adet balkondan oluşan Sinpaş İncek Life Blue Projesi\'nde cambalkonlarda Albert Genau tercih edilmiştir. Projenin yüksek katlı olmasının teknik ve güvenlik taleplerine cevap veren en uygun cambalkon olarak Tiara 08 olduğuna karar verilmiştir.',
+        image: '/images/tiara-08-10/Tiara08.png',
+        reverse: false,
+        imageFit: 'cover'
+      },
+      {
+        type: 'text_image',
+        title: 'Tiara10 — Folkart Time, İzmir',
+        content: 'Sistem Sayısı: 72 Sistem | Balkon Tipi: 3 Tip | Toplam Cam: 752 m²\n\nAlbert Genau, İzmir\'de bulunan Folkart Time projesinin 3 farklı tip, 72 balkonu Tiara10 cambalkon sistemi ile tamamlamıştır. Tiara10 balkon camlama sisteminin özelliği sayesinde, lüks rezidans tipli dairelere yeni bir yaşam alanı eklenmiştir.',
+        image: '/images/tiara-08-10/Tiara10.jpg',
+        reverse: true,
+        imageFit: 'cover'
+      }
     ],
-    safetyImg: '/images/products/katlanir_balkon_hero_v4.jpg',
-    cleaningImg: '/images/products/katlanir_balkon_hero_v4.jpg',
-    cleaningSteps: [
-      'Tüm cam panelleri içeriye doğru tek tek açın.',
-      'Sistemin pürüzsüz yapısı sayesinde dışarı sarkmadan içeriden her iki yüzeyi de kolayca silin.',
-      'Alüminyum profilleri nemli bir bezle zahmetsizce temizleyin.'
+    extraSections: [
+      {
+        type: 'text_image_full',
+        title: 'Gizli Su Tahliye Sistemi',
+        content: 'Taşıyıcı kasa profili üzerindeki gizli buhar kanalı sayesinde sağlanan hem kozmetik hem de verimli su tahliye sistemi, yine bir Tiara özelliği. Kondens kanalı sayesinde hızlı tahliyenin yanında dış ortamdan doğrudan hava girişini de engeller.',
+        image: '/images/tiara-08-10/Tiara-Gizli-Su-Tahliye-Sistemi.png'
+      },
+      {
+        type: 'text_image_dark',
+        title: 'Düşmez, Sarkmaz\nCam Kanatlar',
+        content: 'Tiara Cambalkon Sistemi için özel bir kilitleme mekanizması geliştirildi. "ABL Auto Brake Lock" adı verilen sistem ile kayar cam paneller park alanına geldiklerinde, otomatik kilitlenip, kanadın yerinden oynamadan açılması sağlanıyor.',
+        image: '/images/tiara-08-10/Tiara-Dusmez-Sarkmaz-Cam-Kanatlar.png'
+      }
     ],
     darkFeatures: [
-      { icon: 'fas fa-shield-halved', title: 'Avrupa Patentli Teknoloji', desc: '38 Avrupa ülkesinde geçerli EPO patentli, tescilli Albert Genau kalitesi.' },
-      { icon: 'fas fa-tint-slash', title: 'Gizli Su Tahliye Kanalı', desc: 'Kasa profili üzerindeki gizli buhar kanalı ile hem kozmetik hem verimli su tahliyesi.' },
-      { icon: 'fas fa-sync', title: 'ABL Otomatik Fren Kilidi', desc: 'Paneller park alanına geldiğinde otomatik kilitlenir, kanadın yerinden oynamasını engeller.' },
-      { icon: 'fas fa-lock', title: 'Estetik Topuzlu Kilit', desc: 'Minimalist tasarım ve kullanım kolaylığı sağlayan özel kilit mekanizması.' },
-      { icon: 'fas fa-child', title: 'Entegre Çocuk Kilidi', desc: 'Menteşeli paneller üzerine entegre edilebilen AG patentli çocuk emniyet sistemi.' },
-      { icon: 'fas fa-check-circle', title: '10 Yıl Paslanmazlık Garantisi', desc: '%100 paslanmaz malzeme ile üretilen aksamlar için on yıl garanti.' }
+      { icon: 'fas fa-award', title: 'EU Patent — Avrupa Patenti', desc: 'Patent, 38 Avrupa ülkesinde geçerli Avrupa Patent Ofisi (European Patent Office) tarafından onaylandı.' },
+      { icon: 'fas fa-certificate', title: 'Pfb Sertifikası', desc: 'Tiara Balkon Camlama Sistemi, Avrupa Birliği normlarına göre test edilmiştir ve yüksek sınıf kategorisinde yer almaktadır.' },
+      { icon: 'fas fa-shield-halved', title: 'Paslanmazlık', desc: 'Albert Genau ürünleri, %100 paslanmaz malzeme ile üretilip, 10 yıl paslanmazlık garantisi altındadır.' },
+      { icon: 'fas fa-handshake', title: 'Garanti', desc: 'Albert Genau, alüminyum profillere, sistemin çalışırlığına ve tüm aksesuarlara 2 yıl garanti sağlamaktadır.' }
+    ],
+    bottomFeatures: [
+      {
+        img: '/images/tiara-08-10/Tiara-Durdurulamaz-Hareket.png',
+        title: 'Durdurulamaz Hareket',
+        desc: '38 mm çapında, altta 4, üstte 4, toplam 8 adet özel mühendislik plastiği kaplanmış %100 paslanmaz teker kullanılmıştır. Tüm kanatlar, konforlu şekilde, en az sürtünme ve ses ile hareket eder.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Ekstra-Guvenli-Cam-Pimi.png',
+        title: 'Ekstra Güvenli — Cam Pimi',
+        desc: 'Sistemde kanatların camlar ile birleşimi sadece kimyasallar ile değil, cama monte edilen pimler ile sağlanmaktadır. Bu sayede kanatlar, yüksek taşıma kapasitesine sahip olurlar.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Estetik-Topuzlu-Kilit.jpg',
+        title: 'Estetik Topuzlu Kilit',
+        desc: 'Albert Genau isteğe bağlı olarak topuzlu kilit mekanizması tasarlamıştır. Bu mekanizma şık bir görüntü, minimal tasarım ve kullanım kolaylığı sağlamaktadır.'
+      }
+    ],
+    finalFeatures: [
+      {
+        img: '/images/tiara-08-10/Tiara-Aluminyum-Fitiller.jpg',
+        title: 'Alüminyum Fitiller',
+        desc: 'Sistemde yalıtımı artırmak için, cam panellerin birleşiminde — ister düz, ister açılı — kendinden izolasyon fırçalı alüminyum fitiller, şıklığı ve uzun ömürlü kullanımı ile farkını gösteriyor.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Kolay-Temizlik.jpg',
+        title: '100% Kolay Temizlik',
+        desc: 'Sistemin tüm camları, tek tek içeri açılabildiği için, hem dıştan hem içten çok rahatlıkla silinebilir.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Cocuk-Emniyet-Kilidi.png',
+        title: 'Çocuk Emniyet Kilidi',
+        desc: 'Sistemin menteşeli panelleri üzerinde AG patentli çocuk emniyet kilidi entegre edilebilir. Bu kilit kapalı olduğu sürece, çocuğunuz emniyette.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Kanat-Sabitleme-Aparati.png',
+        title: 'Kanat Sabitleme Aparatı',
+        desc: 'Kanat sabitleme aparatı kasa profiline bağlıdır. Kanatların güvenli bir şekilde toplanmasını sağlar ve kontrol dışı hareketleri önler.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Yukseklik-Ayar-Profili.jpg',
+        title: 'Yükseklik Ayar Profili',
+        desc: 'Bütün Tiara Sistemleri ile uyumlu olan bu profil, terazi ayarı gereken durumlarda kolay, hızlı ve kesin çözümler sunar.'
+      },
+      {
+        img: '/images/tiara-08-10/Tiara-Acili-Lamel.png',
+        title: 'Açılı Lamel',
+        desc: 'Yalın ve akıllı tasarım ile tasarlanan yeni kompakt açılı lamel, kavisli uygulama alanlarında eşsiz bir birleşme detayı sağlar.'
+      }
     ],
     tests: [
-      { icon: 'fas fa-droplet', title: 'SU TESTİ', desc: "Tiara Balkon Camlama Sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, su geçirgenliği testine tabi tutulup, Avrupa Birliği normlarına göre Class 2A sınıfını elde etti." },
-      { icon: 'fas fa-wind', title: 'RÜZGAR GEÇİRGENLİĞİ TESTİ', desc: "Tiara Balkon Camlama sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, rüzgar geçirgenliği testine tabi tutulup, Avrupa Birliği normlarına göre Class 2 sınıfını elde etti." },
-      { icon: 'fas fa-hand-fist', title: 'DARBE DAYANIKLILIK TESTİ', desc: "Tiara Balkon Camlama Sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, darbe dayanıklılık testine tabi tutulup, Avrupa Birliği normlarına göre Class I2/E5 sınıfını elde etti." },
-      { icon: 'fas fa-gauge-high', title: 'RÜZGAR YÜKÜ TESTİ', desc: "Tiara Balkon Camlama sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, rüzgar yükü testine tabi tutulup, Avrupa Birliği normlarına göre Class 3 sınıfını elde etti." }
+      { icon: 'fas fa-droplet', title: 'SU TESTİ', desc: "Tiara Balkon Camlama Sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, su geçirgenliği testine tabi tutulup, Avrupa Birliği normlarına göre Class2A sınıfını elde etti." },
+      { icon: 'fas fa-wind', title: 'RÜZGAR GEÇİRGENLİĞİ TESTİ', desc: "Tiara Balkon Camlama sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, rüzgar geçirgenliği testine tabi tutulup, Avrupa Birliği normlarına göre Class2 sınıfını elde etti." },
+      { icon: 'fas fa-hand-fist', title: 'DARBE DAYANIKLILIK TESTİ', desc: "Tiara Balkon Camlama Sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, darbe dayanıklılık testine tabi tutulup, Avrupa Birliği normlarına göre ClassI2/E5 sınıfını elde etti." },
+      { icon: 'fas fa-gauge-high', title: 'RÜZGAR YÜKÜ TESTİ', desc: "Tiara Balkon Camlama sistemlerimiz, Almanya PFB Teknik Enstitüsü'nde, rüzgar yükü testine tabi tutulup, Avrupa Birliği normlarına göre Class3 sınıfını elde etti." }
     ],
     testimonials: [
       { text: 'Sinpaş İncek Life projesinde kullanıldı, kalitesi ve rüzgar dayanımı gerçekten takdire şayan.', name: 'Proje Müdürü', city: 'Ankara' },
@@ -1042,17 +1137,24 @@ export default function ProductClient({ slug }: { slug: string }) {
             }
             if (es.type === 'text_image_dark') {
               return (
-                <section key={`extra-${idx}`} className={styles.extraDarkSection}>
-                  <div className={styles.extraDarkGrid}>
-                    <div className={styles.extraDarkContent}>
-                      <h2 className={styles.extraDarkTitle}>{es.title}</h2>
-                      <p className={styles.extraDarkText}>{es.content}</p>
+                <div key={`extra-${idx}`}>
+                  {es.topImage && (
+                    <div className={styles.extraTopImageWrap}>
+                      <img src={es.topImage} alt={es.title} />
                     </div>
-                    <div className={styles.extraDarkImg}>
-                      <img src={es.image} alt={es.title} />
+                  )}
+                  <section className={styles.extraDarkSection}>
+                    <div className={styles.extraDarkGrid}>
+                      <div className={styles.extraDarkContent}>
+                        <h2 className={styles.extraDarkTitle}>{es.title}</h2>
+                        <p className={styles.extraDarkText}>{es.content}</p>
+                      </div>
+                      <div className={styles.extraDarkImg}>
+                        <img src={es.image} alt={es.title} />
+                      </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                </div>
               );
             }
             return null;
