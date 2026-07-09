@@ -1021,21 +1021,23 @@ export default function ProductClient({ slug }: { slug: string }) {
             </section>
           )}
 
-          <section className={styles.darkFeatures}>
-            <h2 className={styles.darkFeaturesTitle}>Teknik Üstünlükler</h2>
-            <div className={styles.darkFeaturesGrid}>
-              {product.darkFeatures.map((f: any, i: number) => (
-                <div key={i} className={styles.darkCard}>
-                  <div className={styles.darkIcon}><i className={f.icon} /></div>
-                  <h3 className={styles.darkCardTitle}>{f.title}</h3>
-                  <p className={styles.darkCardDesc}>{f.desc}</p>
-                </div>
-              ))}
-            </div>
+          <section className={`${styles.darkFeatures} ${(!product.darkFeatures || product.darkFeatures.length === 0) ? styles.darkFeaturesEmpty : ''}`}>
+            <h2 className={`${styles.darkFeaturesTitle} ${(!product.darkFeatures || product.darkFeatures.length === 0) ? styles.darkFeaturesTitleEmpty : ''}`}>Teknik Üstünlükler</h2>
+            {product.darkFeatures && product.darkFeatures.length > 0 && (
+              <div className={styles.darkFeaturesGrid}>
+                {product.darkFeatures.map((f: any, i: number) => (
+                  <div key={i} className={styles.darkCard}>
+                    <div className={styles.darkIcon}><i className={f.icon} /></div>
+                    <h3 className={styles.darkCardTitle}>{f.title}</h3>
+                    <p className={styles.darkCardDesc}>{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
 
           {product.bottomFeatures && product.bottomFeatures.length > 0 && (
-            <section className={styles.features}>
+            <section className={`${styles.features} ${product.finalFeatures && product.finalFeatures.length > 0 ? styles.featuresWithNext : ''}`}>
               <div className={styles.featuresGrid}>
                 {product.bottomFeatures.map((f: any, i: number) => (
                   <div key={i} className={styles.featureCard}>

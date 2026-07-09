@@ -1611,12 +1611,56 @@ activeProducts.forEach(slug => {
       ` : ''}
 
       <!-- DARK FEATURES (PREMIUM BENEFITS) -->
-      ${p.darkFeatures && p.darkFeatures.length > 0 ? `
-        <section style="background: #0f172a; padding: 100px 0; color: #fff;">
+      ${(p.darkFeatures && p.darkFeatures.length > 0) || (p.bottomFeatures && p.bottomFeatures.length > 0) || (p.finalFeatures && p.finalFeatures.length > 0) ? `
+        <section style="background: #0f172a; padding: ${p.darkFeatures && p.darkFeatures.length > 0 ? '100px 0' : '40px 0'}; color: #fff;">
           <div class="container">
-            <h2 style="font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 60px; color: #fff; text-transform: uppercase;">Üstün Teknik Çözümler</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-              ${darkFeaturesHTML}
+            <h2 style="font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: ${p.darkFeatures && p.darkFeatures.length > 0 ? '60px' : '0'}; color: #fff; text-transform: uppercase;">Teknik Üstünlükler</h2>
+            ${p.darkFeatures && p.darkFeatures.length > 0 ? `
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px;">
+                ${darkFeaturesHTML}
+              </div>
+            ` : ''}
+          </div>
+        </section>
+      ` : ''}
+
+      <!-- BOTTOM FEATURES -->
+      ${p.bottomFeatures && p.bottomFeatures.length > 0 ? `
+        <section class="product-features" style="padding: 80px 0 ${p.finalFeatures && p.finalFeatures.length > 0 ? '15px' : '80px'} 0; background: #f8f8f8;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+              ${p.bottomFeatures.map(f => `
+                <div class="product-featureCard" style="background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;">
+                  <div style="position: relative; height: 220px; overflow: hidden;">
+                    <img src="../${f.img.replace(/^\//, '')}" alt="${f.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" />
+                  </div>
+                  <div style="padding: 28px 24px;">
+                    <h3 style="font-size: 1.15rem; font-weight: 800; color: #111; margin-bottom: 10px;">${f.title}</h3>
+                    <p style="font-size: 0.9rem; color: #666; line-height: 1.7;">${f.desc}</p>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </section>
+      ` : ''}
+
+      <!-- FINAL FEATURES -->
+      ${p.finalFeatures && p.finalFeatures.length > 0 ? `
+        <section class="product-final-features" style="padding: 15px 0 80px 0; background: #f8f8f8;">
+          <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+              ${p.finalFeatures.map(f => `
+                <div class="product-featureCard" style="background: #fff; border-radius: 4px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;">
+                  <div style="position: relative; height: 220px; overflow: hidden;">
+                    <img src="../${f.img.replace(/^\//, '')}" alt="${f.title}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;" />
+                  </div>
+                  <div style="padding: 28px 24px;">
+                    <h3 style="font-size: 1.15rem; font-weight: 800; color: #111; margin-bottom: 10px;">${f.title}</h3>
+                    <p style="font-size: 0.9rem; color: #666; line-height: 1.7; white-space: pre-line;">${f.desc}</p>
+                  </div>
+                </div>
+              `).join('')}
             </div>
           </div>
         </section>

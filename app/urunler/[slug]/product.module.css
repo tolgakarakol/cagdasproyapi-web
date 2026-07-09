@@ -51,6 +51,7 @@
 
 /* ===== FEATURE CARDS ===== */
 .features { background: #f8f8f8; padding: 80px 0; }
+.featuresWithNext { padding-bottom: 15px; }
 .featuresGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -131,7 +132,9 @@
 
 /* ===== DARK FEATURES ===== */
 .darkFeatures { background: #111; padding: 100px 0; }
+.darkFeaturesEmpty { padding: 40px 0; }
 .darkFeaturesTitle { text-align: center; color: #fff; font-size: 2rem; font-weight: 900; margin-bottom: 60px; }
+.darkFeaturesTitleEmpty { margin-bottom: 0; }
 .darkFeaturesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -492,21 +495,25 @@
 .extraDarkImg img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px; }
 
 /* ===== FINAL FEATURES SECTION ===== */
-.finalFeaturesSection { padding: 80px 20px; background: #f9f9f9; }
+.finalFeaturesSection { padding: 15px 0 80px 0; background: #f8f8f8; }
 .finalFeaturesGrid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 30px; max-width: 1200px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px; margin: 0 auto; padding: 0 30px;
 }
 .finalFeatureCard {
-  background: #fff; border-radius: 8px; overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  transition: transform 0.3s;
+  background: #fff; border-radius: 4px; overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.finalFeatureCard:hover { transform: translateY(-5px); }
-.finalFeatureImg { position: relative; height: 220px; }
-.finalFeatureBody { padding: 25px; }
-.finalFeatureTitle { font-size: 1.2rem; font-weight: 800; color: #111; margin-bottom: 12px; }
-.finalFeatureDesc { font-size: 0.95rem; color: #555; line-height: 1.7; white-space: pre-line; }
+.finalFeatureCard:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+.finalFeatureImg { position: relative; height: 220px; overflow: hidden; }
+.finalFeatureImg img { object-fit: cover; transition: transform 0.5s; }
+.finalFeatureCard:hover .finalFeatureImg img { transform: scale(1.05); }
+.finalFeatureBody { padding: 28px 24px; }
+.finalFeatureTitle { font-size: 1.15rem; font-weight: 800; color: #111; margin-bottom: 10px; }
+.finalFeatureDesc { font-size: 0.9rem; color: #666; line-height: 1.7; white-space: pre-line; }
 
 @media (max-width: 992px) {
   .extraFullGrid { grid-template-columns: 1fr; }

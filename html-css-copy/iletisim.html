@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 
@@ -5,117 +6,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>İletişim | Çağdaş Pro Yapı - Silivri Cam Balkon</title>
-    <meta name="description" content="Çağdaş Pro Yapı ile iletişime geçin. Silivri'deki showroomumuzu ziyaret edin veya ücretsiz keşif için bizi arayın: 0507 916 57 07" />
+    <meta name="description" content="Silivri ve İstanbul genelinde profesyonel cam balkon, bioklimatik pergola ve kış bahçesi sistemleri. Albert Genau yetkili bayisinden 10 yıl garantili çözümler." />
     <link rel="icon" href="images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      .contact-hero {
-        background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('images/products/katlanir_teknik.jpg');
-        background-size: cover;
-        background-position: center;
-        padding: 160px 0 80px;
-        text-align: center;
-      }
-      .contact-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        color: #fff;
-        margin-bottom: 15px;
-        letter-spacing: -2px;
-      }
-      .contact-hero p {
-        color: rgba(255,255,255,0.7);
-        font-size: 1.1rem;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        font-weight: 600;
-        color: #e31e24;
-      }
-      .contact-main { padding: 80px 0; background: #fff; }
-      .contact-main .container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
-      .contact-info-box { background: #0f172a; padding: 50px 40px; border-radius: 4px; }
-      .contact-info-box h2 { color: #fff; font-size: 1.8rem; margin-bottom: 10px; }
-      .contact-info-box > p { color: rgba(255,255,255,0.6); margin-bottom: 40px; font-size: 0.95rem; }
-      .contact-info-item { display: flex; gap: 18px; margin-bottom: 30px; }
-      .contact-info-icon {
-        width: 48px; height: 48px; border-radius: 50%;
-        background: rgba(227,30,36,0.15); border: 1px solid rgba(227,30,36,0.3);
-        display: flex; align-items: center; justify-content: center;
-        color: #e31e24; font-size: 1.1rem; flex-shrink: 0;
-      }
-      .contact-info-label { color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
-      .contact-info-value { color: #fff; font-size: 0.95rem; line-height: 1.6; }
-      .contact-info-value a { color: #fff; transition: color 0.2s; }
-      .contact-info-value a:hover { color: #e31e24; }
-      .contact-social { margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); }
-      .contact-social p { color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-      .contact-social-links { display: flex; gap: 12px; }
-      .contact-social-link {
-        width: 42px; height: 42px; border-radius: 50%;
-        background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-        display: flex; align-items: center; justify-content: center;
-        color: #fff; font-size: 1rem; transition: all 0.3s;
-      }
-      .contact-social-link:hover { background: #e31e24; border-color: #e31e24; }
-      
-      /* Form */
-      .contact-form-box { background: #f8f8f8; padding: 50px 40px; border-radius: 4px; border: 1px solid #eee; }
-      .contact-form-box h2 { font-size: 1.8rem; margin-bottom: 8px; }
-      .contact-form-box > p { color: #666; margin-bottom: 35px; font-size: 0.95rem; }
-      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-      .form-field { margin-bottom: 20px; }
-      .form-field label { display: block; font-size: 0.85rem; font-weight: 700; color: #333; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
-      .form-field input, .form-field select, .form-field textarea {
-        width: 100%; padding: 14px 18px;
-        border: 1.5px solid #ddd; border-radius: 4px;
-        font-size: 0.95rem; color: #111;
-        background: #fff;
-        transition: border-color 0.2s, box-shadow 0.2s;
-        outline: none;
-        font-family: 'Inter', sans-serif;
-      }
-      .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
-        border-color: #e31e24;
-        box-shadow: 0 0 0 3px rgba(227,30,36,0.08);
-      }
-      .form-field textarea { resize: vertical; min-height: 120px; }
-      .form-submit {
-        width: 100%; padding: 16px;
-        background: radial-gradient(circle, #e31e24 0%, #a11418 100%);
-        color: #fff; border: none; border-radius: 4px;
-        font-size: 1rem; font-weight: 900; letter-spacing: 1px;
-        cursor: pointer; transition: all 0.3s;
-        box-shadow: 0 4px 20px rgba(227,30,36,0.3);
-      }
-      .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(227,30,36,0.4); }
-      .form-submit i { margin-right: 8px; }
-      
-      /* Map */
-      .contact-map { padding: 0 0 80px; background: #fff; }
-      .contact-map .container { }
-      .contact-map h2 { text-align: center; font-size: 2rem; margin-bottom: 8px; }
-      .contact-map > .container > p { text-align: center; color: #666; margin-bottom: 40px; }
-      .map-wrap { border-radius: 4px; overflow: hidden; border: 1px solid #eee; box-shadow: 0 10px 40px rgba(0,0,0,0.06); }
-      .map-wrap iframe { display: block; width: 100%; height: 420px; border: none; }
-
-      /* Working hours band */
-      .hours-band { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 50px 0; }
-      .hours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
-      .hours-item h4 { color: #fff; font-size: 1rem; margin-bottom: 6px; }
-      .hours-item p { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
-      .hours-item .hours-badge { display: inline-block; background: rgba(227,30,36,0.2); border: 1px solid rgba(227,30,36,0.3); color: #e31e24; padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
-
-      @media (max-width: 900px) {
-        .contact-main .container { grid-template-columns: 1fr; }
-        .form-row { grid-template-columns: 1fr; }
-        .contact-info-box, .contact-form-box { padding: 35px 25px; }
-      }
-    </style>
   </head>
-
+  
 <body>
   
     <nav class="navbar-nav navbar-scrolled">
@@ -129,16 +28,27 @@
           <li class="navbar-menuItem">
             <span class="navbar-menuLink">Ürünlerimiz <i class="fas fa-chevron-down"></i></span>
             <div class="navbar-dropdown">
-              <a href="urunler/giyotin-tam-balkon.html" class="navbar-dropdownItem">Giyotin Tam Balkon</a>
-              <a href="urunler/katlanir-sistem-cam-balkon.html" class="navbar-dropdownItem">Katlanır - Sürme Cam Balkon</a>
-              <a href="urunler/bioklimatik-pergola.html" class="navbar-dropdownItem">Bioklimatik Pergola</a>
-              <a href="urunler/ruzgar-kirici-sistem.html" class="navbar-dropdownItem">Rüzgar Kırıcı Sistem</a>
-              <a href="urunler/kis-bahcesi.html" class="navbar-dropdownItem">Çelik Konstrüksiyon &amp; Kış Bahçesi</a>
-              <a href="urunler/dusakabin-sistemleri.html" class="navbar-dropdownItem">Duşakabin Sistemleri</a>
-              <a href="urunler/cam-kapi-sistemleri.html" class="navbar-dropdownItem">Cam Kapı Sistemleri</a>
-              <a href="urunler/kompozit-cephe-sistemleri.html" class="navbar-dropdownItem">Kompozit Cephe Sistemleri</a>
-              <a href="urunler/pvc-cam-sistemleri.html" class="navbar-dropdownItem">PVC Cam Sistemleri</a>
-              <a href="urunler/kupeste-modelleri.html" class="navbar-dropdownItem">Küpeşte Modelleri</a>
+              
+    <a href="urunler/giyotin-tam-balkon.html" class="navbar-dropdownItem">Giyotin Tam Balkon</a>
+  
+    <a href="urunler/katlanir-sistem-cam-balkon.html" class="navbar-dropdownItem">Katlanır - Sürme Cam Balkon</a>
+  
+    <a href="urunler/bioklimatik-pergola.html" class="navbar-dropdownItem">Bioklimatik Pergola</a>
+  
+    <a href="urunler/ruzgar-kirici-sistem.html" class="navbar-dropdownItem">Rüzgar Kırıcı Sistem</a>
+  
+    <a href="urunler/kis-bahcesi.html" class="navbar-dropdownItem">Çelik Konstrüksiyon & Kış Bahçesi</a>
+  
+    <a href="urunler/dusakabin-sistemleri.html" class="navbar-dropdownItem">Duşakabin Sistemleri</a>
+  
+    <a href="urunler/cam-kapi-sistemleri.html" class="navbar-dropdownItem">Cam Kapı Sistemleri</a>
+  
+    <a href="urunler/kompozit-cephe-sistemleri.html" class="navbar-dropdownItem">Kompozit Cephe Sistemleri</a>
+  
+    <a href="urunler/pvc-cam-sistemleri.html" class="navbar-dropdownItem">PVC Cam Sistemleri</a>
+  
+    <a href="urunler/kupeste-modelleri.html" class="navbar-dropdownItem">Küpeşte Modelleri</a>
+  
             </div>
           </li>
           <li class="navbar-menuItem"><a href="e-katalog.html" class="navbar-menuLink">E-Katalog</a></li>
@@ -170,13 +80,48 @@
             <div class="navbar-mobileLink mobile-products-trigger">
               Ürünlerimiz <i class="fas fa-chevron-down" style="font-size: 0.9rem;"></i>
             </div>
-            <ul class="navbar-mobileSubLinks" style="display: none;">
-              <li><a href="urunler/giyotin-tam-balkon.html" class="navbar-mobileSubLink">Giyotin Tam Balkon</a></li>
-              <li><a href="urunler/katlanir-sistem-cam-balkon.html" class="navbar-mobileSubLink">Katlanır - Sürme Cam Balkon</a></li>
-              <li><a href="urunler/bioklimatik-pergola.html" class="navbar-mobileSubLink">Bioklimatik Pergola</a></li>
-              <li><a href="urunler/ruzgar-kirici-sistem.html" class="navbar-mobileSubLink">Rüzgar Kırıcı Sistem</a></li>
-              <li><a href="urunler/kis-bahcesi.html" class="navbar-mobileSubLink">Çelik Konstrüksiyon &amp; Kış Bahçesi</a></li>
-              <li><a href="urunler/dusakabin-sistemleri.html" class="navbar-mobileSubLink">Duşakabin Sistemleri</a></li>
+            <ul class="navbar-mobileSubLinks" style="display: none; flex-direction: column; gap: 12px; list-style: none; padding: 15px 0 0 15px;">
+              
+    <li>
+      <a href="urunler/giyotin-tam-balkon.html" class="navbar-mobileSubLink">Giyotin Tam Balkon</a>
+    </li>
+  
+    <li>
+      <a href="urunler/katlanir-sistem-cam-balkon.html" class="navbar-mobileSubLink">Katlanır - Sürme Cam Balkon</a>
+    </li>
+  
+    <li>
+      <a href="urunler/bioklimatik-pergola.html" class="navbar-mobileSubLink">Bioklimatik Pergola</a>
+    </li>
+  
+    <li>
+      <a href="urunler/ruzgar-kirici-sistem.html" class="navbar-mobileSubLink">Rüzgar Kırıcı Sistem</a>
+    </li>
+  
+    <li>
+      <a href="urunler/kis-bahcesi.html" class="navbar-mobileSubLink">Çelik Konstrüksiyon & Kış Bahçesi</a>
+    </li>
+  
+    <li>
+      <a href="urunler/dusakabin-sistemleri.html" class="navbar-mobileSubLink">Duşakabin Sistemleri</a>
+    </li>
+  
+    <li>
+      <a href="urunler/cam-kapi-sistemleri.html" class="navbar-mobileSubLink">Cam Kapı Sistemleri</a>
+    </li>
+  
+    <li>
+      <a href="urunler/kompozit-cephe-sistemleri.html" class="navbar-mobileSubLink">Kompozit Cephe Sistemleri</a>
+    </li>
+  
+    <li>
+      <a href="urunler/pvc-cam-sistemleri.html" class="navbar-mobileSubLink">PVC Cam Sistemleri</a>
+    </li>
+  
+    <li>
+      <a href="urunler/kupeste-modelleri.html" class="navbar-mobileSubLink">Küpeşte Modelleri</a>
+    </li>
+  
             </ul>
           </li>
           <li><a href="e-katalog.html" class="navbar-mobileLink">E-Katalog</a></li>
@@ -186,176 +131,120 @@
         </ul>
       </div>
     </nav>
+  
+  
+    <section class="pageheader-headerSection">
+      <div class="container">
+        <h1 class="pageheader-title">İletişim</h1>
+        <p class="pageheader-subtitle">Size Bir Telefon Kadar Yakınız</p>
+      </div>
+    </section>
+  
 
-  <!-- HERO -->
-  <section class="contact-hero">
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
     <div class="container">
-      <h1>İletişim</h1>
-      <p>Ücretsiz Keşif &amp; Teklif</p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Adres</h4>
+              <p>Piri Mehmet Paşa Mah. Burhan Soyaslan Cad. No: 20/A Silivri / İstanbul</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Telefon</h4>
+              <p><a href="tel:05079165707">0507 916 57 07</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/905079165707" target="_blank" rel="noopener noreferrer">WhatsApp ile Yazın</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>E-posta</h4>
+              <p><a href="mailto:info@cagdasproyapi.com">info@cagdasproyapi.com</a></p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <div>
+              <h4>Çalışma Saatleri</h4>
+              <p>Pazartesi–Cumartesi: 09:00–19:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-mapWrap">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.3!2d28.2438394!3d41.0770615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5153dffc233f9%3A0x412e31643c326a5a!2sALBERT%20GENAU%20CAGDAS%20PRO%20YAPI!5e0!3m2!1str!2str!4v1715000000000!5m2!1str!2str" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- HOURS BAND -->
-  <div class="hours-band">
+  <!-- QUOTE FORM SECTION -->
+  <section class="quote-section">
     <div class="container">
-      <div class="hours-grid">
-        <div class="hours-item">
-          <h4>Çalışma Saatleri</h4>
-          <p>Pazartesi – Cumartesi</p>
-          <span class="hours-badge">09:00 – 19:00</span>
-        </div>
-        <div class="hours-item">
-          <h4>Telefon</h4>
-          <p><a href="tel:05079165707" style="color:rgba(255,255,255,0.6);">0507 916 57 07</a></p>
-          <span class="hours-badge">Hemen Ara</span>
-        </div>
-        <div class="hours-item">
-          <h4>WhatsApp</h4>
-          <p>7/24 Mesaj atın</p>
-          <span class="hours-badge">Hızlı Yanıt</span>
-        </div>
-        <div class="hours-item">
-          <h4>Ücretsiz Keşif</h4>
-          <p>Evinize geliyoruz</p>
-          <span class="hours-badge">Randevu Al</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAIN CONTACT -->
-  <section class="contact-main">
-    <div class="container">
-      
-      <!-- Info Box -->
-      <div class="contact-info-box">
-        <h2>Bize Ulaşın</h2>
-        <p>Sorularınız için telefon, WhatsApp veya e-posta ile ulaşabilirsiniz. Ücretsiz keşif için randevu alın.</p>
-
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div>
-            <div class="contact-info-label">Adres</div>
-            <div class="contact-info-value">Piri Mehmet Paşa Mah. Burhan Soyaslan Cad. No: 20/A<br>Silivri / İstanbul</div>
+      <div class="quote-wrapper">
+        <div>
+          <span class="quote-tag">Teklif İsteyin</span>
+          <h2 class="quote-heading">Fiyat Teklifi İsteyin</h2>
+          <p class="quote-sub">Aşağıdaki formu doldurun, ihtiyacınıza en uygun teklifi hazırlayıp WhatsApp üzerinden anında paylaşalım.</p>
+          <div class="quote-features">
+            <div class="quote-feature"><i class="fas fa-check"></i> <span>Ücretsiz Yerinde Keşif</span></div>
+            <div class="quote-feature"><i class="fas fa-check"></i> <span>Albert Genau Yetkili Bayi Güvencesi</span></div>
+            <div class="quote-feature"><i class="fas fa-check"></i> <span>Hızlı ve Profesyonel Montaj</span></div>
           </div>
         </div>
-
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
-          <div>
-            <div class="contact-info-label">Telefon</div>
-            <div class="contact-info-value"><a href="tel:05079165707">0507 916 57 07</a></div>
+        <form id="quote-form-el" class="quote-form">
+          <div class="quote-field">
+            <label for="quote-name">Adınız Soyadınız</label>
+            <input type="text" id="quote-name" required placeholder="Örn: Ahmet Yılmaz" />
           </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
-          <div>
-            <div class="contact-info-label">WhatsApp</div>
-            <div class="contact-info-value"><a href="https://wa.me/905079165707" target="_blank">Mesaj Gönderin</a></div>
+          <div class="quote-field">
+            <label for="quote-phone">Telefon Numaranız</label>
+            <input type="tel" id="quote-phone" required placeholder="Örn: 0500 000 00 00" />
           </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
-          <div>
-            <div class="contact-info-label">E-posta</div>
-            <div class="contact-info-value"><a href="mailto:info@cagdasproyapi.com">info@cagdasproyapi.com</a></div>
-          </div>
-        </div>
-
-        <div class="contact-info-item">
-          <div class="contact-info-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <div class="contact-info-label">Çalışma Saatleri</div>
-            <div class="contact-info-value">Pazartesi – Cumartesi: 09:00 – 19:00</div>
-          </div>
-        </div>
-
-        <div class="contact-social">
-          <p>Bizi takip edin</p>
-          <div class="contact-social-links">
-            <a href="https://instagram.com/albertgenau_cagdaspro" target="_blank" rel="noopener" class="contact-social-link">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/905079165707" target="_blank" rel="noopener" class="contact-social-link">
-              <i class="fab fa-whatsapp"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Form Box -->
-      <div class="contact-form-box">
-        <h2>Teklif İsteyin</h2>
-        <p>Formu doldurun, en kısa sürede WhatsApp üzerinden size ulaşalım.</p>
-
-        <form id="contact-form-el">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="contact-name">Adınız Soyadınız *</label>
-              <input type="text" id="contact-name" name="name" placeholder="Adınız Soyadınız" required />
-            </div>
-            <div class="form-field">
-              <label for="contact-phone">Telefon Numaranız *</label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="0XXX XXX XX XX" required />
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="contact-email">E-posta Adresiniz</label>
-            <input type="email" id="contact-email" name="email" placeholder="ornek@email.com" />
-          </div>
-
-          <div class="form-field">
-            <label for="contact-service">İlgilendiğiniz Hizmet</label>
-            <select id="contact-service" name="service">
-              <option value="">Hizmet Seçin</option>
-              <option value="Giyotin Cam Balkon">Giyotin Cam Balkon</option>
-              <option value="Katlanır - Sürme Cam Balkon">Katlanır - Sürme Cam Balkon</option>
+          <div class="quote-field">
+            <label for="quote-service">İstediğiniz Hizmet</label>
+            <select id="quote-service" required>
+              <option value="Cam Balkon">Cam Balkon</option>
+              <option value="Kış Bahçesi">Kış Bahçesi</option>
+              <option value="Duşakabin">Duşakabin</option>
+              <option value="Cam Kapı">Cam Kapı</option>
+              <option value="Çelik Konstrüksiyon">Çelik Konstrüksiyon</option>
               <option value="Bioklimatik Pergola">Bioklimatik Pergola</option>
               <option value="Rüzgar Kırıcı Sistem">Rüzgar Kırıcı Sistem</option>
-              <option value="Çelik Konstrüksiyon & Kış Bahçesi">Çelik Konstrüksiyon & Kış Bahçesi</option>
-              <option value="Duşakabin Sistemleri">Duşakabin Sistemleri</option>
-              <option value="Cam Kapı Sistemleri">Cam Kapı Sistemleri</option>
-              <option value="Kompozit Cephe Sistemleri">Kompozit Cephe Sistemleri</option>
-              <option value="PVC Cam Sistemleri">PVC Cam Sistemleri</option>
-              <option value="Küpeşte Modelleri">Küpeşte Modelleri</option>
-              <option value="Diğer">Diğer</option>
+              <option value="Diğer Hizmetler">Diğer Hizmetler</option>
             </select>
           </div>
-
-          <div class="form-field">
-            <label for="contact-message">Mesajınız</label>
-            <textarea id="contact-message" name="message" placeholder="Projenizi kısaca anlatın (metrekare, kat sayısı, özel istekler vb.)"></textarea>
+          <div class="quote-field">
+            <label for="quote-message">Detaylar / Mesajınız</label>
+            <textarea id="quote-message" rows="4" placeholder="Balkon ölçüleri veya istediğiniz renk vb. detaylar..."></textarea>
           </div>
-
-          <button type="submit" class="form-submit">
-            <i class="fab fa-whatsapp"></i>
-            WhatsApp ile Gönder
-          </button>
+          <button type="submit" class="quote-submit">WHATSAPP İLE TEKLİF İSTE</button>
         </form>
       </div>
-
     </div>
   </section>
 
-  <!-- MAP -->
-  <section class="contact-map">
-    <div class="container">
-      <h2>Showroomumuz</h2>
-      <p style="text-align:center; color:#666; margin-bottom:40px;">Silivri'deki showroomumuzu ziyaret edin, ürünlerimizi yerinde inceleyin.</p>
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.0!2d28.2468!3d41.0731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDA0JzIzLjIiTiAyOMKwMTQnNDguNSJF!5e0!3m2!1str!2str!4v1"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
+  
     <footer class="footer-footer">
       <div class="container">
         <div class="footer-grid">
@@ -387,12 +276,19 @@
           <div>
             <h4 class="footer-columnTitle">Popüler Ürünler</h4>
             <ul class="footer-linkList">
-              <li><a href="urunler/giyotin-tam-balkon.html" class="footer-link">Giyotin Tam Balkon</a></li>
-              <li><a href="urunler/katlanir-sistem-cam-balkon.html" class="footer-link">Katlanır - Sürme Cam Balkon</a></li>
-              <li><a href="urunler/bioklimatik-pergola.html" class="footer-link">Bioklimatik Pergola</a></li>
-              <li><a href="urunler/ruzgar-kirici-sistem.html" class="footer-link">Rüzgar Kırıcı Sistem</a></li>
-              <li><a href="urunler/kis-bahcesi.html" class="footer-link">Çelik Konstrüksiyon &amp; Kış Bahçesi</a></li>
-              <li><a href="urunler/dusakabin-sistemleri.html" class="footer-link">Duşakabin Sistemleri</a></li>
+              
+    <li><a href="urunler/giyotin-tam-balkon.html" class="footer-link">Giyotin Tam Balkon</a></li>
+  
+    <li><a href="urunler/katlanir-sistem-cam-balkon.html" class="footer-link">Katlanır - Sürme Cam Balkon</a></li>
+  
+    <li><a href="urunler/bioklimatik-pergola.html" class="footer-link">Bioklimatik Pergola</a></li>
+  
+    <li><a href="urunler/ruzgar-kirici-sistem.html" class="footer-link">Rüzgar Kırıcı Sistem</a></li>
+  
+    <li><a href="urunler/kis-bahcesi.html" class="footer-link">Çelik Konstrüksiyon & Kış Bahçesi</a></li>
+  
+    <li><a href="urunler/dusakabin-sistemleri.html" class="footer-link">Duşakabin Sistemleri</a></li>
+  
             </ul>
           </div>
 

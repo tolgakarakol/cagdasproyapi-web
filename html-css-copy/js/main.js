@@ -208,20 +208,14 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('contact-name')?.value || '';
-      const email = document.getElementById('contact-email')?.value || '';
-      const phone = document.getElementById('contact-phone')?.value || '';
-      const service = document.getElementById('contact-service')?.value || '';
-      const msg = document.getElementById('contact-message')?.value || '';
+      const name = document.getElementById('contact-name').value;
+      const email = document.getElementById('contact-email').value;
+      const phone = document.getElementById('contact-phone').value;
+      const msg = document.getElementById('contact-message').value;
 
-      let text = `Merhaba, Çağdaş Pro Yapı web siteniz üzerinden mesaj gönderiyorum.\n\nİsim: ${name}\nTelefon: ${phone}`;
-      if (email) text += `\nE-posta: ${email}`;
-      if (service) text += `\nİlgilenilen Hizmet: ${service}`;
-      if (msg) text += `\nMesaj: ${msg}`;
-      
+      const text = `Merhaba, Çağdaş Pro Yapı web siteniz üzerinden mesaj gönderiyorum.\n\nİsim: ${name}\nE-posta: ${email}\nTelefon: ${phone}\nMesaj: ${msg}`;
       const encoded = encodeURIComponent(text);
       window.open(`https://wa.me/905079165707?text=${encoded}`, '_blank');
     });
   }
-
 });
