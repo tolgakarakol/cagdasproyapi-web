@@ -170,7 +170,9 @@ export const PRODUCT_DATA: any = {
             desc: 'İster düz ister açılı/oval balkon mimarisine sahip olun; özel tasarım kanatlar direksiz olarak tamamen açılabilir ve manzaranız bölünmez.'
           }
         ]
-      },
+      }
+    ],
+    extraSections: [
       {
         type: 'text_image_full',
         title: 'Gizli Su Tahliye Sistemi',
@@ -182,7 +184,7 @@ export const PRODUCT_DATA: any = {
         title: 'Mekanlara Özgürlük Veren\nEşik Çözümleri',
         content: 'Farklı ihtiyaçlara cevap verebilen eşikli ve eşiksiz ray profilleri sayesinde, Tiara Twinmax hem iç mekan bölmelerinde hem de dış mekan kapatmalarında maksimum esneklik sağlar. Geçiş alanlarında takılmaları önleyen özel eşiksiz alt kasa tasarımıyla konforunuzu artırır.',
         image: '/images/twinmax/Tiara-Twinmax-Esikli-ve-Esiksiz-Kasa-Secenekleri.webp'
-      },
+      }
     ],
     bottomFeatures: [
       {
@@ -912,40 +914,7 @@ export default function ProductClient({ slug }: { slug: string }) {
           })}
 
 
-          {/* Extra Sections (text_image_full, text_image_dark) */}
-          {product.extraSections?.map((es: any, idx: number) => {
-            if (es.type === 'text_image_full') {
-              return (
-                <section key={`extra-${idx}`} className={styles.extraFullSection}>
-                  <div className={styles.extraFullGrid}>
-                    <div className={styles.extraFullImg}>
-                      <img src={es.image} alt={es.title} />
-                    </div>
-                    <div className={styles.extraFullContent}>
-                      <h2 className={styles.extraFullTitle}>{es.title}</h2>
-                      <p className={styles.extraFullText}>{es.content}</p>
-                    </div>
-                  </div>
-                </section>
-              );
-            }
-            if (es.type === 'text_image_dark') {
-              return (
-                <section key={`extra-${idx}`} className={styles.extraDarkSection}>
-                  <div className={styles.extraDarkGrid}>
-                    <div className={styles.extraDarkContent}>
-                      <h2 className={styles.extraDarkTitle}>{es.title}</h2>
-                      <p className={styles.extraDarkText}>{es.content}</p>
-                    </div>
-                    <div className={styles.extraDarkImg}>
-                      <img src={es.image} alt={es.title} />
-                    </div>
-                  </div>
-                </section>
-              );
-            }
-            return null;
-          })}
+
 
           
           {product.features && product.features.length > 0 && (
@@ -1053,6 +1022,41 @@ export default function ProductClient({ slug }: { slug: string }) {
               </div>
             </section>
           )}
+
+          {/* Extra Sections (text_image_full, text_image_dark) */}
+          {product.extraSections?.map((es: any, idx: number) => {
+            if (es.type === 'text_image_full') {
+              return (
+                <section key={`extra-${idx}`} className={styles.extraFullSection}>
+                  <div className={styles.extraFullGrid}>
+                    <div className={styles.extraFullImg}>
+                      <img src={es.image} alt={es.title} />
+                    </div>
+                    <div className={styles.extraFullContent}>
+                      <h2 className={styles.extraFullTitle}>{es.title}</h2>
+                      <p className={styles.extraFullText}>{es.content}</p>
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+            if (es.type === 'text_image_dark') {
+              return (
+                <section key={`extra-${idx}`} className={styles.extraDarkSection}>
+                  <div className={styles.extraDarkGrid}>
+                    <div className={styles.extraDarkContent}>
+                      <h2 className={styles.extraDarkTitle}>{es.title}</h2>
+                      <p className={styles.extraDarkText}>{es.content}</p>
+                    </div>
+                    <div className={styles.extraDarkImg}>
+                      <img src={es.image} alt={es.title} />
+                    </div>
+                  </div>
+                </section>
+              );
+            }
+            return null;
+          })}
 
           {/* Final Features Grid */}
           {product.finalFeatures && product.finalFeatures.length > 0 && (

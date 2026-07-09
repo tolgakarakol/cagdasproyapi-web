@@ -1626,7 +1626,7 @@ activeProducts.forEach(slug => {
 
       <!-- BOTTOM FEATURES -->
       ${p.bottomFeatures && p.bottomFeatures.length > 0 ? `
-        <section class="product-features" style="padding: 80px 0 ${p.finalFeatures && p.finalFeatures.length > 0 ? '15px' : '80px'} 0; background: #f8f8f8;">
+        <section class="product-features" style="padding: 80px 0 ${p.extraSections && p.extraSections.length > 0 ? '15px' : (p.finalFeatures && p.finalFeatures.length > 0 ? '15px' : '80px')} 0; background: #f8f8f8;">
           <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
               ${p.bottomFeatures.map(f => `
@@ -1644,6 +1644,45 @@ activeProducts.forEach(slug => {
           </div>
         </section>
       ` : ''}
+
+      <!-- EXTRA SECTIONS (MIDDLE OF GRIDS) -->
+      ${p.extraSections && p.extraSections.length > 0 ? p.extraSections.map(es => {
+        if (es.type === 'text_image_full') {
+          return `
+            <section style="padding: 80px 0; background: #fff;">
+              <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                  <div style="border-radius: 8px; overflow: hidden;">
+                    <img src="../${es.image.replace(/^\//, '')}" alt="${es.title}" style="width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px;" />
+                  </div>
+                  <div>
+                    <h2 style="font-size: 2.2rem; font-weight: 900; color: #111; margin-bottom: 25px; line-height: 1.2;">${es.title}</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">${es.content}</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          `;
+        }
+        if (es.type === 'text_image_dark') {
+          return `
+            <section style="padding: 80px 0; background: #111; color: #fff;">
+              <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+                  <div>
+                    <h2 style="font-size: 2.2rem; font-weight: 900; color: #fff; margin-bottom: 25px; line-height: 1.2;">${es.title.replace(/\n/g, '<br/>')}</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: #ccc;">${es.content}</p>
+                  </div>
+                  <div style="border-radius: 8px; overflow: hidden;">
+                    <img src="../${es.image.replace(/^\//, '')}" alt="${es.title.replace(/\n/g, ' ')}" style="width: 100%; height: auto; display: block; object-fit: cover; border-radius: 8px;" />
+                  </div>
+                </div>
+              </div>
+            </section>
+          `;
+        }
+        return '';
+      }).join('') : ''}
 
       <!-- FINAL FEATURES -->
       ${p.finalFeatures && p.finalFeatures.length > 0 ? `
