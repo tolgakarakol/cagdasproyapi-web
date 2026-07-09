@@ -100,8 +100,8 @@ cssFiles.forEach(file => {
     if (skipClasses.has(className.toLowerCase()) || className.startsWith('fa-')) {
       return match;
     }
-    // Don't prefix state classes like active, open, scrolled, visible
-    if (['active', 'open', 'scrolled', 'visible', 'mobilemenuopen', 'dropdownitem', 'mobilelink', 'teklifbtn', 'hamburger'].includes(className.toLowerCase())) {
+    // Don't prefix state classes like active, open, visible
+    if (['active', 'open', 'visible'].includes(className.toLowerCase())) {
       return match;
     }
     return `.${file.prefix}-${className}`;
@@ -1449,7 +1449,7 @@ activeProducts.forEach(slug => {
           <span style="display: inline-block; color: var(--accent); font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">
             ${p.badge}
           </span>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px;">${p.heroTitle}</h1>
+          <h1 style="color: #fff; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px;">${p.heroTitle.replace(/\n/g, '<br/>')}</h1>
           <p style="font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">${p.heroSub}</p>
         </div>
       </section>
@@ -1544,15 +1544,14 @@ activeProducts.forEach(slug => {
 
     bodyHTML = `
       <!-- PRODUCT HERO -->
-      <section style="position: relative; height: 75vh; background-image: url('../${p.heroImg.replace(/^\//, '')}'); background-size: cover; background-position: center; display: flex; align-items: center; color: #fff;">
-        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);"></div>
-        <div class="container" style="position: relative; z-index: 3; padding: 0 40px;">
-          <span style="background: radial-gradient(circle, #e31e24 0%, #a11418 100%); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 8px 18px; border-radius: 20px; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(227,30,36,0.3);">
-            ${p.badge}
-          </span>
-          <h1 style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1;">${p.heroTitle}</h1>
-          <p style="font-size: clamp(1rem, 2vw, 1.3rem); color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 40px; line-height: 1.6;">${p.heroSub}</p>
-          <a href="../iletisim.html" class="btn btn-primary">FİYAT TEKLİFİ AL</a>
+      <section class="product-hero">
+        <img src="../${p.heroImg.replace(/^\//, '')}" alt="${p.heroTitle.replace(/\n/g, ' ')}" class="product-heroImg" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;" />
+        <div class="product-heroOverlay">
+          <div class="container" style="position: relative; z-index: 3; width: 100%;">
+            <div class="product-heroBadge">${p.badge}</div>
+            <h1 class="product-heroTitle">${p.heroTitle.replace(/\n/g, '<br/>')}</h1>
+            ${p.heroSub ? `<p class="product-heroSub">${p.heroSub}</p>` : ''}
+          </div>
         </div>
       </section>
 
@@ -1666,6 +1665,11 @@ activeProducts.forEach(slug => {
         }
         if (es.type === 'text_image_dark') {
           return `
+            ${es.topImage ? `
+              <div style="max-width: 1200px; margin: 0 auto 30px auto; padding: 0 30px; border-radius: 8px; overflow: hidden;">
+                <img src="../${es.topImage.replace(/^\//, '')}" alt="${es.title.replace(/\n/g, ' ')}" style="width: 100%; height: auto; display: block; border-radius: 8px;" />
+              </div>
+            ` : ''}
             <section style="padding: 80px 0; background: #111; color: #fff;">
               <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 30px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">

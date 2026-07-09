@@ -324,7 +324,7 @@
 
 .darkFeaturesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -1275,6 +1275,29 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: #555;
+}
+
+/* ===== EXTRA TOP IMAGE WRAP ===== */
+.extraTopImageWrap {
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+  padding: 0 30px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.extraTopImageWrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .extraTopImageWrap {
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
 }
 
 /* ===== EXTRA DARK SECTION ===== */
