@@ -1377,10 +1377,13 @@
   position: relative;
   height: 220px;
   overflow: hidden;
+  background: #fff;
+  border-bottom: 1px solid #f4f4f4;
 }
 
 .finalFeatureImg img {
-  object-fit: cover;
+  object-fit: contain;
+  padding: 25px;
   transition: transform 0.5s;
 }
 
