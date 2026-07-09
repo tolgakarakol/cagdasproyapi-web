@@ -245,7 +245,7 @@ export const PRODUCT_DATA: any = {
         type: 'text_list_with_image',
         title: 'HER BALKONA\nHER MEKANA UYGUN!',
         content: 'Tiara ile yeni yaşam alanınızın keyfine varın. Maksimum genişliğe kadar kanat yapısına izin veren bu sistem, eşsiz bir panoramik görüntü imkanı sunuyor. Sistemin menteşeli panelleri üzerine entegre edilen çocuk kilidi sayesinde, çocuğunuz emniyette.',
-        image: '/images/tiara-08-10/Tiara-Ornek-01.jpg',
+        image: '/images/tiara-08-10/kaliteli-tekcamli-01.png',
         features: [
           {
             title: 'Cam Balkonu Açıp Kapatmak Çok Kolay',
