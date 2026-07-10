@@ -742,8 +742,7 @@
 /* ===== TEST RESULTS SECTION ===== */
 .testSection {
   padding: 100px 0;
-  background: #fff;
-  border-top: 1px solid #eee;
+  background: #fdfdfd;
 }
 
 .testHeader {
@@ -751,30 +750,30 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 
 .testHeader::before,
 .testHeader::after {
   content: "";
   flex: 1;
-  height: 1.5px;
-  background: #802629;
+  height: 1px;
+  background: rgba(128, 38, 41, 0.2);
   max-width: 300px;
 }
 
 .testTitle {
   font-size: 2.2rem;
-  font-weight: 300;
-  color: #802629;
+  font-weight: 700;
+  color: #111;
   font-family: 'Inter', sans-serif;
   white-space: nowrap;
 }
 
 .testGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
@@ -785,28 +784,52 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+}
+
+.testCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(128, 38, 41, 0.08);
 }
 
 .testIcon {
-  font-size: 3.5rem;
-  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(128, 38, 41, 0.05);
+  color: #802629;
+  font-size: 2.2rem;
   margin-bottom: 25px;
-  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+.testCard:hover .testIcon {
+  background: #802629;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .testCardTitle {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 800;
-  color: #333;
+  color: #111;
   text-transform: uppercase;
   margin-bottom: 15px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .testCardDesc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 250px;
 }
 
