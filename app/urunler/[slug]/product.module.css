@@ -82,7 +82,7 @@
 }
 
 .featuresWithNext {
-  padding-bottom: 15px;
+  padding-bottom: 0;
 }
 
 .featuresGrid {
@@ -123,7 +123,7 @@
 }
 
 .featureCardBody {
-  padding: 28px 24px 40px 24px;
+  padding: 28px 24px;
 }
 
 .featureCardTitle {
