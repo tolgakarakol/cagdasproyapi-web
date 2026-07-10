@@ -181,7 +181,6 @@ export const PRODUCT_DATA: any = {
       },
       {
         type: 'text_image_dark',
-        topImage: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri-2.webp',
         title: 'Mekanlara Özgürlük Veren\nEşik Çözümleri',
         content: 'Farklı ihtiyaçlara cevap verebilen eşikli ve eşiksiz ray profilleri sayesinde, Tiara Twinmax hem iç mekan bölmelerinde hem de dış mekan kapatmalarında maksimum esneklik sağlar. Geçiş alanlarında takılmaları önleyen özel eşiksiz alt kasa tasarımıyla konforunuzu artırır.',
         image: '/images/twinmax/Tiara-Twinmax-Mekanlara-Farkli-Esik-Cozumleri.webp'
