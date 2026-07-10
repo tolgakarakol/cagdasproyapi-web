@@ -96,45 +96,66 @@
 
 .featureCard {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(128, 38, 41, 0.1);
 }
 
 .featureCardImg {
   position: relative;
   height: 220px;
   overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .featureCardImg img {
   object-fit: cover;
-  transition: transform 0.5s;
+  transition: transform 0.5s ease;
 }
 
 .featureCard:hover .featureCardImg img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .featureCardBody {
-  padding: 28px 24px;
+  padding: 30px 25px;
+  position: relative;
+}
+
+.featureCardBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 40px;
+  height: 2px;
+  background: #802629;
+  transition: width 0.3s ease;
+}
+
+.featureCard:hover .featureCardBody::before {
+  width: 60px;
 }
 
 .featureCardTitle {
   font-size: 1.15rem;
   font-weight: 800;
   color: #111;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  letter-spacing: 0.2px;
 }
 
 .featureCardDesc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
   line-height: 1.7;
 }
@@ -1385,48 +1406,68 @@
 
 .finalFeatureCard {
   background: #fff;
-  border-radius: 4px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.4s ease;
 }
 
 .finalFeatureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border-color: rgba(128, 38, 41, 0.1);
 }
 
 .finalFeatureImg {
   position: relative;
   height: 220px;
   overflow: hidden;
-  background: #fff;
-  border-bottom: 1px solid #f4f4f4;
+  background: #fdfdfd;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 
 .finalFeatureImg img {
   object-fit: contain;
-  padding: 25px;
-  transition: transform 0.5s;
+  padding: 30px;
+  transition: transform 0.5s ease;
 }
 
 .finalFeatureCard:hover .finalFeatureImg img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
 .finalFeatureBody {
-  padding: 28px 24px;
+  padding: 30px 25px;
+  position: relative;
+}
+
+.finalFeatureBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 40px;
+  height: 2px;
+  background: #802629;
+  transition: width 0.3s ease;
+}
+
+.finalFeatureCard:hover .finalFeatureBody::before {
+  width: 60px;
 }
 
 .finalFeatureTitle {
   font-size: 1.15rem;
   font-weight: 800;
   color: #111;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  letter-spacing: 0.2px;
 }
 
 .finalFeatureDesc {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #666;
   line-height: 1.7;
   white-space: pre-line;
