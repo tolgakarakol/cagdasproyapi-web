@@ -572,11 +572,11 @@ export const PRODUCT_DATA: any = {
     tagline: 'Üstten askılı özel taşıyıcı profili sayesinde mekanlarınızı eşiksiz ve esnek bir şekilde bölerek panoramik manzaranın tadını çıkarın.',
     features: [
       { img: '/images/cam-kapi/cam-kapi-dikey-01.png', title: 'Tek Yönlü Kapılar', desc: 'Tek yöne açılabilen özel mekanizması sayesinde dar alanlarda bile pratik ve kullanışlı bir deneyim sunar.' },
-      { img: '/images/cam-kapi/cam-kapi-dikey-02.png', title: 'Çift Yönlü Kapılar', desc: 'Her iki yöne de açılabilen esnek yapısıyla insan trafiğinin yoğun olduğu geçiş noktalarında yüksek konfor sağlar.' },
+      { img: '/images/cam-kapi/cift-cam-kapi.png', title: 'Çift Yönlü Kapılar', desc: 'Her iki yöne de açılabilen esnek yapısıyla insan trafiğinin yoğun olduğu geçiş noktalarında yüksek konfor sağlar.' },
       { img: '/images/cam-kapi/cam-kapi-dikey-03.png', title: 'Güvenlik (Temperli Cam)', desc: 'Kırılmaya ve darbelere karşı ekstra dirençli özel temperli cam yapısıyla mekanlarınızda tam güvenlik sağlar.' }
     ],
     safetyImg: '/images/cam-kapi/cam-kapi-yatay-01.png',
-    cleaningImg: '/images/cam-kapi/cam-kapi-yatay-03.png',
+    cleaningImg: '/images/cam-kapi/guvenlik-nasil-temizlenir.png',
     cleaningSteps: ['Eşiksiz zemin sayesinde alt ray temizliği gerektirmez.', 'Cam yüzeyler standart temizleyicilerle silinebilir.'],
     darkFeatures: [
       { icon: 'fas fa-lock', title: 'Pim Güvencesi', desc: 'Cam paneller yapıştırıcıya ek olarak, Eksantrik Cam Pimleri ile mekanik olarak kilitlenir.' },
