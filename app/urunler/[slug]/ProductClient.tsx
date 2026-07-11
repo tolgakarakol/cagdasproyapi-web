@@ -501,7 +501,7 @@ export const PRODUCT_DATA: any = {
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
     heroSub: 'Neden Yeni Nesil Sürme Sistem?',
     heroImg: '/images/tek-camli-surme-cam-balkon/tek-ana-gorsel.png',
-    tagline: 'SliderNext ile sürme cambalkon sistemlerinde yeni bir devir başlıyor.\n\nBu kez izolasyon, güvenlik ve panoramik görüntü bir arada!',
+    tagline: 'Neden Yeni Nesil Sürme Sistem?\nSliderNext ile sürme cambalkon sistemlerinde yeni bir devir başlıyor.\n\nBu kez izolasyon, güvenlik ve panoramik görüntü bir arada!',
     features: [
       {
         img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_38.png',
