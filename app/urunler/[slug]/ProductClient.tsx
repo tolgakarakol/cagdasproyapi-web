@@ -498,7 +498,7 @@ export const PRODUCT_DATA: any = {
 
   'tek-camli-surme-cam-balkon': {
 
-    badge: 'Albert Genau — Statü Tango®',
+    badge: 'Albert Genau — SliderNext®',
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
     heroSub: 'Güvenilir Performans, Alışılmış Klasik Tasarım.',
     heroImg: '/images/products/kis_bahcesi_hero.jpg',
