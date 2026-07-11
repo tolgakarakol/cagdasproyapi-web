@@ -388,24 +388,132 @@ export const PRODUCT_DATA: any = {
     ]
   },
   'statu-optima': {
-    badge: 'Albert Genau — Statü Optima®',
+    badge: 'Albert Genau — SlideMaster®',
     heroTitle: 'Isıcamlı Sürme Cam Balkon',
-    heroSub: 'Kalite ve Uygun Fiyatın Buluştuğu Tek Camlı Çözüm.',
-    heroImg: '/images/products/katlanir_ekonomik_v3.jpg',
-    tagline: 'Optima 08 ile fiyat endişesi yaşamadan da kaliteli cam balkona sahip olabilirsiniz. Albert Genau kalitesini ekonomik fiyatlarla balkonunuza taşıyan, dayanıklı ve uzun ömürlü en ideal seri.',
+    heroSub: 'Sürme cambalkon sistemlerinin standartlarını yukarı taşıyor.',
+    heroImg: '/images/isicamli-surme-cam-balkon/Backup_of_Slide_Master.jpg',
+    tagline: 'Isıcam\'lı sürme cambalkon SlideMaster, sürme cambalkon sistemlerinin standartlarını yukarı taşıyor. Sürme cambalkon sistemleri yalıtım, konfor ve estetik açıdan incelenerek yenilendi. Balkonlarınızı, kış bahçelerinizi ve restorantlarınızı eşsiz yaşam alanlarına dönüştürüyor.\n\nSlideMaster hem ısıcam\'lı hem tek camlı olarak kullanılabilme özelliğine sahiptir. Sürme sistemlerindeki yalıtım dezavantajını ortadan kaldırıyor ve köşeleri açık hale getiriyor. 1,5 metre panellere ve kendi özel kilit sistemine imkan veren ve Albert Genau patentli taşıyıcı tekerleri sayesinde konforlu hareketi ile diğer ürünlerden ayrılıyor.',
     features: [],
+    sections: [
+      {
+        type: 'text_image',
+        title: 'Durdurulamaz Hareket',
+        content: 'SlideMaster\'da 150 kg panel taşıma kapasitesine sahip, Albert Genau patentli, paslanmaz rulmanlı, yükseklik ayarı yapılabilen, izlediği yoldaki duruma ayak uyduran süspansiyonlu Speed-HD teker kullanılmaktadır. Tüm kanatlar, konforlu şekilde, en az sürtünme ve ses ile hareket eder, açılıp, kapanır.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__1_.jpg',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Üç Boyutlu Tam İzolasyon',
+        content: 'Sistemde yalıtımı üst düzeye çıkarmak için, cam panellerin dikey birleşiminde, duvar bitimlerinde, ray-panel arası tüm çalışma boşluklarında izolasyon fırçaları kullanılmış olup, sistem sağlanabilecek maksimum yalıtım seviyesine sahiptir.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__2_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Her türlü Köşe Tamamen Açık',
+        content: 'L ve U şeklindeki mekanlar için tasarlanan kanat dikme profilleri sayesinde, sistem sorunsuz kullanılabilmekte ve hiçbir sabit köşe birleşim profili kullanılmadan, balkonlar açık hale getirilebilmektedir.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__3_.jpg',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: '4 Kat Yalıtım',
+        content: 'SlideMaster\'ın ısıcam\'lı versiyonunda kullanılan ısıcamların özelliğine bağlı olarak, tek cama göre 4,3 kata varan daha fazla yalıtım sağlanabilmektedir. Yazlar daha serin, kışlar daha sıcak.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__6_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Güvenlikli Kilit Seçenekleri',
+        content: 'İster gagalı gömme kilitli, ister anahtarlı kancalı kilitli, isterseniz mantar başlı ispanyoletli. İstediğiniz güvenlik ve opsiyonu seçmek bir SlideMaster özelliği.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__8_.jpg',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: '3 Farklı Cam Tipi',
+        content: 'Sistemde, 4+12+4 Isıcam, 8 mm ve 10 mm olmak üzere 3 farklı cam tipi kullanılabilmektedir. Sistemde istenen yalıtım düzeyi veya sistemin uygulanacağı yere göre cam seçimi yapılmaktadır.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__9_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Rahat Açılıp, Kapanan Geniş Kanatlar',
+        content: 'Sistem, panoramik görüntüyü engellemeyen 1,5 metre genişliğe kadar kanat yapısına izin vermektedir. Bu geniş kanatlar, gelişmiş teker aksamı sayesinde rahatça açılıp kapanabilmektedir.',
+        image: '/images/isicamli-surme-cam-balkon/SM_325px.png',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Sonsuz Raylı Sistem',
+        content: 'SlideMaster, özel tasarımı sayesinde, 1+1 raydan istenilen sayıya kadar ray yapabilmeye imkan verir. İstediğiniz kadar panel sayısına ulaşılıp, minimum ve maksimum açıklıklar istenilen esneklikte kapanıp, açılabilir.',
+        image: '/images/isicamli-surme-cam-balkon/test-001.450px.png',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Paslanmaz Aksam',
+        content: 'Albert Genau\'nun tüm ürünlerinde olduğu gibi Slidemaster\'da da tüm rulman ve aksam takımları paslanmazlık garantisi altındadır.',
+        image: '/images/isicamli-surme-cam-balkon/sss.300px.png',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Özel Su Tahliye ve Damlalık Sistemi',
+        content: 'Sisteme entegre edilen ray yataklı profil alt-içte su oluğu olarak görev yaparken, dış-üstte damlalık görevini üstlenir. Damlalık sayesinde, en az su sisteme gelir, içeri girmesi muhtemel su da, su tahliye profilinde toplanıp açılan tahliye delikleri aracılığı ile dışarı atılır.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__10_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Hem İçten, Hem Dıştan %100 Temizlenme',
+        content: 'SlideMaster, özel kanat tasarımı sayesinde, tüm kanatlar istendiği zaman birbirinden ayrılıp, ayrı ayrı konumlandırılabilir. Bu sayede hem içten, hem dıştan tüm camlar silinebilmektedir.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi_11.jpg',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Perde — Kepenk — Sineklik Entegrasyonu',
+        content: 'Sistemin en dıştaki rayına istenirse perde, istenirse sineklik, istenirse kepenk bağlanabilir. Bu sayede çok şık bir şekilde güneşi ve sinek geçişini kontrol edebilirsiniz.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__12_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Eşikli – Eşiksiz Kullanım',
+        content: 'SlideMaster hem eşikli hemde eşiksiz olarak kullanılabilir. Restoranttan, kafeye, kışbahçesinden, balkona esnek çözümler sağlar.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__13_.jpg',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Soft-Touch Kir Tutmaz Yüzey',
+        content: 'SlideMaster, hem dekoratif hem de kullanışlı bir sistem olarak tasarlandı. Sistemde, isteğe bağlı olarak kendinden yaldızlı, toz - leke tutmayan özel ESPC boya kullanılabiliyor.',
+        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__14_.jpg',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Nasıl Çalışır?',
+        content: 'SlideMaster, standart olarak 4 raylı olup, her bir panel bir rayda hareket eder. En içteki paneli kapanma yönüne göre hareket ettirdiğinizde, her panel birbirine kenetlenip, birbirini çekerek hareket eder. Çektiğiniz paneli, son noktaya getirdiğinizde, kendiliğinden kilitlenerek kapalı hale gelir. Yukarıdaki hareketleri diğer yönde yaparak sistem kısmen veya tamamen, kolayca açılabilir.',
+        image: '/images/isicamli-surme-cam-balkon/Untitled-1.300px.png',
+        reverse: false
+      }
+    ],
     darkFeatures: [
-      { icon: 'fas fa-tint-slash', title: 'Sızdırmazlık Pulları', desc: 'Kasa profilinin zemine sabitlendiği noktalarda özel plastik pullarla su sızıntısını önler.' },
-      { icon: 'fas fa-sync', title: 'Ay Parça Kilitleme', desc: 'Panellerin açma-kapama sırasında sarkmaması için özel kilitleme sistemi.' },
-      { icon: 'fas fa-shield-halved', title: '8 mm Temperli Cam', desc: 'Yüksek darbe dayanımlı temperli camlar ile aileniz için tam güvenlik.' },
-      { icon: 'fas fa-award', title: '2 Yıl AG Garantisi', desc: 'Sistemin tüm aksamları 2 yıl boyunca Albert Genau güvencesi altındadır.' }
+      { icon: 'fas fa-thermometer-half', title: '4 Kat Yalıtım', desc: 'Tek cama göre 4,3 kata varan ısı yalıtımı. Yazlar serin, kışlar sıcak.' },
+      { icon: 'fas fa-expand-arrows-alt', title: 'Köşesiz Açılım', desc: 'L ve U şeklindeki balkonda hiçbir köşe profili olmadan tamamen açık balkon.' },
+      { icon: 'fas fa-shield-halved', title: 'Güvenlikli Kilit', desc: 'Gömme kilitli, anahtarlı veya ispanyoletli kilit seçenekleri.' },
+      { icon: 'fas fa-award', title: 'AG Garantisi', desc: 'Tüm aksam paslanmazlık garantisi ile Albert Genau güvencesi altındadır.' }
     ],
     testimonials: [
-      { text: 'Hem uygun fiyatlı hem de çok kaliteli. Beklentimizi tam karşıladı.', name: 'Canan V.', city: 'Kocaeli' },
-      { text: 'Eski sistemimize göre çok daha rahat açılıp kapanıyor.', name: 'Murat S.', city: 'Tekirdağ' },
-      { text: 'Balkonumuz tertemiz kaldı, fiyatı da çok makul.', name: 'Ferhat A.', city: 'Edirne' }
+      { text: 'Hem ısıcamlı hem de köşeleri açık yapısıyla harikaydı. Kesinlikle tavsiye ederim.', name: 'Canan V.', city: 'Kocaeli' },
+      { text: 'SlideMaster ile balkonumuz gerçek bir yaşam alanına dönüştü.', name: 'Murat S.', city: 'Tekirdağ' },
+      { text: 'Diğer sistemlerle kıyaslanmaz, kalite ve konfor bir arada.', name: 'Ferhat A.', city: 'Edirne' }
     ]
   },
+
   'statu-tango': {
     badge: 'Albert Genau — Statü Tango®',
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
