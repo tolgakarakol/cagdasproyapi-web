@@ -392,7 +392,7 @@ export const PRODUCT_DATA: any = {
     heroTitle: 'Isıcamlı Sürme Cam Balkon',
     heroSub: 'Sürme Cambalkon Sistemlerinin Standartlarını Yukarı Taşıyor.',
     heroImg: '/images/isicamli-surme-cam-balkon/buyuk-slider-cam-balkon.png',
-    tagline: 'Isıcam\'lı sürme cambalkon SlideMaster, sürme cambalkon sistemlerinin standartlarını yukarı taşıyor. Sürme cambalkon sistemleri yalıtım, konfor ve estetik açıdan incelenerek yenilendi. Balkonlarınızı, kış bahçelerinizi ve restorantlarınızı eşsiz yaşam alanlarına dönüştürüyor.\n\nSlideMaster hem ısıcam\'lı hem tek camlı olarak kullanılabilme özelliğine sahiptir. Sürme sistemlerindeki yalıtım dezavantajını ortadan kaldırıyor ve köşeleri açık hale getiriyor. 1,5 metre panellere ve kendi özel kilit sistemine imkan veren ve Albert Genau patentli taşıyıcı tekerleri sayesinde konforlu hareketi ile diğer ürünlerden ayrılıyor.',
+    tagline: 'Isıcam\'lı sürme cambalkon SlideMaster, sürme cambalkon sistemlerinin standartlarını yukarı taşıyor. Sürme cambalkon sistemleri yalıtım, konfor ve estetik açıdan incelenerek yenilendi. Balkonlarınızı, kış bahçelerinizi ve restorantlarınızı eşsiz yaşam alanlarına dönüştürüyor.',
     features: [
       { img: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__1_.jpg', title: 'Durdurulamaz Hareket', desc: '150 kg panel taşıma kapasitesine sahip, paslanmaz rulmanlı, süspansiyonlu Speed-HD teker ile en az sürtünme ve sessiz hareket.' },
       { img: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__2_.jpg', title: 'Üç Boyutlu Tam İzolasyon', desc: 'Cam panellerin dikey birleşiminde, duvar bitimlerinde ve ray-panel arasındaki tüm boşluklarda izolasyon fırçaları ile maksimum yalıtım.' },
@@ -402,7 +402,7 @@ export const PRODUCT_DATA: any = {
       {
         type: 'text_list_with_image',
         title: '4 KAT YALITIM\nYAZLAR SERIN, KIŞLAR SICAK!',
-        content: 'SlideMaster\'ın ısıcam\'lı versiyonunda kullanılan ısıcamların özelliğine bağlı olarak, tek cama göre 4,3 kata varan daha fazla yalıtım sağlanabilmektedir. 4+12+4 Isıcam, 8 mm ve 10 mm olmak üzere 3 farklı cam tipi kullanılabilmektedir.',
+        content: 'SlideMaster hem ısıcam\'lı hem tek camlı olarak kullanılabilme özelliğine sahiptir. Sürme sistemlerindeki yalıtım dezavantajını ortadan kaldırıyor ve köşeleri açık hale getiriyor. 1,5 metre panellere ve Albert Genau patentli taşıyıcı tekerleri sayesinde tek cama göre 4,3 kata varan ısı yalıtımı sağlanabilmektedir.',
         image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__6_.jpg',
         features: [
           {
