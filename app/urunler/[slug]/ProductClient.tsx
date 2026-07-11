@@ -497,33 +497,89 @@ export const PRODUCT_DATA: any = {
   },
 
   'tek-camli-surme-cam-balkon': {
-
     badge: 'Albert Genau — SliderNext®',
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
-    heroSub: 'Güvenilir Performans, Alışılmış Klasik Tasarım.',
-    heroImg: '/images/products/kis_bahcesi_hero.jpg',
-    tagline: 'Statü Tango, yıllardır tercih edilen klasik cambalkon deneyimini Albert Genau mühendisliği ile sunar. Ekonomik çözümlerde sağlamlık ve sadelik arayanların tercihi.',
+    heroSub: 'Neden Yeni Nesil Sürme Sistem?',
+    heroImg: '/images/tek-camli-surme-cam-balkon/tek-ana-gorsel.png',
+    tagline: 'SliderNext ile sürme cambalkon sistemlerinde yeni bir devir başlıyor.\n\nBu kez izolasyon, güvenlik ve panoramik görüntü bir arada!',
     features: [
-      { img: '/images/products/katlanir_teknik.jpg', title: 'Sarsılmaz Mekanizma', desc: 'Zamanın testinden geçmiş, sağlam and güvenilir kayar katlanır çalışma sistemi.' },
-      { img: '/images/products/giyotin_final.jpg', title: 'Yüksek Taşıma Kapasitesi', desc: 'Özel tasarım profilleri ile geniş cam kanatlarını bile sarsıntısız taşır.' }
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_38.png',
+        title: 'Maksimum Panoramik Görüntü',
+        desc: 'SliderNext, genişliği 1500 mm\'ye, yüksekliği 3100 mm\'ye kadar imkan sağlayan özel tasarımı ile geniş bir görüş alanı sunar.'
+      },
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_14.png',
+        title: 'Sessizliğin Tadını Çıkarın!',
+        desc: 'Tasarlanan gizli fırça ve conta teknolojisi ile kanatlar pürüzsüzce hareket eder ve geriye sadece sessizliği dinlemek kalır.'
+      },
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_18.png',
+        title: 'Smart Lock Sistemi',
+        desc: 'Kolay tak-çıkar özelliği bulunan Smart Lock\'un köşe, yan, orta seçenekleri bulunmaktadır. Akıllı kilidin sayesinde paneller birbirinden bağımsız hareket edebilir.'
+      }
     ],
-    safetyImg: '/images/products/katlanir_hero.jpg',
-    cleaningImg: '/images/products/katlanir_hero.jpg',
-    cleaningSteps: [
-      'Panelleri tek tek içeri katlayarak toplayın.',
-      'İçeriden kolayca tüm cam yüzeylerini silin.',
-      'Raylarda biriken tozları temizleyerek sistemin ömrünü uzatın.'
+    sections: [
+      {
+        type: 'text_image',
+        title: 'Kesintisiz Manzara',
+        content: 'Yeni nesil Sürme Sistem SliderNext, geliştirilen cam cama birleşim çözümü ile size maksimum panoramik görüntü sağlar. Dar profil yapısı sayesinde manzaranın önündeki hiçbir engel göze çarpmaz.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_10.png',
+        imageFit: 'cover',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Tek Profil Çok Sistem',
+        content: 'Cam kalınlığı uygulanacak alanın yalıtım derecesine göre değişkenlik gösterebileceği için SliderNext cam opsiyonları 8/10 mm olmak üzere çeşitlendirilmiştir. Eşikli/eşiksiz, 8/10 mm cam, çıtalı/çıtasız opsiyonları olmakla birlikte, aynı profil ile 8 farklı sistem üretilebilir.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_31+1.png',
+        imageFit: 'cover',
+        reverse: true
+      },
+      {
+        type: 'text_image',
+        title: 'Opsiyonel Eşik Yükseklikleri',
+        content: 'Cam kalınlığı uygulanacak alanın yalıtım derecesine göre değişebileceği gibi, sistemin uygulanacağı alanın yüksekliği de değişkenlik gösterebilir. SliderNext, sistemin kullanılacağı alanın (restoran, kafe, kış bahçesi, balkon) ihtiyacına bağlı olarak farklı eşik yükseklikleri sunar.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_34.png',
+        imageFit: 'cover',
+        reverse: false
+      },
+      {
+        type: 'text_image',
+        title: 'Hızlı ve Kolay Montaj',
+        content: 'SliderNext; tüm aksesuarların bir arada gönderildiği kutular sayesinde, üreticisine hızlı ve kolay montaj imkânı sağlar. All-in-one-box konsepti ile kurulum süreci dramatik biçimde kısalır.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_41.png',
+        imageFit: 'cover',
+        reverse: true
+      }
+    ],
+    bottomFeatures: [
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_02_-_Kopya+1.png',
+        title: 'Avrupa Sertifikalı',
+        desc: 'Hava, su, ses geçirmezliği; rüzgar ve darbe dayanıklılığı testlerini başarıyla geçerek Avrupa PfB Institute sertifikası almıştır.'
+      },
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_29+1.png',
+        title: '65 Ülkede Aynı Anda',
+        desc: 'SliderNext dünyanın 65 ülkesinde ve tüm Türkiye\'de aynı anda satışta! Küresel güven, yerel hizmet.'
+      },
+      {
+        img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_18.png',
+        title: 'Smart Lock',
+        desc: 'Köşe, yan, orta seçenekleri bulunan tak-çıkar Smart Lock sistemi ile paneller birbirinden bağımsız hareket eder.'
+      }
     ],
     darkFeatures: [
-      { icon: 'fas fa-history', title: 'Klasikleşmiş Tasarım', desc: 'Her balkon tipine uyum sağlayan, alışılmış ve kolay kullanım.' },
-      { icon: 'fas fa-award', title: 'Onaylı Dayanıklılık', desc: 'Statü serisinin en çok güvenilen, sağlamlığı tescilli klasik modeli.' },
-      { icon: 'fas fa-cog', title: 'Sade ve Etkili', desc: 'Minimum hareketli parça ile uzun yıllar arızasız çalışma.' },
-      { icon: 'fas fa-check-circle', title: 'Güvenli Kilit Sistemi', desc: 'Basit ama etkili kilitleme mekanizması ile balkonunuz tam koruma altında.' }
+      { icon: 'fas fa-certificate', title: 'Avrupa Sertifikalı', desc: 'PfB Institute onaylı; hava, su, ses, rüzgar ve darbe testlerini geçti.' },
+      { icon: 'fas fa-expand-arrows-alt', title: 'Geniş Kanat — 1500 mm', desc: '1500 mm genişliğe ve 3100 mm yüksekliğe kadar üretilebilir.' },
+      { icon: 'fas fa-layer-group', title: '8 Farklı Sistem', desc: 'Tek profil ile eşikli/eşiksiz, 8/10 mm cam, çıtalı/çıtasız 8 farklı konfigürasyon.' },
+      { icon: 'fas fa-lock', title: 'Smart Lock', desc: 'Kolay tak-çıkar, bağımsız panel hareketi sağlayan patentli kilit sistemi.' }
     ],
     testimonials: [
-      { text: 'Sade ve kullanışlı bir sistem, çok memnunuz.', name: 'Yusuf M.', city: 'Tekirdağ' },
-      { text: 'Yıllardır kullanıyoruz, hiçbir sorun çıkarmadı.', name: 'Ali T.', city: 'İstanbul' },
-      { text: 'Uygun fiyatlı ve sağlam bir çözüm oldu.', name: 'Merve B.', city: 'Ankara' }
+      { text: 'Panoramik görüntüsü ve sessiz hareketi gerçekten etkileyici, çok memnunuz.', name: 'Hasan K.', city: 'İstanbul' },
+      { text: 'Smart Lock sistemi harika, paneller birbirinden bağımsız açılabiliyor.', name: 'Ayşe T.', city: 'Bursa' },
+      { text: 'Montaj ekibi çok hızlıydı, kalitesi tartışılmaz.', name: 'Emre B.', city: 'Tekirdağ' }
     ]
   },
   'ruzgar-kirici-sistem': {
