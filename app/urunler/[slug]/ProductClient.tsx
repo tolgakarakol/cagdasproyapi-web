@@ -501,7 +501,7 @@ export const PRODUCT_DATA: any = {
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
     heroSub: 'Neden Yeni Nesil Sürme Sistem?',
     heroImg: '/images/tek-camli-surme-cam-balkon/tek-ana-gorsel.png',
-    tagline: 'Neden Yeni Nesil Sürme Sistem?\nSliderNext ile sürme cambalkon sistemlerinde yeni bir devir başlıyor.\n\nBu kez izolasyon, güvenlik ve panoramik görüntü bir arada!',
+    tagline: 'Neden Yeni Nesil Sürme Sistem?\nSliderNext ile sürme cambalkon sistemlerinde yeni bir devir başlıyor.\nBu kez izolasyon, güvenlik ve panoramik görüntü bir arada!',
     features: [
       {
         img: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_38.png',
@@ -1004,7 +1004,11 @@ export default function ProductClient({ slug }: { slug: string }) {
               <div className={styles.tagline}>
                 <p className={styles.taglineText}>
                   {product.tagline.split('\n').map((line: string, i: number) => (
-                    <span key={i}>{line}<br /></span>
+                    i === 0
+                      ? <strong key={i} style={{ display: 'block', fontSize: '1.7rem', fontWeight: 900, color: '#111', marginBottom: '10px', lineHeight: 1.3 }}>{line}<br /></strong>
+                      : line === ''
+                        ? <br key={i} />
+                        : <span key={i}>{line}<br /></span>
                   ))}
                 </p>
               </div>
