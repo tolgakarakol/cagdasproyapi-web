@@ -391,7 +391,7 @@ export const PRODUCT_DATA: any = {
     badge: 'Albert Genau — SlideMaster®',
     heroTitle: 'Isıcamlı Sürme Cam Balkon',
     heroSub: 'Sürme Cambalkon Sistemlerinin Standartlarını Yukarı Taşıyor.',
-    heroImg: '/images/isicamli-surme-cam-balkon/Backup_of_Slide_Master.jpg',
+    heroImg: '/images/isicamli-surme-cam-balkon/buyuk-slider-cam-balkon.png',
     tagline: 'Isıcam\'lı sürme cambalkon SlideMaster, sürme cambalkon sistemlerinin standartlarını yukarı taşıyor. Sürme cambalkon sistemleri yalıtım, konfor ve estetik açıdan incelenerek yenilendi. Balkonlarınızı, kış bahçelerinizi ve restorantlarınızı eşsiz yaşam alanlarına dönüştürüyor.\n\nSlideMaster hem ısıcam\'lı hem tek camlı olarak kullanılabilme özelliğine sahiptir. Sürme sistemlerindeki yalıtım dezavantajını ortadan kaldırıyor ve köşeleri açık hale getiriyor. 1,5 metre panellere ve kendi özel kilit sistemine imkan veren ve Albert Genau patentli taşıyıcı tekerleri sayesinde konforlu hareketi ile diğer ürünlerden ayrılıyor.',
     features: [
       { img: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__1_.jpg', title: 'Durdurulamaz Hareket', desc: '150 kg panel taşıma kapasitesine sahip, paslanmaz rulmanlı, süspansiyonlu Speed-HD teker ile en az sürtünme ve sessiz hareket.' },
