@@ -398,16 +398,6 @@ export const PRODUCT_DATA: any = {
       { img: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__2_.jpg', title: 'Üç Boyutlu Tam İzolasyon', desc: 'Cam panellerin dikey birleşiminde, duvar bitimlerinde ve ray-panel arasındaki tüm boşluklarda izolasyon fırçaları ile maksimum yalıtım.' },
       { img: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__3_.jpg', title: 'Her Köşe Tamamen Açık', desc: 'L ve U şeklindeki mekânlar için tasarlanan kanat profilleri sayesinde hiçbir sabit köşe birleşim profili olmadan tam açıklık.' }
     ],
-    safetyImg: '/images/isicamli-surme-cam-balkon/SlideMaster_3.jpg',
-    safetyTitle: 'Güvenlik Önceliğimizdir',
-    safetyDesc: 'İster gagalı gömme kilitli, ister anahtarlı kancalı kilitli, isterseniz mantar başlı ispanyoletli. İstediğiniz güvenlik ve opsiyonu seçmek bir SlideMaster özelliği.',
-    cleaningImg: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi_11.jpg',
-    cleaningDesc: 'Tüm kanatlar istendiği zaman birbirinden ayrılıp ayrı ayrı konumlandırılabilir. Bu sayede hem içten hem dıştan tüm camlar %100 temizlenebilmektedir.',
-    cleaningSteps: [
-      'En içteki paneli kapanma yönüne göre hareket ettirin.',
-      'Her panel birbirine kenetlenip birbirini çekerek hareket eder.',
-      'Son noktaya getirdiğinizde kendiliğinden kilitlenerek kapalı hale gelir.'
-    ],
     sections: [
       {
         type: 'text_list_with_image',
