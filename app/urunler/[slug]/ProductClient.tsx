@@ -496,7 +496,7 @@ export const PRODUCT_DATA: any = {
     ]
   },
 
-  'statu-tango': {
+  'tek-camli-surme-cam-balkon': {
 
     badge: 'Albert Genau — Statü Tango®',
     heroTitle: 'Tek Camlı Sürme Cam Balkon',
@@ -594,7 +594,7 @@ export const PRODUCT_DATA: any = {
       { slug: 'tiara-twinmax', title: 'Isıcamlı Katlanır Cam Balkon', desc: 'Isıcamlı cambalkonun zirvesi. Maksimum ısı yalıtımı ve konfor.', image: '/images/products/katlanir-sistem-balkon.png', badge: 'ISI YALITIMLI' },
       { slug: 'tiara-08-10', title: 'Tek Camlı Katlanır Cam Balkon', desc: 'Tek camlı sistemlerde zirve kalite. Panoramik manzara için ideal.', image: '/images/products/katlanir_tek_camli.jpg', badge: 'TEK CAMLI' },
       { slug: 'isicamli-surme-cam-balkon', title: 'Isıcamlı Sürme Cam Balkon', desc: 'Albert Genau kalitesini uygun fiyatla balkonunuza taşıyın.', image: '/images/products/surme-isicamli-balkon.png', badge: 'ISI YALITIMLI' },
-      { slug: 'statu-tango', title: 'Tek Camlı Sürme Cam Balkon', desc: 'Zamanın testinden geçmiş, güvenilir klasik cambalkon deneyimi.', image: '/images/products/surme-sistem-tek-camli.png', badge: 'TEK CAMLI' }
+      { slug: 'tek-camli-surme-cam-balkon', title: 'Tek Camlı Sürme Cam Balkon', desc: 'Zamanın testinden geçmiş, güvenilir klasik cambalkon deneyimi.', image: '/images/products/surme-sistem-tek-camli.png', badge: 'TEK CAMLI' }
     ]
   },
   'kis-bahcesi': {
