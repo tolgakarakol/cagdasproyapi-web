@@ -309,7 +309,7 @@ export const PRODUCT_DATA: any = {
         desc: 'Sistemde kanatların camlar ile birleşimi sadece kimyasallar ile değil, cama monte edilen pimler ile sağlanmaktadır. Bu sayede kanatlar, yüksek taşıma kapasitesine sahip olurlar.'
       },
       {
-        img: '/images/tiara-08-10/Tiara-Estetik-Topuzlu-Kilit.jpg',
+        img: '/images/tekcamlı-katlanir/estetik_topuz.png',
         title: 'Estetik Topuzlu Kilit',
         desc: 'Albert Genau isteğe bağlı olarak topuzlu kilit mekanizması tasarlamıştır. Bu mekanizma şık bir görüntü, minimal tasarım ve kullanım kolaylığı sağlamaktadır.'
       }
