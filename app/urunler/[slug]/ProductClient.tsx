@@ -573,7 +573,7 @@ export const PRODUCT_DATA: any = {
     features: [
       { img: '/images/cam-kapi/cam-kapi-dikey-01.png', title: 'Tek Yönlü Kapılar', desc: 'Tek yöne açılabilen özel mekanizması sayesinde dar alanlarda bile pratik ve kullanışlı bir deneyim sunar.' },
       { img: '/images/cam-kapi/cift-cam-kapi.png', title: 'Çift Yönlü Kapılar', desc: 'Her iki yöne de açılabilen esnek yapısıyla insan trafiğinin yoğun olduğu geçiş noktalarında yüksek konfor sağlar.' },
-      { img: '/images/cam-kapi/cam-kapi-dikey-03.png', title: 'Güvenlik (Temperli Cam)', desc: 'Kırılmaya ve darbelere karşı ekstra dirençli özel temperli cam yapısıyla mekanlarınızda tam güvenlik sağlar.' }
+      { img: '/images/cam-kapi/guvenlik-nasil-temizlenir.png', title: 'Güvenlik (Temperli Cam)', desc: 'Kırılmaya ve darbelere karşı ekstra dirençli özel temperli cam yapısıyla mekanlarınızda tam güvenlik sağlar.' }
     ],
     safetyImg: '/images/cam-kapi/cam-kapi-yatay-01.png',
     cleaningImg: '/images/cam-kapi/guvenlik-nasil-temizlenir.png',
