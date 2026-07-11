@@ -1004,11 +1004,9 @@ export default function ProductClient({ slug }: { slug: string }) {
               <div className={styles.tagline}>
                 <p className={styles.taglineText}>
                   {product.tagline.split('\n').map((line: string, i: number) => (
-                    i === 0
-                      ? <strong key={i} style={{ display: 'block', fontSize: '1.7rem', fontWeight: 900, color: '#111', marginBottom: '10px', lineHeight: 1.3 }}>{line}<br /></strong>
-                      : line === ''
-                        ? <br key={i} />
-                        : <span key={i}>{line}<br /></span>
+                    line === ''
+                      ? <br key={i} />
+                      : <span key={i}>{line}<br /></span>
                   ))}
                 </p>
               </div>
