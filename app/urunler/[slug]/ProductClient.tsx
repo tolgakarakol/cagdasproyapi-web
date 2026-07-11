@@ -521,24 +521,36 @@ export const PRODUCT_DATA: any = {
     ],
     sections: [
       {
-        type: 'image_full',
+        type: 'text_image',
         title: 'Kesintisiz Manzara',
-        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_10.png'
+        content: 'Yeni nesil Sürme Sistem SliderNext, geliştirilen cam cama birleşim çözümü ile size maksimum panoramik görüntü sağlar. Dar profil yapısı sayesinde manzaranın önündeki hiçbir engel göze çarpmaz.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_10.png',
+        imageFit: 'cover',
+        reverse: false
       },
       {
-        type: 'image_full',
+        type: 'text_image',
         title: 'Tek Profil Çok Sistem',
-        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_31+1.png'
+        content: 'Cam kalınlığı uygulanacak alanın yalıtım derecesine göre değişkenlik gösterebileceği için SliderNext cam opsiyonları 8/10 mm olmak üzere çeşitlendirilmiştir. Eşikli/eşiksiz, 8/10 mm cam, çıtalı/çıtasız opsiyonları olmakla birlikte, aynı profil ile 8 farklı sistem üretilebilir.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_31+1.png',
+        imageFit: 'cover',
+        reverse: true
       },
       {
-        type: 'image_full',
+        type: 'text_image',
         title: 'Opsiyonel Eşik Yükseklikleri',
-        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_34.png'
+        content: 'Cam kalınlığı uygulanacak alanın yalıtım derecesine göre değişebileceği gibi, sistemin uygulanacağı alanın yüksekliği de değişkenlik gösterebilir. SliderNext, sistemin kullanılacağı alanın (restoran, kafe, kış bahçesi, balkon) ihtiyacına bağlı olarak farklı eşik yükseklikleri sunar.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_34.png',
+        imageFit: 'cover',
+        reverse: false
       },
       {
-        type: 'image_full',
+        type: 'text_image',
         title: 'Hızlı ve Kolay Montaj',
-        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_41.png'
+        content: 'SliderNext; tüm aksesuarların bir arada gönderildiği kutular sayesinde, üreticisine hızlı ve kolay montaj imkânı sağlar. All-in-one-box konsepti ile kurulum süreci dramatik biçimde kısalır.',
+        image: '/images/tek-camli-surme-cam-balkon/SliderNext_TR_Site_41.png',
+        imageFit: 'cover',
+        reverse: true
       }
     ],
     bottomFeatures: [
