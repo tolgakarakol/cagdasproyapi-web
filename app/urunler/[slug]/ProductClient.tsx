@@ -393,18 +393,7 @@ export const PRODUCT_DATA: any = {
     heroSub: 'Kalite ve Uygun Fiyatın Buluştuğu Tek Camlı Çözüm.',
     heroImg: '/images/products/katlanir_ekonomik_v3.jpg',
     tagline: 'Optima 08 ile fiyat endişesi yaşamadan da kaliteli cam balkona sahip olabilirsiniz. Albert Genau kalitesini ekonomik fiyatlarla balkonunuza taşıyan, dayanıklı ve uzun ömürlü en ideal seri.',
-    features: [
-      { img: '/images/products/tiara_wheels.jpg', title: '36 mm Çelik Teker', desc: '4 altta, 4 üstte olmak üzere toplam 8 adet çelik taşıyıcı teker ile sessiz ve konforlu hareket.' },
-      { img: '/images/products/twinmax_lock.jpg', title: 'Katlanabilir Çıkış Kolu', desc: 'Katlanabilir yapısı sayesinde cam balkonunuzda perde veya stor perde kullanımına engel olmaz.' },
-      { img: '/images/products/katlanir_isicamli.jpg', title: 'Gizli Su Tahliyesi', desc: 'Kasa profili üzerindeki damlalıklı tasarım ile suyu içeri almadan doğrudan tahliye eder.' }
-    ],
-    safetyImg: '/images/products/katlanir_balkon_hero.jpg',
-    cleaningImg: '/images/products/katlanir_balkon_hero.jpg',
-    cleaningSteps: [
-      'Kanatları içeriye doğru katlayarak sistemi açın.',
-      'Tüm cam panellerini içeriden güvenli bir şekilde silin.',
-      'Sistemin pürüzsüz raylarını nemli bezle temizleyerek bakımını tamamlayın.'
-    ],
+    features: [],
     darkFeatures: [
       { icon: 'fas fa-tint-slash', title: 'Sızdırmazlık Pulları', desc: 'Kasa profilinin zemine sabitlendiği noktalarda özel plastik pullarla su sızıntısını önler.' },
       { icon: 'fas fa-sync', title: 'Ay Parça Kilitleme', desc: 'Panellerin açma-kapama sırasında sarkmaması için özel kilitleme sistemi.' },
