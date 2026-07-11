@@ -423,7 +423,7 @@ export const PRODUCT_DATA: any = {
         type: 'text_image',
         title: 'Özel Su Tahliye ve Damlalık Sistemi',
         content: 'Sisteme entegre edilen ray yataklı profil alt-içte su oluğu olarak görev yaparken, dış-üstte damlalık görevini üstlenir. Damlalık sayesinde en az su sisteme gelir, içeri girmesi muhtemel su da su tahliye profilinde toplanıp açılan tahliye delikleri aracılığıyla dışarı atılır.',
-        image: '/images/isicamli-surme-cam-balkon/SlideMaster_Surme_Cambalkon_Sistemi__10_.jpg',
+        image: '/images/isicamli-surme-cam-balkon/soft-touch.png',
         reverse: false
       },
       {
