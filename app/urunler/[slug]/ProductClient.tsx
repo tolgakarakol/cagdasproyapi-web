@@ -316,7 +316,7 @@ export const PRODUCT_DATA: any = {
     ],
     finalFeatures: [
       {
-        img: '/images/tiara-08-10/Tiara-Aluminyum-Fitiller.jpg',
+        img: '/images/tekcamlı-katlanir/super_fitil.png',
         title: 'Alüminyum Fitiller',
         desc: 'Sistemde yalıtımı artırmak için, cam panellerin birleşiminde — ister düz, ister açılı — kendinden izolasyon fırçalı alüminyum fitiller, şıklığı ve uzun ömürlü kullanımı ile farkını gösteriyor.'
       },
