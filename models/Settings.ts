@@ -14,6 +14,7 @@ export interface ISettings extends Document {
   metaTitle: string;
   metaDescription: string;
   googleVerification: string;
+  customScripts: string;
   updatedAt: Date;
 }
 
@@ -31,6 +32,7 @@ const SettingsSchema = new Schema<ISettings>({
   metaTitle: { type: String, default: 'Çağdaş Pro Yapı – Albert Genau Yetkili Bayisi | Silivri İstanbul' },
   metaDescription: { type: String, default: 'Cam balkon, bioklimatik pergola, kış bahçesi ve cam sistemlerinde Albert Genau yetkili bayisi. 15 yıllık deneyim, Silivri/İstanbul merkezli tüm Türkiye hizmet.' },
   googleVerification: { type: String, default: '' },
+  customScripts: { type: String, default: '' },
 }, { timestamps: true });
 
 export const Settings = mongoose.models.Settings || mongoose.model<ISettings>('Settings', SettingsSchema);

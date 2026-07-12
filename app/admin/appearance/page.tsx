@@ -69,6 +69,20 @@ export default function AppearancePage() {
         </div>
 
         <div className={styles.section} style={{ gridColumn: '1/-1' }}>
+          <h3><i className="fas fa-image" /> Görseller (Logo & Favicon)</h3>
+          <div className={styles.field}>
+            <label>Logo URL (veya yolu örn: /images/logo.png)</label>
+            <input type="text" value={data.logoUrl || ''} onChange={e => setData({...data, logoUrl: e.target.value})} />
+            {data.logoUrl && <img src={data.logoUrl} alt="Logo Önizleme" style={{ maxHeight: 60, marginTop: 10, background: '#333', padding: 5, borderRadius: 5 }} />}
+          </div>
+          <div className={styles.field}>
+            <label>Favicon URL (veya yolu örn: /favicon.ico)</label>
+            <input type="text" value={data.faviconUrl || ''} onChange={e => setData({...data, faviconUrl: e.target.value})} />
+            {data.faviconUrl && <img src={data.faviconUrl} alt="Favicon Önizleme" style={{ maxHeight: 32, marginTop: 10 }} />}
+          </div>
+        </div>
+
+        <div className={styles.section} style={{ gridColumn: '1/-1' }}>
           <h3><i className="fas fa-image" /> Önizleme</h3>
           <div className={styles.preview2} style={{ background: data.bgColor }}>
             <div style={{ background: data.primaryColor, padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 12, borderRadius: '8px 8px 0 0' }}>

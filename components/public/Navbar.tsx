@@ -25,10 +25,23 @@ export default function Navbar() {
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
+  const [logoUrl, setLogoUrl] = useState('/images/cagdas_pro_yapi_logo.png');
+
   useEffect(() => {
     setMounted(true);
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
+    
+    // Logonun dinamik olarak çekilmesi
+    fetch('/api/appearance')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.logoUrl) {
+          setLogoUrl(data.logoUrl);
+        }
+      })
+      .catch(() => {});
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,7 +53,7 @@ export default function Navbar() {
       <div className={styles.container}>
         <a href="/" className={styles.logo} style={{ cursor: 'pointer', display: 'flex' }}>
           <img 
-            src={useWhiteLogo ? "/images/cagdasproyapi_beyaz.png" : "/images/cagdas_pro_yapi_logo.png"} 
+            src={useWhiteLogo ? "/images/cagdasproyapi_beyaz.png" : logoUrl} 
             alt="Anasayfa" 
             width={368} 
             height={98} 

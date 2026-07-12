@@ -13,6 +13,7 @@ const FIELDS = [
   { key: 'metaTitle', label: 'SEO Başlığı (Meta Title)', type: 'text' },
   { key: 'metaDescription', label: 'SEO Açıklaması (Meta Description)', type: 'textarea' },
   { key: 'googleVerification', label: 'Google Doğrulama Kodu', type: 'text' },
+  { key: 'customScripts', label: 'Özel Scriptler (Google Ads, Analytics vb. - <script> etiketleriyle ekleyin)', type: 'textarea' },
 ];
 
 export default function SettingsPage() {

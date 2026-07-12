@@ -1,22 +1,50 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { connectDB } from '@/lib/mongodb';
+import { Settings } from '@/models/Settings';
+import { Appearance } from '@/models/Appearance';
 
-export const metadata: Metadata = {
-  title: 'Silivri Cam Balkon & Pergola | Çağdaş Pro Yapı - Albert Genau Bayi',
-  description: 'Silivri, Selimpaşa, Gümüşyaka ve Ortaköy bölgelerinde profesyonel cam balkon, bioklimatik pergola ve kış bahçesi sistemleri. Albert Genau yetkili bayisinden 10 yıl garantili çözümler.',
-  keywords: 'silivri cam balkon, selimpaşa cam balkon, gümüşyaka cam balkon, silivri pergola sistemleri, silivri kış bahçesi, albert genel silivri bayii, istanbul cam balkon fiyatları',
-  icons: {
-    icon: '/images/favicon.png',
-  },
-  openGraph: {
-    title: 'Çağdaş Pro Yapı | Silivri Cam Balkon & Pergola',
-    description: 'Albert Genau Yetkili Bayisi olarak Silivri ve tüm mahallelerinde premium cam sistemleri sunuyoruz.',
-    type: 'website',
-    locale: 'tr_TR',
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    await connectDB();
+    const settings = await Settings.findOne() || {};
+    const appearance = await Appearance.findOne() || {};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const title = settings.metaTitle || 'Çağdaş Pro Yapı - Albert Genau Bayi';
+    const description = settings.metaDescription || 'Silivri, Selimpaşa profesyonel cam balkon ve pergola sistemleri.';
+    const faviconUrl = appearance.faviconUrl || '/images/favicon.png';
+
+    return {
+      title,
+      description,
+      icons: {
+        icon: faviconUrl,
+      },
+      openGraph: {
+        title,
+        description,
+        type: 'website',
+        locale: 'tr_TR',
+      },
+      verification: settings.googleVerification ? {
+        google: settings.googleVerification,
+      } : undefined,
+    };
+  } catch (e) {
+    return { title: 'Çağdaş Pro Yapı' };
+  }
+}
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  let customScripts = '';
+  try {
+    await connectDB();
+    const settings = await Settings.findOne();
+    if (settings && settings.customScripts) {
+      customScripts = settings.customScripts;
+    }
+  } catch (e) {}
+
   return (
     <html lang="tr">
       <head>
@@ -31,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
+        {customScripts && <div dangerouslySetInnerHTML={{ __html: customScripts }} />}
       </head>
       <body>{children}</body>
     </html>
