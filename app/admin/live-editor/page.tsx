@@ -32,17 +32,38 @@ const getPageIcon = (slug: string): string => {
   }
 };
 
+const SECTION_ICONS: Record<string, string> = {
+  hero_slider: 'fas fa-images',
+  products_grid: 'fas fa-th-large',
+  guarantee_band: 'fas fa-shield-alt',
+  about: 'fas fa-address-card',
+  partners: 'fas fa-handshake',
+  catalogs: 'fas fa-folder-open',
+  hap_bilgiler: 'fas fa-info-circle',
+  quote_form: 'fas fa-file-invoice-dollar',
+  contact: 'fas fa-map-marked-alt',
+  product_detail: 'fas fa-cube',
+  page_header: 'fas fa-heading',
+  about_story: 'fas fa-book-open',
+  about_values: 'fas fa-star',
+  about_mv: 'fas fa-bullseye'
+};
+
 const LABELS: Record<string, string> = {
-  hero_slider: '🖼️ Sürgülü Afiş (Slider)',
-  products_grid: '🏠 Ürünlerimiz Bölümü',
-  guarantee_band: '🛡️ Garanti/Güven Bandı',
-  about: '👥 Hakkımızda Tanıtımı',
-  partners: '🤝 Çözüm Ortakları',
-  catalogs: '📂 E-Katalog Bölümü',
-  hap_bilgiler: '📄 Pratik Bilgiler (Hap Bilgiler)',
-  quote_form: '💬 Teklif Al Formu',
-  contact: '📍 İletişim Bilgileri',
-  product_detail: '🛍️ Ürün Sayfası Detayı',
+  hero_slider: 'Sürgülü Afiş (Slider)',
+  products_grid: 'Ürünlerimiz Bölümü',
+  guarantee_band: 'Garanti/Güven Bandı',
+  about: 'Hakkımızda Tanıtımı',
+  partners: 'Çözüm Ortakları',
+  catalogs: 'E-Katalog Bölümü',
+  hap_bilgiler: 'Pratik Bilgiler (Hap Bilgiler)',
+  quote_form: 'Teklif Al Formu',
+  contact: 'İletişim Bilgileri',
+  product_detail: 'Ürün Sayfası Detayı',
+  page_header: 'Sayfa Başlık Alanı (Header)',
+  about_story: 'Hikayemiz (Detaylı Anlatım)',
+  about_values: 'Temel Değerlerimiz',
+  about_mv: 'Vizyon & Misyon'
 };
 
 const formatLabel = (key: string): string => {
@@ -562,7 +583,10 @@ export default function LiveEditor() {
                         className={`${styles.sectionItem} ${selectedSectionId === s._id ? styles.sectionItemActive : ''}`}
                         onClick={() => setSelectedSectionId(s._id)}
                       >
-                        <span className={styles.sectionName}>{LABELS[s.type] || s.title}</span>
+                        <span className={styles.sectionName}>
+                          <i className={SECTION_ICONS[s.type] || 'fas fa-cube'} style={{ marginRight: '10px', width: '16px', textAlign: 'center', color: '#c8960c' }} />
+                          {LABELS[s.type] || s.title}
+                        </span>
                         {!s.isVisible && <i className="fas fa-eye-slash text-gray" title="Yayında Gizli" />}
                       </div>
                     ))

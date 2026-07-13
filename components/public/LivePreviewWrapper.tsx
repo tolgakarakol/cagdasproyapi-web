@@ -10,6 +10,10 @@ import HapBilgiler from './HapBilgiler';
 import QuoteForm from './QuoteForm';
 import ContactSection from './ContactSection';
 import Testimonials from './Testimonials';
+import PageHeader from './PageHeader';
+import AboutStory from './AboutStory';
+import AboutValues from './AboutValues';
+import AboutMV from './AboutMV';
 
 const SECTION_MAP: Record<string, React.ComponentType<{ content: any }>> = {
   products_grid: ProductsGrid,
@@ -20,17 +24,22 @@ const SECTION_MAP: Record<string, React.ComponentType<{ content: any }>> = {
   hap_bilgiler: HapBilgiler,
   quote_form: QuoteForm,
   contact: ContactSection,
+  about_story: AboutStory,
+  about_values: AboutValues,
+  about_mv: AboutMV,
 };
 
 import { usePathname } from 'next/navigation';
 
 export default function LivePreviewWrapper({ initialSections }: { initialSections: any[] }) {
   const [sections, setSections] = useState(initialSections);
+  const [isLive, setIsLive] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const isLive = typeof window !== 'undefined' && window.location.search.includes('live=true');
-    if (!isLive) return;
+    const liveMode = typeof window !== 'undefined' && window.location.search.includes('live=true');
+    setIsLive(liveMode);
+    if (!liveMode) return;
 
     const handleMessage = (event: MessageEvent) => {
       if (event.data && event.data.type === 'LIVE_PREVIEW_UPDATE') {
@@ -228,7 +237,7 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
   }, []);
 
   const heroSection = sections.find((s: any) => s.type === 'hero_slider');
-  const otherSections = sections.filter((s: any) => s.type !== 'hero_slider' && s.isVisible !== false);
+  const otherSections = sections.filter((s: any) => s.type !== 'hero_slider' && (isLive || s.isVisible !== false));
 
   const isHome = pathname === '/';
 
@@ -240,6 +249,13 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
         </div>
       )}
       {otherSections.map((section: any) => {
+        if (section.type === 'page_header') {
+          return (
+            <div key={section._id || section.type} data-section-id={section._id}>
+              <PageHeader title={section.content?.title || ''} subtitle={section.content?.subtitle} />
+            </div>
+          );
+        }
         const Component = SECTION_MAP[section.type];
         if (!Component) return null;
         if (isHome && (section.type === 'contact' || section.type === 'quote_form')) return null;

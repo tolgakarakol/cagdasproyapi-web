@@ -7,10 +7,19 @@ import LivePreviewWrapper from '@/components/public/LivePreviewWrapper';
 
 const DEFAULT_SECTIONS = [
   {
-    _id: 'contact_fallback_id',
+    pageSlug: 'iletisim',
+    type: 'page_header',
+    order: 0,
+    isVisible: true,
+    title: 'İletişim Sayfa Başlığı',
+    content: { title: 'İletişim', subtitle: 'Size Bir Telefon Kadar Yakınız' }
+  },
+  {
     pageSlug: 'iletisim',
     type: 'contact',
+    order: 1,
     isVisible: true,
+    title: 'İletişim Bilgileri',
     content: { 
       sectionTitle: 'Bize Ulaşın',
       address: 'Piri Mehmet Paşa Mah. Burhan Soyaslan Cad. No: 20/A Silivri / İstanbul',
@@ -23,10 +32,11 @@ const DEFAULT_SECTIONS = [
     }
   },
   {
-    _id: 'quote_fallback_id',
     pageSlug: 'iletisim',
     type: 'quote_form',
+    order: 2,
     isVisible: true,
+    title: 'Teklif Al Formu',
     content: { 
       sectionTitle: 'Fiyat Teklifi İsteyin', 
       whatsapp: '905079165707',
@@ -47,7 +57,10 @@ const DEFAULT_SECTIONS = [
 async function getSections() {
   try {
     await connectDB();
-    const sections = await Section.find({ pageSlug: 'iletisim', isVisible: true }).sort({ order: 1 }).lean();
+    let sections = await Section.find({ pageSlug: 'iletisim' }).sort({ order: 1 }).lean();
+    if (!sections || sections.length === 0) {
+      sections = await Section.create(DEFAULT_SECTIONS);
+    }
     return JSON.parse(JSON.stringify(sections));
   } catch (err) {
     console.error('Error fetching contact sections:', err);
@@ -56,13 +69,11 @@ async function getSections() {
 }
 
 export default async function ContactPage() {
-  const dbSections = await getSections();
-  const sections = dbSections && dbSections.length > 0 ? dbSections : DEFAULT_SECTIONS;
+  const sections = await getSections();
 
   return (
     <main>
       <Navbar />
-      <PageHeader title="İletişim" subtitle="Size Bir Telefon Kadar Yakınız" />
       <LivePreviewWrapper initialSections={sections} />
       <Footer />
     </main>

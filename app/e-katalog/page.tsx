@@ -7,10 +7,19 @@ import LivePreviewWrapper from '@/components/public/LivePreviewWrapper';
 
 const DEFAULT_SECTIONS = [
   {
-    _id: 'catalogs_fallback_id',
+    pageSlug: 'e-katalog',
+    type: 'page_header',
+    order: 0,
+    isVisible: true,
+    title: 'Katalog Sayfa Başlığı',
+    content: { title: 'E-Katalog', subtitle: 'Ürünlerimizi Detaylı İnceleyin' }
+  },
+  {
     pageSlug: 'e-katalog',
     type: 'catalogs',
+    order: 1,
     isVisible: true,
+    title: 'E-Katalog Listesi',
     content: {
       sectionTitle: 'E-Katalog',
       sectionSubtitle: 'Ürün kataloglarımızı inceleyin veya indirin',
@@ -30,7 +39,10 @@ const DEFAULT_SECTIONS = [
 async function getSections() {
   try {
     await connectDB();
-    const sections = await Section.find({ pageSlug: 'e-katalog', isVisible: true }).sort({ order: 1 }).lean();
+    let sections = await Section.find({ pageSlug: 'e-katalog' }).sort({ order: 1 }).lean();
+    if (!sections || sections.length === 0) {
+      sections = await Section.create(DEFAULT_SECTIONS);
+    }
     return JSON.parse(JSON.stringify(sections));
   } catch (err) {
     console.error('Error fetching catalog sections:', err);
@@ -39,13 +51,11 @@ async function getSections() {
 }
 
 export default async function CatalogsPage() {
-  const dbSections = await getSections();
-  const sections = dbSections && dbSections.length > 0 ? dbSections : DEFAULT_SECTIONS;
+  const sections = await getSections();
 
   return (
     <main>
       <Navbar />
-      <PageHeader title="E-Katalog" subtitle="Ürünlerimizi Detaylı İnceleyin" />
       <LivePreviewWrapper initialSections={sections} />
       <Footer />
     </main>

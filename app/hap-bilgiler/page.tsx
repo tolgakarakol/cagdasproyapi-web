@@ -1,69 +1,57 @@
 import Navbar from '@/components/public/Navbar';
 import Footer from '@/components/public/Footer';
-import PageHeader from '@/components/public/PageHeader';
-import styles from '../e-katalog/catalogs.module.css';
-import Image from 'next/image';
+import { connectDB } from '@/lib/mongodb';
+import { Section } from '@/models/Section';
+import LivePreviewWrapper from '@/components/public/LivePreviewWrapper';
 
-const HAP_BILGILER = [
-  { 
-    title: 'SlideMaster Sürme Cambalkon', 
-    file: 'slidemaster-surme.pdf', 
-    cover: '/hap-bilgiler/covers/slidemaster-surme.png',
-    subtitle: 'Albert Genau - SlideMaster'
+const DEFAULT_SECTIONS = [
+  {
+    pageSlug: 'hap-bilgiler',
+    type: 'page_header',
+    order: 0,
+    isVisible: true,
+    title: 'Hap Bilgiler Sayfa Başlığı',
+    content: { title: 'Hap Bilgiler', subtitle: 'Pratik ve Teknik Bilgilendirmeler' }
   },
-  { 
-    title: 'Tambalkon Giyotin Cam', 
-    file: 'tambalkon-giyotin.pdf', 
-    cover: '/hap-bilgiler/covers/tambalkon-giyotin.png',
-    subtitle: 'Albert Genau - Tambalkon'
-  },
-  { 
-    title: 'Tiara Katlanır Cambalkon', 
-    file: 'tiara-katlanir.pdf', 
-    cover: '/hap-bilgiler/covers/tiara-katlanir.png',
-    subtitle: 'Albert Genau - Tiara'
-  },
-  { 
-    title: 'Cambalkon Seçim Rehberi', 
-    file: 'cambalkon-rehberi.pdf', 
-    cover: '/hap-bilgiler/covers/cambalkon-rehberi.png',
-    subtitle: 'Dikkat Edilmesi Gerekenler'
-  },
+  {
+    pageSlug: 'hap-bilgiler',
+    type: 'hap_bilgiler',
+    order: 1,
+    isVisible: true,
+    title: 'Pratik Bilgiler (Hap Bilgiler) Listesi',
+    content: {
+      sectionSubtitle: 'Ürünlerimizle ilgili pratik kullanım ve teknik bilgilendirme dosyaları.',
+      items: [
+        { title: 'SlideMaster Sürme Cambalkon', description: 'Albert Genau - SlideMaster Sürme Cambalkon pratik kullanım rehberi.', file: '/hap-bilgiler/slidemaster-surme.pdf' },
+        { title: 'Tambalkon Giyotin Cam', description: 'Albert Genau - Tambalkon Giyotin Cam balkon pratik kullanım rehberi.', file: '/hap-bilgiler/tambalkon-giyotin.pdf' },
+        { title: 'Tiara Katlanır Cambalkon', description: 'Albert Genau - Tiara Katlanır Cambalkon pratik kullanım rehberi.', file: '/hap-bilgiler/tiara-katlanir.pdf' },
+        { title: 'Cambalkon Seçim Rehberi', description: 'Cambalkon seçerken dikkat edilmesi gereken teknik detaylar.', file: '/hap-bilgiler/cambalkon-rehberi.pdf' }
+      ]
+    }
+  }
 ];
 
-export default function HapBilgilerPage() {
+async function getSections() {
+  try {
+    await connectDB();
+    let sections = await Section.find({ pageSlug: 'hap-bilgiler' }).sort({ order: 1 }).lean();
+    if (!sections || sections.length === 0) {
+      sections = await Section.create(DEFAULT_SECTIONS);
+    }
+    return JSON.parse(JSON.stringify(sections));
+  } catch (err) {
+    console.error('Error fetching hap-bilgiler sections:', err);
+    return [];
+  }
+}
+
+export default async function HapBilgilerPage() {
+  const sections = await getSections();
+
   return (
     <main>
       <Navbar />
-      <PageHeader title="Hap Bilgiler" subtitle="Pratik ve Teknik Bilgilendirmeler" />
-      
-      <section className={styles.section}>
-        <div className="container">
-          <div className={`${styles.grid} ${styles.twoByTwo}`}>
-            {HAP_BILGILER.map((item, i) => (
-              <a 
-                key={i} 
-                href={`/hap-bilgiler/${item.file}`} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.card}
-              >
-                <div className={styles.coverWrapper}>
-                  <Image src={item.cover} alt={item.title} fill className={styles.cover} />
-                  <div className={styles.overlay}>
-                    <span className={styles.btn}>OKUMAYA BAŞLA</span>
-                  </div>
-                </div>
-                <div className={styles.info}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <p className={styles.cardSubtitle}>{item.subtitle}</p>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      <LivePreviewWrapper initialSections={sections} />
       <Footer />
     </main>
   );
