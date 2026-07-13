@@ -293,6 +293,59 @@ export default function LiveEditor() {
     const lastKey = path[path.length - 1];
 
     if (typeof value === 'string') {
+      const isImage = 
+        ['image', 'img', 'heroimg', 'bgimg', 'logo', 'bg', 'icon', 'src'].includes(lastKey.toLowerCase()) ||
+        (value.startsWith('/images/') || value.startsWith('data:image/') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(value));
+
+      if (isImage) {
+        return (
+          <div key={path.join('.')} className={styles.field}>
+            <label>{formatLabel(lastKey)}</label>
+            <div className={styles.imageFieldRow}>
+              {value && (
+                <div className={styles.imagePreview}>
+                  <img src={value} alt="Önizleme" />
+                </div>
+              )}
+              <div className={styles.imageActions}>
+                <input
+                  type="text"
+                  value={value}
+                  onChange={e => handleFieldChange(path, e.target.value)}
+                  placeholder="Resim yolu veya URL"
+                  className={styles.imagePathInput}
+                />
+                <button 
+                  type="button" 
+                  className={styles.uploadBtn}
+                  onClick={() => {
+                    const fileInput = document.createElement('input');
+                    fileInput.type = 'file';
+                    fileInput.accept = 'image/*';
+                    fileInput.onchange = (fileEvent: any) => {
+                      const file = fileEvent.target.files?.[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onload = (uploadEvent: any) => {
+                          const base64Src = uploadEvent.target?.result as string;
+                          if (base64Src) {
+                            handleFieldChange(path, base64Src);
+                          }
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    };
+                    fileInput.click();
+                  }}
+                >
+                  <i className="fas fa-upload" /> Seç
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
       const isLongText = value.length > 50 || lastKey === 'desc' || lastKey === 'description' || lastKey === 'content';
       return (
         <div key={path.join('.')} className={styles.field}>

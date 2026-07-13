@@ -374,3 +374,68 @@
   color: #c8960c;
   font-size: 0.9rem;
 }
+
+.imageFieldRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.imagePreview {
+  width: 100%;
+  height: 120px;
+  border-radius: 6px;
+  border: 1px dashed rgba(200, 150, 12, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.imagePreview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.imageActions {
+  display: flex;
+  gap: 8px;
+}
+
+.imagePathInput {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #f0f0f0;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.imagePathInput:focus {
+  border-color: #c8960c;
+}
+
+.uploadBtn {
+  background: rgba(200, 150, 12, 0.1);
+  border: 1px solid rgba(200, 150, 12, 0.3);
+  color: #c8960c;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.uploadBtn:hover {
+  background: rgba(200, 150, 12, 0.2);
+  border-color: #c8960c;
+}
