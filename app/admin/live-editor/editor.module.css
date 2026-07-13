@@ -439,3 +439,85 @@
   background: rgba(200, 150, 12, 0.2);
   border-color: #c8960c;
 }
+
+.customSelectWrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.customSelectTrigger {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s;
+}
+
+.customSelectTrigger:hover {
+  border-color: rgba(200, 150, 12, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.customSelectOptions {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  right: 0;
+  background: #16213e;
+  border: 1px solid rgba(200, 150, 12, 0.3);
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.optGroupLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #c8960c;
+  padding: 10px 16px 4px 16px;
+  letter-spacing: 0.08em;
+  background: rgba(200, 150, 12, 0.03);
+}
+
+.customOption {
+  padding: 10px 16px;
+  font-size: 0.88rem;
+  color: #9aa0b0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.customOption i {
+  color: #9aa0b0;
+  transition: color 0.2s;
+}
+
+.customOption:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f0f0f0;
+}
+
+.customOption:hover i {
+  color: #c8960c;
+}
+
+.customOptionActive {
+  background: rgba(200, 150, 12, 0.1) !important;
+  color: #c8960c !important;
+  font-weight: 600;
+}
+
+.customOptionActive i {
+  color: #c8960c !important;
+}

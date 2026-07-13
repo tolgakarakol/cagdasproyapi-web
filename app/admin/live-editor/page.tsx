@@ -4,23 +4,33 @@ import { useRouter } from 'next/navigation';
 import styles from './editor.module.css';
 
 const PAGES = [
-  { slug: 'home', label: '🏠 Anasayfa', url: '/' },
-  { slug: 'hakkimizda', label: '👥 Hakkımızda', url: '/hakkimizda' },
-  { slug: 'e-katalog', label: '📂 E-Katalog', url: '/e-katalog' },
-  { slug: 'iletisim', label: '📍 İletişim', url: '/iletisim' },
+  { slug: 'home', label: 'Anasayfa', url: '/' },
+  { slug: 'hakkimizda', label: 'Hakkımızda', url: '/hakkimizda' },
+  { slug: 'e-katalog', label: 'E-Katalog', url: '/e-katalog' },
+  { slug: 'iletisim', label: 'İletişim', url: '/iletisim' },
   // Ürünler Alt Menüsü
-  { slug: 'giyotin-tam-balkon', label: '— Giyotin Cam Balkon', url: '/urunler/giyotin-tam-balkon' },
-  { slug: 'bioklimatik-pergola', label: '— Bioklimatik Pergola', url: '/urunler/bioklimatik-pergola' },
-  { slug: 'tiara-twinmax', label: '— Tiara TwinMax Isıcamlı', url: '/urunler/tiara-twinmax' },
-  { slug: 'tiara-flat-slim-zero', label: '— Tiara Flat/Slim/Zero', url: '/urunler/tiara-flat-slim-zero' },
-  { slug: 'isicamli-surme-cam-balkon', label: '— Isıcamlı Sürme Cam Balkon', url: '/urunler/isicamli-surme-cam-balkon' },
-  { slug: 'tek-camli-surme-cam-balkon', label: '— Tek Camlı Sürme Cam Balkon', url: '/urunler/tek-camli-surme-cam-balkon' },
-  { slug: 'ruzgar-kirici-sistem', label: '— Rüzgar Kırıcı Sistem', url: '/urunler/ruzgar-kirici-sistem' },
-  { slug: 'katlanir-sistem-cam-balkon', label: '— Katlanır Sistem Cam Balkon', url: '/urunler/katlanir-sistem-cam-balkon' },
-  { slug: 'kis-bahcesi', label: '— Kış Bahçesi', url: '/urunler/kis-bahcesi' },
-  { slug: 'dusakabin', label: '— Duşakabin', url: '/urunler/dusakabin' },
-  { slug: 'cam-kapi', label: '— Cam Kapı', url: '/urunler/cam-kapi' }
+  { slug: 'giyotin-tam-balkon', label: 'Giyotin Cam Balkon', url: '/urunler/giyotin-tam-balkon' },
+  { slug: 'bioklimatik-pergola', label: 'Bioklimatik Pergola', url: '/urunler/bioklimatik-pergola' },
+  { slug: 'tiara-twinmax', label: 'Tiara TwinMax Isıcamlı', url: '/urunler/tiara-twinmax' },
+  { slug: 'tiara-flat-slim-zero', label: 'Tiara Flat/Slim/Zero', url: '/urunler/tiara-flat-slim-zero' },
+  { slug: 'isicamli-surme-cam-balkon', label: 'Isıcamlı Sürme Cam Balkon', url: '/urunler/isicamli-surme-cam-balkon' },
+  { slug: 'tek-camli-surme-cam-balkon', label: 'Tek Camlı Sürme Cam Balkon', url: '/urunler/tek-camli-surme-cam-balkon' },
+  { slug: 'ruzgar-kirici-sistem', label: 'Rüzgar Kırıcı Sistem', url: '/urunler/ruzgar-kirici-sistem' },
+  { slug: 'katlanir-sistem-cam-balkon', label: 'Katlanır Sistem Cam Balkon', url: '/urunler/katlanir-sistem-cam-balkon' },
+  { slug: 'kis-bahcesi', label: 'Kış Bahçesi', url: '/urunler/kis-bahcesi' },
+  { slug: 'dusakabin', label: 'Duşakabin', url: '/urunler/dusakabin' },
+  { slug: 'cam-kapi', label: 'Cam Kapı', url: '/urunler/cam-kapi' }
 ];
+
+const getPageIcon = (slug: string): string => {
+  switch (slug) {
+    case 'home': return 'fas fa-home';
+    case 'hakkimizda': return 'fas fa-users';
+    case 'e-katalog': return 'fas fa-book-open';
+    case 'iletisim': return 'fas fa-map-marker-alt';
+    default: return 'fas fa-cube';
+  }
+};
 
 const LABELS: Record<string, string> = {
   hero_slider: '🖼️ Sürgülü Afiş (Slider)',
@@ -93,6 +103,18 @@ export default function LiveEditor() {
   const [saving, setSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isSelectOpen, setIsSelectOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(e.target as Node)) {
+        setIsSelectOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleOutsideClick);
+    return () => document.removeEventListener('mousedown', handleOutsideClick);
+  }, []);
 
   // Verileri yükle
   const loadData = async (pageSlug: string) => {
@@ -472,19 +494,51 @@ export default function LiveEditor() {
           {/* Sayfa Seçici */}
           <div className={styles.sidebarSection}>
             <h3 className={styles.sectionTitle}>Düzenlenecek Sayfa</h3>
-            <select
-              value={selectedPageSlug}
-              onChange={e => {
-                setSelectedPageSlug(e.target.value);
-              }}
-              className={styles.pageSelect}
-            >
-              {PAGES.map(p => (
-                <option key={p.slug} value={p.slug}>
-                  {p.label}
-                </option>
-              ))}
-            </select>
+            <div className={styles.customSelectWrapper} ref={selectRef}>
+              <div 
+                className={styles.customSelectTrigger} 
+                onClick={() => setIsSelectOpen(!isSelectOpen)}
+              >
+                <span>
+                  <i className={getPageIcon(selectedPage.slug)} style={{ marginRight: '10px', color: '#c8960c' }} />
+                  {selectedPage.label}
+                </span>
+                <i className={`fas fa-chevron-${isSelectOpen ? 'up' : 'down'}`} style={{ fontSize: '0.8rem', color: '#9aa0b0' }} />
+              </div>
+              {isSelectOpen && (
+                <div className={styles.customSelectOptions}>
+                  <div className={styles.optGroupLabel}>GENEL SAYFALAR</div>
+                  {PAGES.filter(p => !['giyotin-tam-balkon', 'bioklimatik-pergola', 'tiara-twinmax', 'tiara-flat-slim-zero', 'isicamli-surme-cam-balkon', 'tek-camli-surme-cam-balkon', 'ruzgar-kirici-sistem', 'katlanir-sistem-cam-balkon', 'kis-bahcesi', 'dusakabin', 'cam-kapi'].includes(p.slug)).map(p => (
+                    <div 
+                      key={p.slug} 
+                      className={`${styles.customOption} ${selectedPageSlug === p.slug ? styles.customOptionActive : ''}`}
+                      onClick={() => {
+                        setSelectedPageSlug(p.slug);
+                        setIsSelectOpen(false);
+                      }}
+                    >
+                      <i className={getPageIcon(p.slug)} style={{ marginRight: '10px', width: '16px', textAlign: 'center' }} />
+                      {p.label}
+                    </div>
+                  ))}
+                  
+                  <div className={styles.optGroupLabel}>ÜRÜN DETAY SAYFALARI</div>
+                  {PAGES.filter(p => ['giyotin-tam-balkon', 'bioklimatik-pergola', 'tiara-twinmax', 'tiara-flat-slim-zero', 'isicamli-surme-cam-balkon', 'tek-camli-surme-cam-balkon', 'ruzgar-kirici-sistem', 'katlanir-sistem-cam-balkon', 'kis-bahcesi', 'dusakabin', 'cam-kapi'].includes(p.slug)).map(p => (
+                    <div 
+                      key={p.slug} 
+                      className={`${styles.customOption} ${selectedPageSlug === p.slug ? styles.customOptionActive : ''}`}
+                      onClick={() => {
+                        setSelectedPageSlug(p.slug);
+                        setIsSelectOpen(false);
+                      }}
+                    >
+                      <i className={getPageIcon(p.slug)} style={{ marginRight: '10px', width: '16px', textAlign: 'center' }} />
+                      {p.label}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {loading ? (
