@@ -3,6 +3,13 @@ import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './editor.module.css';
 
+const PAGES = [
+  { slug: 'home', label: '🏠 Anasayfa', url: '/' },
+  { slug: 'hakkimizda', label: '👥 Hakkımızda', url: '/hakkimizda' },
+  { slug: 'e-katalog', label: '📂 E-Katalog', url: '/e-katalog' },
+  { slug: 'iletisim', label: '📍 İletişim', url: '/iletisim' }
+];
+
 const LABELS: Record<string, string> = {
   hero_slider: '🖼️ Sürgülü Afiş (Slider)',
   products_grid: '🏠 Ürünlerimiz Bölümü',
@@ -43,8 +50,30 @@ const formatLabel = (key: string): string => {
   return dictionary[key] || key.charAt(0).toUpperCase() + key.slice(1);
 };
 
+// Rekürsif olarak nesne içinde eşleşen metin değerlerini güncelleyen yardımcı fonksiyon
+const updateNestedStringValue = (obj: any, originalText: string, newText: string): any => {
+  if (typeof obj === 'string') {
+    if (obj.trim() === originalText) {
+      return newText;
+    }
+    return obj;
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(item => updateNestedStringValue(item, originalText, newText));
+  }
+  if (typeof obj === 'object' && obj !== null) {
+    const newObj: any = {};
+    for (const key in obj) {
+      newObj[key] = updateNestedStringValue(obj[key], originalText, newText);
+    }
+    return newObj;
+  }
+  return obj;
+};
+
 export default function LiveEditor() {
   const router = useRouter();
+  const [selectedPageSlug, setSelectedPageSlug] = useState('home');
   const [sections, setSections] = useState<any[]>([]);
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -53,14 +82,17 @@ export default function LiveEditor() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   // Verileri yükle
-  const loadData = async () => {
+  const loadData = async (pageSlug: string) => {
+    setLoading(true);
     try {
-      const res = await fetch('/api/sections?pageSlug=home');
+      const res = await fetch(`/api/sections?pageSlug=${pageSlug}`);
       if (res.ok) {
         const data = await res.json();
         setSections(data);
         if (data.length > 0) {
           setSelectedSectionId(data[0]._id);
+        } else {
+          setSelectedSectionId(null);
         }
       }
     } catch (err) {
@@ -71,8 +103,8 @@ export default function LiveEditor() {
   };
 
   useEffect(() => {
-    loadData();
-  }, []);
+    loadData(selectedPageSlug);
+  }, [selectedPageSlug]);
 
   // Değişiklikleri iframe'e anlık gönder
   const sendPreviewUpdate = (currentSections: any[]) => {
@@ -90,6 +122,39 @@ export default function LiveEditor() {
       sendPreviewUpdate(sections);
     }
   }, [sections]);
+
+  // Iframe'den gelen inline görsel düzenleme mesajlarını dinle
+  useEffect(() => {
+    const handleMessageFromIframe = (event: MessageEvent) => {
+      if (event.data && event.data.type === 'INLINE_TEXT_UPDATE') {
+        const { sectionId, originalText, newText } = event.data;
+        setSections(prevSections => {
+          return prevSections.map(s => {
+            if (s._id === sectionId) {
+              const updatedContent = updateNestedStringValue(s.content, originalText, newText);
+              return { ...s, content: updatedContent };
+            }
+            return s;
+          });
+        });
+      }
+      if (event.data && event.data.type === 'INLINE_IMAGE_UPDATE') {
+        const { sectionId, originalSrc, newSrc } = event.data;
+        setSections(prevSections => {
+          return prevSections.map(s => {
+            if (s._id === sectionId) {
+              const updatedContent = updateNestedStringValue(s.content, originalSrc, newSrc);
+              return { ...s, content: updatedContent };
+            }
+            return s;
+          });
+        });
+      }
+    };
+
+    window.addEventListener('message', handleMessageFromIframe);
+    return () => window.removeEventListener('message', handleMessageFromIframe);
+  }, []);
 
   const selectedSection = sections.find(s => s._id === selectedSectionId);
 
@@ -132,11 +197,11 @@ export default function LiveEditor() {
       // Varsayılan boş şablonlar
       const lastKey = path[path.length - 1];
       if (lastKey === 'slides') {
-        newItem = { image: '/placeholder.jpg', title: 'Yeni Slayt Başlığı', subtitle: 'Alt Başlık', ctaText: 'Teklif Al', ctaLink: '#iletisim' };
+        newItem = { image: '/placeholder.jpg', title: 'Yeni Slayt Başlığı', subtitle: 'Alt Başlık', ctaText: 'Teklif Al', ctaLink: '#teklif' };
       } else if (lastKey === 'items') {
         newItem = { icon: 'fas fa-check', title: 'Yeni Öğe Başlığı', desc: 'Açıklama giriniz.' };
       } else if (lastKey === 'catalogs') {
-        newItem = { name: 'Katalog İsmi', pdfUrl: '#', imageUrl: '/placeholder.jpg' };
+        newItem = { title: 'Katalog İsmi', file: '#', cover: '/placeholder.jpg' };
       } else {
         newItem = { title: '', desc: '' };
       }
@@ -152,7 +217,7 @@ export default function LiveEditor() {
     for (const k in obj) {
       if (typeof obj[k] === 'string') {
         // İkonlar ve resimler hariç boşalt
-        if (k.toLowerCase().includes('image') || k.toLowerCase().includes('logo') || k.toLowerCase().includes('icon')) {
+        if (k.toLowerCase().includes('image') || k.toLowerCase().includes('logo') || k.toLowerCase().includes('icon') || k.toLowerCase().includes('cover')) {
           res[k] = obj[k];
         } else {
           res[k] = '';
@@ -323,14 +388,8 @@ export default function LiveEditor() {
     return null;
   };
 
-  if (loading) {
-    return (
-      <div className={styles.loadingWrapper}>
-        <i className="fas fa-spinner fa-spin fa-3x" />
-        <p>Görsel Düzenleyici Yükleniyor...</p>
-      </div>
-    );
-  }
+  const selectedPage = PAGES.find(p => p.slug === selectedPageSlug) || PAGES[0];
+  const iframeSrc = `${selectedPage.url}?live=true`;
 
   return (
     <div className={styles.editorLayout}>
@@ -344,43 +403,75 @@ export default function LiveEditor() {
         </div>
 
         <div className={styles.sidebarContent}>
-          {/* Bölüm Listesi */}
+          {/* Sayfa Seçici */}
           <div className={styles.sidebarSection}>
-            <h3 className={styles.sectionTitle}>Sayfa Bölümleri</h3>
-            <div className={styles.sectionsList}>
-              {sections.map(s => (
-                <div
-                  key={s._id}
-                  className={`${styles.sectionItem} ${selectedSectionId === s._id ? styles.sectionItemActive : ''}`}
-                  onClick={() => setSelectedSectionId(s._id)}
-                >
-                  <span className={styles.sectionName}>{LABELS[s.type] || s.title}</span>
-                  {!s.isVisible && <i className="fas fa-eye-slash text-gray" title="Yayında Gizli" />}
-                </div>
+            <h3 className={styles.sectionTitle}>Düzenlenecek Sayfa</h3>
+            <select
+              value={selectedPageSlug}
+              onChange={e => {
+                setSelectedPageSlug(e.target.value);
+              }}
+              className={styles.pageSelect}
+            >
+              {PAGES.map(p => (
+                <option key={p.slug} value={p.slug}>
+                  {p.label}
+                </option>
               ))}
-            </div>
+            </select>
           </div>
 
-          {/* Form Alanı */}
-          {selectedSection && (
-            <div className={styles.formContainer}>
-              <h3 className={styles.formTitle}>İçeriği Düzenle</h3>
-              
-              {/* Görünürlük Checkbox'ı (Bölüm bazlı) */}
-              <div className={styles.fieldCheckbox} style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '6px' }}>
-                <input
-                  type="checkbox"
-                  checked={selectedSection.isVisible}
-                  id="section-visibility"
-                  onChange={e => handleFieldChange(['isVisible'], e.target.checked)}
-                />
-                <label htmlFor="section-visibility" style={{ fontWeight: 'bold', color: '#c8960c' }}>
-                  Bu Bölümü Sitede Göster (Aktif Et)
-                </label>
+          {loading ? (
+            <div className={styles.loadingInner}>
+              <i className="fas fa-spinner fa-spin" /> Yükleniyor...
+            </div>
+          ) : (
+            <>
+              {/* Bölüm Listesi */}
+              <div className={styles.sidebarSection}>
+                <h3 className={styles.sectionTitle}>Sayfa Bölümleri</h3>
+                <div className={styles.sectionsList}>
+                  {sections.length === 0 ? (
+                    <div style={{ padding: '10px', color: '#9aa0b0', fontSize: '0.85rem' }}>
+                      Bu sayfa için henüz bir dinamik bölüm eklenmemiş.
+                    </div>
+                  ) : (
+                    sections.map(s => (
+                      <div
+                        key={s._id}
+                        className={`${styles.sectionItem} ${selectedSectionId === s._id ? styles.sectionItemActive : ''}`}
+                        onClick={() => setSelectedSectionId(s._id)}
+                      >
+                        <span className={styles.sectionName}>{LABELS[s.type] || s.title}</span>
+                        {!s.isVisible && <i className="fas fa-eye-slash text-gray" title="Yayında Gizli" />}
+                      </div>
+                    ))
+                  )}
+                </div>
               </div>
 
-              {selectedSection.content && renderFormFields(['content'], selectedSection.content)}
-            </div>
+              {/* Form Alanı */}
+              {selectedSection && (
+                <div className={styles.formContainer}>
+                  <h3 className={styles.formTitle}>İçeriği Düzenle</h3>
+                  
+                  {/* Görünürlük Checkbox'ı (Bölüm bazlı) */}
+                  <div className={styles.fieldCheckbox} style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '6px' }}>
+                    <input
+                      type="checkbox"
+                      checked={selectedSection.isVisible}
+                      id="section-visibility"
+                      onChange={e => handleFieldChange(['isVisible'], e.target.checked)}
+                    />
+                    <label htmlFor="section-visibility" style={{ fontWeight: 'bold', color: '#c8960c' }}>
+                      Bu Bölümü Sitede Göster (Aktif Et)
+                    </label>
+                  </div>
+
+                  {selectedSection.content && renderFormFields(['content'], selectedSection.content)}
+                </div>
+              )}
+            </>
           )}
         </div>
 
@@ -388,7 +479,7 @@ export default function LiveEditor() {
           <button
             className={styles.saveBtn}
             onClick={saveCurrentSection}
-            disabled={saving}
+            disabled={saving || sections.length === 0}
           >
             {saving ? (
               <><i className="fas fa-spinner fa-spin" /> Kaydediliyor...</>
@@ -405,16 +496,16 @@ export default function LiveEditor() {
       <main className={styles.previewContainer}>
         <div className={styles.previewHeader}>
           <span className={styles.previewTitle}>
-            <i className="fas fa-laptop" /> Canlı Önizleme (Değişikliklerinizi anında görün)
+            <i className="fas fa-laptop" /> Canlı Önizleme (Sayfa içindeki yazılara ve resimlere tıklayarak doğrudan düzenleyebilirsiniz!)
           </span>
           <span style={{ fontSize: '0.8rem', color: '#9aa0b0' }}>
-            cagdasproyapi.com
+            cagdasproyapi.com{selectedPage.url}
           </span>
         </div>
         <div className={styles.iframeWrapper}>
           <iframe
             ref={iframeRef}
-            src="/?live=true"
+            src={iframeSrc}
             className={styles.iframe}
             title="Süreç Önizleme"
             onLoad={() => {

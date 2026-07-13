@@ -1,5 +1,7 @@
-.section { background:var(--bg); }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+.section { background:var(--bg); padding: 100px 0; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:40px; }
+
+/* Standart Liste Kartı */
 .card {
   display:flex; align-items:center; gap:16px;
   padding:20px; border-radius:var(--radius);
@@ -11,3 +13,93 @@
 .icon i { color:var(--accent); font-size:1.4rem; }
 .body h4 { color:var(--text); font-size:0.92rem; font-weight:600; margin-bottom:3px; }
 .body p { color:var(--text-muted); font-size:0.8rem; }
+
+/* Kapak Görselli Premium Kart */
+.coverCard {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.coverWrapper {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn {
+  background: #c8960c;
+  color: #0f0f1a;
+  padding: 12px 24px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.coverCard:hover .coverWrapper {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(200, 150, 12, 0.15);
+  border-color: rgba(200, 150, 12, 0.4);
+}
+
+.coverCard:hover .cover {
+  transform: scale(1.08);
+}
+
+.coverCard:hover .overlay {
+  opacity: 1;
+}
+
+.coverCard:hover .btn {
+  transform: translateY(0);
+}
+
+.info { padding: 15px 0 0; }
+
+.cardTitle {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  transition: color 0.3s;
+}
+
+.coverCard:hover .cardTitle { color: var(--accent); }
+
+.cardSubtitle {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+  .grid { gap: 25px; }
+}

@@ -343,3 +343,29 @@
   color: #f0f0f0;
   font-weight: 500;
 }
+
+.pageSelect {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: all 0.2s;
+}
+
+.pageSelect:focus {
+  border-color: #c8960c;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.loadingInner {
+  padding: 30px;
+  text-align: center;
+  color: #c8960c;
+  font-size: 0.9rem;
+}

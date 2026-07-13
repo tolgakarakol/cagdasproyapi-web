@@ -1,0 +1,8 @@
+- [ ] `task.md` güncellenmesi
+- [ ] `LivePreviewWrapper.tsx` içine sayfa içi düzenleme (inline edit) scriptinin enjekte edilmesi ve sections sarmalanması
+- [ ] `app/admin/live-editor/page.tsx` içine sayfa seçici (Anasayfa, Hakkımızda, vb.) ve iframe/senkronizasyon güncellemelerinin eklenmesi
+- [ ] `app/hakkimizda/page.tsx` dosyasının dinamik hale getirilmesi (veritabanından okuma)
+- [ ] `app/e-katalog/page.tsx` dosyasının dinamik hale getirilmesi
+- [ ] `app/iletisim/page.tsx` dosyasının dinamik hale getirilmesi
+- [ ] Veritabanında `hakkimizda`, `e-katalog` ve `iletisim` için varsayılan bölümlerin oluşturulması (seed betiğinin güncellenip çalıştırılması)
+- [ ] Derleme testleri ve git push

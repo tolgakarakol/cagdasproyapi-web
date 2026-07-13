@@ -223,6 +223,79 @@ async function seed() {
     console.log('✅ Ana sayfa bölümleri oluşturuldu');
   }
 
+  // --- Diğer Sayfaların Bölümleri ---
+  const otherPages = [
+    {
+      pageSlug: 'hakkimizda', type: 'about', title: 'Hakkımızda Hikayemiz', order: 0, isVisible: true,
+      content: {
+        sectionTitle: 'Hikayemiz',
+        heading: 'Sektörün Öncü\nÇözüm Ortağı',
+        body: 'Çağdaş Pro Yapı olarak 15 yıldır Silivri merkezli tüm Türkiye\'ye Albert Genau kalitesini taşıyoruz. Profesyonel ekibimiz ve müşteri odaklı yaklaşımımızla yaşam alanlarınıza değer katıyoruz.',
+        stats: [
+          { value: '15', label: 'Yıl Deneyim' },
+          { value: '500', label: 'Proje' },
+          { value: '12', label: 'Uzman Ekip' },
+          { value: '100', label: 'Memnuniyet' }
+        ],
+        hideButton: true
+      }
+    },
+    {
+      pageSlug: 'e-katalog', type: 'catalogs', title: 'Katalog Listesi', order: 0, isVisible: true,
+      content: {
+        sectionTitle: 'E-Katalog',
+        sectionSubtitle: 'Ürün kataloglarımızı inceleyin veya indirin',
+        catalogs: [
+          { title: 'Genel Ürün Kataloğu', file: 'albert-genau-2023.pdf', cover: '/images/catalogs/urun-katalogu.png' },
+          { title: 'Bioklimatik Pergola', file: 'bioklimatik-pergola.pdf', cover: '/images/catalogs/bioklimatik-pergola.png' },
+          { title: 'Hareketli Cephe Sistemleri', file: 'hareketli-cephe.pdf', cover: '/images/catalogs/hareketli-cephe.png' },
+          { title: 'Giyotin Cam Sistemleri', file: 'giyotin-cam-sistemleri.pdf', cover: '/images/catalogs/giyotin-sistem.png' },
+          { title: 'SlideMaster Sürme Sistem', file: 'slidemaster-surme.pdf', cover: '/images/catalogs/isicamli-surme.png' },
+          { title: 'Yeni Nesil Cam Balkon', file: 'yeni-nesil-cam-balkon.pdf', cover: '/images/catalogs/yeni-nesil-cam-balkon.png' },
+          { title: 'Isıcamlı Cam Balkon', file: 'tiara-twinmax.pdf', cover: '/images/catalogs/isicamli-balkon.png' },
+        ]
+      }
+    },
+    {
+      pageSlug: 'iletisim', type: 'contact', title: 'İletişim Bilgileri', order: 0, isVisible: true,
+      content: {
+        sectionTitle: 'Bize Ulaşın',
+        address: 'Piri Mehmet Paşa Mah. Burhan Soyaslan Cad. No: 20/A Silivri / İstanbul',
+        phone: '0507 916 57 07',
+        whatsapp: '905079165707',
+        instagram: 'albertgenau_cagdaspro',
+        email: 'info@cagdasproyapi.com',
+        workingHours: 'Pazartesi–Cumartesi: 09:00–19:00',
+        mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.3!2d28.2438394!3d41.0770615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5153dffc233f9%3A0x412e31643c326a5a!2sALBERT%20GENAU%20CAGDAS%20PRO%20YAPI!5e0!3m2!1str!2str!4v1715000000000!5m2!1str!2str'
+      }
+    },
+    {
+      pageSlug: 'iletisim', type: 'quote_form', title: 'Teklif Formu', order: 1, isVisible: true,
+      content: {
+        sectionTitle: 'Fiyat Teklifi İsteyin', 
+        whatsapp: '905079165707',
+        services: [
+          'Cam Balkon',
+          'Kış Bahçesi',
+          'Duşakabin',
+          'Cam Kapı',
+          'Çelik Konstrüksiyon',
+          'Bioklimatik Pergola',
+          'Rüzgar Kırıcı Sistem',
+          'Diğer Hizmetler'
+        ]
+      }
+    }
+  ];
+
+  for (const p of otherPages) {
+    const exists = await Section.findOne({ pageSlug: p.pageSlug, type: p.type });
+    if (!exists) {
+      await Section.create(p);
+      console.log(`✅ ${p.pageSlug} sayfa bölümü (${p.type}) oluşturuldu`);
+    }
+  }
+
   // --- Home page ---
   const PageSchema = new mongoose.Schema({}, { strict: false });
   const Page = mongoose.models.Page || mongoose.model('Page', PageSchema);

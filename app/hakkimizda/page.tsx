@@ -5,25 +5,52 @@ import AboutSection from '@/components/public/AboutSection';
 import Image from 'next/image';
 import styles from './hakkimizda.module.css';
 
-export default function AboutPage() {
+import { connectDB } from '@/lib/mongodb';
+import { Section } from '@/models/Section';
+import LivePreviewWrapper from '@/components/public/LivePreviewWrapper';
+
+const DEFAULT_SECTIONS = [
+  {
+    _id: 'about_fallback_id',
+    pageSlug: 'hakkimizda',
+    type: 'about',
+    isVisible: true,
+    content: {
+      sectionTitle: 'Hikayemiz',
+      heading: 'Sektörün Öncü\nÇözüm Ortağı',
+      body: 'Çağdaş Pro Yapı olarak 15 yıldır Silivri merkezli tüm Türkiye\'ye Albert Genau kalitesini taşıyoruz. Profesyonel ekibimiz ve müşteri odaklı yaklaşımımızla yaşam alanlarınıza değer katıyoruz.',
+      stats: [
+        { value: '15', label: 'Yıl Deneyim' },
+        { value: '500', label: 'Proje' },
+        { value: '12', label: 'Uzman Ekip' },
+        { value: '100', label: 'Memnuniyet' }
+      ],
+      hideButton: true
+    }
+  }
+];
+
+async function getSections() {
+  try {
+    await connectDB();
+    const sections = await Section.find({ pageSlug: 'hakkimizda', isVisible: true }).sort({ order: 1 }).lean();
+    return JSON.parse(JSON.stringify(sections));
+  } catch (err) {
+    console.error('Error fetching about sections:', err);
+    return [];
+  }
+}
+
+export default async function AboutPage() {
+  const dbSections = await getSections();
+  const sections = dbSections && dbSections.length > 0 ? dbSections : DEFAULT_SECTIONS;
+
   return (
     <main>
       <Navbar />
       <PageHeader title="Hakkımızda" subtitle="15 Yıllık Deneyim & Güven" />
       
-      {/* ORIGINAL ABOUT SECTION (Restored as requested) */}
-      <AboutSection content={{
-        sectionTitle: 'Hikayemiz',
-        heading: 'Sektörün Öncü\nÇözüm Ortağı',
-        body: 'Çağdaş Pro Yapı olarak 15 yıldır Silivri merkezli tüm Türkiye\'ye Albert Genau kalitesini taşıyoruz. Profesyonel ekibimiz ve müşteri odaklı yaklaşımımızla yaşam alanlarınıza değer katıyoruz.',
-        stats: [
-          { value: '15', label: 'Yıl Deneyim' },
-          { value: '500', label: 'Proje' },
-          { value: '12', label: 'Uzman Ekip' },
-          { value: '100', label: 'Memnuniyet' }
-        ],
-        hideButton: true // Hid the "Daha Fazlası" button here as requested
-      }} />
+      <LivePreviewWrapper initialSections={sections} />
 
       {/* NEW PREMIUM STORY SECTIONS */}
       <section className={styles.storySection} style={{ paddingTop: '2rem' }}>
