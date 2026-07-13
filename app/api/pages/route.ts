@@ -10,6 +10,8 @@ function requireAdmin(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   await connectDB();
+  // 'super' slug'lı test/gereksiz kayıtları otomatik temizle
+  await Page.deleteMany({ slug: 'super' });
   const isAdmin = !!requireAdmin(req);
   const query = isAdmin ? {} : { isVisible: true };
   const pages = await Page.find(query).sort({ order: 1 });
