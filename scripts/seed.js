@@ -2,42 +2,14 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config({ path: '.env.local' });
 
-const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = 'mongodb+srv://tolgakarakol_db_user:Cagdas2026@cluster0.zuy4t94.mongodb.net/cagdasproyapi?appName=Cluster0';
 
 async function seed() {
-  let uri = process.env.MONGODB_URI;
-  
-  if (!uri || uri.includes('localhost')) {
-    try {
-      console.log('Trying to connect to local MongoDB...');
-      await mongoose.connect(uri || 'mongodb://localhost:27017/cagdasproyapi');
-    } catch (e) {
-      console.log('Local MongoDB not found, starting Embedded Memory Server for seeding...');
-      const { MongoMemoryServer } = require('mongodb-memory-server-core');
-      const mongod = await MongoMemoryServer.create();
-      uri = mongod.getUri();
-      // We can't really "seed" a memory server that dies after this process,
-      // but this script is for local development testing.
-      // Actually, for local dev WITHOUT mongodb installed, we should just let the app handle it.
-      await mongoose.connect(uri);
-    }
-  } else {
-    await mongoose.connect(uri);
-  }
+  await mongoose.connect(MONGODB_URI);
   
   console.log('✅ MongoDB bağlantısı kuruldu');
 
-  // --- Admin ---
-  const AdminSchema = new mongoose.Schema({ email: String, password: String, name: String });
-  const Admin = mongoose.models.Admin || mongoose.model('Admin', AdminSchema);
-  const existing = await Admin.findOne({ email: process.env.ADMIN_EMAIL });
-  if (!existing) {
-    const hashed = await bcrypt.hash(process.env.ADMIN_PASSWORD, 10);
-    await Admin.create({ email: process.env.ADMIN_EMAIL, password: hashed, name: 'Admin' });
-    console.log('✅ Admin kullanıcısı oluşturuldu:', process.env.ADMIN_EMAIL);
-  } else {
-    console.log('ℹ️  Admin zaten mevcut');
-  }
+  // --- Admin (create-admin.js tarafından yapıldığı için devre dışı bırakıldı) ---
 
   // --- Settings ---
   const SettingsSchema = new mongoose.Schema({}, { strict: false });
