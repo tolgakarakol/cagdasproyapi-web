@@ -7,9 +7,9 @@ import { signToken } from '@/lib/auth';
 export async function POST(req: NextRequest) {
   try {
     await connectDB();
-    const { email, password } = await req.json();
+    const { username, password } = await req.json();
 
-    const admin = await Admin.findOne({ email });
+    const admin = await Admin.findOne({ username });
     if (!admin) {
       return NextResponse.json({ error: 'Geçersiz kimlik bilgileri' }, { status: 401 });
     }
@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Geçersiz kimlik bilgileri' }, { status: 401 });
     }
 
-    const token = signToken({ id: admin._id, email: admin.email });
+    const token = signToken({ id: admin._id, username: admin.username });
 
     const response = NextResponse.json({ success: true, name: admin.name });
     response.cookies.set('admin_token', token, {
@@ -31,7 +31,8 @@ export async function POST(req: NextRequest) {
     });
 
     return response;
-  } catch (error) {
-    return NextResponse.json({ error: 'Sunucu hatası' }, { status: 500 });
+  } catch (error: any) {
+    console.error('LOGIN ERROR DETAYI:', error);
+    return NextResponse.json({ error: error.message || 'Sunucu hatası' }, { status: 500 });
   }
 }

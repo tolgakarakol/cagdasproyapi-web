@@ -1,7 +1,7 @@
 .page { min-height:100vh; display:flex; align-items:center; justify-content:center; background:radial-gradient(ellipse at center,#16213e 0%,#0f0f1a 70%); padding:20px; }
 .card { background:rgba(255,255,255,0.04); border:1px solid rgba(200,150,12,0.2); border-radius:16px; padding:48px; width:100%; max-width:420px; text-align:center; backdrop-filter:blur(20px); }
-.logo { width:64px; height:64px; background:rgba(200,150,12,0.1); border-radius:16px; display:flex; align-items:center; justify-content:center; margin:0 auto 24px; font-size:1.8rem; color:#c8960c; }
-.title { font-family:'Playfair Display',serif; font-size:1.8rem; color:#f0f0f0; margin-bottom:8px; }
+.logo { display:flex; align-items:center; justify-content:center; margin:0 auto 24px; }
+.title { font-weight:800; font-size:1.8rem; color:#f0f0f0; margin-bottom:8px; }
 .sub { color:#9aa0b0; font-size:0.9rem; margin-bottom:28px; }
 .error { background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:12px; color:#f87171; font-size:0.9rem; margin-bottom:20px; text-align:left; }
 .form { text-align:left; }

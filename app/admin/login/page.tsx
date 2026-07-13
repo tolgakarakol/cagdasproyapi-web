@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import styles from './login.module.css';
 
 export default function AdminLogin() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ export default function AdminLogin() {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
       });
       const data = await res.json();
       if (!res.ok) { setError(data.error); return; }
@@ -33,15 +33,15 @@ export default function AdminLogin() {
     <div className={styles.page}>
       <div className={styles.card}>
         <div className={styles.logo}>
-          <i className="fas fa-shield-alt" />
+          <img src="/images/cagdasproyapi_beyaz.png" alt="Çağdaş Pro Yapı" style={{ width: '220px', height: 'auto' }} />
         </div>
         <h1 className={styles.title}>Admin Paneli</h1>
         <p className={styles.sub}>Çağdaş Pro Yapı Yönetim Sistemi</p>
         {error && <div className={styles.error}><i className="fas fa-exclamation-circle" /> {error}</div>}
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.field}>
-            <label>E-posta</label>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)} required placeholder="admin@cagdasproyapi.com" />
+            <label>Kullanıcı Adı</label>
+            <input type="text" value={username} onChange={e => setUsername(e.target.value)} required placeholder="Kullanıcı adınızı girin" />
           </div>
           <div className={styles.field}>
             <label>Şifre</label>

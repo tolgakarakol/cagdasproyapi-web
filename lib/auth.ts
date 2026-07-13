@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const JWT_SECRET = process.env.JWT_SECRET!;
+const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_key_12345';
 
 export function signToken(payload: object): string {
   return jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
