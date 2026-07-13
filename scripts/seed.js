@@ -64,11 +64,7 @@ async function seed() {
       { label: 'Hap Bilgiler', href: '#hapbilgiler', order: 4, isVisible: true, isExternal: false, children: [] },
       { label: 'İletişim', href: '#iletisim', order: 5, isVisible: true, isExternal: false, children: [] },
     ]);
-    console.log('✅ Menüler oluşturuldu');
-  }
-
-  // --- Sections ---
-  const SectionSchema = new mongoose.Schema({}, { strict: false });
+   const SectionSchema = new mongoose.Schema({}, { strict: false });
   const Section = mongoose.models.Section || mongoose.model('Section', SectionSchema);
   const sectionCount = await Section.countDocuments({ pageSlug: 'home' });
   if (sectionCount === 0) {
@@ -78,42 +74,52 @@ async function seed() {
         content: {
           slides: [
             {
-              image: '/images/slides/bioklimatik.jpg',
-              title: 'Bioklimatik Pergola Sistemleri',
-              subtitle: 'Dört mevsim konfor. Akıllı havalandırma, modern estetik.',
-              ctaText: 'Teklif Al',
-              ctaLink: '#teklif',
+              image: '/images/biyoklimatik-balkon.png',
+              title: 'Bioklimatik Pergola',
+              subtitle: 'Motorlu alüminyum lamel sistemi ile dört mevsim açık hava konforu.',
+              ctaText: 'HEMEN KEŞFET',
+              ctaLink: '/urunler/bioklimatik-pergola'
             },
             {
-              image: '/images/slides/kis-bahcesi.jpg',
-              title: 'Kış Bahçesi Sistemleri',
-              subtitle: 'Doğayı içeri taşıyın. Her mevsim, her hava şartında keyifli yaşam alanları.',
-              ctaText: 'Teklif Al',
-              ctaLink: '#teklif',
+              image: '/images/slides/slider_kis_bahcesi.png',
+              title: 'Kış Bahçesi',
+              subtitle: 'Doğayla iç içe, her mevsim yaşayan cam ve çelik konstrüksiyon sistemleri.',
+              ctaText: 'İNCELE',
+              ctaLink: '/urunler/kis-bahcesi'
             },
             {
               image: '/images/giyotin-balkon-banner.png',
-              title: 'Giyotin Cam Balkon Sistemleri',
-              subtitle: '5 yıl paslanmaz, 2 yıl sistem garantisi. Albert Genau kalitesiyle.',
-              ctaText: 'Teklif Al',
-              ctaLink: '#teklif',
-            },
+              title: 'Giyotin Cam Balkon',
+              subtitle: 'Silinebilir akıllı cam balkon sistemleri ile manzaranızı kesmeyin.',
+              ctaText: 'TÜM ÜRÜNLERİ GÖR',
+              ctaLink: '/urunler/giyotin-tam-balkon'
+            }
           ]
         }
       },
       {
         pageSlug: 'home', type: 'products_grid', title: 'Ürünlerimiz', order: 1, isVisible: true,
         content: {
-          sectionTitle: 'Ürünlerimiz',
-          sectionSubtitle: 'Albert Genau yetkili bayisi olarak sunduğumuz premium yapı sistemleri',
+          sectionSubtitle: 'Albert Genau yetkili bayisi olarak premium çözümler sunuyoruz.',
           products: [
-            { id: 'giyotin', title: 'Giyotin Cam Balkon', subtitle: 'Tambalkon Silinebilir Sistem', icon: '🏠', description: 'Cam panellerin birbirinin içinden geçerek katlanmasıyla maksimum açıklık. Temizlenebilir, estetik ve dayanıklı.', image: '/images/products/giyotin.jpg', tag: '2+5 Yıl Garanti' },
-            { id: 'katlanir', title: 'Katlanır Sistem Cam Balkon', subtitle: 'Tiara & TwinMax Serisi', icon: '🌿', description: 'Katlanır mekanizma ile balkonunuzu istediğinizde tamamen açın, istediğinizde kapatın.', image: '/images/products/katlanir.jpg', tag: '2+5 Yıl Garanti' },
-            { id: 'bioklimatik', title: 'Bioklimatik Pergola', subtitle: 'Akıllı Havalandırma Sistemi', icon: '☀️', description: 'Motor kontrollü lamel sistemi. Güneş, rüzgar, yağmur sensörleri ile otomatik çalışma seçeneği.', image: '/images/products/bioklimatik.jpg', tag: 'Premium Sistem' },
-            { id: 'ruzgar-kirici', title: 'Rüzgar Kırıcı Sistem', subtitle: 'Airflex Serisi', icon: '💨', description: 'Açık alanlarınızı rüzgardan koruyun. Şeffaf cam paneller ile görünümü bozmadan maksimum konfor.', image: '/images/products/ruzgar-kirici.jpg', tag: 'Özel Tasarım' },
-            { id: 'kis-bahcesi', title: 'Çelik Konstrüksiyon & Kış Bahçesi', subtitle: 'Özel Tasarım Sistemler', icon: '❄️', description: 'Çelik taşıyıcı sistem üzerine cam kaplamalı kış bahçesi. 4 mevsim kullanılabilir konforlu yaşam alanı.', image: '/images/products/kis-bahcesi.jpg', tag: 'Özel Proje' },
-            { id: 'dusakabin', title: 'Duşakabin Sistemleri', subtitle: 'Banyo Cam Sistemleri', icon: '🚿', description: 'Temperli güvenlik camı, paslanmaz profiller. Sabit, sürgülü, pivot kapı seçenekleri.', image: '/images/products/dusakabin.jpg', tag: 'İç Mekan' },
-            { id: 'cam-kapi', title: 'Cam Kapı Sistemleri', subtitle: 'Hareketli Cam Duvarlar', icon: '🚪', description: 'Ofis, mağaza ve villa girişleri için estetik cam kapı ve cam duvar sistemleri.', image: '/images/products/cam-kapi.jpg', tag: 'Ticari & Konut' },
+            {
+              id: 'giyotin-tam-balkon',
+              title: 'Giyotin Cam Balkon',
+              description: 'Silinebilir akıllı cam balkon sistemi.',
+              image: '/images/products/giyotin_final.jpg'
+            },
+            {
+              id: 'bioklimatik-pergola',
+              title: 'Bioklimatik Pergola',
+              description: 'Açılır-kapanır konforlu tavan sistemleri.',
+              image: '/images/products/pergola_final.jpg'
+            },
+            {
+              id: 'katlanir-sistem-cam-balkon',
+              title: 'Katlanır Cam Balkon',
+              description: 'Geniş manzara, tam açılım sağlayan sistemler.',
+              image: '/images/products/katlanir_teknik.jpg'
+            }
           ]
         }
       },
@@ -121,104 +127,13 @@ async function seed() {
         pageSlug: 'home', type: 'guarantee_band', title: 'Garanti Bandı', order: 2, isVisible: true,
         content: {
           guarantees: [
-            { icon: '🛡️', title: '2 Yıl Sistem Garantisi', subtitle: 'Albert Genau güvencesiyle' },
-            { icon: '⚙️', title: '5 Yıl Paslanmaz Garanti', subtitle: 'Profil ve aksamlarda' },
-            { icon: '🏆', title: '15 Yıl Sektör Deneyimi', subtitle: 'Uzman ekibimizle' },
-            { icon: '🚀', title: 'Tüm Türkiye Hizmet', subtitle: 'Silivri/İstanbul merkezli' },
+            { icon: 'fa-regular fa-circle-check', title: '10 Yıl Garanti', subtitle: 'Paslanmazlık ve çalışma garantisi.' },
+            { icon: 'fa-regular fa-star', title: 'Yetkili Bayi', subtitle: 'Albert Genau resmi teknik servis desteği.' },
+            { icon: 'fa-regular fa-clock', title: 'Hızlı Montaj', subtitle: 'Deneyimli ekiplerle zamanında teslimat.' },
+            { icon: 'fa-regular fa-comments', title: '7/24 Destek', subtitle: 'Satış sonrası kesintisiz müşteri hizmetleri.' }
           ]
         }
-      },
-      {
-        pageSlug: 'home', type: 'about', title: 'Hakkımızda', order: 3, isVisible: true,
-        content: {
-          sectionTitle: 'Hakkımızda',
-          heading: '15 Yıllık Deneyim,\nProfesyonel Ekip',
-          body: 'Çağdaş Pro Yapı olarak 2009 yılından bu yana alüminyum ve cam sistemleri sektöründe hizmet vermekteyiz. Albert Genau yetkili bayisi sıfatıyla, Silivri/İstanbul merkezimizden tüm Türkiye\'ye ulaşan 12 kişilik uzman ekibimizle müşterilerimize en kaliteli çözümleri sunuyoruz.',
-          stats: [
-            { value: '15', suffix: '+', label: 'Yıl Deneyim' },
-            { value: '12', suffix: '', label: 'Uzman Ekip' },
-            { value: '500', suffix: '+', label: 'Tamamlanan Proje' },
-            { value: '100', suffix: '%', label: 'Müşteri Memnuniyeti' },
-          ],
-          badges: ['Albert Genau Yetkili Bayisi', 'Silivri / İstanbul', 'Tüm Türkiye Hizmet'],
-        }
-      },
-      {
-        pageSlug: 'home', type: 'partners', title: 'Çözüm Ortaklarımız', order: 4, isVisible: true,
-        content: {
-          sectionTitle: 'Çözüm Ortaklarımız',
-          brands: [
-            { name: 'Albert Genau', logo: '/images/brands/albert-genau.png' },
-            { name: 'Kömmerling', logo: '/images/brands/kommerling.png' },
-            { name: 'Schuco', logo: '/images/brands/schuco.png' },
-            { name: 'Winsa', logo: '/images/brands/winsa.png' },
-            { name: 'Egepen', logo: '/images/brands/egepen.png' },
-            { name: 'Pimapen', logo: '/images/brands/pimapen.png' },
-            { name: 'Asaş', logo: '/images/brands/asas.png' },
-          ]
-        }
-      },
-      {
-        pageSlug: 'home', type: 'catalogs', title: 'E-Katalog', order: 5, isVisible: true,
-        content: {
-          sectionTitle: 'E-Katalog',
-          sectionSubtitle: 'Ürün kataloglarımızı inceleyin veya indirin',
-          catalogs: [
-            { title: 'Albert Genau 2023 Ana Katalog', file: '/e-katalog/Albert_Genau_-_2023_-TR.pdf', size: '9.4 MB' },
-            { title: 'Bioklimatik Pergola Kataloğu', file: '/e-katalog/Albert-Genau-Bioklimatik-Pergola-Katalogu+2.pdf', size: '2.3 MB' },
-            { title: 'Atrium Momentum Centrum Camlama', file: '/e-katalog/Albert_Genau_Atrium_Momentum_Centrum_Camlama_Sistemleri.pdf', size: '9.5 MB' },
-            { title: 'Isıcamlı Giyotin Sistem — Vertiflex Twin', file: '/e-katalog/Albert_Genau_Isicam_li_Giyotin_Sistemi_Vertiflex_Twin.pdf', size: '17 MB' },
-            { title: 'SlideMaster Dijital Katalog', file: '/e-katalog/SlideMaster_Dijital.pdf', size: '3.8 MB' },
-            { title: 'Tiara TwinMax Brochure', file: '/e-katalog/Tiara_Twinmax_Brosur_A3_digital_.pdf', size: '5.1 MB' },
-            { title: 'Tiara 08-10 Kataloğu', file: '/e-katalog/tiara08-10web.pdf', size: '5.5 MB' },
-          ]
-        }
-      },
-      {
-        pageSlug: 'home', type: 'hap_bilgiler', title: 'Hap Bilgiler', order: 6, isVisible: true,
-        content: {
-          sectionTitle: 'Hap Bilgiler',
-          sectionSubtitle: 'Cam balkon yaptırmadan önce bilmeniz gerekenler',
-          items: [
-            { title: 'Albert Genau SlideMaster Sürme Cambalkon', file: '/hapbilgiler/Albert Genau - SlideMaster Sürme Cambalkon Sistemi.pdf', description: 'SlideMaster sürme cam balkon sisteminin teknik özellikleri ve kullanım kılavuzu.' },
-            { title: 'Albert Genau Tambalkon Giyotin Cam Sistemi', file: '/hapbilgiler/Albert Genau - Tambalkon Giyotin Cam Sistemi.pdf', description: 'Tambalkon giyotin cam sisteminin detaylı teknik bilgileri.' },
-            { title: 'Albert Genau Tiara Katlanır Cambalkon', file: '/hapbilgiler/Albert Genau - Tiara Katlanır Cambalkon Sistemi.pdf', description: 'Tiara katlanır cam balkon sisteminin özellikleri ve kurulum bilgileri.' },
-            { title: 'Cambalkon Yaptırırken Dikkat Etmeniz Gerekenler', file: '/hapbilgiler/Cambalkon Yaptırırken Dikkat Etmeniz Gerekenler.pdf', description: 'Cam balkon yaptırmadan önce mutlaka okumanız gereken önemli bilgiler.' },
-          ]
-        }
-      },
-      {
-        pageSlug: 'home', type: 'quote_form', title: 'Teklif Al', order: 7, isVisible: true,
-        content: {
-          sectionTitle: 'Ücretsiz Teklif Alın',
-          sectionSubtitle: 'Formu doldurun, WhatsApp üzerinden anında iletişime geçelim',
-          whatsapp: '905079165707',
-          services: [
-            'Giyotin Cam Balkon',
-            'Katlanır Sistem Cam Balkon',
-            'Bioklimatik Pergola',
-            'Rüzgar Kırıcı Sistem',
-            'Kış Bahçesi',
-            'Duşakabin Sistemleri',
-            'Cam Kapı Sistemleri',
-            'Diğer',
-          ]
-        }
-      },
-      {
-        pageSlug: 'home', type: 'contact', title: 'İletişim', order: 8, isVisible: true,
-        content: {
-          sectionTitle: 'İletişim',
-          address: 'Piri Mehmet Paşa Mahallesi, Burhan Soyaslan Caddesi 20/A, Silivri/İstanbul',
-          phone: '0507 916 57 07',
-          whatsapp: '905079165707',
-          instagram: 'albertgenau_cagdaspro',
-          workingHours: 'Pazartesi–Cumartesi: 09:00–19:00',
-          mapLat: 41.0770615,
-          mapLng: 28.2438394,
-          mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.3!2d28.2438394!3d41.0770615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b5153dffc233f9%3A0x412e31643c326a5a!2sALBERT%20GENAU%20CAGDAS%20PRO%20YAPI!5e0!3m2!1str!2str!4v1715000000000!5m2!1str!2str',
-        }
-      },
+      }
     ]);
     console.log('✅ Ana sayfa bölümleri oluşturuldu');
   }
