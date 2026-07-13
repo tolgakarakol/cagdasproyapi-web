@@ -16,16 +16,63 @@ export async function GET(req: NextRequest) {
   const isAdmin = !!requireAdmin(req);
 
   if (pageSlug === 'galeri') {
-    const headerQuery: any = { pageSlug: 'galeri' };
-    if (!isAdmin) headerQuery.isVisible = true;
-    const headerSections = await Section.find(headerQuery);
+    // Temizlik: Galeri slug'ına hatalı atanmış product_detail kayıtlarını sil
+    await Section.deleteMany({ pageSlug: 'galeri', type: 'product_detail' });
 
-    const productQuery: any = { type: 'product_detail' };
-    if (!isAdmin) productQuery.isVisible = true;
-    const productSections = await Section.find(productQuery).sort({ order: 1 });
+    const galeriQuery: any = { pageSlug: 'galeri' };
+    if (!isAdmin) galeriQuery.isVisible = true;
+    let galeriSections = await Section.find(galeriQuery).sort({ order: 1 });
 
-    return NextResponse.json([...headerSections, ...productSections]);
+    // Galeri grupları hiç yoksa ürün datasından oluştur (ilk kurulum)
+    const hasGalleryGroups = galeriSections.some((s: any) => s.type === 'gallery_group');
+    if (!hasGalleryGroups) {
+      const MENU_CATEGORIES = [
+        { id: 'giyotin-tam-balkon', title: 'Giyotin Tam Balkon' },
+        { id: 'tiara-08-10', title: 'Katlanır - Sürme Cam Balkon' },
+        { id: 'bioklimatik-pergola', title: 'Bioklimatik Pergola' },
+        { id: 'ruzgar-kirici-sistem', title: 'Rüzgar Kırıcı Sistem' },
+        { id: 'kis-bahcesi', title: 'Çelik Konstrüksiyon & Kış Bahçesi' },
+        { id: 'dusakabin', title: 'Duşakabin Sistemleri' },
+        { id: 'cam-kapi', title: 'Cam Kapı Sistemleri' },
+        { id: 'kompozit-cephe-sistemleri', title: 'Kompozit Cephe Sistemleri' },
+        { id: 'pvc-cam-sistemleri', title: 'PVC Cam Sistemleri' },
+        { id: 'kupeste-modelleri', title: 'Küpeşte Modelleri' },
+      ];
+
+      for (let i = 0; i < MENU_CATEGORIES.length; i++) {
+        const category = MENU_CATEGORIES[i];
+        const product = PRODUCT_DATA[category.id];
+        const imageSet = new Set<string>();
+        if (product) {
+          if (product.heroImg) imageSet.add(product.heroImg);
+          if (product.safetyImg) imageSet.add(product.safetyImg);
+          if (product.cleaningImg) imageSet.add(product.cleaningImg);
+          if (product.features) product.features.forEach((f: any) => { if (f.img) imageSet.add(f.img); });
+          if (product.sections) {
+            product.sections.forEach((s: any) => {
+              if (s.image) imageSet.add(s.image);
+              if (s.images) s.images.forEach((img: string) => { if (img) imageSet.add(img); });
+            });
+          }
+        }
+        const groupImages = Array.from(imageSet).filter((img): img is string => typeof img === 'string' && img.length > 0);
+        await Section.create({
+          pageSlug: 'galeri',
+          type: 'gallery_group',
+          title: category.title,
+          order: i + 1,
+          isVisible: true,
+          content: { title: category.title, images: groupImages.length > 0 ? groupImages : [] }
+        });
+      }
+
+      // Tazelenen listeyi çek
+      galeriSections = await Section.find(galeriQuery).sort({ order: 1 });
+    }
+
+    return NextResponse.json(galeriSections);
   }
+
 
   const query: any = { pageSlug };
   if (!isAdmin) query.isVisible = true;
