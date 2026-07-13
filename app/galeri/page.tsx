@@ -20,85 +20,73 @@ async function getGalleryData() {
   try {
     await connectDB();
     
-    // Her kategori için veritabanında ürün detay kaydını sorgula, yoksa otomatik tohumla.
-    const galleryData = await Promise.all(
-      MENU_CATEGORIES.map(async (category) => {
-        let productSection = await Section.findOne({ pageSlug: category.id, type: 'product_detail' });
-        if (!productSection) {
-          productSection = await Section.create({
-            pageSlug: category.id,
-            type: 'product_detail',
-            title: `${category.id} Detay`,
-            order: 0,
-            isVisible: true,
-            content: PRODUCT_DATA[category.id] || {},
-          });
-        }
+    // Temizlik: Yanlışlıkla galeri slug'ına atanmış product_detail kayıtlarını temizle
+    await Section.deleteMany({ pageSlug: 'galeri', type: 'product_detail' });
 
-        const product = productSection.content;
+    // Mevcut galeri gruplarını çek
+    let galleryGroups = await Section.find({ pageSlug: 'galeri', type: 'gallery_group' })
+      .sort({ order: 1 })
+      .lean();
+
+    // Veritabanı boşsa (ilk kurulum), varsayılan grupları ürün datasından tohumla
+    if (!galleryGroups || galleryGroups.length === 0) {
+      const newGroups = [];
+      for (let i = 0; i < MENU_CATEGORIES.length; i++) {
+        const category = MENU_CATEGORIES[i];
+        
+        // Ürün datasından başlangıç resimlerini topla
+        const product = PRODUCT_DATA[category.id];
         const imageSet = new Set<string>();
-
         if (product) {
           if (product.heroImg) imageSet.add(product.heroImg);
           if (product.safetyImg) imageSet.add(product.safetyImg);
           if (product.cleaningImg) imageSet.add(product.cleaningImg);
           if (product.features) {
-            product.features.forEach((f: any) => {
-              if (f.img) imageSet.add(f.img);
-            });
+            product.features.forEach((f: any) => { if (f.img) imageSet.add(f.img); });
           }
           if (product.sections) {
             product.sections.forEach((s: any) => {
               if (s.image) imageSet.add(s.image);
-              if (s.images) {
-                s.images.forEach((img: string) => {
-                  if (img) imageSet.add(img);
-                });
-              }
+              if (s.images) s.images.forEach((img: string) => { if (img) imageSet.add(img); });
             });
           }
         }
-
-        // Tiara Twinmax görsellerini de katlanır balkona ekleyelim
-        if (category.id === 'tiara-08-10') {
-          let twinmaxSection = await Section.findOne({ pageSlug: 'tiara-twinmax', type: 'product_detail' });
-          if (!twinmaxSection) {
-            twinmaxSection = await Section.create({
-              pageSlug: 'tiara-twinmax',
-              type: 'product_detail',
-              title: 'tiara-twinmax Detay',
-              order: 0,
-              isVisible: true,
-              content: PRODUCT_DATA['tiara-twinmax'] || {},
-            });
-          }
-          const twinmax = twinmaxSection.content;
-          if (twinmax) {
-            if (twinmax.heroImg) imageSet.add(twinmax.heroImg);
-            if (twinmax.safetyImg) imageSet.add(twinmax.safetyImg);
-            if (twinmax.cleaningImg) imageSet.add(twinmax.cleaningImg);
-            if (twinmax.features) {
-              twinmax.features.forEach((f: any) => {
-                if (f.img) imageSet.add(f.img);
-              });
-            }
-          }
-        }
-
-        return {
-          sectionId: productSection._id.toString(),
+        
+        const groupImages = Array.from(imageSet).filter(Boolean);
+        
+        const newGroup = await Section.create({
+          pageSlug: 'galeri',
+          type: 'gallery_group',
           title: category.title,
-          images: Array.from(imageSet)
-            .filter(Boolean)
-            .map((src) => ({
-              src: src as string,
-              alt: `${category.title} Uygulaması`,
-            })),
-        };
-      })
-    );
+          order: i,
+          isVisible: true,
+          content: {
+            title: category.title,
+            images: groupImages.length > 0 ? groupImages : ['/placeholder.jpg']
+          }
+        });
+        
+        // Mongoose document'ı düz objeye çeviriyoruz (.lean() muadili)
+        newGroups.push(JSON.parse(JSON.stringify(newGroup)));
+      }
+      galleryGroups = newGroups;
+    }
 
-    return galleryData.filter((section) => section.images.length > 0);
+    // İstemciye uygun formata çevir
+    const formattedData = galleryGroups.map(group => {
+      const content = group.content || {};
+      const imagesList = content.images || [];
+      return {
+        sectionId: group._id.toString(),
+        title: content.title || group.title,
+        images: imagesList.filter(Boolean).map((src: string) => ({
+          src,
+          alt: `${content.title || group.title} Görseli`
+        }))
+      };
+    }).filter(g => g.images.length > 0);
+
+    return formattedData;
   } catch (err) {
     console.error('Error fetching gallery data:', err);
     return [];

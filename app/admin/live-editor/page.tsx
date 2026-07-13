@@ -48,7 +48,8 @@ const SECTION_ICONS: Record<string, string> = {
   page_header: 'fas fa-heading',
   about_story: 'fas fa-book-open',
   about_values: 'fas fa-star',
-  about_mv: 'fas fa-bullseye'
+  about_mv: 'fas fa-bullseye',
+  gallery_group: 'fas fa-images'
 };
 
 const LABELS: Record<string, string> = {
@@ -65,7 +66,8 @@ const LABELS: Record<string, string> = {
   page_header: 'Sayfa Başlık Alanı (Header)',
   about_story: 'Hikayemiz (Detaylı Anlatım)',
   about_values: 'Temel Değerlerimiz',
-  about_mv: 'Vizyon & Misyon'
+  about_mv: 'Vizyon & Misyon',
+  gallery_group: 'Galeri Albümü'
 };
 
 const formatLabel = (key: string): string => {

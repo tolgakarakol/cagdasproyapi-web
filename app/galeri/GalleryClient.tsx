@@ -77,12 +77,39 @@ function GallerySection({ title, images, onImageClick, isLive }: GallerySectionP
 }
 
 export default function GalleryClient({ galleryData, headerSection }: { galleryData: any[]; headerSection: any }) {
+  const [localGalleryData, setLocalGalleryData] = useState(galleryData);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedAlt, setSelectedAlt] = useState<string>('');
   const [isLive, setIsLive] = useState(false);
 
   useEffect(() => {
     setIsLive(typeof window !== 'undefined' && window.location.search.includes('live=true'));
+    
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data && event.data.type === 'LIVE_PREVIEW_UPDATE') {
+        const updatedGallerySections = event.data.sections
+          .filter((s: any) => s.type === 'gallery_group')
+          .map((group: any) => {
+            const content = group.content || {};
+            const imagesList = content.images || [];
+            return {
+              sectionId: group._id,
+              title: content.title || group.title,
+              images: imagesList.filter(Boolean).map((src: string) => ({
+                src,
+                alt: `${content.title || group.title} Görseli`
+              }))
+            };
+          });
+          
+        if (updatedGallerySections.length > 0) {
+          setLocalGalleryData(updatedGallerySections);
+        }
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
   }, []);
 
   const openLightbox = (src: string, alt: string) => {
@@ -104,7 +131,7 @@ export default function GalleryClient({ galleryData, headerSection }: { galleryD
 
       <section className={styles.galleryPage}>
         <div className={styles.container}>
-          {galleryData.map((section, sectionIdx) => (
+          {localGalleryData.map((section, sectionIdx) => (
             <div key={section.sectionId || sectionIdx} data-section-id={section.sectionId}>
               <GallerySection
                 title={section.title}
