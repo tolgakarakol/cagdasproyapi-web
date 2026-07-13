@@ -99,7 +99,17 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
         e.preventDefault();
         e.stopPropagation();
 
-        const originalSrc = target.getAttribute('src') || '';
+        let originalSrc = target.getAttribute('src') || '';
+        if (originalSrc.includes('/_next/image') || originalSrc.includes('?url=')) {
+          try {
+            const urlObj = new URL(originalSrc, window.location.origin);
+            const rawUrl = urlObj.searchParams.get('url');
+            if (rawUrl) originalSrc = rawUrl;
+          } catch (e) {
+            const match = originalSrc.match(/[?&]url=([^&]+)/);
+            if (match) originalSrc = decodeURIComponent(match[1]);
+          }
+        }
         const fileInput = document.createElement('input');
         fileInput.type = 'file';
         fileInput.accept = 'image/*';
