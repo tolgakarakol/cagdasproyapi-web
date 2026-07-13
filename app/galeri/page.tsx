@@ -6,7 +6,7 @@ import PageHeader from '@/components/public/PageHeader';
 import Image from 'next/image';
 import styles from './galeri.module.css';
 
-import { PRODUCT_DATA } from '@/app/urunler/[slug]/ProductClient';
+import { PRODUCT_DATA } from '@/lib/productData';
 
 const MENU_CATEGORIES = [
   { id: 'giyotin-tam-balkon', title: 'Giyotin Tam Balkon' },

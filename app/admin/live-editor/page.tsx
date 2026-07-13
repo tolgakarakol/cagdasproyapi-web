@@ -7,7 +7,19 @@ const PAGES = [
   { slug: 'home', label: '🏠 Anasayfa', url: '/' },
   { slug: 'hakkimizda', label: '👥 Hakkımızda', url: '/hakkimizda' },
   { slug: 'e-katalog', label: '📂 E-Katalog', url: '/e-katalog' },
-  { slug: 'iletisim', label: '📍 İletişim', url: '/iletisim' }
+  { slug: 'iletisim', label: '📍 İletişim', url: '/iletisim' },
+  // Ürünler Alt Menüsü
+  { slug: 'giyotin-tam-balkon', label: '— Giyotin Cam Balkon', url: '/urunler/giyotin-tam-balkon' },
+  { slug: 'bioklimatik-pergola', label: '— Bioklimatik Pergola', url: '/urunler/bioklimatik-pergola' },
+  { slug: 'tiara-twinmax', label: '— Tiara TwinMax Isıcamlı', url: '/urunler/tiara-twinmax' },
+  { slug: 'tiara-flat-slim-zero', label: '— Tiara Flat/Slim/Zero', url: '/urunler/tiara-flat-slim-zero' },
+  { slug: 'isicamli-surme-cam-balkon', label: '— Isıcamlı Sürme Cam Balkon', url: '/urunler/isicamli-surme-cam-balkon' },
+  { slug: 'tek-camli-surme-cam-balkon', label: '— Tek Camlı Sürme Cam Balkon', url: '/urunler/tek-camli-surme-cam-balkon' },
+  { slug: 'ruzgar-kirici-sistem', label: '— Rüzgar Kırıcı Sistem', url: '/urunler/ruzgar-kirici-sistem' },
+  { slug: 'katlanir-sistem-cam-balkon', label: '— Katlanır Sistem Cam Balkon', url: '/urunler/katlanir-sistem-cam-balkon' },
+  { slug: 'kis-bahcesi', label: '— Kış Bahçesi', url: '/urunler/kis-bahcesi' },
+  { slug: 'dusakabin', label: '— Duşakabin', url: '/urunler/dusakabin' },
+  { slug: 'cam-kapi', label: '— Cam Kapı', url: '/urunler/cam-kapi' }
 ];
 
 const LABELS: Record<string, string> = {
@@ -20,6 +32,7 @@ const LABELS: Record<string, string> = {
   hap_bilgiler: '📄 Pratik Bilgiler (Hap Bilgiler)',
   quote_form: '💬 Teklif Al Formu',
   contact: '📍 İletişim Bilgileri',
+  product_detail: '🛍️ Ürün Sayfası Detayı',
 };
 
 const formatLabel = (key: string): string => {

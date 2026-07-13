@@ -106,16 +106,33 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
         e.stopPropagation();
 
         const originalSrc = target.getAttribute('src') || '';
-        const newSrc = prompt('Yeni görsel (resim) adresini giriniz:', originalSrc);
-        if (newSrc !== null && newSrc.trim() !== '' && newSrc !== originalSrc) {
-          const sectionId = sectionEl.getAttribute('data-section-id');
-          window.parent.postMessage({
-            type: 'INLINE_IMAGE_UPDATE',
-            sectionId,
-            originalSrc,
-            newSrc: newSrc.trim()
-          }, '*');
-        }
+        
+        // Yerel dosyaları taramak için dinamik dosya girişi oluştur
+        const fileInput = document.createElement('input');
+        fileInput.type = 'file';
+        fileInput.accept = 'image/*';
+        
+        fileInput.onchange = (fileEvent: any) => {
+          const file = fileEvent.target.files?.[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (uploadEvent) => {
+              const base64Src = uploadEvent.target?.result as string;
+              if (base64Src) {
+                const sectionId = sectionEl.getAttribute('data-section-id');
+                window.parent.postMessage({
+                  type: 'INLINE_IMAGE_UPDATE',
+                  sectionId,
+                  originalSrc,
+                  newSrc: base64Src
+                }, '*');
+              }
+            };
+            reader.readAsDataURL(file);
+          }
+        };
+        
+        fileInput.click();
       }
     };
 

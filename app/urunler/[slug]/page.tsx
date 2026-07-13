@@ -2,6 +2,9 @@ import Navbar from '@/components/public/Navbar';
 import Footer from '@/components/public/Footer';
 import ProductClient from './ProductClient';
 import { Metadata } from 'next';
+import { connectDB } from '@/lib/mongodb';
+import { Section } from '@/models/Section';
+import { PRODUCT_DATA } from '@/lib/productData';
 
 const PRODUCT_SEO_DATA: any = {
   'giyotin-tam-balkon': {
@@ -35,12 +38,37 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+async function getProductSection(slug: string) {
+  try {
+    await connectDB();
+    let section = await Section.findOne({ pageSlug: slug, type: 'product_detail' }).lean();
+    if (!section && slug in PRODUCT_DATA) {
+      section = await Section.create({
+        pageSlug: slug,
+        type: 'product_detail',
+        title: `${slug} Detay`,
+        order: 0,
+        isVisible: true,
+        content: PRODUCT_DATA[slug]
+      });
+    }
+    return section ? JSON.parse(JSON.stringify(section)) : null;
+  } catch (err) {
+    console.error('Error fetching product section:', err);
+    return null;
+  }
+}
+
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const section = await getProductSection(slug);
+  const initialData = section ? section.content : null;
+  const sectionId = section ? section._id.toString() : '';
+
   return (
     <main>
       <Navbar />
-      <ProductClient slug={slug} />
+      <ProductClient slug={slug} initialData={initialData} sectionId={sectionId} />
       <Footer />
     </main>
   );

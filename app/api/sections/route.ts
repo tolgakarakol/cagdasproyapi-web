@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { connectDB } from '@/lib/mongodb';
 import { Section } from '@/models/Section';
 import { verifyToken } from '@/lib/auth';
+import { PRODUCT_DATA } from '@/lib/productData';
 
 function requireAdmin(req: NextRequest) {
   const token = req.cookies.get('admin_token')?.value;
@@ -18,6 +19,20 @@ export async function GET(req: NextRequest) {
   if (!isAdmin) query.isVisible = true;
 
   const sections = await Section.find(query).sort({ order: 1 });
+
+  // Eğer bu bilinen bir ürün slugı ise ve veritabanında bölümü yoksa, varsayılan verilerle oluştur.
+  if (sections.length === 0 && pageSlug in PRODUCT_DATA) {
+    const defaultSection = await Section.create({
+      pageSlug,
+      type: 'product_detail',
+      title: `${pageSlug} Detay`,
+      order: 0,
+      isVisible: true,
+      content: PRODUCT_DATA[pageSlug]
+    });
+    return NextResponse.json([defaultSection]);
+  }
+
   return NextResponse.json(sections);
 }
 
