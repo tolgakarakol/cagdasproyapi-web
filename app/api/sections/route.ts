@@ -73,7 +73,9 @@ export async function PUT(req: NextRequest) {
 
 const updateNestedStringValue = (obj: any, originalText: string, newText: string): any => {
   if (typeof obj === 'string') {
-    if (obj.trim() === originalText) {
+    const isMatch = obj.trim() === originalText.trim();
+    console.log(`[COMPARE] DB value: "${obj.trim()}" | Clicked value: "${originalText.trim()}" | Match: ${isMatch}`);
+    if (isMatch) {
       return newText;
     }
     return obj;
@@ -96,8 +98,16 @@ export async function PATCH(req: NextRequest) {
   await connectDB();
   const { sectionId, originalSrc, newSrc, originalText, newText } = await req.json();
 
+  console.log(`[PATCH API] Request received for sectionId: ${sectionId}`);
+  if (originalSrc) {
+    console.log(`[PATCH API] Attempting image update. originalSrc: "${originalSrc}"`);
+  }
+
   const section = await Section.findById(sectionId);
-  if (!section) return NextResponse.json({ error: 'Bölüm bulunamadı' }, { status: 404 });
+  if (!section) {
+    console.log(`[PATCH API] Section not found in DB: ${sectionId}`);
+    return NextResponse.json({ error: 'Bölüm bulunamadı' }, { status: 404 });
+  }
 
   let updatedContent = section.content;
   if (originalSrc && newSrc) {
@@ -107,10 +117,10 @@ export async function PATCH(req: NextRequest) {
   }
 
   section.content = updatedContent;
-  // Mongoose mixed tipini güncellemek için markModified kullanıyoruz
   section.markModified('content');
   await section.save();
 
+  console.log(`[PATCH API] Save complete for section: ${sectionId}`);
   return NextResponse.json(section);
 }
 
