@@ -353,13 +353,6 @@ export default function LiveEditor() {
                 </div>
               )}
               <div className={styles.imageActions}>
-                <input
-                  type="text"
-                  value={value}
-                  onChange={e => handleFieldChange(path, e.target.value)}
-                  placeholder="Resim yolu veya URL"
-                  className={styles.imagePathInput}
-                />
                 <button 
                   type="button" 
                   className={styles.uploadBtn}
@@ -383,7 +376,7 @@ export default function LiveEditor() {
                     fileInput.click();
                   }}
                 >
-                  <i className="fas fa-upload" /> Seç
+                  <i className="fas fa-image" /> Görseli Değiştir
                 </button>
               </div>
             </div>
