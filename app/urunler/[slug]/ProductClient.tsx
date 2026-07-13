@@ -58,6 +58,32 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
       return null;
     };
 
+    const compressImage = (base64Str: string, maxWidth = 1200, quality = 0.85): Promise<string> => {
+      return new Promise((resolve) => {
+        const img = new window.Image();
+        img.src = base64Str;
+        img.onload = () => {
+          let width = img.width;
+          let height = img.height;
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+          const canvas = document.createElement('canvas');
+          canvas.width = width;
+          canvas.height = height;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            ctx.drawImage(img, 0, 0, width, height);
+            resolve(canvas.toDataURL('image/jpeg', quality));
+          } else {
+            resolve(base64Str);
+          }
+        };
+        img.onerror = () => resolve(base64Str);
+      });
+    };
+
     const handleDocumentClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const sectionEl = target.closest('[data-section-id]');
@@ -118,15 +144,16 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
           const file = fileEvent.target.files?.[0];
           if (file) {
             const reader = new FileReader();
-            reader.onload = (uploadEvent: any) => {
+            reader.onload = async (uploadEvent: any) => {
               const base64Src = uploadEvent.target?.result as string;
               if (base64Src) {
+                const compressed = await compressImage(base64Src);
                 const sid = sectionEl.getAttribute('data-section-id');
                 window.parent.postMessage({
                   type: 'INLINE_IMAGE_UPDATE',
                   sectionId: sid,
                   originalSrc,
-                  newSrc: base64Src
+                  newSrc: compressed
                 }, '*');
               }
             };
@@ -148,15 +175,16 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
             const file = fileEvent.target.files?.[0];
             if (file) {
               const reader = new FileReader();
-              reader.onload = (uploadEvent: any) => {
+              reader.onload = async (uploadEvent: any) => {
                 const base64Src = uploadEvent.target?.result as string;
                 if (base64Src) {
+                  const compressed = await compressImage(base64Src);
                   const sid = sectionEl.getAttribute('data-section-id');
                   window.parent.postMessage({
                     type: 'INLINE_IMAGE_UPDATE',
                     sectionId: sid,
                     originalSrc: bgData.url,
-                    newSrc: base64Src
+                    newSrc: compressed
                   }, '*');
                 }
               };
