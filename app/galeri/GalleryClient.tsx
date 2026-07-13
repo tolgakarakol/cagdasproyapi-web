@@ -97,12 +97,13 @@ export default function GalleryClient({ galleryData, headerSection }: { galleryD
       <section className={styles.galleryPage}>
         <div className={styles.container}>
           {galleryData.map((section, sectionIdx) => (
-            <GallerySection
-              key={sectionIdx}
-              title={section.title}
-              images={section.images}
-              onImageClick={openLightbox}
-            />
+            <div key={section.sectionId || sectionIdx} data-section-id={section.sectionId}>
+              <GallerySection
+                title={section.title}
+                images={section.images}
+                onImageClick={openLightbox}
+              />
+            </div>
           ))}
         </div>
       </section>

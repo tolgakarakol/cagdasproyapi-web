@@ -59,6 +59,49 @@ export async function PUT(req: NextRequest) {
   return NextResponse.json(section);
 }
 
+const updateNestedStringValue = (obj: any, originalText: string, newText: string): any => {
+  if (typeof obj === 'string') {
+    if (obj.trim() === originalText) {
+      return newText;
+    }
+    return obj;
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(item => updateNestedStringValue(item, originalText, newText));
+  }
+  if (typeof obj === 'object' && obj !== null) {
+    const newObj: any = {};
+    for (const key in obj) {
+      newObj[key] = updateNestedStringValue(obj[key], originalText, newText);
+    }
+    return newObj;
+  }
+  return obj;
+};
+
+export async function PATCH(req: NextRequest) {
+  if (!requireAdmin(req)) return NextResponse.json({ error: 'Yetkisiz' }, { status: 401 });
+  await connectDB();
+  const { sectionId, originalSrc, newSrc, originalText, newText } = await req.json();
+
+  const section = await Section.findById(sectionId);
+  if (!section) return NextResponse.json({ error: 'Bölüm bulunamadı' }, { status: 404 });
+
+  let updatedContent = section.content;
+  if (originalSrc && newSrc) {
+    updatedContent = updateNestedStringValue(section.content, originalSrc, newSrc);
+  } else if (originalText && newText) {
+    updatedContent = updateNestedStringValue(section.content, originalText, newText);
+  }
+
+  section.content = updatedContent;
+  // Mongoose mixed tipini güncellemek için markModified kullanıyoruz
+  section.markModified('content');
+  await section.save();
+
+  return NextResponse.json(section);
+}
+
 export async function DELETE(req: NextRequest) {
   if (!requireAdmin(req)) return NextResponse.json({ error: 'Yetkisiz' }, { status: 401 });
   await connectDB();

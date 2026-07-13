@@ -19,73 +19,86 @@ const MENU_CATEGORIES = [
 async function getGalleryData() {
   try {
     await connectDB();
-    // Veritabanındaki tüm ürün detay bölümlerini çek
-    const dbSections = await Section.find({ type: 'product_detail' }).lean();
     
-    const dbProductMap: Record<string, any> = {};
-    dbSections.forEach((s: any) => {
-      dbProductMap[s.pageSlug] = s.content;
-    });
-
-    // Varsayılan statik PRODUCT_DATA ile veritabanından gelenleri birleştir
-    const mergedProductData = { ...PRODUCT_DATA };
-    Object.keys(dbProductMap).forEach((slug) => {
-      mergedProductData[slug] = dbProductMap[slug];
-    });
-
-    // Galeri görsellerini dinamik olarak derle
-    const galleryData = MENU_CATEGORIES.map((category) => {
-      const product = mergedProductData[category.id];
-      const imageSet = new Set<string>();
-
-      if (product) {
-        if (product.heroImg) imageSet.add(product.heroImg);
-        if (product.safetyImg) imageSet.add(product.safetyImg);
-        if (product.cleaningImg) imageSet.add(product.cleaningImg);
-        if (product.features) {
-          product.features.forEach((f: any) => {
-            if (f.img) imageSet.add(f.img);
+    // Her kategori için veritabanında ürün detay kaydını sorgula, yoksa otomatik tohumla.
+    const galleryData = await Promise.all(
+      MENU_CATEGORIES.map(async (category) => {
+        let productSection = await Section.findOne({ pageSlug: category.id, type: 'product_detail' });
+        if (!productSection) {
+          productSection = await Section.create({
+            pageSlug: category.id,
+            type: 'product_detail',
+            title: `${category.id} Detay`,
+            order: 0,
+            isVisible: true,
+            content: PRODUCT_DATA[category.id] || {},
           });
         }
-        if (product.sections) {
-          product.sections.forEach((s: any) => {
-            if (s.image) imageSet.add(s.image);
-            if (s.images) {
-              s.images.forEach((img: string) => {
-                if (img) imageSet.add(img);
-              });
-            }
-          });
-        }
-      }
 
-      // Tiara Twinmax görsellerini de katlanır balkona ekleyelim
-      if (category.id === 'tiara-08-10') {
-        const twinmax = mergedProductData['tiara-twinmax'];
-        if (twinmax) {
-          if (twinmax.heroImg) imageSet.add(twinmax.heroImg);
-          if (twinmax.safetyImg) imageSet.add(twinmax.safetyImg);
-          if (twinmax.cleaningImg) imageSet.add(twinmax.cleaningImg);
-          if (twinmax.features) {
-            twinmax.features.forEach((f: any) => {
+        const product = productSection.content;
+        const imageSet = new Set<string>();
+
+        if (product) {
+          if (product.heroImg) imageSet.add(product.heroImg);
+          if (product.safetyImg) imageSet.add(product.safetyImg);
+          if (product.cleaningImg) imageSet.add(product.cleaningImg);
+          if (product.features) {
+            product.features.forEach((f: any) => {
               if (f.img) imageSet.add(f.img);
             });
           }
+          if (product.sections) {
+            product.sections.forEach((s: any) => {
+              if (s.image) imageSet.add(s.image);
+              if (s.images) {
+                s.images.forEach((img: string) => {
+                  if (img) imageSet.add(img);
+                });
+              }
+            });
+          }
         }
-      }
 
-      return {
-        title: category.title,
-        images: Array.from(imageSet)
-          .filter(Boolean)
-          .map((src) => ({
-            src: src as string,
-            alt: `${category.title} Uygulaması`,
-          })),
-      };
-    }).filter((section) => section.images.length > 0);
+        // Tiara Twinmax görsellerini de katlanır balkona ekleyelim
+        if (category.id === 'tiara-08-10') {
+          let twinmaxSection = await Section.findOne({ pageSlug: 'tiara-twinmax', type: 'product_detail' });
+          if (!twinmaxSection) {
+            twinmaxSection = await Section.create({
+              pageSlug: 'tiara-twinmax',
+              type: 'product_detail',
+              title: 'tiara-twinmax Detay',
+              order: 0,
+              isVisible: true,
+              content: PRODUCT_DATA['tiara-twinmax'] || {},
+            });
+          }
+          const twinmax = twinmaxSection.content;
+          if (twinmax) {
+            if (twinmax.heroImg) imageSet.add(twinmax.heroImg);
+            if (twinmax.safetyImg) imageSet.add(twinmax.safetyImg);
+            if (twinmax.cleaningImg) imageSet.add(twinmax.cleaningImg);
+            if (twinmax.features) {
+              twinmax.features.forEach((f: any) => {
+                if (f.img) imageSet.add(f.img);
+              });
+            }
+          }
+        }
 
-    return galleryData;
+        return {
+          sectionId: productSection._id.toString(),
+          title: category.title,
+          images: Array.from(imageSet)
+            .filter(Boolean)
+            .map((src) => ({
+              src: src as string,
+              alt: `${category.title} Uygulaması`,
+            })),
+        };
+      })
+    );
+
+    return galleryData.filter((section) => section.images.length > 0);
   } catch (err) {
     console.error('Error fetching gallery data:', err);
     return [];

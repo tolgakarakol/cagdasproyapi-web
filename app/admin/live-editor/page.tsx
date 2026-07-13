@@ -187,6 +187,19 @@ export default function LiveEditor() {
       if (event.data && event.data.type === 'INLINE_TEXT_UPDATE') {
         const { sectionId, originalText, newText } = event.data;
         setSections(prevSections => {
+          const exists = prevSections.some(s => s._id === sectionId);
+          if (!exists) {
+            fetch('/api/sections', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ sectionId, originalText, newText })
+            }).then(res => {
+              if (res.ok && iframeRef.current) {
+                iframeRef.current.src = iframeRef.current.src;
+              }
+            });
+            return prevSections;
+          }
           return prevSections.map(s => {
             if (s._id === sectionId) {
               const updatedContent = updateNestedStringValue(s.content, originalText, newText);
@@ -199,6 +212,19 @@ export default function LiveEditor() {
       if (event.data && event.data.type === 'INLINE_IMAGE_UPDATE') {
         const { sectionId, originalSrc, newSrc } = event.data;
         setSections(prevSections => {
+          const exists = prevSections.some(s => s._id === sectionId);
+          if (!exists) {
+            fetch('/api/sections', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ sectionId, originalSrc, newSrc })
+            }).then(res => {
+              if (res.ok && iframeRef.current) {
+                iframeRef.current.src = iframeRef.current.src;
+              }
+            });
+            return prevSections;
+          }
           return prevSections.map(s => {
             if (s._id === sectionId) {
               const updatedContent = updateNestedStringValue(s.content, originalSrc, newSrc);
