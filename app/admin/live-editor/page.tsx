@@ -119,7 +119,22 @@ const updateNestedStringValue = (obj: any, originalText: string, newText: string
 
 export default function LiveEditor() {
   const router = useRouter();
-  const [selectedPageSlug, setSelectedPageSlug] = useState('home');
+  const [selectedPageSlug, setSelectedPageSlug] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('page') || 'home';
+    }
+    return 'home';
+  });
+
+  const handlePageChange = (slug: string) => {
+    setSelectedPageSlug(slug);
+    if (typeof window !== 'undefined') {
+      const url = new URL(window.location.href);
+      url.searchParams.set('page', slug);
+      window.history.pushState({}, '', url.toString());
+    }
+  };
   const [sections, setSections] = useState<any[]>([]);
   const [selectedSectionId, setSelectedSectionId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -582,7 +597,7 @@ export default function LiveEditor() {
                       key={p.slug} 
                       className={`${styles.customOption} ${selectedPageSlug === p.slug ? styles.customOptionActive : ''}`}
                       onClick={() => {
-                        setSelectedPageSlug(p.slug);
+                        handlePageChange(p.slug);
                         setIsSelectOpen(false);
                       }}
                     >
@@ -597,7 +612,7 @@ export default function LiveEditor() {
                       key={p.slug} 
                       className={`${styles.customOption} ${selectedPageSlug === p.slug ? styles.customOptionActive : ''}`}
                       onClick={() => {
-                        setSelectedPageSlug(p.slug);
+                        handlePageChange(p.slug);
                         setIsSelectOpen(false);
                       }}
                     >
