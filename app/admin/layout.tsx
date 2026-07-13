@@ -6,7 +6,8 @@ import styles from './admin.module.css';
 
 const NAV = [
   { href: '/admin/dashboard', icon: 'fa-gauge', label: 'Dashboard' },
-  { href: '/admin/sections', icon: 'fa-layer-group', label: 'Bölümler' },
+  { href: '/admin/live-editor', icon: 'fa-eye', label: 'Canlı Görsel Editör' },
+  { href: '/admin/sections', icon: 'fa-layer-group', label: 'Bölümler (JSON)' },
   { href: '/admin/menus', icon: 'fa-bars', label: 'Menüler' },
   { href: '/admin/pages', icon: 'fa-file-alt', label: 'Sayfalar' },
   { href: '/admin/appearance', icon: 'fa-palette', label: 'Görünüm' },

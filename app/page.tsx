@@ -74,29 +74,15 @@ async function getSections() {
   }
 }
 
+import LivePreviewWrapper from '@/components/public/LivePreviewWrapper';
+
 export default async function HomePage() {
   const sections = await getSections();
-
-  const heroSection = sections.find((s: any) => s.type === 'hero_slider');
-  const otherSections = sections.filter((s: any) => s.type !== 'hero_slider');
 
   return (
     <>
       <Navbar />
-      {heroSection && <HeroSlider slides={heroSection.content?.slides || []} />}
-      {otherSections.map((section: any) => {
-        const Component = SECTION_MAP[section.type];
-        if (!Component || section.type === 'contact' || section.type === 'quote_form') return null;
-        if (section.type === 'products_grid') {
-          return (
-            <div key={section._id}>
-              <Component content={section.content} />
-              <Testimonials />
-            </div>
-          );
-        }
-        return <Component key={section._id} content={section.content} />;
-      })}
+      <LivePreviewWrapper initialSections={sections} />
       <PartnersCarousel />
       <Footer />
       <WhatsAppFloat />
