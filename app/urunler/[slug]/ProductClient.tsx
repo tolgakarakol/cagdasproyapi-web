@@ -45,6 +45,19 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
     `;
     document.head.appendChild(style);
 
+    const findBgElement = (targetEl: HTMLElement): { el: HTMLElement; url: string } | null => {
+      let currentEl: HTMLElement | null = targetEl;
+      while (currentEl && !currentEl.hasAttribute('data-section-id')) {
+        const bg = window.getComputedStyle(currentEl).backgroundImage;
+        if (bg && bg !== 'none' && bg.startsWith('url(')) {
+          const cleanUrl = bg.replace(/^url\(['"]?/, '').replace(/['"]?\)$/, '');
+          return { el: currentEl, url: cleanUrl };
+        }
+        currentEl = currentEl.parentElement;
+      }
+      return null;
+    };
+
     const handleDocumentClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const sectionEl = target.closest('[data-section-id]');
@@ -79,6 +92,7 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
           target.removeEventListener('blur', handleBlur);
         };
         target.addEventListener('blur', handleBlur);
+        return;
       }
 
       if (target.tagName === 'IMG') {
@@ -110,6 +124,37 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
           }
         };
         fileInput.click();
+      } else {
+        const bgData = findBgElement(target);
+        if (bgData) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const fileInput = document.createElement('input');
+          fileInput.type = 'file';
+          fileInput.accept = 'image/*';
+          
+          fileInput.onchange = (fileEvent: any) => {
+            const file = fileEvent.target.files?.[0];
+            if (file) {
+              const reader = new FileReader();
+              reader.onload = (uploadEvent: any) => {
+                const base64Src = uploadEvent.target?.result as string;
+                if (base64Src) {
+                  const sid = sectionEl.getAttribute('data-section-id');
+                  window.parent.postMessage({
+                    type: 'INLINE_IMAGE_UPDATE',
+                    sectionId: sid,
+                    originalSrc: bgData.url,
+                    newSrc: base64Src
+                  }, '*');
+                }
+              };
+              reader.readAsDataURL(file);
+            }
+          };
+          fileInput.click();
+        }
       }
     };
 
@@ -122,6 +167,13 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
           target.style.outlineOffset = '2px';
           target.style.cursor = 'pointer';
         }
+      } else {
+        const bgData = findBgElement(target);
+        if (bgData) {
+          bgData.el.style.outline = '3px dashed #c8960c';
+          bgData.el.style.outlineOffset = '-3px';
+          bgData.el.style.cursor = 'pointer';
+        }
       }
     };
 
@@ -129,6 +181,12 @@ export default function ProductClient({ slug, initialData, sectionId }: { slug: 
       const target = e.target as HTMLElement;
       if (target.tagName === 'IMG') {
         target.style.outline = '';
+      } else {
+        const bgData = findBgElement(target);
+        if (bgData) {
+          bgData.el.style.outline = '';
+          bgData.el.style.outlineOffset = '';
+        }
       }
     };
 
