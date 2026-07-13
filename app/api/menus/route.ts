@@ -8,9 +8,14 @@ function requireAdmin(req: NextRequest) {
   return token ? verifyToken(token) : null;
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   await connectDB();
-  const menus = await Menu.find({ isVisible: true }).sort({ order: 1 });
+  const isAdmin = !!requireAdmin(req);
+
+  const query: any = {};
+  if (!isAdmin) query.isVisible = true;
+
+  const menus = await Menu.find(query).sort({ order: 1 });
   return NextResponse.json(menus);
 }
 
