@@ -10,9 +10,10 @@ interface GallerySectionProps {
   title: string;
   images: { src: string; alt: string }[];
   onImageClick: (src: string, alt: string) => void;
+  isLive?: boolean;
 }
 
-function GallerySection({ title, images, onImageClick }: GallerySectionProps) {
+function GallerySection({ title, images, onImageClick, isLive }: GallerySectionProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -44,7 +45,9 @@ function GallerySection({ title, images, onImageClick }: GallerySectionProps) {
             <div
               key={imgIdx}
               className={styles.slide}
-              onClick={() => onImageClick(img.src, img.alt)}
+              onClick={() => {
+                if (!isLive) onImageClick(img.src, img.alt);
+              }}
             >
               <Image
                 src={img.src}
@@ -54,8 +57,8 @@ function GallerySection({ title, images, onImageClick }: GallerySectionProps) {
                 quality={85}
                 style={{ objectFit: 'cover' }}
               />
-              <div className={styles.imageOverlay}>
-                <i className={`fas fa-magnifying-glass-plus ${styles.zoomIcon}`} />
+              <div className={styles.imageOverlay} style={isLive ? { pointerEvents: 'none' } : undefined}>
+                <i className={`fas fa-magnifying-glass-plus ${styles.zoomIcon}`} style={isLive ? { pointerEvents: 'none' } : undefined} />
               </div>
             </div>
           ))}
@@ -76,6 +79,11 @@ function GallerySection({ title, images, onImageClick }: GallerySectionProps) {
 export default function GalleryClient({ galleryData, headerSection }: { galleryData: any[]; headerSection: any }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedAlt, setSelectedAlt] = useState<string>('');
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    setIsLive(typeof window !== 'undefined' && window.location.search.includes('live=true'));
+  }, []);
 
   const openLightbox = (src: string, alt: string) => {
     setSelectedImage(src);
@@ -102,6 +110,7 @@ export default function GalleryClient({ galleryData, headerSection }: { galleryD
                 title={section.title}
                 images={section.images}
                 onImageClick={openLightbox}
+                isLive={isLive}
               />
             </div>
           ))}

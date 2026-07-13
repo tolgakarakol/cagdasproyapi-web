@@ -15,6 +15,18 @@ export async function GET(req: NextRequest) {
   const pageSlug = searchParams.get('pageSlug') || 'home';
   const isAdmin = !!requireAdmin(req);
 
+  if (pageSlug === 'galeri') {
+    const headerQuery: any = { pageSlug: 'galeri' };
+    if (!isAdmin) headerQuery.isVisible = true;
+    const headerSections = await Section.find(headerQuery);
+
+    const productQuery: any = { type: 'product_detail' };
+    if (!isAdmin) productQuery.isVisible = true;
+    const productSections = await Section.find(productQuery).sort({ order: 1 });
+
+    return NextResponse.json([...headerSections, ...productSections]);
+  }
+
   const query: any = { pageSlug };
   if (!isAdmin) query.isVisible = true;
 
