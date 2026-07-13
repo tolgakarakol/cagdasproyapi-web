@@ -69,6 +69,7 @@ const LABELS: Record<string, string> = {
 };
 
 const formatLabel = (key: string): string => {
+  if (!isNaN(Number(key))) return `Görsel ${Number(key) + 1}`;
   const dictionary: Record<string, string> = {
     title: 'Başlık',
     subtitle: 'Alt Başlık',
@@ -143,6 +144,71 @@ export default function LiveEditor() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
   const selectRef = useRef<HTMLDivElement>(null);
+  const [imageUploadStates, setImageUploadStates] = useState<Record<string, boolean>>({});
+  const globalFileInputRef = useRef<HTMLInputElement>(null);
+  const activeImagePathRef = useRef<string[] | null>(null);
+
+  const handleGlobalFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    const currentPath = activeImagePathRef.current;
+    
+    if (!file || !currentPath) {
+      if (globalFileInputRef.current) globalFileInputRef.current.value = '';
+      return;
+    }
+
+    const fieldKey = currentPath.join('.');
+    setImageUploadStates(prev => ({ ...prev, [fieldKey]: true }));
+
+    try {
+      const reader = new FileReader();
+      reader.onload = async (uploadEvent: any) => {
+        try {
+          const base64Src = uploadEvent.target?.result as string;
+          if (base64Src) {
+            const compressImage = (base64Str: string, maxWidth = 1200, quality = 0.85): Promise<string> => {
+              return new Promise((resolve) => {
+                const img = new window.Image();
+                img.src = base64Str;
+                img.onload = () => {
+                  let width = img.width;
+                  let height = img.height;
+                  if (width > maxWidth) {
+                    height = Math.round((height * maxWidth) / width);
+                    width = maxWidth;
+                  }
+                  const canvas = document.createElement('canvas');
+                  canvas.width = width;
+                  canvas.height = height;
+                  const ctx = canvas.getContext('2d');
+                  if (ctx) {
+                    ctx.drawImage(img, 0, 0, width, height);
+                    resolve(canvas.toDataURL('image/jpeg', quality));
+                  } else {
+                    resolve(base64Str);
+                  }
+                };
+                img.onerror = () => resolve(base64Str);
+              });
+            };
+
+            const compressed = await compressImage(base64Src);
+            handleFieldChange(currentPath, compressed);
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Görsel işlenirken bir hata oluştu.');
+        } finally {
+          setImageUploadStates(prev => ({ ...prev, [fieldKey]: false }));
+          if (globalFileInputRef.current) globalFileInputRef.current.value = '';
+        }
+      };
+      reader.readAsDataURL(file);
+    } catch (err) {
+      setImageUploadStates(prev => ({ ...prev, [fieldKey]: false }));
+      if (globalFileInputRef.current) globalFileInputRef.current.value = '';
+    }
+  };
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
@@ -301,6 +367,8 @@ export default function LiveEditor() {
         newItem = { icon: 'fas fa-check', title: 'Yeni Öğe Başlığı', desc: 'Açıklama giriniz.' };
       } else if (lastKey === 'catalogs') {
         newItem = { title: 'Katalog İsmi', file: '#', cover: '/placeholder.jpg' };
+      } else if (lastKey === 'images') {
+        newItem = '/placeholder.jpg';
       } else {
         newItem = { title: '', desc: '' };
       }
@@ -379,8 +447,10 @@ export default function LiveEditor() {
     const lastKey = path[path.length - 1];
 
     if (typeof value === 'string') {
+      const parentKey = path.length > 1 ? path[path.length - 2] : '';
       const isImage = 
         ['image', 'img', 'heroimg', 'bgimg', 'logo', 'bg', 'icon', 'src'].includes(lastKey.toLowerCase()) ||
+        ['images'].includes(parentKey.toLowerCase()) ||
         (value.startsWith('/images/') || value.startsWith('data:image/') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(value));
 
       if (isImage) {
@@ -397,54 +467,19 @@ export default function LiveEditor() {
                 <button 
                   type="button" 
                   className={styles.uploadBtn}
+                  disabled={imageUploadStates[path.join('.')]}
                   onClick={() => {
-                    const compressImage = (base64Str: string, maxWidth = 1200, quality = 0.85): Promise<string> => {
-                      return new Promise((resolve) => {
-                        const img = new window.Image();
-                        img.src = base64Str;
-                        img.onload = () => {
-                          let width = img.width;
-                          let height = img.height;
-                          if (width > maxWidth) {
-                            height = Math.round((height * maxWidth) / width);
-                            width = maxWidth;
-                          }
-                          const canvas = document.createElement('canvas');
-                          canvas.width = width;
-                          canvas.height = height;
-                          const ctx = canvas.getContext('2d');
-                          if (ctx) {
-                            ctx.drawImage(img, 0, 0, width, height);
-                            resolve(canvas.toDataURL('image/jpeg', quality));
-                          } else {
-                            resolve(base64Str);
-                          }
-                        };
-                        img.onerror = () => resolve(base64Str);
-                      });
-                    };
-
-                    const fileInput = document.createElement('input');
-                    fileInput.type = 'file';
-                    fileInput.accept = 'image/*';
-                    fileInput.onchange = (fileEvent: any) => {
-                      const file = fileEvent.target.files?.[0];
-                      if (file) {
-                        const reader = new FileReader();
-                        reader.onload = async (uploadEvent: any) => {
-                          const base64Src = uploadEvent.target?.result as string;
-                          if (base64Src) {
-                            const compressed = await compressImage(base64Src);
-                            handleFieldChange(path, compressed);
-                          }
-                        };
-                        reader.readAsDataURL(file);
-                      }
-                    };
-                    fileInput.click();
+                    activeImagePathRef.current = path;
+                    if (globalFileInputRef.current) {
+                      globalFileInputRef.current.click();
+                    }
                   }}
                 >
-                  <i className="fas fa-image" /> Görseli Değiştir
+                  {imageUploadStates[path.join('.')] ? (
+                    <><i className="fas fa-spinner fa-spin" /> Yükleniyor...</>
+                  ) : (
+                    <><i className="fas fa-image" /> Görseli Değiştir</>
+                  )}
                 </button>
               </div>
             </div>
@@ -528,12 +563,8 @@ export default function LiveEditor() {
                   </button>
                 </div>
                 {typeof item === 'string' ? (
-                  <div className={styles.field}>
-                    <input
-                      type="text"
-                      value={item}
-                      onChange={e => handleFieldChange([...path, idx.toString()], e.target.value)}
-                    />
+                  <div style={{width: '100%'}}>
+                    {renderFormFields([...path, idx.toString()], item)}
                   </div>
                 ) : (
                   Object.keys(item).map(key =>
@@ -565,6 +596,13 @@ export default function LiveEditor() {
 
   return (
     <div className={styles.editorLayout}>
+      <input 
+        type="file" 
+        accept="image/*" 
+        style={{ display: 'none' }} 
+        ref={globalFileInputRef}
+        onChange={handleGlobalFileChange}
+      />
       {/* Sol Panel: Düzenleyici */}
       <aside className={styles.sidebar}>
         <div className={styles.sidebarHeader}>
