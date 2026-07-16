@@ -467,7 +467,7 @@ export default function LiveEditor() {
         (value.startsWith('/images/') || value.startsWith('data:image/') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(value));
 
       const isFile = 
-        ['file', 'pdf', 'document'].includes(lastKey.toLowerCase()) ||
+        ['file', 'pdf', 'pdfurl', 'document'].includes(lastKey.toLowerCase()) ||
         (value.startsWith('/pdf/') || value.startsWith('data:application/pdf') || /\.(pdf)$/i.test(value));
 
       if (isImage || isFile) {
