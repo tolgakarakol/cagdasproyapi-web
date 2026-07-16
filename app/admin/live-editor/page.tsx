@@ -95,6 +95,8 @@ const formatLabel = (key: string): string => {
     catalogs: 'Katalog Dosyaları',
     name: 'Katalog Adı',
     pdfUrl: 'PDF İndirme Bağlantısı',
+    file: 'PDF Dosyası',
+    cover: 'Kapak Görseli',
     content: 'Detaylı İçerik',
     icon: 'İkon Sınıfı (Örn: fas fa-shield-alt)',
   };
