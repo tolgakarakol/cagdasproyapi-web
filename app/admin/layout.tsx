@@ -35,9 +35,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (pathname === '/admin/login') return <>{children}</>;
   if (checking) return <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#0f0f1a', color: '#c8960c' }}><i className="fas fa-spinner fa-spin fa-2x" /></div>;
 
+  const isLiveEditor = pathname.startsWith('/admin/live-editor');
+
   return (
     <div className={styles.layout}>
-      <aside className={styles.sidebar}>
+      <aside className={`${styles.sidebar} ${isLiveEditor ? styles.sidebarCollapsed : ''}`}>
         <div className={styles.sidebarHeader}>
           <div className={styles.sidebarLogo}><i className="fas fa-building" /></div>
           <div><p className={styles.sidebarTitle}>Çağdaş Pro Yapı</p><p className={styles.sidebarSub}>Admin Paneli</p></div>
@@ -55,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <button className={`${styles.navItem} ${styles.logoutBtn}`} onClick={logout}><i className="fas fa-sign-out-alt" /><span>Çıkış</span></button>
         </div>
       </aside>
-      <main className={styles.main}>{children}</main>
+      <main className={`${styles.main} ${isLiveEditor ? styles.mainCollapsed : ''}`}>{children}</main>
     </div>
   );
 }
