@@ -168,7 +168,8 @@ export default function LiveEditor() {
         try {
           const base64Src = uploadEvent.target?.result as string;
           if (base64Src) {
-            const compressImage = (base64Str: string, maxWidth = 1200, quality = 0.85): Promise<string> => {
+            if (file.type.startsWith('image/')) {
+              const compressImage = (base64Str: string, maxWidth = 1200, quality = 0.85): Promise<string> => {
               return new Promise((resolve) => {
                 const img = new window.Image();
                 img.src = base64Str;
@@ -196,6 +197,10 @@ export default function LiveEditor() {
 
             const compressed = await compressImage(base64Src);
             handleFieldChange(currentPath, compressed);
+            } else {
+              // PDF veya diğer dosyalar için sıkıştırma yapma
+              handleFieldChange(currentPath, base64Src);
+            }
           }
         } catch (err) {
           console.error(err);
@@ -455,27 +460,40 @@ export default function LiveEditor() {
     if (typeof value === 'string') {
       const parentKey = path.length > 1 ? path[path.length - 2] : '';
       const isImage = 
-        ['image', 'img', 'heroimg', 'bgimg', 'logo', 'bg', 'icon', 'src'].includes(lastKey.toLowerCase()) ||
+        ['image', 'img', 'heroimg', 'bgimg', 'logo', 'bg', 'icon', 'src', 'cover'].includes(lastKey.toLowerCase()) ||
         ['images'].includes(parentKey.toLowerCase()) ||
         (value.startsWith('/images/') || value.startsWith('data:image/') || /\.(jpg|jpeg|png|webp|gif|svg)$/i.test(value));
 
-      if (isImage) {
+      const isFile = 
+        ['file', 'pdf', 'document'].includes(lastKey.toLowerCase()) ||
+        (value.startsWith('/pdf/') || value.startsWith('data:application/pdf') || /\.(pdf)$/i.test(value));
+
+      if (isImage || isFile) {
         return (
           <div key={path.join('.')} className={styles.field}>
             <label>{formatLabel(lastKey)}</label>
             <div className={styles.imageFieldRow}>
-              {value && (
+              {value && isImage && (
                 <div 
                   className={styles.imagePreview}
                   onClick={() => {
                     activeImagePathRef.current = path;
                     if (globalFileInputRef.current) {
+                      globalFileInputRef.current.accept = 'image/*';
                       globalFileInputRef.current.click();
                     }
                   }}
                   title="Resmi değiştirmek için tıklayın"
                 >
                   <img src={value} alt="Önizleme" />
+                </div>
+              )}
+              {value && isFile && (
+                <div className={styles.filePreview} style={{ padding: '10px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
+                  <i className="fas fa-file-pdf" style={{fontSize: '1.5rem', color: '#e11d48'}} />
+                  <span style={{ fontSize: '0.85rem', color: '#f0f0f0', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '200px' }}>
+                    {value.length > 100 ? 'Yüklü PDF Dosyası (Base64)' : value}
+                  </span>
                 </div>
               )}
               <div className={styles.imageActions}>
@@ -486,6 +504,7 @@ export default function LiveEditor() {
                   onClick={() => {
                     activeImagePathRef.current = path;
                     if (globalFileInputRef.current) {
+                      globalFileInputRef.current.accept = isFile ? 'application/pdf' : 'image/*';
                       globalFileInputRef.current.click();
                     }
                   }}
@@ -493,7 +512,7 @@ export default function LiveEditor() {
                   {imageUploadStates[path.join('.')] ? (
                     <><i className="fas fa-spinner fa-spin" /> Yükleniyor...</>
                   ) : (
-                    <><i className="fas fa-image" /> Görseli Değiştir</>
+                    <><i className={`fas fa-${isFile ? 'file-upload' : 'image'}`} /> {isFile ? 'PDF Yükle' : 'Görsel Seç'}</>
                   )}
                 </button>
               </div>
@@ -613,7 +632,6 @@ export default function LiveEditor() {
     <div className={styles.editorLayout}>
       <input 
         type="file" 
-        accept="image/*" 
         style={{ display: 'none' }} 
         ref={globalFileInputRef}
         onChange={handleGlobalFileChange}
