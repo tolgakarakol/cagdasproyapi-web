@@ -8,6 +8,7 @@ const PAGES = [
   { slug: 'hakkimizda', label: 'Hakkımızda', url: '/hakkimizda' },
   { slug: 'e-katalog', label: 'E-Katalog', url: '/e-katalog' },
   { slug: 'galeri', label: 'Galeri', url: '/galeri' },
+  { slug: 'hap-bilgiler', label: 'Hap Bilgiler', url: '/hap-bilgiler' },
   { slug: 'iletisim', label: 'İletişim', url: '/iletisim' },
   // Ürünler Alt Menüsü
   { slug: 'giyotin-tam-balkon', label: 'Giyotin Cam Balkon', url: '/urunler/giyotin-tam-balkon' },
@@ -29,6 +30,7 @@ const getPageIcon = (slug: string): string => {
     case 'hakkimizda': return 'fas fa-users';
     case 'e-katalog': return 'fas fa-book-open';
     case 'galeri': return 'fas fa-images';
+    case 'hap-bilgiler': return 'fas fa-info-circle';
     case 'iletisim': return 'fas fa-map-marker-alt';
     default: return 'fas fa-cube';
   }
