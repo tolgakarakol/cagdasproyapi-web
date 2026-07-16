@@ -4,11 +4,10 @@ import styles from './dashboard.module.css';
 import Link from 'next/link';
 
 const CARDS = [
-  { href: '/admin/sections', icon: 'fa-layer-group', label: 'Bölümler', color: '#6366f1', desc: 'Sayfa bölümlerini düzenle' },
+  { href: '/admin/live-editor', icon: 'fa-eye', label: 'Canlı Editör', color: '#6366f1', desc: 'Siteyi görsel olarak düzenle' },
   { href: '/admin/menus', icon: 'fa-bars', label: 'Menüler', color: '#c8960c', desc: 'Navigasyon menüsünü yönet' },
-  { href: '/admin/pages', icon: 'fa-file-alt', label: 'Sayfalar', color: '#10b981', desc: 'Sayfa ekle, düzenle, sil' },
   { href: '/admin/appearance', icon: 'fa-palette', label: 'Görünüm', color: '#ec4899', desc: 'Font, renk, logo ayarları' },
-  { href: '/admin/settings', icon: 'fa-cog', label: 'Site Ayarları', color: '#f59e0b', desc: 'İletişim, SEO, adres' },
+  { href: '/admin/settings', icon: 'fa-cog', label: 'Site Ayarları', color: '#10b981', desc: 'İletişim, SEO, adres' },
 ];
 
 export default function Dashboard() {
@@ -35,6 +34,30 @@ export default function Dashboard() {
           <span><strong>{settings.siteName}</strong> — {settings.phone} · {settings.workingHours}</span>
         </div>
       )}
+
+      <div className={styles.statsGrid}>
+        <div className={styles.statCard}>
+          <div className={styles.statIcon} style={{color: '#6366f1', background: 'rgba(99, 102, 241, 0.1)'}}><i className="fas fa-users" /></div>
+          <div className={styles.statInfo}>
+            <h4>Bugünkü Ziyaretçi</h4>
+            <p>124</p>
+          </div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statIcon} style={{color: '#10b981', background: 'rgba(16, 185, 129, 0.1)'}}><i className="fas fa-chart-line" /></div>
+          <div className={styles.statInfo}>
+            <h4>Aylık Görüntülenme</h4>
+            <p>3,842</p>
+          </div>
+        </div>
+        <div className={styles.statCard}>
+          <div className={styles.statIcon} style={{color: '#c8960c', background: 'rgba(200, 150, 12, 0.1)'}}><i className="fas fa-mouse-pointer" /></div>
+          <div className={styles.statInfo}>
+            <h4>Sayfa Etkileşimi</h4>
+            <p>% 76</p>
+          </div>
+        </div>
+      </div>
 
       <div className={styles.grid}>
         {CARDS.map(card => (
