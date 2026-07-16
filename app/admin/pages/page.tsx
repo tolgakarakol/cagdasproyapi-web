@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './pages.module.css';
 
 export default function PagesAdminPage() {
@@ -7,6 +8,7 @@ export default function PagesAdminPage() {
   const [showAdd, setShowAdd] = useState(false);
   const [newPage, setNewPage] = useState({ title: '', slug: '', metaTitle: '', metaDescription: '' });
   const [saving, setSaving] = useState(false);
+  const router = useRouter();
 
   const load = () => fetch('/api/pages').then(r => r.json()).then(setPages);
   useEffect(() => { load(); }, []);
@@ -57,6 +59,7 @@ export default function PagesAdminPage() {
               {p.slug === 'home' && <span className={styles.badge}>Ana Sayfa</span>}
             </div>
             <div className={styles.actions}>
+              <button className={`${styles.btn} ${styles.btnLive}`} onClick={() => router.push(`/admin/live-editor?page=${p.slug}`)} title="Canlı Editörde Düzenle"><i className="fas fa-eye" /> Canlı Düzenle</button>
               {p.slug !== 'home' && (
                 <button className={`${styles.btn} ${styles.btnDel}`} onClick={() => deletePage(p._id)}><i className="fas fa-trash" /></button>
               )}
