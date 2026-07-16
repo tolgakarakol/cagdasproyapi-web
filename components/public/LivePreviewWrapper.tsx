@@ -301,7 +301,7 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
       {otherSections.map((section: any) => {
         if (section.type === 'page_header') {
           return (
-            <div key={section._id || section.type} data-section-id={section._id}>
+            <div key={section._id || section.type} data-section-id={section._id} style={{ scrollMarginTop: '110px' }}>
               <PageHeader title={section.content?.title || ''} subtitle={section.content?.subtitle} />
             </div>
           );
@@ -311,14 +311,14 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
         if (isHome && (section.type === 'contact' || section.type === 'quote_form')) return null;
         if (section.type === 'products_grid') {
           return (
-            <div key={section._id || section.type} data-section-id={section._id}>
+            <div key={section._id || section.type} data-section-id={section._id} style={{ scrollMarginTop: '110px' }}>
               <Component content={section.content} />
               <Testimonials />
             </div>
           );
         }
         return (
-          <div key={section._id || section.type} data-section-id={section._id}>
+          <div key={section._id || section.type} data-section-id={section._id} style={{ scrollMarginTop: '110px' }}>
             <Component content={section.content} />
           </div>
         );
