@@ -14,7 +14,8 @@
 .container { max-width: 1240px; margin: 0 auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; }
 
 .logo { display: flex; align-items: center; transition: all 0.3s; }
-.logo img { height: auto; width: 240px; object-fit: contain; }
+.logo img { height: auto; width: 240px; object-fit: contain; transition: mix-blend-mode 0.3s; }
+.scrolled .logo img { mix-blend-mode: multiply; }
 
 .menu { display: flex; align-items: center; gap: 5px; list-style: none; }
 .menuLink {

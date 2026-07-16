@@ -188,7 +188,7 @@ export default function LiveEditor() {
                   const ctx = canvas.getContext('2d');
                   if (ctx) {
                     ctx.drawImage(img, 0, 0, width, height);
-                    resolve(canvas.toDataURL('image/jpeg', quality));
+                    resolve(canvas.toDataURL('image/webp', quality));
                   } else {
                     resolve(base64Str);
                   }
