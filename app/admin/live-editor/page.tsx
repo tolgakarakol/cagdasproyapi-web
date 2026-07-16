@@ -465,7 +465,16 @@ export default function LiveEditor() {
             <label>{formatLabel(lastKey)}</label>
             <div className={styles.imageFieldRow}>
               {value && (
-                <div className={styles.imagePreview}>
+                <div 
+                  className={styles.imagePreview}
+                  onClick={() => {
+                    activeImagePathRef.current = path;
+                    if (globalFileInputRef.current) {
+                      globalFileInputRef.current.click();
+                    }
+                  }}
+                  title="Resmi değiştirmek için tıklayın"
+                >
                   <img src={value} alt="Önizleme" />
                 </div>
               )}
