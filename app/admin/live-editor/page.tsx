@@ -587,7 +587,15 @@ export default function LiveEditor() {
             {value.map((item, idx) => (
               <div key={idx} className={styles.arrayItemCard}>
                 <div className={styles.arrayItemHeader}>
-                  <span>{formatLabel(lastKey).slice(0, -3)} #{idx + 1}</span>
+                  <span>
+                    {(() => {
+                      let lbl = formatLabel(lastKey);
+                      if (lbl.endsWith('ları')) return lbl.slice(0, -4) + 'sı';
+                      if (lbl.endsWith('leri')) return lbl.slice(0, -4) + 'si';
+                      if (lbl.endsWith('lar') || lbl.endsWith('ler')) return lbl.slice(0, -3);
+                      return lbl;
+                    })()} #{idx + 1}
+                  </span>
                   <button
                     className={styles.delArrayBtn}
                     onClick={() => handleRemoveArrayItem(path, idx)}
