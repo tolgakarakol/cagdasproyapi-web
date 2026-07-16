@@ -127,7 +127,7 @@ export default function GalleryClient({ galleryData, headerSection }: { galleryD
   return (
     <main>
       <Navbar />
-      <LivePreviewWrapper initialSections={[headerSection]} />
+      <LivePreviewWrapper initialSections={[headerSection].filter(Boolean)} />
 
       <section className={styles.galleryPage}>
         <div className={styles.container}>
