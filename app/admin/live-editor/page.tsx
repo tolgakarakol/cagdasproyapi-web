@@ -684,11 +684,16 @@ export default function LiveEditor() {
                       <div
                         key={s._id}
                         className={`${styles.sectionItem} ${selectedSectionId === s._id ? styles.sectionItemActive : ''}`}
-                        onClick={() => setSelectedSectionId(s._id)}
+                        onClick={() => {
+                          setSelectedSectionId(s._id);
+                          if (iframeRef.current && iframeRef.current.contentWindow) {
+                            iframeRef.current.contentWindow.postMessage({ type: 'SCROLL_TO_SECTION', sectionId: s._id }, '*');
+                          }
+                        }}
                       >
                         <span className={styles.sectionName}>
                           <i className={SECTION_ICONS[s.type] || 'fas fa-cube'} style={{ marginRight: '10px', width: '16px', textAlign: 'center', color: '#c8960c' }} />
-                          {LABELS[s.type] || s.title}
+                          {(s.content && (s.content.title || s.content.name)) || LABELS[s.type] || s.title}
                         </span>
                         {!s.isVisible && <i className="fas fa-eye-slash text-gray" title="Yayında Gizli" />}
                       </div>
