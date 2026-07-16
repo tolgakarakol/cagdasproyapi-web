@@ -106,6 +106,18 @@ export default function GalleryClient({ galleryData, headerSection }: { galleryD
           setLocalGalleryData(updatedGallerySections);
         }
       }
+      if (event.data && event.data.type === 'SCROLL_TO_SECTION') {
+        const el = document.querySelector(`[data-section-id="${event.data.sectionId}"]`) as HTMLElement;
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          el.style.outline = '3px dashed #c8960c';
+          el.style.outlineOffset = '-3px';
+          setTimeout(() => {
+            el.style.outline = '';
+            el.style.outlineOffset = '';
+          }, 2000);
+        }
+      }
     };
 
     window.addEventListener('message', handleMessage);

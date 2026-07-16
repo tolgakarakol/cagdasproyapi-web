@@ -359,7 +359,11 @@ export default function LiveEditor() {
     if (currentArray.length > 0) {
       // Şablonu ilk elemandan klonla ama içini temizle
       const template = currentArray[0];
-      newItem = cloneTemplate(template);
+      if (typeof template === 'string') {
+        newItem = '/placeholder.jpg';
+      } else {
+        newItem = cloneTemplate(template);
+      }
     } else {
       // Varsayılan boş şablonlar
       const lastKey = path[path.length - 1];
