@@ -130,7 +130,10 @@ export default function LivePreviewWrapper({ initialSections }: { initialSection
 
       // Handle text tags
       const editableTags = ['H1', 'H2', 'H3', 'H4', 'P', 'SPAN', 'A', 'BUTTON'];
-      if (editableTags.includes(target.tagName)) {
+      
+      const isNavControl = target.closest('[class*="navBtn"], [class*="prevBtn"], [class*="nextBtn"], [class*="swiper-button"]');
+
+      if (editableTags.includes(target.tagName) && !isNavControl) {
         if (target.classList.contains('inline-edit-active')) return;
 
         e.preventDefault();
