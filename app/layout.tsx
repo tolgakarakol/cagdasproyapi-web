@@ -3,6 +3,7 @@ import './globals.css';
 import { connectDB } from '@/lib/mongodb';
 import { Settings } from '@/models/Settings';
 import { Appearance } from '@/models/Appearance';
+import AnalyticsTracker from '@/components/public/AnalyticsTracker';
 
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -61,7 +62,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         />
         {customScripts && <div dangerouslySetInnerHTML={{ __html: customScripts }} />}
       </head>
-      <body>{children}</body>
+      <body>
+        <AnalyticsTracker />
+        {children}
+      </body>
     </html>
   );
 }

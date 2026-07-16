@@ -12,8 +12,11 @@ const CARDS = [
 
 export default function Dashboard() {
   const [settings, setSettings] = useState<any>(null);
+  const [analytics, setAnalytics] = useState<any>(null);
+  
   useEffect(() => {
     fetch('/api/settings').then(r => r.json()).then(setSettings).catch(() => {});
+    fetch('/api/analytics').then(r => r.json()).then(setAnalytics).catch(() => {});
   }, []);
 
   return (
@@ -40,21 +43,21 @@ export default function Dashboard() {
           <div className={styles.statIcon} style={{color: '#6366f1', background: 'rgba(99, 102, 241, 0.1)'}}><i className="fas fa-users" /></div>
           <div className={styles.statInfo}>
             <h4>Bugünkü Ziyaretçi</h4>
-            <p>124</p>
+            <p>{analytics ? analytics.todayViews : '...'}</p>
           </div>
         </div>
         <div className={styles.statCard}>
           <div className={styles.statIcon} style={{color: '#10b981', background: 'rgba(16, 185, 129, 0.1)'}}><i className="fas fa-chart-line" /></div>
           <div className={styles.statInfo}>
             <h4>Aylık Görüntülenme</h4>
-            <p>3,842</p>
+            <p>{analytics ? analytics.monthViews : '...'}</p>
           </div>
         </div>
         <div className={styles.statCard}>
           <div className={styles.statIcon} style={{color: '#c8960c', background: 'rgba(200, 150, 12, 0.1)'}}><i className="fas fa-mouse-pointer" /></div>
           <div className={styles.statInfo}>
             <h4>Sayfa Etkileşimi</h4>
-            <p>% 76</p>
+            <p>% {analytics ? analytics.interactionRate : '...'}</p>
           </div>
         </div>
       </div>
